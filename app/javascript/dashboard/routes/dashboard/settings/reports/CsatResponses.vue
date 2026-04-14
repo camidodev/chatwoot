@@ -1,27 +1,46 @@
+<template>
+  <div class="flex-1 overflow-auto p-4">
+    <report-filter-selector
+      :show-agents-filter="true"
+      :show-inbox-filter="true"
+      :show-rating-filter="true"
+      :show-team-filter="isTeamsEnabled"
+      :show-business-hours-switch="false"
+      @filter-change="onFilterChange"
+    />
+    <woot-button
+      color-scheme="success"
+      class-names="button--fixed-top"
+      icon="arrow-download"
+      @click="downloadReports"
+    >
+      {{ $t('CSAT_REPORTS.DOWNLOAD') }}
+    </woot-button>
+    <csat-metrics :filters="requestPayload" />
+    <csat-table :page-index="pageIndex" @page-change="onPageNumberChange" />
+  </div>
+</template>
 <script>
-import { mapGetters } from 'vuex';
-import { useAlert, useTrack } from 'dashboard/composables';
 import CsatMetrics from './components/CsatMetrics.vue';
 import CsatTable from './components/CsatTable.vue';
-import CsatFilters from './components/Csat/CsatFilters.vue';
+import ReportFilterSelector from './components/FilterSelector.vue';
 import { generateFileName } from '../../../../helper/downloadHelper';
 import { REPORTS_EVENTS } from '../../../../helper/AnalyticsHelper/events';
+import { mapGetters } from 'vuex';
 import { FEATURE_FLAGS } from '../../../../featureFlags';
-import V4Button from 'dashboard/components-next/button/Button.vue';
-import ReportHeader from './components/ReportHeader.vue';
+import alertMixin from '../../../../../shared/mixins/alertMixin';
 
 export default {
   name: 'CsatResponses',
   components: {
     CsatMetrics,
     CsatTable,
-    CsatFilters,
-    ReportHeader,
-    V4Button,
+    ReportFilterSelector,
   },
+  mixins: [alertMixin],
   data() {
     return {
-      pageIndex: 0,
+      pageIndex: 1,
       from: 0,
       to: 0,
       userIds: [],
@@ -52,21 +71,18 @@ export default {
       );
     },
   },
-  mounted() {
-    this.$store.dispatch('agents/get');
-  },
   methods: {
     getAllData() {
       try {
         this.$store.dispatch('csat/getMetrics', this.requestPayload);
         this.getResponses();
       } catch {
-        useAlert(this.$t('REPORT.DATA_FETCHING_FAILED'));
+        this.showAlert(this.$t('REPORT.DATA_FETCHING_FAILED'));
       }
     },
     getResponses() {
       this.$store.dispatch('csat/get', {
-        page: this.pageIndex + 1,
+        page: this.pageIndex,
         ...this.requestPayload,
       });
     },
@@ -78,7 +94,7 @@ export default {
           ...this.requestPayload,
         });
       } catch (error) {
-        useAlert(this.$t('REPORT.CSAT_REPORTS.DOWNLOAD_FAILED'));
+        this.showAlert(this.$t('REPORT.CSAT_REPORTS.DOWNLOAD_FAILED'));
       }
     },
     onPageNumberChange(pageIndex) {
@@ -93,9 +109,9 @@ export default {
       selectedTeam,
       selectedRating,
     }) {
-      // do not track filter change on initial load
+      // do not track filter change on inital load
       if (this.from !== 0 && this.to !== 0) {
-        useTrack(REPORTS_EVENTS.FILTER_REPORT, {
+        this.$track(REPORTS_EVENTS.FILTER_REPORT, {
           filterType: 'date',
           reportType: 'csat',
         });
@@ -113,23 +129,3 @@ export default {
   },
 };
 </script>
-
-<template>
-  <ReportHeader :header-title="$t('CSAT_REPORTS.HEADER')">
-    <V4Button
-      :label="$t('CSAT_REPORTS.DOWNLOAD')"
-      icon="i-ph-download-simple"
-      size="sm"
-      @click="downloadReports"
-    />
-  </ReportHeader>
-
-  <div class="flex flex-col gap-6">
-    <CsatFilters
-      :show-team-filter="isTeamsEnabled"
-      @filter-change="onFilterChange"
-    />
-    <CsatMetrics :filters="requestPayload" />
-    <CsatTable :page-index="pageIndex" @page-change="onPageNumberChange" />
-  </div>
-</template>

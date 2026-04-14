@@ -1,5 +1,4 @@
 import ar from './locale/ar';
-import bg from './locale/bg';
 import ca from './locale/ca';
 import cs from './locale/cs';
 import da from './locale/da';
@@ -41,7 +40,6 @@ import lt from './locale/lt';
 
 export default {
   ar,
-  bg,
   ca,
   cs,
   da,

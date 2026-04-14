@@ -1,7 +1,7 @@
 {
   "EMOJI": {
-    "PLACEHOLDER": "Cerca emoji",
-    "NOT_FOUND": "Nessuna emoji corrisponde alla tua ricerca",
+    "PLACEHOLDER": "Search emojis",
+    "NOT_FOUND": "No emoji match your search",
     "REMOVE": "Rimuovi"
   }
 }

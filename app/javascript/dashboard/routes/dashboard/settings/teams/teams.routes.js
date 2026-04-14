@@ -1,51 +1,43 @@
+/* eslint arrow-body-style: 0 */
 import { frontendURL } from '../../../../helper/URLHelper';
-import { FEATURE_FLAGS } from '../../../../featureFlags';
 
-import TeamsIndex from './Index.vue';
-import CreateStepWrap from './Create/Index.vue';
-import EditStepWrap from './Edit/Index.vue';
-import CreateTeam from './Create/CreateTeam.vue';
-import EditTeam from './Edit/EditTeam.vue';
-import AddAgents from './Create/AddAgents.vue';
-import EditAgents from './Edit/EditAgents.vue';
-import FinishSetup from './FinishSetup.vue';
-import SettingsContent from '../Wrapper.vue';
-import SettingsWrapper from '../SettingsWrapper.vue';
+const CreateStepWrap = () => import('./Create/Index.vue');
+const EditStepWrap = () => import('./Edit/Index.vue');
+const CreateTeam = () => import('./Create/CreateTeam.vue');
+const EditTeam = () => import('./Edit/EditTeam.vue');
+const AddAgents = () => import('./Create/AddAgents.vue');
+const EditAgents = () => import('./Edit/EditAgents.vue');
+const FinishSetup = () => import('./FinishSetup.vue');
+const SettingsContent = () => import('../Wrapper.vue');
+const TeamsHome = () => import('./Index.vue');
 
 export default {
   routes: [
     {
       path: frontendURL('accounts/:accountId/settings/teams'),
-      component: SettingsWrapper,
+      component: SettingsContent,
+      props: params => {
+        const showBackButton = params.name !== 'settings_teams_list';
+        return {
+          headerTitle: 'TEAMS_SETTINGS.HEADER',
+          headerButtonText: 'TEAMS_SETTINGS.NEW_TEAM',
+          icon: 'people-team',
+          newButtonRoutes: ['settings_teams_new'],
+          showBackButton,
+        };
+      },
       children: [
         {
           path: '',
-          redirect: to => {
-            return { name: 'settings_teams_list', params: to.params };
-          },
+          name: 'settings_teams',
+          redirect: 'list',
         },
         {
           path: 'list',
           name: 'settings_teams_list',
-          component: TeamsIndex,
-          meta: {
-            featureFlag: FEATURE_FLAGS.TEAM_MANAGEMENT,
-            permissions: ['administrator'],
-          },
+          component: TeamsHome,
+          roles: ['administrator'],
         },
-      ],
-    },
-    {
-      path: frontendURL('accounts/:accountId/settings/teams'),
-      component: SettingsContent,
-      props: () => {
-        return {
-          headerTitle: 'TEAMS_SETTINGS.HEADER',
-          icon: 'people-team',
-          showBackButton: true,
-        };
-      },
-      children: [
         {
           path: 'new',
           component: CreateStepWrap,
@@ -54,27 +46,18 @@ export default {
               path: '',
               name: 'settings_teams_new',
               component: CreateTeam,
-              meta: {
-                featureFlag: FEATURE_FLAGS.TEAM_MANAGEMENT,
-                permissions: ['administrator'],
-              },
+              roles: ['administrator'],
             },
             {
               path: ':teamId/finish',
               name: 'settings_teams_finish',
               component: FinishSetup,
-              meta: {
-                featureFlag: FEATURE_FLAGS.TEAM_MANAGEMENT,
-                permissions: ['administrator'],
-              },
+              roles: ['administrator'],
             },
             {
               path: ':teamId/agents',
               name: 'settings_teams_add_agents',
-              meta: {
-                featureFlag: FEATURE_FLAGS.TEAM_MANAGEMENT,
-                permissions: ['administrator'],
-              },
+              roles: ['administrator'],
               component: AddAgents,
             },
           ],
@@ -87,27 +70,18 @@ export default {
               path: '',
               name: 'settings_teams_edit',
               component: EditTeam,
-              meta: {
-                featureFlag: FEATURE_FLAGS.TEAM_MANAGEMENT,
-                permissions: ['administrator'],
-              },
+              roles: ['administrator'],
             },
             {
               path: 'agents',
               name: 'settings_teams_edit_members',
               component: EditAgents,
-              meta: {
-                featureFlag: FEATURE_FLAGS.TEAM_MANAGEMENT,
-                permissions: ['administrator'],
-              },
+              roles: ['administrator'],
             },
             {
               path: 'finish',
               name: 'settings_teams_edit_finish',
-              meta: {
-                featureFlag: FEATURE_FLAGS.TEAM_MANAGEMENT,
-                permissions: ['administrator'],
-              },
+              roles: ['administrator'],
               component: FinishSetup,
             },
           ],

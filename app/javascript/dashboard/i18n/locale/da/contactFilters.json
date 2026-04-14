@@ -30,9 +30,6 @@
       "is_lesser_than": "Er mindre end",
       "days_before": "Er x dage før"
     },
-    "ERRORS": {
-      "VALUE_REQUIRED": "Værdi er påkrævet"
-    },
     "ATTRIBUTES": {
       "NAME": "Navn",
       "EMAIL": "E-mail",
@@ -48,8 +45,7 @@
       "CREATED_AT": "Oprettet Den",
       "LAST_ACTIVITY": "Sidste Aktivitet",
       "REFERER_LINK": "Link til reference",
-      "BLOCKED": "Blocked",
-      "LABELS": "Etiketter"
+      "BLOCKED": "Blocked"
     },
     "GROUPS": {
       "STANDARD_FILTERS": "Standard Filtre",

@@ -7,16 +7,10 @@ json.meta do
     json.partial! 'api/v1/models/contact', formats: [:json], resource: conversation.contact
   end
   json.channel conversation.inbox.try(:channel_type)
-  if conversation.assigned_entity.is_a?(AgentBot)
+  if conversation.assignee&.account
     json.assignee do
-      json.partial! 'api/v1/models/agent_bot_slim', formats: [:json], resource: conversation.assigned_entity
+      json.partial! 'api/v1/models/agent', formats: [:json], resource: conversation.assignee
     end
-    json.assignee_type 'AgentBot'
-  elsif conversation.assigned_entity&.account
-    json.assignee do
-      json.partial! 'api/v1/models/agent', formats: [:json], resource: conversation.assigned_entity
-    end
-    json.assignee_type 'User'
   end
   if conversation.team.present?
     json.team do
@@ -50,7 +44,6 @@ json.muted conversation.muted?
 json.snoozed_until conversation.snoozed_until
 json.status conversation.status
 json.created_at conversation.created_at.to_i
-json.updated_at conversation.updated_at.to_f
 json.timestamp conversation.last_activity_at.to_i
 json.first_reply_created_at conversation.first_reply_created_at.to_i
 json.unread_count conversation.unread_incoming_messages.count

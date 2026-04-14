@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { actions } from '../../notifications/actions';
 import types from '../../../mutation-types';
-const commit = vi.fn();
+const commit = jest.fn();
 global.axios = axios;
-vi.mock('axios');
+jest.mock('axios');
 
 describe('#actions', () => {
   describe('#get', () => {
@@ -280,36 +280,6 @@ describe('#actions', () => {
       expect(commit.mock.calls).toEqual([
         [types.SET_NOTIFICATIONS_UI_FLAG, { isUpdating: true }],
         [types.SET_NOTIFICATIONS_UI_FLAG, { isUpdating: false }],
-      ]);
-    });
-  });
-
-  describe('setNotificationFilters', () => {
-    it('set notification filters', async () => {
-      const filters = {
-        page: 1,
-        status: 'read',
-        type: 'all',
-        sortOrder: 'desc',
-      };
-      await actions.setNotificationFilters({ commit }, filters);
-      expect(commit.mock.calls).toEqual([
-        [types.SET_NOTIFICATION_FILTERS, filters],
-      ]);
-    });
-  });
-
-  describe('updateNotificationFilters', () => {
-    it('update notification filters', async () => {
-      const filters = {
-        page: 1,
-        status: 'unread',
-        type: 'all',
-        sortOrder: 'desc',
-      };
-      await actions.updateNotificationFilters({ commit }, filters);
-      expect(commit.mock.calls).toEqual([
-        [types.UPDATE_NOTIFICATION_FILTERS, filters],
       ]);
     });
   });

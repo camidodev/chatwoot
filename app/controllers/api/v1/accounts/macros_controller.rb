@@ -1,6 +1,4 @@
 class Api::V1::Accounts::MacrosController < Api::V1::Accounts::BaseController
-  include AttachmentConcern
-
   before_action :fetch_macro, only: [:show, :update, :destroy, :execute]
   before_action :check_authorization, only: [:show, :update, :destroy, :execute]
 
@@ -13,32 +11,26 @@ class Api::V1::Accounts::MacrosController < Api::V1::Accounts::BaseController
   end
 
   def create
-    blobs, actions, error = validate_and_prepare_attachments(params[:actions])
-    return render_could_not_create_error(error) if error
-
     @macro = Current.account.macros.new(macros_with_user.merge(created_by_id: current_user.id))
     @macro.set_visibility(current_user, permitted_params)
-    @macro.actions = actions
+    @macro.actions = params[:actions]
 
-    return render_could_not_create_error(@macro.errors.messages) unless @macro.valid?
+    render json: { error: @macro.errors.messages }, status: :unprocessable_entity and return unless @macro.valid?
 
     @macro.save!
-    blobs.each { |blob| @macro.files.attach(blob) }
+    process_attachments
+    @macro
   end
 
   def update
-    blobs, actions, error = validate_and_prepare_attachments(params[:actions], @macro)
-    return render_could_not_create_error(error) if error
-
     ActiveRecord::Base.transaction do
-      @macro.assign_attributes(macros_with_user)
+      @macro.update!(macros_with_user)
       @macro.set_visibility(current_user, permitted_params)
-      @macro.actions = actions if params[:actions]
+      process_attachments
       @macro.save!
-      blobs.each { |blob| @macro.files.attach(blob) }
     rescue StandardError => e
       Rails.logger.error e
-      render_could_not_create_error(@macro.errors.messages)
+      render json: { error: @macro.errors.messages }.to_json, status: :unprocessable_entity
     end
   end
 
@@ -55,9 +47,20 @@ class Api::V1::Accounts::MacrosController < Api::V1::Accounts::BaseController
 
   private
 
+  def process_attachments
+    actions = @macro.actions.filter_map { |k, _v| k if k['action_name'] == 'send_attachment' }
+    return if actions.blank?
+
+    actions.each do |action|
+      blob_id = action['action_params']
+      blob = ActiveStorage::Blob.find_by(id: blob_id)
+      @macro.files.attach(blob)
+    end
+  end
+
   def permitted_params
     params.permit(
-      :name, :visibility,
+      :name, :account_id, :visibility,
       actions: [:action_name, { action_params: [] }]
     )
   end

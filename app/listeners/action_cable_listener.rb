@@ -14,19 +14,11 @@ class ActionCableListener < BaseListener
   end
 
   def notification_deleted(event)
-    notification_data = event.data[:notification_data]
+    return if event.data[:notification].user.blank?
 
-    user = User.find_by(id: notification_data[:user_id])
-    account = Account.find_by(id: notification_data[:account_id])
-    return if user.blank? || account.blank?
-
-    notification_finder = NotificationFinder.new(user, account)
-    tokens = [user.pubsub_token]
-    broadcast(account, tokens, NOTIFICATION_DELETED, {
-                notification: { id: notification_data[:id] },
-                unread_count: notification_finder.unread_count,
-                count: notification_finder.count
-              })
+    notification, account, unread_count, count = extract_notification_and_account(event)
+    tokens = [event.data[:notification].user.pubsub_token]
+    broadcast(account, tokens, NOTIFICATION_DELETED, { notification: notification.push_event_data, unread_count: unread_count, count: count })
   end
 
   def account_cache_invalidated(event)
@@ -145,25 +137,30 @@ class ActionCableListener < BaseListener
 
   def contact_created(event)
     contact, account = extract_contact_and_account(event)
-    broadcast(account, [account_token(account)], CONTACT_CREATED, contact.push_event_data)
+    tokens = user_tokens(account, account.agents)
+
+    broadcast(account, tokens, CONTACT_CREATED, contact.push_event_data)
   end
 
   def contact_updated(event)
     contact, account = extract_contact_and_account(event)
-    broadcast(account, [account_token(account)], CONTACT_UPDATED, contact.push_event_data)
+    tokens = user_tokens(account, account.agents)
+
+    broadcast(account, tokens, CONTACT_UPDATED, contact.push_event_data)
   end
 
   def contact_merged(event)
     contact, account = extract_contact_and_account(event)
-    broadcast(account, [account_token(account)], CONTACT_MERGED, contact.push_event_data)
+    tokens = event.data[:tokens]
+
+    broadcast(account, tokens, CONTACT_MERGED, contact.push_event_data)
   end
 
   def contact_deleted(event)
-    contact_data = event.data[:contact_data]
-    account = Account.find_by(id: contact_data[:account_id])
-    return if account.blank?
+    contact, account = extract_contact_and_account(event)
+    tokens = user_tokens(account, account.agents)
 
-    broadcast(account, [account_token(account)], CONTACT_DELETED, contact_data)
+    broadcast(account, tokens, CONTACT_DELETED, contact.push_event_data)
   end
 
   def conversation_mentioned(event)
@@ -175,19 +172,9 @@ class ActionCableListener < BaseListener
 
   private
 
-  def account_token(account)
-    "account_#{account.id}"
-  end
-
   def typing_event_listener_tokens(account, conversation, user)
-    current_user_token = if user.is_a?(Contact)
-                           conversation.contact_inbox.pubsub_token
-                         elsif user.respond_to?(:pubsub_token)
-                           user.pubsub_token
-                         end
-
-    tokens = user_tokens(account, conversation.inbox.members) + [conversation.contact_inbox.pubsub_token]
-    current_user_token.present? ? tokens - [current_user_token] : tokens
+    current_user_token = user.is_a?(Contact) ? conversation.contact_inbox.pubsub_token : user.pubsub_token
+    (user_tokens(account, conversation.inbox.members) + [conversation.contact_inbox.pubsub_token]) - [current_user_token]
   end
 
   def user_tokens(account, agents)
@@ -221,5 +208,3 @@ class ActionCableListener < BaseListener
     ::ActionCableBroadcastJob.perform_later(tokens.uniq, event_name, payload)
   end
 end
-
-ActionCableListener.prepend_mod_with('ActionCableListener')

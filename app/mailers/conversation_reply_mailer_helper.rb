@@ -1,6 +1,4 @@
 module ConversationReplyMailerHelper
-  include ConversationReplyMailerAttachmentHelper
-
   def prepare_mail(cc_bcc_enabled)
     @options = {
       to: to_emails,
@@ -8,56 +6,40 @@ module ConversationReplyMailerHelper
       reply_to: email_reply_to,
       subject: mail_subject,
       message_id: custom_message_id,
-      in_reply_to: in_reply_to_email,
-      references: references_header
+      in_reply_to: in_reply_to_email
     }
 
     if cc_bcc_enabled
       @options[:cc] = cc_bcc_emails[0]
       @options[:bcc] = cc_bcc_emails[1]
     end
-    oauth_smtp_settings
+    ms_smtp_settings
     set_delivery_method
 
-    # Email type detection logic:
-    # - email_reply: Sets @message with a single message
-    # - Other actions: Set @messages with a collection of messages
-    #
-    # So this check implicitly determines we're handling an email_reply
-    # and not one of the other email types (summary, transcript, etc.)
-    process_attachments_as_files_for_email_reply if @message&.attachments.present?
+    Rails.logger.info("Email sent from #{email_from} to #{to_emails} with subject #{mail_subject}")
+
     mail(@options)
   end
 
   private
 
-  def oauth_smtp_settings
-    return unless @inbox.email? && @channel.imap_enabled
-    return unless oauth_provider_domain
+  def ms_smtp_settings
+    return unless @inbox.email? && @channel.imap_enabled && @inbox.channel.provider == 'microsoft'
 
-    @options[:delivery_method] = :smtp
-    @options[:delivery_method_options] = base_smtp_settings(oauth_provider_domain)
-  end
-
-  def oauth_provider_domain
-    return 'smtp.gmail.com' if @inbox.channel.google?
-    return 'smtp.office365.com' if @inbox.channel.microsoft?
-  end
-
-  def base_smtp_settings(domain)
-    {
-      address: domain,
+    smtp_settings = {
+      address: 'smtp.office365.com',
       port: 587,
       user_name: @channel.imap_login,
       password: @channel.provider_config['access_token'],
-      domain: domain,
+      domain: 'smtp.office365.com',
       tls: false,
       enable_starttls_auto: true,
       openssl_verify_mode: 'none',
-      open_timeout: 15,
-      read_timeout: 15,
       authentication: 'xoauth2'
     }
+
+    @options[:delivery_method] = :smtp
+    @options[:delivery_method_options] = smtp_settings
   end
 
   def set_delivery_method
@@ -79,28 +61,24 @@ module ConversationReplyMailerHelper
     @options[:delivery_method_options] = smtp_settings
   end
 
-  def email_smtp_enabled?
+  def email_smtp_enabled
     @inbox.inbox_type == 'Email' && @channel.smtp_enabled
   end
 
-  def email_imap_enabled?
+  def email_imap_enabled
     @inbox.inbox_type == 'Email' && @channel.imap_enabled
   end
 
-  def email_oauth_enabled?
-    @inbox.inbox_type == 'Email' && (@channel.microsoft? || @channel.google?)
+  def email_microsoft_auth_enabled
+    @inbox.inbox_type == 'Email' && @channel.provider == 'microsoft'
   end
 
   def email_from
-    return Email::FromBuilder.new(inbox: @inbox, message: current_message).build if @account.feature_enabled?(:reply_mailer_migration)
-
-    email_oauth_enabled? || email_smtp_enabled? ? channel_email_with_name : from_email_with_name
+    email_microsoft_auth_enabled || email_smtp_enabled ? channel_email_with_name : from_email_with_name
   end
 
   def email_reply_to
-    return Email::ReplyToBuilder.new(inbox: @inbox, message: current_message).build if @account.feature_enabled?(:reply_mailer_migration)
-
-    email_imap_enabled? ? @channel.email : reply_email
+    email_imap_enabled ? @channel.email : reply_email
   end
 
   # Use channel email domain in case of account email domain is not set for custom message_id and in_reply_to

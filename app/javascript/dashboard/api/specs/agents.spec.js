@@ -14,7 +14,7 @@ describe('#AgentAPI', () => {
   describe('API calls', () => {
     const originalAxios = window.axios;
     const axiosMock = {
-      post: vi.fn(() => Promise.resolve()),
+      post: jest.fn(() => Promise.resolve()),
     };
 
     beforeEach(() => {

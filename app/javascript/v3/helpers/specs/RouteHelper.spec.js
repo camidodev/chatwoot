@@ -3,21 +3,18 @@ import { clearBrowserSessionCookies } from 'dashboard/store/utils/api';
 import { replaceRouteWithReload } from '../CommonHelper';
 import Cookies from 'js-cookie';
 
-const next = vi.fn();
-vi.mock('dashboard/store/utils/api', () => ({
-  clearBrowserSessionCookies: vi.fn(),
+const next = jest.fn();
+jest.mock('dashboard/store/utils/api', () => ({
+  clearBrowserSessionCookies: jest.fn(),
 }));
-vi.mock('../CommonHelper', () => ({ replaceRouteWithReload: vi.fn() }));
+jest.mock('../CommonHelper', () => ({ replaceRouteWithReload: jest.fn() }));
 
+jest.mock('js-cookie', () => ({
+  get: jest.fn(),
+}));
+
+Cookies.get.mockReturnValueOnce(true).mockReturnValue(false);
 describe('#validateRouteAccess', () => {
-  beforeEach(() => {
-    vi.spyOn(Cookies, 'set');
-  });
-
-  afterEach(() => {
-    vi.restoreAllMocks();
-  });
-
   it('reset cookies and continues to the login page if the SSO parameters are present', () => {
     validateRouteAccess(
       {
@@ -43,8 +40,7 @@ describe('#validateRouteAccess', () => {
   });
 
   it('redirects to dashboard if auth cookie is present', () => {
-    vi.spyOn(Cookies, 'get').mockReturnValueOnce(true);
-
+    Cookies.get.mockImplementation(() => true);
     validateRouteAccess({ name: 'login' }, next);
     expect(clearBrowserSessionCookies).not.toHaveBeenCalled();
     expect(replaceRouteWithReload).toHaveBeenCalledWith('/app/');

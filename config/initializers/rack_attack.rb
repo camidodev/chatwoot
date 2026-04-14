@@ -11,12 +11,7 @@ class Rack::Attack
   # Rack::Attack.cache.store = ActiveSupport::Cache::MemoryStore.new
 
   # https://github.com/rack/rack-attack/issues/102
-  # Rails 7.1 automatically adds its own ConnectionPool around RedisCacheStore.
-  # Because `$velma` is *already* a ConnectionPool, double-wrapping causes
-  # Redis calls like `get` to hit the outer wrapper and explode.
-  # `pool: false` tells Rails to skip its internal pool and use ours directly.
-  # TODO: We can use build in connection pool in future upgrade
-  Rack::Attack.cache.store = ActiveSupport::Cache::RedisCacheStore.new(redis: $velma, pool: false)
+  Rack::Attack.cache.store = ActiveSupport::Cache::RedisCacheStore.new(redis: $velma)
 
   class Request < ::Rack::Request
     # You many need to specify a method to fetch the correct remote IP address
@@ -26,9 +21,8 @@ class Rack::Attack
     end
 
     def allowed_ip?
-      default_allowed_ips = ['127.0.0.1', '::1']
-      env_allowed_ips = ENV.fetch('RACK_ATTACK_ALLOWED_IPS', '').split(',').map(&:strip)
-      (default_allowed_ips + env_allowed_ips).include?(remote_ip)
+      allowed_ips = ['127.0.0.1', '::1']
+      allowed_ips.include?(remote_ip)
     end
 
     # Rails would allow requests to paths with extentions, so lets compare against the path with extention stripped
@@ -36,21 +30,6 @@ class Rack::Attack
     def path_without_extentions
       path[/^[^.]+/]
     end
-  end
-
-  ### Safelist IPs from Environment Variable ###
-  #
-  # This block ensures requests from any IP present in RACK_ATTACK_ALLOWED_IPS
-  # will bypass Rack::Attack’s throttling rules.
-  #
-  # Example: RACK_ATTACK_ALLOWED_IPS="127.0.0.1,::1,192.168.0.10"
-
-  Rack::Attack.safelist('trusted IPs', &:allowed_ip?)
-
-  # Safelist health check endpoint so it never touches Redis for throttle tracking.
-  # This keeps /health fully dependency-free for ALB liveness checks.
-  Rack::Attack.safelist('health check') do |req|
-    req.path == '/health'
   end
 
   ### Throttle Spammy Clients ###
@@ -89,17 +68,12 @@ class Rack::Attack
   end
 
   # ### Prevent Brute-Force Login Attacks ###
-  # Exclude MFA verification attempts from regular login throttling
   throttle('login/ip', limit: 5, period: 5.minutes) do |req|
-    if req.path_without_extentions == '/auth/sign_in' && req.post? && req.params['mfa_token'].blank?
-      # Skip if this is an MFA verification request
-      req.ip
-    end
+    req.ip if req.path_without_extentions == '/auth/sign_in' && req.post?
   end
 
   throttle('login/email', limit: 10, period: 15.minutes) do |req|
-    # Skip if this is an MFA verification request
-    if req.path_without_extentions == '/auth/sign_in' && req.post? && req.params['mfa_token'].blank?
+    if req.path_without_extentions == '/auth/sign_in' && req.post?
       # ref: https://github.com/rack/rack-attack/issues/399
       # NOTE: This line used to throw ArgumentError /rails/action_mailbox/sendgrid/inbound_emails : invalid byte sequence in UTF-8
       # Hence placed in the if block
@@ -120,43 +94,9 @@ class Rack::Attack
     end
   end
 
-  ## Resend confirmation throttling (unauthenticated)
+  ## Resend confirmation throttling
   throttle('resend_confirmation/ip', limit: 5, period: 30.minutes) do |req|
-    req.ip if req.path_without_extentions == '/resend_confirmation' && req.post?
-  end
-
-  throttle('resend_confirmation/email', limit: 5, period: 1.hour) do |req|
-    if req.path_without_extentions == '/resend_confirmation' && req.post?
-      email = req.params['email'].presence || ActionDispatch::Request.new(req.env).params['email'].presence
-      email.to_s.downcase.gsub(/\s+/, '')
-    end
-  end
-
-  ## Resend confirmation throttling (authenticated)
-  throttle('resend_confirmation_auth/ip', limit: 5, period: 30.minutes) do |req|
     req.ip if req.path_without_extentions == '/api/v1/profile/resend_confirmation' && req.post?
-  end
-
-  ## MFA throttling - prevent brute force attacks
-  throttle('mfa_verification/ip', limit: 5, period: 1.minute) do |req|
-    if req.path_without_extentions == '/api/v1/profile/mfa'
-      req.ip if req.delete? # Throttle disable attempts
-    elsif req.path_without_extentions.match?(%r{/api/v1/profile/mfa/(verify|backup_codes)})
-      req.ip if req.post? # Throttle verify and backup_codes attempts
-    end
-  end
-
-  # Separate rate limiting for MFA verification attempts
-  throttle('mfa_login/ip', limit: 10, period: 1.minute) do |req|
-    req.ip if req.path_without_extentions == '/auth/sign_in' && req.post? && req.params['mfa_token'].present?
-  end
-
-  throttle('mfa_login/token', limit: 10, period: 1.minute) do |req|
-    if req.path_without_extentions == '/auth/sign_in' && req.post?
-      # Track by MFA token to prevent brute force on a specific token
-      mfa_token = req.params['mfa_token'].presence
-      (mfa_token.presence)
-    end
   end
 
   ## Prevent Brute-Force Signup Attacks ###
@@ -197,8 +137,7 @@ class Rack::Attack
   ###-----------------------------------------------###
 
   ## Prevent Abuse of Converstion Transcript APIs ###
-  throttle('/api/v1/accounts/:account_id/conversations/:conversation_id/transcript',
-           limit: ENV.fetch('RATE_LIMIT_CONVERSATION_TRANSCRIPT', '1000').to_i, period: 1.hour) do |req|
+  throttle('/api/v1/accounts/:account_id/conversations/:conversation_id/transcript', limit: 30, period: 1.hour) do |req|
     match_data = %r{/api/v1/accounts/(?<account_id>\d+)/conversations/(?<conversation_id>\d+)/transcript}.match(req.path)
     match_data[:account_id] if match_data.present?
   end
@@ -210,41 +149,9 @@ class Rack::Attack
   end
 
   ## Prevent abuse of contact search api
-  throttle('/api/v1/accounts/:account_id/contacts/search', limit: ENV.fetch('RATE_LIMIT_CONTACT_SEARCH', '100').to_i, period: 1.minute) do |req|
+  throttle('/api/v1/accounts/:account_id/contacts/search', limit: 5, period: 1.minute) do |req|
     match_data = %r{/api/v1/accounts/(?<account_id>\d+)/contacts/search}.match(req.path)
     match_data[:account_id] if match_data.present?
-  end
-
-  # Throttle by individual user (based on uid)
-  throttle('/api/v2/accounts/:account_id/reports/user', limit: ENV.fetch('RATE_LIMIT_REPORTS_API_USER_LEVEL', '100').to_i, period: 1.minute) do |req|
-    match_data = %r{/api/v2/accounts/(?<account_id>\d+)/reports}.match(req.path)
-    # Extract user identification (uid for web, api_access_token for API requests)
-    user_uid = req.get_header('HTTP_UID')
-    api_access_token = req.get_header('HTTP_API_ACCESS_TOKEN') || req.get_header('api_access_token')
-
-    # Use uid if present, otherwise fallback to api_access_token for tracking
-    user_identifier = user_uid.presence || api_access_token.presence
-
-    "#{user_identifier}:#{match_data[:account_id]}" if match_data.present? && user_identifier.present?
-  end
-
-  ## Prevent abuse of reports api at account level
-  throttle('/api/v2/accounts/:account_id/reports', limit: ENV.fetch('RATE_LIMIT_REPORTS_API_ACCOUNT_LEVEL', '1000').to_i, period: 1.minute) do |req|
-    match_data = %r{/api/v2/accounts/(?<account_id>\d+)/reports}.match(req.path)
-    match_data[:account_id] if match_data.present?
-  end
-
-  ## Prevent increased use of conversations meta API per user
-  throttle('/api/v1/accounts/:account_id/conversations/meta/user',
-           limit: ENV.fetch('RATE_LIMIT_CONVERSATIONS_META', '30').to_i, period: 1.minute) do |req|
-    match_data = %r{/api/v1/accounts/(?<account_id>\d+)/conversations/meta}.match(req.path)
-    next unless match_data.present? && req.get?
-
-    user_uid = req.get_header('HTTP_UID')
-    api_access_token = req.get_header('HTTP_API_ACCESS_TOKEN') || req.get_header('api_access_token')
-    user_identifier = user_uid.presence || api_access_token.presence
-
-    "#{user_identifier}:#{match_data[:account_id]}" if user_identifier.present?
   end
 
   ## ----------------------------------------------- ##
@@ -252,29 +159,7 @@ end
 
 # Log blocked events
 ActiveSupport::Notifications.subscribe('throttle.rack_attack') do |_name, _start, _finish, _request_id, payload|
-  req = payload[:request]
-
-  user_uid = req.get_header('HTTP_UID')
-  api_access_token = req.get_header('HTTP_API_ACCESS_TOKEN') || req.get_header('api_access_token')
-
-  # Mask the token if present
-  masked_api_token = api_access_token.present? ? "#{api_access_token[0..4]}...[REDACTED]" : nil
-
-  # Use uid if present, otherwise fallback to masked api_access_token for tracking
-  user_identifier = user_uid.presence || masked_api_token.presence || 'unknown_user'
-
-  # Extract account ID if present
-  account_match = %r{/accounts/(?<account_id>\d+)}.match(req.path)
-  account_id = account_match ? account_match[:account_id] : 'unknown_account'
-
-  Rails.logger.warn(
-    "[Rack::Attack][Blocked] remote_ip: \"#{req.remote_ip}\", " \
-    "path: \"#{req.path}\", " \
-    "user_identifier: \"#{user_identifier}\", " \
-    "account_id: \"#{account_id}\", " \
-    "method: \"#{req.request_method}\", " \
-    "user_agent: \"#{req.user_agent}\""
-  )
+  Rails.logger.warn "[Rack::Attack][Blocked] remote_ip: \"#{payload[:request].remote_ip}\", path: \"#{payload[:request].path}\""
 end
 
 Rack::Attack.enabled = Rails.env.production? ? ActiveModel::Type::Boolean.new.cast(ENV.fetch('ENABLE_RACK_ATTACK', true)) : false

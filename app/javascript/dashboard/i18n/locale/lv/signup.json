@@ -1,7 +1,6 @@
 {
   "REGISTER": {
     "TRY_WOOT": "Izveidot kontu",
-    "GET_STARTED": "Get started with Chatwoot",
     "TITLE": "Reģistrēt",
     "TESTIMONIAL_HEADER": "Viss, kas nepieciešams, ir viens solis, lai virzītos uz priekšu",
     "TESTIMONIAL_CONTENT": "Jūs esat viena soļa attālumā no klientu piesaistīšanas, noturēšanas un jaunu klientu atrašanas.",
@@ -21,27 +20,22 @@
     },
     "EMAIL": {
       "LABEL": "Darba e-pasts",
-      "PLACEHOLDER": "Ievadiet savu darba e-pasta adresi. Piemēram, bruce{'@'}wayne{'.'}enterprises",
+      "PLACEHOLDER": "Ievadiet savu darba e-pasta adresi. Piemēram, bruce@wayne.enterprises",
       "ERROR": "Lūdzu, ievadiet derīgu darba e-pasta adresi."
     },
     "PASSWORD": {
       "LABEL": "Parole",
       "PLACEHOLDER": "Parole",
       "ERROR": "Parole ir pārāk īsa",
-      "IS_INVALID_PASSWORD": "Parolei ir jāsatur vismaz 1 lielais burts, 1 mazais burts, 1 cipars un 1 speciālā rakstzīme.",
-      "REQUIREMENTS_LENGTH": "At least 6 characters long",
-      "REQUIREMENTS_UPPERCASE": "At least one uppercase letter",
-      "REQUIREMENTS_LOWERCASE": "At least one lowercase letter",
-      "REQUIREMENTS_NUMBER": "At least one number",
-      "REQUIREMENTS_SPECIAL": "At least one special character"
+      "IS_INVALID_PASSWORD": "Parolei ir jāsatur vismaz 1 lielais burts, 1 mazais burts, 1 cipars un 1 speciālā rakstzīme."
     },
     "CONFIRM_PASSWORD": {
       "LABEL": "Apstipriniet paroli",
       "PLACEHOLDER": "Apstipriniet paroli",
-      "ERROR": "Paroles nesakrīt."
+      "ERROR": "Parole nesakrīt."
     },
     "API": {
-      "SUCCESS_MESSAGE": "Registration Successful",
+      "SUCCESS_MESSAGE": "Reģistrācija sekmīga",
       "ERROR_MESSAGE": "Nevarēja izveidot savienojumu ar Woot serveri. Lūdzu mēģiniet vēlreiz."
     },
     "SUBMIT": "Izveidot kontu",

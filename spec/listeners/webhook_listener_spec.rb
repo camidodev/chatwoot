@@ -28,10 +28,7 @@ describe WebhookListener do
     context 'when webhook is configured and event is subscribed' do
       it 'triggers the webhook event' do
         webhook = create(:webhook, inbox: inbox, account: account)
-        expect(WebhookJob).to receive(:perform_later).with(
-          webhook.url, message.webhook_data.merge(event: 'message_created'), :account_webhook,
-          secret: webhook.secret, delivery_id: instance_of(String)
-        ).once
+        expect(WebhookJob).to receive(:perform_later).with(webhook.url, message.webhook_data.merge(event: 'message_created')).once
         listener.message_created(message_created_event)
       end
     end
@@ -57,10 +54,8 @@ describe WebhookListener do
           conversation: api_conversation
         )
         api_event = Events::Base.new(event_name, Time.zone.now, message: api_message)
-        expect(WebhookJob).to receive(:perform_later).with(
-          channel_api.webhook_url, api_message.webhook_data.merge(event: 'message_created'),
-          :api_inbox_webhook, secret: channel_api.secret, delivery_id: instance_of(String)
-        ).once
+        expect(WebhookJob).to receive(:perform_later).with(channel_api.webhook_url, api_message.webhook_data.merge(event: 'message_created'),
+                                                           :api_inbox_webhook).once
         listener.message_created(api_event)
       end
 
@@ -95,10 +90,7 @@ describe WebhookListener do
     context 'when webhook is configured' do
       it 'triggers webhook' do
         webhook = create(:webhook, inbox: inbox, account: account)
-        expect(WebhookJob).to receive(:perform_later).with(
-          webhook.url, conversation.webhook_data.merge(event: 'conversation_created'), :account_webhook,
-          secret: webhook.secret, delivery_id: instance_of(String)
-        ).once
+        expect(WebhookJob).to receive(:perform_later).with(webhook.url, conversation.webhook_data.merge(event: 'conversation_created')).once
         listener.conversation_created(conversation_created_event)
       end
     end
@@ -109,11 +101,9 @@ describe WebhookListener do
         api_inbox = channel_api.inbox
         api_conversation = create(:conversation, account: account, inbox: api_inbox, assignee: user)
         api_event = Events::Base.new(event_name, Time.zone.now, conversation: api_conversation)
-        expect(WebhookJob).to receive(:perform_later).with(
-          channel_api.webhook_url,
-          api_conversation.webhook_data.merge(event: 'conversation_created'),
-          :api_inbox_webhook, secret: channel_api.secret, delivery_id: instance_of(String)
-        ).once
+        expect(WebhookJob).to receive(:perform_later).with(channel_api.webhook_url,
+                                                           api_conversation.webhook_data.merge(event: 'conversation_created'),
+                                                           :api_inbox_webhook).once
         listener.conversation_created(api_event)
       end
 
@@ -166,9 +156,7 @@ describe WebhookListener do
                 }
               }
             ]
-          ),
-          :account_webhook,
-          secret: webhook.secret, delivery_id: instance_of(String)
+          )
         ).once
 
         listener.conversation_updated(conversation_updated_event)
@@ -189,10 +177,7 @@ describe WebhookListener do
     context 'when webhook is configured' do
       it 'triggers webhook' do
         webhook = create(:webhook, account: account)
-        expect(WebhookJob).to receive(:perform_later).with(
-          webhook.url, contact.webhook_data.merge(event: 'contact_created'), :account_webhook,
-          secret: webhook.secret, delivery_id: instance_of(String)
-        ).once
+        expect(WebhookJob).to receive(:perform_later).with(webhook.url, contact.webhook_data.merge(event: 'contact_created')).once
         listener.contact_created(contact_event)
       end
     end
@@ -228,9 +213,7 @@ describe WebhookListener do
           contact.webhook_data.merge(
             event: 'contact_updated',
             changed_attributes: [{ 'name' => { :current_value => 'Jane Doe', :previous_value => 'Jane' } }]
-          ),
-          :account_webhook,
-          secret: webhook.secret, delivery_id: instance_of(String)
+          )
         ).once
         listener.contact_updated(contact_updated_event)
       end
@@ -252,10 +235,7 @@ describe WebhookListener do
       it 'triggers webhook' do
         inbox_data = Inbox::EventDataPresenter.new(inbox).push_data
         webhook = create(:webhook, account: account, subscriptions: ['inbox_created'])
-        expect(WebhookJob).to receive(:perform_later).with(
-          webhook.url, inbox_data.merge(event: 'inbox_created'), :account_webhook,
-          secret: webhook.secret, delivery_id: instance_of(String)
-        ).once
+        expect(WebhookJob).to receive(:perform_later).with(webhook.url, inbox_data.merge(event: 'inbox_created')).once
         listener.inbox_created(inbox_created_event)
       end
     end
@@ -292,96 +272,10 @@ describe WebhookListener do
 
         expect(WebhookJob).to receive(:perform_later).with(
           webhook.url,
-          inbox_data.merge(event: 'inbox_updated', changed_attributes: changed_attributes_data),
-          :account_webhook,
-          secret: webhook.secret, delivery_id: instance_of(String)
+          inbox_data.merge(event: 'inbox_updated', changed_attributes: changed_attributes_data)
         ).once
 
         listener.inbox_updated(inbox_updated_event)
-      end
-    end
-  end
-
-  describe '#conversation_typing_on' do
-    let(:event_name) { :'conversation.typing_on' }
-    let!(:typing_event) { Events::Base.new(event_name, Time.zone.now, conversation: conversation, user: user) }
-
-    context 'when webhook is not configured' do
-      it 'does not trigger webhook' do
-        expect(WebhookJob).not_to receive(:perform_later)
-        listener.conversation_typing_on(typing_event)
-      end
-    end
-
-    context 'when webhook is configured' do
-      it 'triggers webhook' do
-        webhook = create(:webhook, inbox: inbox, account: account, subscriptions: ['conversation_typing_on'])
-
-        payload = {
-          event: 'conversation_typing_on',
-          user: user.webhook_data,
-          conversation: conversation.webhook_data,
-          is_private: false
-        }
-
-        expect(WebhookJob).to receive(:perform_later).with(
-          webhook.url, payload, :account_webhook,
-          secret: webhook.secret, delivery_id: instance_of(String)
-        ).once
-        listener.conversation_typing_on(typing_event)
-      end
-    end
-
-    context 'when inbox is an API Channel' do
-      it 'triggers webhook if webhook_url is present' do
-        channel_api = create(:channel_api, account: account)
-        api_inbox = channel_api.inbox
-        api_conversation = create(:conversation, account: account, inbox: api_inbox, assignee: user)
-        api_event = Events::Base.new(event_name, Time.zone.now, conversation: api_conversation, user: user, is_private: false)
-
-        payload = {
-          event: 'conversation_typing_on',
-          user: user.webhook_data,
-          conversation: api_conversation.webhook_data,
-          is_private: false
-        }
-
-        expect(WebhookJob).to receive(:perform_later).with(
-          channel_api.webhook_url, payload, :api_inbox_webhook,
-          secret: channel_api.secret, delivery_id: instance_of(String)
-        ).once
-        listener.conversation_typing_on(api_event)
-      end
-    end
-  end
-
-  describe '#conversation_typing_off' do
-    let(:event_name) { :'conversation.typing_off' }
-    let!(:typing_event) { Events::Base.new(event_name, Time.zone.now, conversation: conversation, user: user, is_private: false) }
-
-    context 'when webhook is not configured' do
-      it 'does not trigger webhook' do
-        expect(WebhookJob).not_to receive(:perform_later)
-        listener.conversation_typing_off(typing_event)
-      end
-    end
-
-    context 'when webhook is configured' do
-      it 'triggers webhook' do
-        webhook = create(:webhook, inbox: inbox, account: account, subscriptions: ['conversation_typing_off'])
-
-        payload = {
-          event: 'conversation_typing_off',
-          user: user.webhook_data,
-          conversation: conversation.webhook_data,
-          is_private: false
-        }
-
-        expect(WebhookJob).to receive(:perform_later).with(
-          webhook.url, payload, :account_webhook,
-          secret: webhook.secret, delivery_id: instance_of(String)
-        ).once
-        listener.conversation_typing_off(typing_event)
       end
     end
   end

@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import types from '../../mutation-types';
 import ConversationApi from '../../../api/inbox/conversation';
 import MessageApi from '../../../api/inbox/message';
@@ -11,11 +12,6 @@ import {
 } from './helpers/actionHelpers';
 import messageReadActions from './actions/messageReadActions';
 import messageTranslateActions from './actions/messageTranslateActions';
-import * as Sentry from '@sentry/vue';
-import {
-  handleVoiceCallCreated,
-  handleVoiceCallUpdated,
-} from 'dashboard/helper/voice';
 
 export const hasMessageFailedWithExternalError = pendingMessage => {
   // This helper is used to check if the message has failed with an external error.
@@ -41,10 +37,9 @@ const actions = {
     }
   },
 
-  fetchAllConversations: async ({ commit, state, dispatch }) => {
+  fetchAllConversations: async ({ commit, dispatch }, params) => {
     commit(types.SET_LIST_LOADING_STATUS);
     try {
-      const params = state.conversationFilters;
       const {
         data: { data },
       } = await ConversationApi.get(params);
@@ -96,7 +91,7 @@ const actions = {
         data: payload,
       });
       if (!payload.length) {
-        commit(types.SET_ALL_MESSAGES_LOADED, data.conversationId);
+        commit(types.SET_ALL_MESSAGES_LOADED);
       }
     } catch (error) {
       // Handle error
@@ -104,24 +99,14 @@ const actions = {
   },
 
   fetchAllAttachments: async ({ commit }, conversationId) => {
-    let attachments = [];
-
     try {
       const { data } = await ConversationApi.getAllAttachments(conversationId);
-      attachments = data.payload;
-    } catch (error) {
-      // in case of error, log the error and continue
-      Sentry.setContext('Conversation', {
-        id: conversationId,
-      });
-      Sentry.captureException(error);
-    } finally {
-      // we run the commit even if the request fails
-      // this ensures that the `attachment` variable is always present on chat
       commit(types.SET_ALL_ATTACHMENTS, {
         id: conversationId,
-        data: attachments,
+        data: data.payload,
       });
+    } catch (error) {
+      // Handle error
     }
   },
 
@@ -191,7 +176,7 @@ const actions = {
 
   async setActiveChat({ commit, dispatch }, { data, after }) {
     commit(types.SET_CURRENT_CHAT_WINDOW, data);
-    commit(types.CLEAR_ALL_MESSAGES_LOADED, data.id);
+    commit(types.CLEAR_ALL_MESSAGES_LOADED);
     if (data.dataFetched === undefined) {
       try {
         await dispatch('fetchPreviousMessages', {
@@ -199,7 +184,7 @@ const actions = {
           before: data.messages[0].id,
           conversationId: data.id,
         });
-        commit(types.SET_CHAT_DATA_FETCHED, data.id);
+        Vue.set(data, 'dataFetched', true);
       } catch (error) {
         // Ignore error
       }
@@ -212,17 +197,14 @@ const actions = {
         conversationId,
         agentId,
       });
-      dispatch('setCurrentChatAssignee', {
-        conversationId,
-        assignee: response.data,
-      });
+      dispatch('setCurrentChatAssignee', response.data);
     } catch (error) {
       // Handle error
     }
   },
 
-  setCurrentChatAssignee({ commit }, { conversationId, assignee }) {
-    commit(types.ASSIGN_AGENT, { conversationId, assignee });
+  setCurrentChatAssignee({ commit }, assignee) {
+    commit(types.ASSIGN_AGENT, assignee);
   },
 
   assignTeam: async ({ dispatch }, { conversationId, teamId }) => {
@@ -243,21 +225,9 @@ const actions = {
 
   toggleStatus: async (
     { commit },
-    { conversationId, status, snoozedUntil = null, customAttributes = null }
+    { conversationId, status, snoozedUntil = null }
   ) => {
     try {
-      // Update custom attributes first if provided
-      if (customAttributes) {
-        await ConversationApi.updateCustomAttributes({
-          conversationId,
-          customAttributes,
-        });
-        commit(types.UPDATE_CONVERSATION_CUSTOM_ATTRIBUTES, {
-          conversationId,
-          customAttributes,
-        });
-      }
-
       const {
         data: {
           payload: {
@@ -318,7 +288,7 @@ const actions = {
     }
   },
 
-  addMessage({ commit, rootGetters }, message) {
+  addMessage({ commit }, message) {
     commit(types.ADD_MESSAGE, message);
     if (message.message_type === MESSAGE_TYPE.INCOMING) {
       commit(types.SET_CONVERSATION_CAN_REPLY, {
@@ -327,12 +297,10 @@ const actions = {
       });
       commit(types.ADD_CONVERSATION_ATTACHMENTS, message);
     }
-    handleVoiceCallCreated(message, rootGetters?.getCurrentUserID);
   },
 
-  updateMessage({ commit, rootGetters }, message) {
+  updateMessage({ commit }, message) {
     commit(types.ADD_MESSAGE, message);
-    handleVoiceCallUpdated(commit, message, rootGetters?.getCurrentUserID);
   },
 
   deleteMessage: async function deleteLabels(
@@ -343,16 +311,6 @@ const actions = {
       const { data } = await MessageApi.delete(conversationId, messageId);
       commit(types.ADD_MESSAGE, data);
       commit(types.DELETE_CONVERSATION_ATTACHMENTS, data);
-    } catch (error) {
-      throw new Error(error);
-    }
-  },
-
-  deleteConversation: async ({ commit, dispatch }, conversationId) => {
-    try {
-      await ConversationApi.delete(conversationId);
-      commit(types.DELETE_CONVERSATION, conversationId);
-      dispatch('conversationStats/get', {}, { root: true });
     } catch (error) {
       throw new Error(error);
     }
@@ -457,7 +415,11 @@ const actions = {
   },
 
   sendEmailTranscript: async (_, { conversationId, email }) => {
-    await ConversationApi.sendEmailTranscript({ conversationId, email });
+    try {
+      await ConversationApi.sendEmailTranscript({ conversationId, email });
+    } catch (error) {
+      throw new Error(error);
+    }
   },
 
   updateCustomAttributes: async (
@@ -470,10 +432,7 @@ const actions = {
         customAttributes,
       });
       const { custom_attributes } = response.data;
-      commit(types.UPDATE_CONVERSATION_CUSTOM_ATTRIBUTES, {
-        conversationId,
-        customAttributes: custom_attributes,
-      });
+      commit(types.UPDATE_CONVERSATION_CUSTOM_ATTRIBUTES, custom_attributes);
     } catch (error) {
       // Handle error
     }
@@ -485,14 +444,6 @@ const actions = {
 
   clearConversationFilters({ commit }) {
     commit(types.CLEAR_CONVERSATION_FILTERS);
-  },
-
-  setChatListFilters({ commit }, data) {
-    commit(types.SET_CHAT_LIST_FILTERS, data);
-  },
-
-  updateChatListFilters({ commit }, data) {
-    commit(types.UPDATE_CHAT_LIST_FILTERS, data);
   },
 
   assignPriority: async ({ dispatch }, { conversationId, priority }) => {
@@ -513,19 +464,6 @@ const actions = {
 
   setCurrentChatPriority({ commit }, { priority, conversationId }) {
     commit(types.ASSIGN_PRIORITY, { priority, conversationId });
-  },
-
-  setContextMenuChatId({ commit }, chatId) {
-    commit(types.SET_CONTEXT_MENU_CHAT_ID, chatId);
-  },
-
-  getInboxCaptainAssistantById: async ({ commit }, conversationId) => {
-    try {
-      const response = await ConversationApi.getInboxAssistant(conversationId);
-      commit(types.SET_INBOX_CAPTAIN_ASSISTANT, response.data);
-    } catch (error) {
-      // Handle error
-    }
   },
 
   ...messageReadActions,

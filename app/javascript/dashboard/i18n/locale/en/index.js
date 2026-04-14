@@ -8,19 +8,13 @@ import bulkActions from './bulkActions.json';
 import campaign from './campaign.json';
 import cannedMgmt from './cannedMgmt.json';
 import chatlist from './chatlist.json';
-import companies from './companies.json';
-import components from './components.json';
 import contact from './contact.json';
 import contactFilters from './contactFilters.json';
 import conversation from './conversation.json';
 import csatMgmt from './csatMgmt.json';
-import customRole from './customRole.json';
-import datePicker from './datePicker.json';
 import emoji from './emoji.json';
-import general from './general.json';
 import generalSettings from './generalSettings.json';
 import helpCenter from './helpCenter.json';
-import inbox from './inbox.json';
 import inboxMgmt from './inboxMgmt.json';
 import integrationApps from './integrationApps.json';
 import integrations from './integrations.json';
@@ -33,13 +27,11 @@ import search from './search.json';
 import setNewPassword from './setNewPassword.json';
 import settings from './settings.json';
 import signup from './signup.json';
-import sla from './sla.json';
-import snooze from './snooze.json';
 import teamsSettings from './teamsSettings.json';
 import whatsappTemplates from './whatsappTemplates.json';
-import contentTemplates from './contentTemplates.json';
-import mfa from './mfa.json';
-import yearInReview from './yearInReview.json';
+import sla from './sla.json';
+import inbox from './inbox.json';
+import general from './general.json';
 
 export default {
   ...advancedFilters,
@@ -52,19 +44,13 @@ export default {
   ...campaign,
   ...cannedMgmt,
   ...chatlist,
-  ...companies,
-  ...components,
   ...contact,
   ...contactFilters,
   ...conversation,
   ...csatMgmt,
-  ...customRole,
-  ...datePicker,
   ...emoji,
-  ...general,
   ...generalSettings,
   ...helpCenter,
-  ...inbox,
   ...inboxMgmt,
   ...integrationApps,
   ...integrations,
@@ -78,10 +64,8 @@ export default {
   ...settings,
   ...signup,
   ...sla,
-  ...snooze,
   ...teamsSettings,
   ...whatsappTemplates,
-  ...contentTemplates,
-  ...mfa,
-  ...yearInReview,
+  ...inbox,
+  ...general,
 };

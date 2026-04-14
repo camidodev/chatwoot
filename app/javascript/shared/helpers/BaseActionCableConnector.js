@@ -1,4 +1,5 @@
 import { createConsumer } from '@rails/actioncable';
+import { BUS_EVENTS } from 'shared/constants/busEvents';
 
 const PRESENCE_INTERVAL = 20000;
 const RECONNECT_INTERVAL = 1000;
@@ -6,12 +7,7 @@ const RECONNECT_INTERVAL = 1000;
 class BaseActionCableConnector {
   static isDisconnected = false;
 
-  constructor(
-    app,
-    pubsubToken,
-    websocketHost = '',
-    presenceInterval = PRESENCE_INTERVAL
-  ) {
+  constructor(app, pubsubToken, websocketHost = '') {
     const websocketURL = websocketHost ? `${websocketHost}/cable` : undefined;
 
     this.consumer = createConsumer(websocketURL);
@@ -31,6 +27,8 @@ class BaseActionCableConnector {
           BaseActionCableConnector.isDisconnected = true;
           this.onDisconnected();
           this.initReconnectTimer();
+          // TODO: Remove this after completing the conversation list refetching
+          window.bus.$emit(BUS_EVENTS.WEBSOCKET_DISCONNECT);
         },
       }
     );
@@ -42,7 +40,7 @@ class BaseActionCableConnector {
       setTimeout(() => {
         this.subscription.updatePresence();
         this.triggerPresenceInterval();
-      }, presenceInterval);
+      }, PRESENCE_INTERVAL);
     };
     this.triggerPresenceInterval();
   }

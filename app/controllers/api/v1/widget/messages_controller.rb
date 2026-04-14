@@ -43,15 +43,7 @@ class Api::V1::Widget::MessagesController < Api::V1::Widget::BaseController
   end
 
   def set_conversation
-    return unless conversation.nil?
-
-    @conversation = create_conversation
-    apply_labels if permitted_params[:labels].present?
-  end
-
-  def apply_labels
-    valid_labels = inbox.account.labels.where(title: permitted_params[:labels]).pluck(:title)
-    @conversation.update_labels(valid_labels) if valid_labels.present?
+    @conversation = create_conversation if conversation.nil?
   end
 
   def message_finder_params
@@ -72,14 +64,7 @@ class Api::V1::Widget::MessagesController < Api::V1::Widget::BaseController
 
   def permitted_params
     # timestamp parameter is used in create conversation method
-    # custom_attributes and labels are applied when a new conversation is created alongside the first message
-    params.permit(
-      :id, :before, :after, :website_token,
-      contact: [:name, :email],
-      message: [:content, :referer_url, :timestamp, :echo_id, :reply_to],
-      custom_attributes: {},
-      labels: []
-    )
+    params.permit(:id, :before, :after, :website_token, contact: [:name, :email], message: [:content, :referer_url, :timestamp, :echo_id, :reply_to])
   end
 
   def set_message

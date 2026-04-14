@@ -1,4 +1,4 @@
-import * as amplitude from '@amplitude/analytics-browser';
+import { AnalyticsBrowser } from '@june-so/analytics-next';
 
 /**
  * AnalyticsHelper class to initialize and track user analytics
@@ -26,10 +26,10 @@ export class AnalyticsHelper {
       return;
     }
 
-    amplitude.init(this.analyticsToken, {
-      defaultTracking: false,
+    let [analytics] = await AnalyticsBrowser.load({
+      writeKey: this.analyticsToken,
     });
-    this.analytics = amplitude;
+    this.analytics = analytics;
   }
 
   /**
@@ -38,31 +38,25 @@ export class AnalyticsHelper {
    * @param {Object} user - User object
    */
   identify(user) {
-    if (!this.analytics || !user) {
+    if (!this.analytics) {
       return;
     }
-
     this.user = user;
-    this.analytics.setUserId(`user-${this.user.id.toString()}`);
-
-    const identifyEvent = new amplitude.Identify();
-    identifyEvent.set('email', this.user.email);
-    identifyEvent.set('name', this.user.name);
-    identifyEvent.set('avatar', this.user.avatar_url);
-    this.analytics.identify(identifyEvent);
+    this.analytics.identify(this.user.email, {
+      userId: this.user.id,
+      email: this.user.email,
+      name: this.user.name,
+      avatar: this.user.avatar_url,
+    });
 
     const { accounts, account_id: accountId } = this.user;
     const [currentAccount] = accounts.filter(
       account => account.id === accountId
     );
     if (currentAccount) {
-      const groupId = `account-${currentAccount.id.toString()}`;
-
-      this.analytics.setGroup('company', groupId);
-
-      const groupIdentify = new amplitude.Identify();
-      groupIdentify.set('name', currentAccount.name);
-      this.analytics.groupIdentify('company', groupId, groupIdentify);
+      this.analytics.group(currentAccount.id, this.user.id, {
+        name: currentAccount.name,
+      });
     }
   }
 
@@ -76,23 +70,27 @@ export class AnalyticsHelper {
     if (!this.analytics) {
       return;
     }
-    this.analytics.track(eventName, properties);
+
+    this.analytics.track({
+      userId: this.user.id,
+      event: eventName,
+      properties,
+    });
   }
 
   /**
    * Track the page views
    * @function
-   * @param {string} pageName - Page name
-   * @param {Object} [properties={}] - Page view properties
+   * @param {Object} params - Page view properties
    */
-  page(pageName, properties = {}) {
+  page(params) {
     if (!this.analytics) {
       return;
     }
 
-    this.analytics.track('$pageview', { pageName, ...properties });
+    this.analytics.page(params);
   }
 }
 
-// This object is shared across, the init is called in app/javascript/entrypoints/dashboard.js
+// This object is shared across, the init is called in app/javascript/packs/application.js
 export default new AnalyticsHelper(window.analyticsConfig);

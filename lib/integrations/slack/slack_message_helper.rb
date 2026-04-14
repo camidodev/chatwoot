@@ -27,10 +27,6 @@ module Integrations::Slack::SlackMessageHelper
   end
 
   def create_message
-    resolved_sender, sender_name, sender_avatar_url = resolve_slack_sender
-    slack_sender_attrs = {}
-    slack_sender_attrs[:sender_name] = sender_name if sender_name
-    slack_sender_attrs[:sender_avatar_url] = sender_avatar_url if sender_avatar_url
     @message = conversation.messages.build(
       message_type: :outgoing,
       account_id: conversation.account_id,
@@ -38,8 +34,7 @@ module Integrations::Slack::SlackMessageHelper
       content: Slack::Messages::Formatting.unescape(params[:event][:text] || ''),
       external_source_id_slack: params[:event][:ts],
       private: private_note?,
-      sender: resolved_sender,
-      additional_attributes: slack_sender_attrs
+      sender: sender
     )
     process_attachments(params[:event][:files]) if attachments_present?
     @message.save!
@@ -75,9 +70,7 @@ module Integrations::Slack::SlackMessageHelper
     case attachment[:filetype]
     when 'png', 'jpeg', 'gif', 'bmp', 'tiff', 'jpg'
       :image
-    when 'mp4', 'avi', 'mov', 'wmv', 'flv', 'webm'
-      :video
-    else
+    when 'pdf'
       :file
     end
   end
@@ -86,22 +79,9 @@ module Integrations::Slack::SlackMessageHelper
     @conversation ||= Conversation.where(identifier: params[:event][:thread_ts]).first
   end
 
-  def resolve_slack_sender
-    return [nil, nil, nil] unless params[:event][:user]
-
-    slack_user = slack_client.users_info(user: params[:event][:user])[:user]
-    chatwoot_user = conversation.account.users.from_email(slack_user[:profile][:email])
-    return [chatwoot_user, nil, nil] if chatwoot_user
-
-    sender_name = slack_user.dig(:profile, :display_name).presence ||
-                  slack_user[:real_name].presence ||
-                  slack_user[:name]
-    sender_avatar_url = slack_user.dig(:profile, :image_192).presence
-    [nil, sender_name, sender_avatar_url]
-  rescue Slack::Web::Api::Errors::MissingScope
-    raise
-  rescue StandardError
-    [nil, nil, nil]
+  def sender
+    user_email = slack_client.users_info(user: params[:event][:user])[:user][:profile][:email]
+    conversation.account.users.from_email(user_email)
   end
 
   def private_note?

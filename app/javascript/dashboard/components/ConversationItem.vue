@@ -1,3 +1,26 @@
+<template>
+  <conversation-card
+    :key="source.id"
+    :active-label="label"
+    :team-id="teamId"
+    :folders-id="foldersId"
+    :chat="source"
+    :conversation-type="conversationType"
+    :selected="isConversationSelected(source.id)"
+    :show-assignee="showAssignee"
+    :enable-context-menu="true"
+    @select-conversation="selectConversation"
+    @de-select-conversation="deSelectConversation"
+    @assign-agent="assignAgent"
+    @assign-team="assignTeam"
+    @assign-label="assignLabels"
+    @update-conversation-status="updateConversationStatus"
+    @context-menu-toggle="toggleContextMenu"
+    @mark-as-unread="markAsUnread"
+    @assign-priority="assignPriority"
+  />
+</template>
+
 <script>
 import ConversationCard from './widgets/conversation/ConversationCard.vue';
 export default {
@@ -10,14 +33,10 @@ export default {
     'assignAgent',
     'assignTeam',
     'assignLabels',
-    'removeLabels',
     'updateConversationStatus',
     'toggleContextMenu',
     'markAsUnread',
-    'markAsRead',
     'assignPriority',
-    'isConversationSelected',
-    'deleteConversation',
   ],
   props: {
     source: {
@@ -40,6 +59,10 @@ export default {
       type: [String, Number],
       default: 0,
     },
+    isConversationSelected: {
+      type: Function,
+      default: () => {},
+    },
     showAssignee: {
       type: Boolean,
       default: false,
@@ -47,28 +70,3 @@ export default {
   },
 };
 </script>
-
-<template>
-  <ConversationCard
-    :active-label="label"
-    :team-id="teamId"
-    :folders-id="foldersId"
-    :chat="source"
-    :conversation-type="conversationType"
-    :selected="isConversationSelected(source.id)"
-    :show-assignee="showAssignee"
-    enable-context-menu
-    @select-conversation="selectConversation"
-    @de-select-conversation="deSelectConversation"
-    @assign-agent="assignAgent"
-    @assign-team="assignTeam"
-    @assign-label="assignLabels"
-    @remove-label="removeLabels"
-    @update-conversation-status="updateConversationStatus"
-    @context-menu-toggle="toggleContextMenu"
-    @mark-as-unread="markAsUnread"
-    @mark-as-read="markAsRead"
-    @assign-priority="assignPriority"
-    @delete-conversation="deleteConversation"
-  />
-</template>

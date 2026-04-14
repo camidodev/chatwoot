@@ -12,36 +12,25 @@
       "ERROR_MESSAGE": "Nem sikerült az elküldés, kérjük próbáld később"
     }
   },
-  "THUMBNAIL": {
-    "AUTHOR": {
-      "NOT_AVAILABLE": "Not available"
-    }
-  },
   "TEAM_AVAILABILITY": {
     "ONLINE": "Online vagyunk",
-    "OFFLINE": "Jelenleg nem vagyunk elérhetőek",
-    "BACK_AS_SOON_AS_POSSIBLE": "We will be back as soon as possible"
+    "OFFLINE": "Jelenleg nem vagyunk elérhetőek"
   },
   "REPLY_TIME": {
     "IN_A_FEW_MINUTES": "Néhány percen belül válaszol",
     "IN_A_FEW_HOURS": "Néhány órán belül válaszol",
     "IN_A_DAY": "Általánban egy napon belül válaszol",
-    "BACK_IN_HOURS": "We will be back online in {n} hour | We will be back online in {n} hours",
-    "BACK_IN_MINUTES": "We will be back online in {time} minutes",
-    "BACK_AT_TIME": "We will be back online at {time}",
-    "BACK_ON_DAY": "We will be back online on {day}",
-    "BACK_TOMORROW": "We will be back online tomorrow",
-    "BACK_IN_SOME_TIME": "We will be back online in some time"
+    "BACK_IN": "Legközelebb online leszünk ekkor:"
   },
-  "DAY_NAMES": {
-    "SUNDAY": "vasárnap",
-    "MONDAY": "hétfő",
-    "TUESDAY": "kedd",
-    "WEDNESDAY": "szerda",
-    "THURSDAY": "csütörtök",
-    "FRIDAY": "péntek",
-    "SATURDAY": "szombat"
-  },
+  "DAY_NAMES": [
+    "vasárnap",
+    "hétfő",
+    "kedd",
+    "szerda",
+    "csütörtök",
+    "péntek",
+    "szombat"
+  ],
   "START_CONVERSATION": "Beszélgetés megkezdése",
   "END_CONVERSATION": "Beszélgetés befejezése",
   "CONTINUE_CONVERSATION": "Beszélgetés folytatása",
@@ -81,8 +70,7 @@
         "REQUIRED_ERROR": "Telefonszám megadása kötelező",
         "DIAL_CODE_VALID_ERROR": "Kérlek válassz országot",
         "VALID_ERROR": "Kérlek egy valós telefonszámot adj meg",
-        "DROPDOWN_EMPTY": "Nincs találat",
-        "DROPDOWN_SEARCH": "Search country"
+        "DROPDOWN_EMPTY": "Nincs találat"
       },
       "MESSAGE": {
         "LABEL": "Üzenet",
@@ -103,8 +91,7 @@
   },
   "EMOJI": {
     "PLACEHOLDER": "Emoji keresése",
-    "NOT_FOUND": "Nem található emoji",
-    "ARIA_LABEL": "Emoji picker"
+    "NOT_FOUND": "Nem található emoji"
   },
   "CSAT": {
     "TITLE": "Értékeld a beszélgetést",
@@ -146,8 +133,5 @@
     "fallback": {
       "CONTENT": "megosztott URL-t tartalmaz"
     }
-  },
-  "FOOTER_REPLY_TO": {
-    "REPLY_TO": "Válaszolva a következőre:"
   }
 }

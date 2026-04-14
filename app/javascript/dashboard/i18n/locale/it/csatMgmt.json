@@ -3,11 +3,11 @@
     "TITLE": "Valuta la conversazione",
     "PLACEHOLDER": "Dicci di più...",
     "RATINGS": {
-      "POOR": "😞 Scarsa",
-      "FAIR": "😑 Sufficiente",
-      "AVERAGE": "😐 Nella Media",
-      "GOOD": "😀 Buona",
-      "EXCELLENT": "😍 Eccellente"
+      "POOR": "😞 Poor",
+      "FAIR": "😑 Fair",
+      "AVERAGE": "😐 Average",
+      "GOOD": "😀 Good",
+      "EXCELLENT": "😍 Excellent"
     }
   }
 }

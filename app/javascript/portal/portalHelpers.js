@@ -1,35 +1,21 @@
-import { createApp } from 'vue';
-import VueDOMPurifyHTML from 'vue-dompurify-html';
-import { domPurifyConfig } from '../shared/helpers/HTMLSanitizer';
-import { directive as onClickaway } from 'vue3-click-away';
-import { isSameHost } from '@chatwoot/utils';
-
 import slugifyWithCounter from '@sindresorhus/slugify';
+import Vue from 'vue';
+
 import PublicArticleSearch from './components/PublicArticleSearch.vue';
 import TableOfContents from './components/TableOfContents.vue';
 import { initializeTheme } from './portalThemeHelper.js';
-import { getLanguageDirection } from 'dashboard/components/widgets/conversation/advancedFilterItems/languages.js';
 
 export const getHeadingsfromTheArticle = () => {
   const rows = [];
   const articleElement = document.getElementById('cw-article-content');
   articleElement.querySelectorAll('h1, h2, h3').forEach(element => {
-    const headingText = element.innerText;
-    const slug = slugifyWithCounter(headingText);
+    const slug = slugifyWithCounter(element.innerText);
     element.id = slug;
     element.className = 'scroll-mt-24 heading';
-
-    const permalink = document.createElement('a');
-    permalink.className = 'permalink text-slate-600 ml-3';
-    permalink.href = `#${slug}`;
-    permalink.title = headingText;
-    permalink.dataset.turbolinks = 'false';
-    permalink.textContent = '#';
-    element.appendChild(permalink);
-
+    element.innerHTML += `<a class="permalink text-slate-600 ml-3" href="#${slug}" title="${element.innerText}" data-turbolinks="false">#</a>`;
     rows.push({
       slug,
-      title: headingText,
+      title: element.innerText,
       tag: element.tagName.toLowerCase(),
     });
   });
@@ -38,23 +24,31 @@ export const getHeadingsfromTheArticle = () => {
 
 export const openExternalLinksInNewTab = () => {
   const { customDomain, hostURL } = window.portalConfig;
-  const isOnArticlePage =
-    document.querySelector('#cw-article-content') !== null;
+  const isSameHost =
+    window.location.href.includes(customDomain) ||
+    window.location.href.includes(hostURL);
 
-  document.addEventListener('click', event => {
+  // Modify external links only on articles page
+  const isOnArticlePage =
+    isSameHost && document.querySelector('#cw-article-content') !== null;
+
+  document.addEventListener('click', function (event) {
     if (!isOnArticlePage) return;
 
-    const link = event.target.closest('a');
+    // Some of the links come wrapped in strong tag through prosemirror
 
-    if (link) {
-      const currentLocation = window.location.href;
-      const linkHref = link.href;
+    const isTagAnchor = event.target.tagName === 'A';
+    const isParentTagAnchor =
+      event.target.tagName === 'STRONG' &&
+      event.target.parentNode.tagName === 'A';
 
-      // Check against current location and custom domains
+    if (isTagAnchor || isParentTagAnchor) {
+      const link = isTagAnchor ? event.target : event.target.parentNode;
+
       const isInternalLink =
-        isSameHost(linkHref, currentLocation) ||
-        (customDomain && isSameHost(linkHref, customDomain)) ||
-        (hostURL && isSameHost(linkHref, hostURL));
+        link.hostname === window.location.hostname ||
+        link.href.includes(customDomain) ||
+        link.href.includes(hostURL);
 
       if (!isInternalLink) {
         link.target = '_blank';
@@ -68,49 +62,42 @@ export const openExternalLinksInNewTab = () => {
 
 export const InitializationHelpers = {
   navigateToLocalePage: () => {
-    document.addEventListener('change', e => {
-      const localeSwitcher = e.target.closest('.locale-switcher');
-      if (!localeSwitcher) return;
+    const allLocaleSwitcher = document.querySelector('.locale-switcher');
 
-      const { portalSlug } = localeSwitcher.dataset;
-      window.location.href = `/hc/${encodeURIComponent(portalSlug)}/${encodeURIComponent(localeSwitcher.value)}/`;
+    if (!allLocaleSwitcher) {
+      return false;
+    }
+
+    const { portalSlug } = allLocaleSwitcher.dataset;
+    allLocaleSwitcher.addEventListener('change', event => {
+      window.location = `/hc/${portalSlug}/${event.target.value}/`;
     });
+    return false;
   },
 
   initializeSearch: () => {
     const isSearchContainerAvailable = document.querySelector('#search-wrap');
     if (isSearchContainerAvailable) {
-      // eslint-disable-next-line vue/one-component-per-file
-      const app = createApp({
+      new Vue({
         components: { PublicArticleSearch },
         template: '<PublicArticleSearch />',
-      });
-
-      app.use(VueDOMPurifyHTML, domPurifyConfig);
-      app.directive('on-clickaway', onClickaway);
-      app.mount('#search-wrap');
+      }).$mount('#search-wrap');
     }
   },
 
   initializeTableOfContents: () => {
     const isOnArticlePage = document.querySelector('#cw-hc-toc');
     if (isOnArticlePage) {
-      // eslint-disable-next-line vue/one-component-per-file
-      const app = createApp({
+      new Vue({
         components: { TableOfContents },
-        data() {
-          return { rows: getHeadingsfromTheArticle() };
-        },
+        data: { rows: getHeadingsfromTheArticle() },
         template: '<table-of-contents :rows="rows" />',
-      });
-
-      app.use(VueDOMPurifyHTML, domPurifyConfig);
-      app.mount('#cw-hc-toc');
+      }).$mount('#cw-hc-toc');
     }
   },
 
   appendPlainParamToURLs: () => {
-    [...document.getElementsByTagName('a')].forEach(aTagElement => {
+    document.getElementsByTagName('a').forEach(aTagElement => {
       if (aTagElement.href && aTagElement.href.includes('/hc/')) {
         const url = new URL(aTagElement.href);
         url.searchParams.set('show_plain_layout', 'true');
@@ -120,22 +107,10 @@ export const InitializationHelpers = {
     });
   },
 
-  setDirectionAttribute: () => {
-    const htmlElement = document.querySelector('html');
-    // If direction is already applied through props, do not apply again (iframe case)
-    const hasDirApplied = htmlElement.getAttribute('data-dir-applied');
-    if (!htmlElement || hasDirApplied) return;
-
-    const localeFromHtml = htmlElement.lang;
-    htmlElement.dir =
-      localeFromHtml && getLanguageDirection(localeFromHtml) ? 'rtl' : 'ltr';
-  },
-
   initializeThemesInPortal: initializeTheme,
 
   initialize: () => {
     openExternalLinksInNewTab();
-    InitializationHelpers.setDirectionAttribute();
     if (window.portalConfig.isPlainLayoutEnabled === 'true') {
       InitializationHelpers.appendPlainParamToURLs();
     } else {

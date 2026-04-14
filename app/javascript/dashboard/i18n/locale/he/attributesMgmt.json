@@ -1,25 +1,9 @@
 {
   "ATTRIBUTES_MGMT": {
-    "HEADER": "מאפיינים מותאמים אישית",
+    "HEADER": "מאפיינים בהתאמה אישית",
     "HEADER_BTN_TXT": "הוסף מאפיין מותאם אישית",
-    "LOADING": "טוען מאפיינים מותאמים אישית",
-    "DESCRIPTION": "מאפיין מותאם אישית עוקב אחר פרטים נוספים על אנשי הקשר או השיחות שלך—כגון תוכנית המנוי או תאריך הרכישה הראשונה שלהם. אתה יכול להוסיף סוגים שונים של מאפיינים מותאמים אישית, כגון טקסט, רשימות או מספרים, כדי ללכוד את המידע הספציפי שאתה צריך.",
-    "LEARN_MORE": "למד עוד על מאפיינים מותאמים אישית",
-    "COUNT": "{n} attribute | {n} attributes",
-    "SEARCH_PLACEHOLDER": "חפש מאפיין...",
-    "NO_RESULTS": "No attributes found matching your search",
-    "ATTRIBUTE_MODELS": {
-      "CONVERSATION": "שיחה",
-      "CONTACT": "איש קשר"
-    },
-    "ATTRIBUTE_TYPES": {
-      "TEXT": "טקסט",
-      "NUMBER": "מספר",
-      "LINK": "קישור",
-      "DATE": "תאריך",
-      "LIST": "רשימה",
-      "CHECKBOX": "תיבת סימון"
-    },
+    "LOADING": "שולף מאפיינים מותאמים אישית",
+    "SIDEBAR_TXT": "<p><b>שדות מותאמים</b> <p> שדות מותאמים הינן פרמטרים נוספים שאתה יכול לשמור אודות איש הקשר או השיחה שלך — לדוגמא החבילה שבה נמצא הלקוח, או מתי הם עשו רכישה לאחרונה. <br /><br /> כדי ליצור שדה מותאם חדש, יש ללחוץ על <b>הוסף שדה. </b> ניתן גם לערוך או לחוק שדות על ידי לחיצה על כפתור העריכה או המחיקה בהתאמה </p>",
     "ADD": {
       "TITLE": "הוסף מאפיין מותאם אישית",
       "SUBMIT": "צור",
@@ -27,119 +11,111 @@
       "FORM": {
         "NAME": {
           "LABEL": "שם תצוגה",
-          "PLACEHOLDER": "הכנס שם תצוגה למאפיין מותאם אישית",
-          "ERROR": "שם נדרש"
+          "PLACEHOLDER": "הכנס שם לשדה המותאם",
+          "ERROR": "שם שדה חובה"
         },
         "DESC": {
           "LABEL": "תיאור",
-          "PLACEHOLDER": "הכנס תיאור למאפיין מותאם אישית",
-          "ERROR": "תיאור נדרש"
+          "PLACEHOLDER": "הכנס תיאור לשדה המותאם",
+          "ERROR": "נדרש תיאור"
         },
         "MODEL": {
           "LABEL": "חל על",
-          "PLACEHOLDER": "אנא בחר אחד",
-          "ERROR": "דגם נדרש"
+          "PLACEHOLDER": "בבקשה תבחר אחד",
+          "ERROR": "דגם שדה חובה"
         },
         "TYPE": {
           "LABEL": "סוג",
           "PLACEHOLDER": "אנא בחר סוג",
-          "ERROR": "סוג נדרש",
+          "ERROR": "סוג הינו שדה חובה",
           "LIST": {
-            "LABEL": "ערכי רשימה",
-            "PLACEHOLDER": "אנא הכנס ערך ולחץ על מקש Enter",
-            "ERROR": "חייב להיות לפחות ערך אחד"
+            "LABEL": "רשימת ערכים",
+            "PLACEHOLDER": "נא הכנס ערך תקין ולחץ על Enter",
+            "ERROR": "חובה להזין לפחות ערך אחד"
           }
         },
         "KEY": {
           "LABEL": "מפתח",
-          "PLACEHOLDER": "הכנס מפתח למאפיין מותאם אישית",
-          "ERROR": "מפתח נדרש",
-          "IN_VALID": "מפתח לא תקין"
+          "PLACEHOLDER": "הכנס מפתח ייחודי לשדה המותאם",
+          "ERROR": "מפתח הוא שדה חובה",
+          "IN_VALID": "מפתח אינו חוקי"
         },
         "REGEX_PATTERN": {
-          "LABEL": "תבנית Regex",
-          "PLACEHOLDER": "אנא הכנס תבנית regex למאפיין מותאם אישית. (אופציונלי)"
+          "LABEL": "Regex Pattern",
+          "PLACEHOLDER": "Please enter custom attribute regex pattern. (Optional)"
         },
         "REGEX_CUE": {
-          "LABEL": "רמז Regex",
-          "PLACEHOLDER": "אנא הכנס רמז לתבנית regex. (אופציונלי)"
+          "LABEL": "Regex Cue",
+          "PLACEHOLDER": "Please enter regex pattern hint. (Optional)"
         },
         "ENABLE_REGEX": {
-          "LABEL": "אפשר אימות regex"
-        },
-        "BADGES": {
-          "PRE_CHAT": "Pre-chat",
-          "RESOLUTION": "Resolution"
+          "LABEL": "Enable regex validation"
         }
       },
       "API": {
-        "SUCCESS_MESSAGE": "מאפיין מותאם אישית נוסף בהצלחה!",
-        "ERROR_MESSAGE": "לא ניתן ליצור מאפיין מותאם אישית. אנא נסה שוב מאוחר יותר."
+        "SUCCESS_MESSAGE": "שדה מותאם התווסף בהצלחה!",
+        "ERROR_MESSAGE": "לא ניתן היה ליצור שדה מותאם, אנא נסה שוב מאוחר יותר."
       }
     },
     "DELETE": {
       "BUTTON_TEXT": "מחק",
       "API": {
-        "SUCCESS_MESSAGE": "מאפיין מותאם אישית נמחק בהצלחה.",
-        "ERROR_MESSAGE": "לא ניתן למחוק את המאפיין המותאם אישית. נסה שוב."
+        "SUCCESS_MESSAGE": "שדה מותאם נמחק בהצלחה.",
+        "ERROR_MESSAGE": "לא ניתן למחוק את המאפיין המותאם אישית. נסה שנית."
       },
       "CONFIRM": {
-        "TITLE": "האם אתה בטוח שברצונך למחוק - {attributeName}",
+        "TITLE": "האם אתה בטוח רוצה למחוק - %{attributeName}",
         "PLACE_HOLDER": "אנא הקלד {attributeName} כדי לאשר",
-        "MESSAGE": "המחיקה תסיר את המאפיין המותאם אישית",
+        "MESSAGE": "המחיקה תסיר את השדה המותאם",
         "YES": "מחק ",
         "NO": "ביטול"
       }
     },
     "EDIT": {
-      "TITLE": "ערוך מאפיין מותאם אישית",
+      "TITLE": "ערוך שדה מותאם",
       "UPDATE_BUTTON_TEXT": "עדכן",
       "TYPE": {
         "LIST": {
-          "LABEL": "ערכי רשימה",
-          "PLACEHOLDER": "אנא הכנס ערכים ולחץ על מקש Enter"
+          "LABEL": "רשימת ערכים",
+          "PLACEHOLDER": "אנא הכנס ערכים ולחץ Enter"
         }
       },
       "API": {
-        "SUCCESS_MESSAGE": "מאפיין מותאם אישית עודכן בהצלחה",
-        "ERROR_MESSAGE": "אירעה שגיאה בעדכון המאפיין המותאם אישית, אנא נסה שוב"
+        "SUCCESS_MESSAGE": "שדה מותאם עודכן בהצלחה",
+        "ERROR_MESSAGE": "אירעה שגיאה בעדכון השדה המותאם, אנא נסה שנית"
       }
     },
     "TABS": {
-      "HEADER": "מאפיינים מותאמים אישית",
+      "HEADER": "מאפיינים בהתאמה אישית",
       "CONVERSATION": "שיחה",
       "CONTACT": "איש קשר"
     },
     "LIST": {
-      "TABLE_HEADER": {
-        "NAME": "שם",
-        "DESCRIPTION": "תיאור",
-        "TYPE": "סוג",
-        "KEY": "מפתח"
-      },
+      "TABLE_HEADER": [
+        "שם",
+        "תיאור",
+        "סוג",
+        "מפתח"
+      ],
       "BUTTONS": {
         "EDIT": "ערוך",
         "DELETE": "מחק"
       },
       "EMPTY_RESULT": {
-        "404": "אין מאפיינים מותאמים אישית שנוצרו",
-        "NOT_FOUND": "אין מאפיינים מותאמים אישית מוגדרים"
+        "404": "לא קיימים שדות מותאמים",
+        "NOT_FOUND": "לא קיימים שדות מותאמים"
       },
       "REGEX_PATTERN": {
-        "LABEL": "תבנית Regex",
-        "PLACEHOLDER": "אנא הכנס תבנית regex למאפיין מותאם אישית. (אופציונלי)"
+        "LABEL": "Regex Pattern",
+        "PLACEHOLDER": "Please enter custom attribute regex pattern. (Optional)"
       },
       "REGEX_CUE": {
-        "LABEL": "רמז Regex",
-        "PLACEHOLDER": "אנא הכנס רמז לתבנית regex. (אופציונלי)"
+        "LABEL": "Regex Cue",
+        "PLACEHOLDER": "Please enter regex pattern hint. (Optional)"
       },
       "ENABLE_REGEX": {
-        "LABEL": "אפשר אימות regex"
+        "LABEL": "Enable regex validation"
       }
-    },
-    "BADGES": {
-      "PRE_CHAT": "Pre-chat",
-      "RESOLUTION": "Resolution"
     }
   }
 }

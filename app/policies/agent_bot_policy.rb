@@ -22,12 +22,4 @@ class AgentBotPolicy < ApplicationPolicy
   def avatar?
     @account_user.administrator?
   end
-
-  def reset_access_token?
-    @account_user.administrator?
-  end
-
-  def reset_secret?
-    @account_user.administrator?
-  end
 end

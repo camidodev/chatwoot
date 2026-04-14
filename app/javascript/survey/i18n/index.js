@@ -1,5 +1,4 @@
 import ar from './locale/ar.json';
-import bg from './locale/bg.json';
 import ca from './locale/ca.json';
 import cs from './locale/cs.json';
 import da from './locale/da.json';
@@ -41,7 +40,6 @@ import zh_TW from './locale/zh_TW.json';
 
 export default {
   ar,
-  bg,
   ca,
   cs,
   da,

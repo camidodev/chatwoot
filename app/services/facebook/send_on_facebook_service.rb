@@ -16,58 +16,26 @@ class Facebook::SendOnFacebookService < Base::SendOnChannelService
   rescue Facebook::Messenger::FacebookError => e
     # TODO : handle specific errors or else page will get disconnected
     handle_facebook_error(e)
-    Messages::StatusUpdateService.new(message, 'failed', e.message).perform
+    message.update!(status: :failed, external_error: e.message)
   end
 
   def send_message_to_facebook(delivery_params)
-    parsed_result = deliver_message(delivery_params)
-    return if parsed_result.nil?
-
-    if parsed_result['error'].present?
-      Messages::StatusUpdateService.new(message, 'failed', external_error(parsed_result)).perform
-      Rails.logger.info "Facebook::SendOnFacebookService: Error sending message to Facebook : Page - #{channel.page_id} : #{parsed_result}"
-    end
-
-    message.update!(source_id: parsed_result['message_id']) if parsed_result['message_id'].present?
-  end
-
-  def deliver_message(delivery_params)
     result = Facebook::Messenger::Bot.deliver(delivery_params, page_id: channel.page_id)
-    JSON.parse(result)
-  rescue JSON::ParserError
-    Messages::StatusUpdateService.new(message, 'failed', 'Facebook was unable to process this request').perform
-    Rails.logger.error "Facebook::SendOnFacebookService: Error parsing JSON response from Facebook : Page - #{channel.page_id} : #{result}"
-    nil
-  rescue Net::OpenTimeout
-    Messages::StatusUpdateService.new(message, 'failed', 'Request timed out, please try again later').perform
-    Rails.logger.error "Facebook::SendOnFacebookService: Timeout error sending message to Facebook : Page - #{channel.page_id}"
-    nil
+    parsed_result = JSON.parse(result)
+    if parsed_result['error'].present?
+      message.update!(status: :failed, external_error: external_error(parsed_result))
+      Rails.logger.info "Facebook::SendOnFacebookService: Error sending message to Facebook : Page - #{channel.page_id} : #{result}"
+    end
+    message.update!(source_id: parsed_result['message_id']) if parsed_result['message_id'].present?
   end
 
   def fb_text_message_params
     {
       recipient: { id: contact.get_source_id(inbox.id) },
-      message: fb_text_message_payload,
+      message: { text: message.content },
       messaging_type: 'MESSAGE_TAG',
-      tag: message_tag
+      tag: 'ACCOUNT_UPDATE'
     }
-  end
-
-  def fb_text_message_payload
-    if message.content_type == 'input_select' && message.content_attributes['items'].any?
-      {
-        text: message.content,
-        quick_replies: message.content_attributes['items'].map do |item|
-          {
-            content_type: 'text',
-            payload: item['title'],
-            title: item['title']
-          }
-        end
-      }
-    else
-      { text: message.outgoing_content }
-    end
   end
 
   def external_error(response)
@@ -90,12 +58,8 @@ class Facebook::SendOnFacebookService < Base::SendOnChannelService
         }
       },
       messaging_type: 'MESSAGE_TAG',
-      tag: message_tag
+      tag: 'ACCOUNT_UPDATE'
     }
-  end
-
-  def message_tag
-    @message_tag ||= GlobalConfigService.load('ENABLE_MESSENGER_CHANNEL_HUMAN_AGENT', nil) ? 'HUMAN_AGENT' : 'ACCOUNT_UPDATE'
   end
 
   def attachment_type(attachment)

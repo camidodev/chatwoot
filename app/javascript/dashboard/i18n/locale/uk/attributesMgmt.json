@@ -3,23 +3,7 @@
     "HEADER": "Свої атрибути",
     "HEADER_BTN_TXT": "Додати свій атрибут",
     "LOADING": "Отримання користувацьких атрибутів",
-    "DESCRIPTION": "A custom attribute tracks additional details about your contacts or conversations—such as the subscription plan or the date of their first purchase. You can add different types of custom attributes, such as text, lists, or numbers, to capture the specific information you need.",
-    "LEARN_MORE": "Learn more about custom attributes",
-    "COUNT": "{n} attribute | {n} attributes",
-    "SEARCH_PLACEHOLDER": "Атрибути пошуку...",
-    "NO_RESULTS": "No attributes found matching your search",
-    "ATTRIBUTE_MODELS": {
-      "CONVERSATION": "Розмови",
-      "CONTACT": "Контакт"
-    },
-    "ATTRIBUTE_TYPES": {
-      "TEXT": "Текст",
-      "NUMBER": "Номер",
-      "LINK": "Лінк",
-      "DATE": "Date",
-      "LIST": "Список",
-      "CHECKBOX": "Прапорець"
-    },
+    "SIDEBAR_TXT": "<p><b>Користувацькі Атрибути</b> <p>Користувацький атрибут відстежує факти про ваших контактів/розмову — наприклад, план підписки або коли вони замовили перший товар і т. д. <br /><br />Для створення Користувацького атрибуту, просто натисніть на <b>Додати Користувацький атрибут.</b> Ви також можете редагувати або видаляти існуючі користувацькі атрибути, натиснувши на кнопку Редагувати або Видалити.</p>",
     "ADD": {
       "TITLE": "Додати свій атрибут",
       "SUBMIT": "Створити",
@@ -57,19 +41,15 @@
           "IN_VALID": "Невірний ключ"
         },
         "REGEX_PATTERN": {
-          "LABEL": "Шаблон регулярного виразу",
-          "PLACEHOLDER": "Будь ласка, введіть користувацький атрибут regex pattern. (Необов'язково)"
+          "LABEL": "Regex Pattern",
+          "PLACEHOLDER": "Please enter custom attribute regex pattern. (Optional)"
         },
         "REGEX_CUE": {
           "LABEL": "Regex Cue",
-          "PLACEHOLDER": "Будь ласка, введіть підказку для регулярного виразу (необов'язково)"
+          "PLACEHOLDER": "Please enter regex pattern hint. (Optional)"
         },
         "ENABLE_REGEX": {
-          "LABEL": "Увімкнути перевірку регулярного виразу"
-        },
-        "BADGES": {
-          "PRE_CHAT": "Пре-чат",
-          "RESOLUTION": "Вирішення"
+          "LABEL": "Enable regex validation"
         }
       },
       "API": {
@@ -84,7 +64,7 @@
         "ERROR_MESSAGE": "Не вдалося видалити користувацький атрибут. Повторіть спробу."
       },
       "CONFIRM": {
-        "TITLE": "Ви впевнені, що бажаєте видалити - {attributeName}",
+        "TITLE": "Ви дійсно бажаєте видалити - %{attributeName}",
         "PLACE_HOLDER": "Будь ласка, введіть {attributeName} щоб підтвердити",
         "MESSAGE": "Ця дія видалить користувацький атрибут",
         "YES": "Видалити ",
@@ -111,12 +91,12 @@
       "CONTACT": "Контакт"
     },
     "LIST": {
-      "TABLE_HEADER": {
-        "NAME": "Ім'я",
-        "DESCRIPTION": "Опис",
-        "TYPE": "Тип",
-        "KEY": "Ключ"
-      },
+      "TABLE_HEADER": [
+        "Ім'я",
+        "Опис",
+        "Тип",
+        "Ключ"
+      ],
       "BUTTONS": {
         "EDIT": "Редагувати",
         "DELETE": "Видалити"
@@ -126,20 +106,16 @@
         "NOT_FOUND": "Немає налаштованих власних атрибутів"
       },
       "REGEX_PATTERN": {
-        "LABEL": "Шаблон регулярного виразу",
-        "PLACEHOLDER": "Будь ласка, введіть користувацький атрибут regex pattern. (Необов'язково)"
+        "LABEL": "Regex Pattern",
+        "PLACEHOLDER": "Please enter custom attribute regex pattern. (Optional)"
       },
       "REGEX_CUE": {
         "LABEL": "Regex Cue",
-        "PLACEHOLDER": "Введіть підказку для регулярного виразу (необов'язково)"
+        "PLACEHOLDER": "Please enter regex pattern hint. (Optional)"
       },
       "ENABLE_REGEX": {
-        "LABEL": "Увімкнути перевірку регулярного виразу"
+        "LABEL": "Enable regex validation"
       }
-    },
-    "BADGES": {
-      "PRE_CHAT": "Пре-чат",
-      "RESOLUTION": "Вирішення"
     }
   }
 }

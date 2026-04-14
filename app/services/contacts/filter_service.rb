@@ -1,15 +1,7 @@
 class Contacts::FilterService < FilterService
   ATTRIBUTE_MODEL = 'contact_attribute'.freeze
 
-  def initialize(account, user, params)
-    @account = account
-    # TODO: Change the order of arguments in FilterService maybe?
-    # account, user, params makes more sense
-    super(params, user)
-  end
-
   def perform
-    validate_query_operator
     @contacts = query_builder(@filters['contacts'])
 
     {
@@ -21,7 +13,7 @@ class Contacts::FilterService < FilterService
   def filter_values(query_hash)
     current_val = query_hash['values'][0]
     if query_hash['attribute_key'] == 'phone_number'
-      "+#{current_val&.delete('+')}"
+      "+#{current_val}"
     elsif query_hash['attribute_key'] == 'country_code'
       current_val.downcase
     else
@@ -30,7 +22,7 @@ class Contacts::FilterService < FilterService
   end
 
   def base_relation
-    @account.contacts.resolved_contacts(use_crm_v2: @account.feature_enabled?('crm_v2'))
+    Current.account.contacts
   end
 
   def filter_config

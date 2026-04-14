@@ -1,16 +1,26 @@
+<template>
+  <div
+    v-tooltip.top="{
+      content: tooltipText,
+      delay: { show: 1500, hide: 0 },
+      hideOnClick: true,
+    }"
+    class="text-xxs text-slate-500 dark:text-slate-500 leading-4 ml-auto hover:text-slate-900 dark:hover:text-slate-100"
+  >
+    <span>{{ `${createdAtTime} • ${lastActivityTime}` }}</span>
+  </div>
+</template>
+
 <script>
 const MINUTE_IN_MILLI_SECONDS = 60000;
 const HOUR_IN_MILLI_SECONDS = MINUTE_IN_MILLI_SECONDS * 60;
 const DAY_IN_MILLI_SECONDS = HOUR_IN_MILLI_SECONDS * 24;
 
-import {
-  dynamicTime,
-  dateFormat,
-  shortTimestamp,
-} from 'shared/helpers/timeHelper';
+import timeMixin from 'dashboard/mixins/time';
 
 export default {
   name: 'TimeAgo',
+  mixins: [timeMixin],
   props: {
     isAutoRefreshEnabled: {
       type: Boolean,
@@ -24,24 +34,20 @@ export default {
       type: [String, Date, Number],
       default: '',
     },
-    conversationId: {
-      type: [String, Number],
-      default: '',
-    },
   },
   data() {
     return {
-      lastActivityAtTimeAgo: dynamicTime(this.lastActivityTimestamp),
-      createdAtTimeAgo: dynamicTime(this.createdAtTimestamp),
+      lastActivityAtTimeAgo: this.dynamicTime(this.lastActivityTimestamp),
+      createdAtTimeAgo: this.dynamicTime(this.createdAtTimestamp),
       timer: null,
     };
   },
   computed: {
     lastActivityTime() {
-      return shortTimestamp(this.lastActivityAtTimeAgo);
+      return this.shortTimestamp(this.lastActivityAtTimeAgo);
     },
     createdAtTime() {
-      return shortTimestamp(this.createdAtTimeAgo);
+      return this.shortTimestamp(this.createdAtTimeAgo);
     },
     createdAt() {
       const createdTimeDiff = Date.now() - this.createdAtTimestamp * 1000;
@@ -50,9 +56,9 @@ export default {
         ? `${this.$t('CHAT_LIST.CHAT_TIME_STAMP.CREATED.LATEST')} ${
             this.createdAtTimeAgo
           }`
-        : `${this.$t('CHAT_LIST.CHAT_TIME_STAMP.CREATED.OLDEST')} ${dateFormat(
-            this.createdAtTimestamp
-          )}`;
+        : `${this.$t(
+            'CHAT_LIST.CHAT_TIME_STAMP.CREATED.OLDEST'
+          )} ${this.dateFormat(this.createdAtTimestamp)}`;
     },
     lastActivity() {
       const lastActivityTimeDiff =
@@ -64,7 +70,7 @@ export default {
           }`
         : `${this.$t(
             'CHAT_LIST.CHAT_TIME_STAMP.LAST_ACTIVITY.NOT_ACTIVE'
-          )} ${dateFormat(this.lastActivityTimestamp)}`;
+          )} ${this.dateFormat(this.lastActivityTimestamp)}`;
     },
     tooltipText() {
       return `${this.createdAt}
@@ -73,19 +79,10 @@ export default {
   },
   watch: {
     lastActivityTimestamp() {
-      this.lastActivityAtTimeAgo = dynamicTime(this.lastActivityTimestamp);
+      this.lastActivityAtTimeAgo = this.dynamicTime(this.lastActivityTimestamp);
     },
     createdAtTimestamp() {
-      this.createdAtTimeAgo = dynamicTime(this.createdAtTimestamp);
-    },
-    conversationId() {
-      // Reset display values and timer when the row is recycled to a different conversation.
-      this.lastActivityAtTimeAgo = dynamicTime(this.lastActivityTimestamp);
-      this.createdAtTimeAgo = dynamicTime(this.createdAtTimestamp);
-      if (this.isAutoRefreshEnabled) {
-        clearTimeout(this.timer);
-        this.createTimer();
-      }
+      this.createdAtTimeAgo = this.dynamicTime(this.createdAtTimestamp);
     },
   },
   mounted() {
@@ -93,14 +90,16 @@ export default {
       this.createTimer();
     }
   },
-  unmounted() {
+  beforeDestroy() {
     clearTimeout(this.timer);
   },
   methods: {
     createTimer() {
       this.timer = setTimeout(() => {
-        this.lastActivityAtTimeAgo = dynamicTime(this.lastActivityTimestamp);
-        this.createdAtTimeAgo = dynamicTime(this.createdAtTimestamp);
+        this.lastActivityAtTimeAgo = this.dynamicTime(
+          this.lastActivityTimestamp
+        );
+        this.createdAtTimeAgo = this.dynamicTime(this.createdAtTimestamp);
         this.createTimer();
       }, this.refreshTime());
     },
@@ -118,15 +117,3 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div
-    v-tooltip.top="{
-      content: tooltipText,
-      delay: { show: 1000, hide: 0 },
-    }"
-    class="ml-auto leading-4 text-xxs text-n-slate-10 hover:text-n-slate-11"
-  >
-    <span>{{ `${createdAtTime} • ${lastActivityTime}` }}</span>
-  </div>
-</template>

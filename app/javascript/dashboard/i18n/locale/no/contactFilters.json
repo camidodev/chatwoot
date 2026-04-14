@@ -30,9 +30,6 @@
       "is_lesser_than": "Is lesser than",
       "days_before": "Is x days before"
     },
-    "ERRORS": {
-      "VALUE_REQUIRED": "Value is required"
-    },
     "ATTRIBUTES": {
       "NAME": "Navn",
       "EMAIL": "E-post",
@@ -48,8 +45,7 @@
       "CREATED_AT": "Created At",
       "LAST_ACTIVITY": "Last Activity",
       "REFERER_LINK": "Referrer link",
-      "BLOCKED": "Blocked",
-      "LABELS": "Etiketter"
+      "BLOCKED": "Blocked"
     },
     "GROUPS": {
       "STANDARD_FILTERS": "Standard Filters",

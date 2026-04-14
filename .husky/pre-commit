@@ -1,11 +1,19 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# lint js and vue files
-npx --no-install lint-staged
+# lint js and vue files (local bin: avoids npx fetching packages in non-interactive Git UI)
+if [ ! -f "node_modules/.bin/lint-staged" ] && [ ! -f "node_modules/.bin/lint-staged.cmd" ]; then
+  echo "husky: lint-staged is missing. Run yarn install in the repo root, then try again."
+  exit 1
+fi
+if [ -f "node_modules/.bin/lint-staged" ]; then
+  ./node_modules/.bin/lint-staged
+else
+  ./node_modules/.bin/lint-staged.cmd
+fi
 
-# lint only staged ruby files that still exist (not deleted)
-git diff --name-only --cached | xargs -I {} sh -c 'test -f "{}" && echo "{}"' | grep '\.rb$' | xargs -I {} bundle exec rubocop --force-exclusion -a "{}" || true
+# lint only staged ruby files
+git diff --name-only --cached | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs bundle exec rubocop --force-exclusion -a
 
 # stage rubocop changes to files
-git diff --name-only --cached | xargs -I {} sh -c 'test -f "{}" && git add "{}"' || true
+git diff --name-only --cached | xargs git add

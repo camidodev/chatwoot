@@ -1,16 +1,55 @@
+<template>
+  <div
+    class="border border-slate-25 dark:border-slate-800/60 overflow-x-auto bg-white dark:bg-slate-900 h-full p-6 w-full max-w-full md:w-3/4 md:max-w-[75%] flex-shrink-0 flex-grow-0"
+  >
+    <form
+      class="mx-0 flex flex-wrap overflow-x-auto"
+      @submit.prevent="addAgents"
+    >
+      <div class="w-full">
+        <page-header
+          :header-title="headerTitle"
+          :header-content="$t('TEAMS_SETTINGS.ADD.DESC')"
+        />
+      </div>
+
+      <div class="w-full">
+        <div v-if="$v.selectedAgents.$error">
+          <p class="error-message">
+            {{ $t('TEAMS_SETTINGS.ADD.AGENT_VALIDATION_ERROR') }}
+          </p>
+        </div>
+        <agent-selector
+          :agent-list="agentList"
+          :selected-agents="selectedAgents"
+          :update-selected-agents="updateSelectedAgents"
+          :is-working="isCreating"
+          :submit-button-text="$t('TEAMS_SETTINGS.ADD.BUTTON_TEXT')"
+        />
+      </div>
+    </form>
+  </div>
+</template>
+
 <script>
 import { mapGetters } from 'vuex';
-import { useAlert } from 'dashboard/composables';
 
+import alertMixin from 'shared/mixins/alertMixin';
 import router from '../../../../index';
 import PageHeader from '../../SettingsSubPageHeader.vue';
 import AgentSelector from '../AgentSelector.vue';
-import { useVuelidate } from '@vuelidate/core';
 
 export default {
   components: {
     PageHeader,
     AgentSelector,
+  },
+  mixins: [alertMixin],
+  props: {
+    team: {
+      type: Object,
+      default: () => {},
+    },
   },
   validations: {
     selectedAgents: {
@@ -18,10 +57,6 @@ export default {
         return !!this.selectedAgents.length;
       },
     },
-  },
-
-  setup() {
-    return { v$: useVuelidate() };
   },
 
   data() {
@@ -55,7 +90,7 @@ export default {
 
   methods: {
     updateSelectedAgents(newAgentList) {
-      this.v$.selectedAgents.$touch();
+      this.$v.selectedAgents.$touch();
       this.selectedAgents = [...newAgentList];
     },
     selectAllAgents() {
@@ -79,36 +114,10 @@ export default {
         });
         this.$store.dispatch('teams/get');
       } catch (error) {
-        useAlert(error.message);
+        this.showAlert(error.message);
       }
       this.isCreating = false;
     },
   },
 };
 </script>
-
-<template>
-  <div class="h-full w-full p-8 col-span-6 overflow-auto">
-    <form class="flex flex-col gap-4 mx-0" @submit.prevent="addAgents">
-      <PageHeader
-        :header-title="headerTitle"
-        :header-content="$t('TEAMS_SETTINGS.ADD.DESC')"
-      />
-
-      <div class="w-full h-full">
-        <div v-if="v$.selectedAgents.$error">
-          <p class="error-message pb-2">
-            {{ $t('TEAMS_SETTINGS.ADD.AGENT_VALIDATION_ERROR') }}
-          </p>
-        </div>
-        <AgentSelector
-          :agent-list="agentList"
-          :selected-agents="selectedAgents"
-          :update-selected-agents="updateSelectedAgents"
-          :is-working="isCreating"
-          :submit-button-text="$t('TEAMS_SETTINGS.ADD.BUTTON_TEXT')"
-        />
-      </div>
-    </form>
-  </div>
-</template>

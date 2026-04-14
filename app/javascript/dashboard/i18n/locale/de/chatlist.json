@@ -6,7 +6,6 @@
     "LIST": {
       "404": "In dieser Gruppe existieren keine aktiven Gespräche."
     },
-    "FAILED_TO_SEND": "Fehler beim Senden",
     "TAB_HEADING": "Gespräche",
     "MENTION_HEADING": "Erwähnungen",
     "UNATTENDED_HEADING": "Unbeaufsichtigt",
@@ -54,31 +53,28 @@
     },
     "SORT_ORDER_ITEMS": {
       "last_activity_at_asc": {
-        "TEXT": "Letzte Aktivität: Älteste zuerst"
+        "TEXT": "Last activity: Oldest first"
       },
       "last_activity_at_desc": {
-        "TEXT": "Letzte Aktivität: Neueste zuerst"
+        "TEXT": "Last activity: Newest first"
       },
       "created_at_desc": {
-        "TEXT": "Erstellt am: Neueste zuerst"
+        "TEXT": "Created at: Newest first"
       },
       "created_at_asc": {
-        "TEXT": "Erstellt am: Älteste zuerst"
+        "TEXT": "Created at: Oldest first"
       },
       "priority_desc": {
-        "TEXT": "Priorität: Höchste zuerst"
+        "TEXT": "Priority: Highest first"
       },
       "priority_asc": {
-        "TEXT": "Priorität: Niedrigste zuerst"
+        "TEXT": "Priority: Lowest first"
       },
       "waiting_since_asc": {
-        "TEXT": "Ausstehende Antwort: Längste zuerst"
+        "TEXT": "Pending Response: Longest first"
       },
       "waiting_since_desc": {
-        "TEXT": "Ausstehende Antwort: Kürzeste zuerst"
-      },
-      "priority_desc_created_at_asc": {
-        "TEXT": "Priority: Highest first, Created: Oldest first"
+        "TEXT": "Pending Response: Shortest first"
       }
     },
     "ATTACHMENTS": {
@@ -97,17 +93,8 @@
       "location": {
         "CONTENT": "Ort"
       },
-      "ig_reel": {
-        "CONTENT": "Instagram Reel"
-      },
       "fallback": {
         "CONTENT": "hat eine URL geteilt"
-      },
-      "contact": {
-        "CONTENT": "Geteilter Kontakt"
-      },
-      "embed": {
-        "CONTENT": "Embedded content"
       }
     },
     "CHAT_SORT_BY_FILTER": {
@@ -139,7 +126,6 @@
     "NO_CONTENT": "Kein Inhalt verfügbar",
     "HIDE_QUOTED_TEXT": "Zitierten Text ausblenden",
     "SHOW_QUOTED_TEXT": "Zitierten Text anzeigen",
-    "MESSAGE_READ": "Lesen",
-    "SENDING": "Sende"
+    "MESSAGE_READ": "Lesen"
   }
 }

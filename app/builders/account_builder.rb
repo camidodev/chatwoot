@@ -32,7 +32,12 @@ class AccountBuilder
   end
 
   def validate_email
-    Account::SignUpEmailValidationService.new(@email).perform
+    address = ValidEmail2::Address.new(@email)
+    if address.valid? # && !address.disposable?
+      true
+    else
+      raise InvalidEmail.new(valid: address.valid?)
+    end
   end
 
   def validate_user

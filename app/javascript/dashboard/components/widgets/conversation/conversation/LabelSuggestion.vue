@@ -1,12 +1,98 @@
+<template>
+  <li
+    v-if="shouldShowSuggestions"
+    class="label-suggestion right"
+    @mouseover="isHovered = true"
+    @mouseleave="isHovered = false"
+  >
+    <div class="wrap">
+      <div class="label-suggestion--container">
+        <h6 class="label-suggestion--title">Suggested labels</h6>
+        <div class="label-suggestion--options">
+          <button
+            v-for="label in preparedLabels"
+            :key="label.title"
+            v-tooltip.top="{
+              content: selectedLabels.includes(label.title)
+                ? $t('LABEL_MGMT.SUGGESTIONS.TOOLTIP.DESELECT')
+                : labelTooltip,
+              delay: { show: 600, hide: 0 },
+              hideOnClick: true,
+            }"
+            class="label-suggestion--option"
+            @click="pushOrAddLabel(label.title)"
+          >
+            <woot-label
+              variant="dashed"
+              v-bind="label"
+              :bg-color="
+                selectedLabels.includes(label.title) ? 'var(--w-100)' : ''
+              "
+            />
+          </button>
+          <woot-button
+            v-if="preparedLabels.length === 1"
+            v-tooltip.top="{
+              content: $t('LABEL_MGMT.SUGGESTIONS.TOOLTIP.DISMISS'),
+              delay: { show: 600, hide: 0 },
+              hideOnClick: true,
+            }"
+            variant="smooth"
+            :color-scheme="isHovered ? 'alert' : 'primary'"
+            class="label--add"
+            icon="dismiss"
+            size="tiny"
+            @click="dismissSuggestions"
+          />
+        </div>
+        <div v-if="preparedLabels.length > 1">
+          <woot-button
+            :variant="selectedLabels.length === 0 ? 'smooth' : ''"
+            class="label--add"
+            icon="add"
+            size="tiny"
+            @click="addAllLabels"
+          >
+            {{ addButtonText }}
+          </woot-button>
+          <woot-button
+            v-tooltip.top="{
+              content: $t('LABEL_MGMT.SUGGESTIONS.TOOLTIP.DISMISS'),
+              delay: { show: 600, hide: 0 },
+              hideOnClick: true,
+            }"
+            :color-scheme="isHovered ? 'alert' : 'primary'"
+            variant="smooth"
+            class="label--add"
+            icon="dismiss"
+            size="tiny"
+            @click="dismissSuggestions"
+          />
+        </div>
+      </div>
+      <div class="sender--info has-tooltip" data-original-title="null">
+        <woot-thumbnail
+          v-tooltip.top="{
+            content: $t('LABEL_MGMT.SUGGESTIONS.POWERED_BY'),
+            delay: { show: 600, hide: 0 },
+            hideOnClick: true,
+          }"
+          size="16px"
+        >
+          <avatar class="user-thumbnail thumbnail-rounded">
+            <fluent-icon class="chatwoot-ai-icon" icon="chatwoot-ai" />
+          </avatar>
+        </woot-thumbnail>
+      </div>
+    </div>
+  </li>
+</template>
+
 <script>
 // components
-import NextButton from 'dashboard/components-next/button/Button.vue';
-import Avatar from 'dashboard/components-next/avatar/Avatar.vue';
-import { useBranding } from 'shared/composables/useBranding';
-
-// composables
-import { useCaptain } from 'dashboard/composables/useCaptain';
-import { useTrack } from 'dashboard/composables';
+import WootButton from '../../../ui/WootButton.vue';
+import Avatar from '../../Avatar.vue';
+import aiMixin from 'dashboard/mixins/aiMixin';
 
 // store & api
 import { mapGetters } from 'vuex';
@@ -14,14 +100,15 @@ import { mapGetters } from 'vuex';
 // utils & constants
 import { LocalStorage } from 'shared/helpers/localStorage';
 import { LOCAL_STORAGE_KEYS } from 'dashboard/constants/localStorage';
-import { CAPTAIN_EVENTS } from '../../../../helper/AnalyticsHelper/events';
+import { OPEN_AI_EVENTS } from '../../../../helper/AnalyticsHelper/events';
 
 export default {
   name: 'LabelSuggestion',
   components: {
     Avatar,
-    NextButton,
+    WootButton,
   },
+  mixins: [aiMixin],
   props: {
     suggestedLabels: {
       type: Array,
@@ -32,12 +119,6 @@ export default {
       required: false,
       default: () => [],
     },
-  },
-  setup() {
-    const { captainTasksEnabled } = useCaptain();
-    const { replaceInstallationName } = useBranding();
-
-    return { captainTasksEnabled, replaceInstallationName };
   },
   data() {
     return {
@@ -50,11 +131,7 @@ export default {
     ...mapGetters({
       allLabels: 'labels/getLabels',
       currentAccountId: 'getCurrentAccountId',
-      currentChat: 'getSelectedChat',
     }),
-    conversationId() {
-      return this.currentChat?.id;
-    },
     labelTooltip() {
       if (this.preparedLabels.length > 1) {
         return this.$t('LABEL_MGMT.SUGGESTIONS.TOOLTIP.MULTIPLE_SUGGESTION');
@@ -80,7 +157,7 @@ export default {
     },
     shouldShowSuggestions() {
       if (this.isDismissed) return false;
-      if (!this.captainTasksEnabled) return false;
+      if (!this.isAIIntegrationEnabled) return false;
 
       return this.preparedLabels.length && this.chatLabels.length === 0;
     },
@@ -116,7 +193,7 @@ export default {
 
       // dismiss this once the values are set
       this.isDismissed = true;
-      this.trackLabelEvent(CAPTAIN_EVENTS.LABEL_SUGGESTION_DISMISSED);
+      this.trackLabelEvent(OPEN_AI_EVENTS.DISMISS_LABEL_SUGGESTION);
     },
     isConversationDismissed() {
       return LocalStorage.getFlag(
@@ -134,7 +211,7 @@ export default {
         conversationId: this.conversationId,
         labels: labelsToAdd,
       });
-      this.trackLabelEvent(CAPTAIN_EVENTS.LABEL_SUGGESTION_APPLIED);
+      this.trackLabelEvent(OPEN_AI_EVENTS.APPLY_LABEL_SUGGESTION);
     },
     trackLabelEvent(event) {
       const payload = {
@@ -146,104 +223,11 @@ export default {
           : this.suggestedLabels,
       };
 
-      useTrack(event, payload);
+      this.$track(event, payload);
     },
   },
 };
 </script>
-
-<!-- eslint-disable-next-line vue/no-root-v-if -->
-<template>
-  <li
-    v-if="shouldShowSuggestions"
-    class="label-suggestion right list-none"
-    @mouseover="isHovered = true"
-    @mouseleave="isHovered = false"
-  >
-    <div class="wrap">
-      <div class="label-suggestion--container">
-        <h6 class="label-suggestion--title">
-          {{ $t('LABEL_MGMT.SUGGESTIONS.SUGGESTED_LABELS') }}
-        </h6>
-        <div class="label-suggestion--options">
-          <button
-            v-for="label in preparedLabels"
-            :key="label.title"
-            v-tooltip.top="{
-              content: selectedLabels.includes(label.title)
-                ? $t('LABEL_MGMT.SUGGESTIONS.TOOLTIP.DESELECT')
-                : labelTooltip,
-              delay: { show: 600, hide: 0 },
-              hideOnClick: true,
-            }"
-            class="label-suggestion--option !px-0"
-            @click="pushOrAddLabel(label.title)"
-          >
-            <woot-label
-              variant="dashed"
-              v-bind="label"
-              :bg-color="selectedLabels.includes(label.title) ? '#2781F6' : ''"
-            />
-          </button>
-          <NextButton
-            v-if="preparedLabels.length === 1"
-            v-tooltip.top="{
-              content: $t('LABEL_MGMT.SUGGESTIONS.TOOLTIP.DISMISS'),
-              delay: { show: 600, hide: 0 },
-              hideOnClick: true,
-            }"
-            faded
-            xs
-            icon="i-lucide-x"
-            class="flex-shrink-0"
-            :color="isHovered ? 'ruby' : 'blue'"
-            @click="dismissSuggestions"
-          />
-        </div>
-        <div
-          v-if="preparedLabels.length > 1"
-          class="inline-flex items-center gap-1"
-        >
-          <NextButton
-            xs
-            icon="i-lucide-plus"
-            class="flex-shrink-0"
-            :variant="selectedLabels.length === 0 ? 'faded' : 'solid'"
-            :label="addButtonText"
-            @click="addAllLabels"
-          />
-          <NextButton
-            v-tooltip.top="{
-              content: $t('LABEL_MGMT.SUGGESTIONS.TOOLTIP.DISMISS'),
-              delay: { show: 600, hide: 0 },
-              hideOnClick: true,
-            }"
-            faded
-            xs
-            icon="i-lucide-x"
-            class="flex-shrink-0"
-            :color="isHovered ? 'ruby' : 'blue'"
-            @click="dismissSuggestions"
-          />
-        </div>
-      </div>
-      <div class="sender--info has-tooltip" data-original-title="null">
-        <Avatar
-          v-tooltip.top="{
-            content: replaceInstallationName(
-              $t('LABEL_MGMT.SUGGESTIONS.POWERED_BY')
-            ),
-            delay: { show: 600, hide: 0 },
-            hideOnClick: true,
-          }"
-          :size="16"
-          name="chatwoot-ai"
-          icon-name="i-lucide-sparkles"
-        />
-      </div>
-    </div>
-  </li>
-</template>
 
 <style scoped lang="scss">
 .wrap {
@@ -253,14 +237,17 @@ export default {
 .label-suggestion {
   flex-direction: row;
   justify-content: flex-end;
-  margin-top: 1rem;
+  margin-top: var(--space-normal);
 
   .label-suggestion--container {
     max-width: 300px;
   }
 
   .label-suggestion--options {
-    @apply gap-0.5 text-end flex items-center;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: var(--space-micro);
 
     button.label-suggestion--option {
       .label {
@@ -270,8 +257,15 @@ export default {
     }
   }
 
+  .chatwoot-ai-icon {
+    height: var(--font-size-mini);
+    width: var(--font-size-mini);
+  }
+
   .label-suggestion--title {
-    @apply text-n-slate-11 mt-0.5 text-xxs;
+    color: var(--b-600);
+    margin-top: var(--space-micro);
+    font-size: var(--font-size-micro);
   }
 }
 </style>

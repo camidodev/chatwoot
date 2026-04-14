@@ -1,4 +1,30 @@
+<template>
+  <div v-on-clickaway="closeSearch" class="max-w-5xl w-full relative my-4">
+    <public-search-input
+      v-model="searchTerm"
+      :search-placeholder="searchTranslations.searchPlaceholder"
+      @focus="openSearch"
+    />
+    <div
+      v-if="shouldShowSearchBox"
+      class="absolute top-14 w-full"
+      @mouseover="openSearch"
+    >
+      <search-suggestions
+        :items="searchResults"
+        :is-loading="isLoading"
+        :search-term="searchTerm"
+        :empty-placeholder="searchTranslations.emptyPlaceholder"
+        :results-title="searchTranslations.resultsTitle"
+        :loading-placeholder="searchTranslations.loadingPlaceholder"
+      />
+    </div>
+  </div>
+</template>
+
 <script>
+import { mixin as clickaway } from 'vue-clickaway';
+
 import SearchSuggestions from './SearchSuggestions.vue';
 import PublicSearchInput from './PublicSearchInput.vue';
 
@@ -9,7 +35,13 @@ export default {
     PublicSearchInput,
     SearchSuggestions,
   },
-  emits: ['input', 'blur'],
+  mixins: [clickaway],
+  props: {
+    value: {
+      type: [String, Number],
+      default: '',
+    },
+  },
   data() {
     return {
       searchTerm: '',
@@ -26,11 +58,8 @@ export default {
     localeCode() {
       return window.portalConfig.localeCode;
     },
-    normalizedSearchTerm() {
-      return this.searchTerm.trim();
-    },
     shouldShowSearchBox() {
-      return this.normalizedSearchTerm !== '' && this.showSearchBox;
+      return this.searchTerm !== '' && this.showSearchBox;
     },
     searchTranslations() {
       const { searchTranslations = {} } = window.portalConfig;
@@ -39,27 +68,9 @@ export default {
   },
 
   watch: {
-    currentPage() {
-      this.clearSearchTerm();
-    },
-  },
-
-  unmounted() {
-    clearTimeout(this.typingTimer);
-  },
-
-  methods: {
-    onUpdateSearchTerm(value) {
-      this.searchTerm = value;
+    searchTerm() {
       if (this.typingTimer) {
         clearTimeout(this.typingTimer);
-      }
-
-      if (this.normalizedSearchTerm === '') {
-        this.searchResults = [];
-        this.isLoading = false;
-        this.closeSearch();
-        return;
       }
 
       this.openSearch();
@@ -68,6 +79,16 @@ export default {
         this.fetchArticlesByQuery();
       }, 1000);
     },
+    currentPage() {
+      this.clearSearchTerm();
+    },
+  },
+
+  beforeDestroy() {
+    clearTimeout(this.typingTimer);
+  },
+
+  methods: {
     onChange(e) {
       this.$emit('input', e.target.value);
     },
@@ -84,21 +105,16 @@ export default {
       this.searchTerm = '';
     },
     async fetchArticlesByQuery() {
-      const query = this.normalizedSearchTerm;
-      if (!query) {
-        this.isLoading = false;
-        return;
-      }
-
       try {
         this.isLoading = true;
         this.searchResults = [];
         const { data } = await ArticlesAPI.searchArticles(
           this.portalSlug,
           this.localeCode,
-          query
+          this.searchTerm
         );
         this.searchResults = data.payload;
+        this.isLoading = true;
       } catch (error) {
         // Show something wrong message
       } finally {
@@ -108,28 +124,3 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div v-on-clickaway="closeSearch" class="relative w-full max-w-5xl my-4">
-    <PublicSearchInput
-      :search-term="searchTerm"
-      :search-placeholder="searchTranslations.searchPlaceholder"
-      @update:search-term="onUpdateSearchTerm"
-      @focus="openSearch"
-    />
-    <div
-      v-if="shouldShowSearchBox"
-      class="absolute w-full top-14"
-      @mouseover="openSearch"
-    >
-      <SearchSuggestions
-        :items="searchResults"
-        :is-loading="isLoading"
-        :search-term="normalizedSearchTerm"
-        :empty-placeholder="searchTranslations.emptyPlaceholder"
-        :results-title="searchTranslations.resultsTitle"
-        :loading-placeholder="searchTranslations.loadingPlaceholder"
-      />
-    </div>
-  </div>
-</template>

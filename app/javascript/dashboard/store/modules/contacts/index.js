@@ -6,7 +6,6 @@ const state = {
   meta: {
     count: 0,
     currentPage: 1,
-    hasMore: false,
   },
   records: {},
   uiFlags: {
@@ -16,9 +15,6 @@ const state = {
     isUpdating: false,
     isMerging: false,
     isDeleting: false,
-    isExporting: false,
-    isImporting: false,
-    isInitiatingCall: false,
   },
   sortOrder: [],
   appliedFilters: [],

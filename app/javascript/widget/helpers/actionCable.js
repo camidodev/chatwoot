@@ -4,7 +4,6 @@ import { ON_AGENT_MESSAGE_RECEIVED } from '../constants/widgetBusEvents';
 import { IFrameHelper } from 'widget/helpers/utils';
 import { shouldTriggerMessageUpdateEvent } from './IframeEventHelper';
 import { CHATWOOT_ON_MESSAGE } from '../constants/sdkEvents';
-import { emitter } from '../../shared/helpers/mitt';
 
 const isMessageInActiveConversation = (getters, message) => {
   const { conversation_id: conversationId } = message;
@@ -13,11 +12,9 @@ const isMessageInActiveConversation = (getters, message) => {
   return activeConversationId && conversationId !== activeConversationId;
 };
 
-const WIDGET_PRESENCE_INTERVAL = 60000;
-
 class ActionCableConnector extends BaseActionCableConnector {
   constructor(app, pubsubToken) {
-    super(app, pubsubToken, '', WIDGET_PRESENCE_INTERVAL);
+    super(app, pubsubToken);
     this.events = {
       'message.created': this.onMessageCreated,
       'message.updated': this.onMessageUpdated,
@@ -60,7 +57,7 @@ class ActionCableConnector extends BaseActionCableConnector {
 
     this.app.$store
       .dispatch('conversation/addOrUpdateMessage', data)
-      .then(() => emitter.emit(ON_AGENT_MESSAGE_RECEIVED));
+      .then(() => window.bus.$emit(ON_AGENT_MESSAGE_RECEIVED));
 
     IFrameHelper.sendMessage({
       event: 'onEvent',

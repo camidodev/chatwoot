@@ -12,36 +12,25 @@
       "ERROR_MESSAGE": "ارسال نشد، دوباره امتحان کنید"
     }
   },
-  "THUMBNAIL": {
-    "AUTHOR": {
-      "NOT_AVAILABLE": "خارج از دسترس"
-    }
-  },
   "TEAM_AVAILABILITY": {
     "ONLINE": "ما آنلاین هستیم",
-    "OFFLINE": "در حال حاضر دردسترس نیستیم",
-    "BACK_AS_SOON_AS_POSSIBLE": "در سریعترین زمان ممکن باز خواهیم گشت"
+    "OFFLINE": "در حال حاضر دردسترس نیستیم"
   },
   "REPLY_TIME": {
     "IN_A_FEW_MINUTES": "معمولاً در عرض چند دقیقه پاسخ می دهند",
     "IN_A_FEW_HOURS": "معمولاً در عرض چند ساعت پاسخ می دهند",
     "IN_A_DAY": "به طور معمول در یک روز پاسخ می دهند",
-    "BACK_IN_HOURS": "تا {n} ساعت دیگر باز خواهیم گشت | تا {n} ساعت دیگر باز خواهیم گشت",
-    "BACK_IN_MINUTES": "تا {time} دقیقه دیگر باز خواهیم گشت",
-    "BACK_AT_TIME": "در {time} باز خواهیم گشت",
-    "BACK_ON_DAY": "در روز {day} باز خواهیم گشت",
-    "BACK_TOMORROW": "فردا باز خواهیم گشت",
-    "BACK_IN_SOME_TIME": "مدتی دیگر باز خواهیم گشت"
+    "BACK_IN": "دوباره آنلاین خواهیم بود"
   },
-  "DAY_NAMES": {
-    "SUNDAY": "یک‌شنبه",
-    "MONDAY": "دوشنبه",
-    "TUESDAY": "سه‌شنبه",
-    "WEDNESDAY": "چهارشنبه",
-    "THURSDAY": "پنج‌شنبه",
-    "FRIDAY": "جمعه",
-    "SATURDAY": "شنبه"
-  },
+  "DAY_NAMES": [
+    "یک‌شنبه",
+    "دوشنبه",
+    "سه‌شنبه",
+    "چهارشنبه",
+    "پنج‌شنبه",
+    "جمعه",
+    "شنبه"
+  ],
   "START_CONVERSATION": "شروع گفتگو",
   "END_CONVERSATION": "پایان گفتگو",
   "CONTINUE_CONVERSATION": "ادامه گفتگو",
@@ -81,8 +70,7 @@
         "REQUIRED_ERROR": "شماره تلفن مورد نیاز است",
         "DIAL_CODE_VALID_ERROR": "لطفا\" یک کد کشور انتخاب کنید",
         "VALID_ERROR": "لطفا\" یک شماره موبایل معتبر وارد نمایید",
-        "DROPDOWN_EMPTY": "نتیجه‌ای یافت نشد",
-        "DROPDOWN_SEARCH": "جستجوی کشور"
+        "DROPDOWN_EMPTY": "نتیجه‌ای یافت نشد"
       },
       "MESSAGE": {
         "LABEL": "پیام",
@@ -93,7 +81,7 @@
     "CAMPAIGN_HEADER": "لطفا قبل از شروع گفتگو نام و ایمیل خود را وارد کنید",
     "IS_REQUIRED": "مورد نیاز است",
     "REQUIRED": "ضروری",
-    "REGEX_ERROR": "لطفا یک ورودی معتبر ارائه دهید"
+    "REGEX_ERROR": "Please provide a valid input"
   },
   "FILE_SIZE_LIMIT": "فایل ضمیمه شده بیشتر از {MAXIMUM_FILE_UPLOAD_SIZE} است",
   "CHAT_FORM": {
@@ -102,9 +90,8 @@
     }
   },
   "EMOJI": {
-    "PLACEHOLDER": "جستجوی اموجی",
-    "NOT_FOUND": "هیچ اموجی با جستجوی شما مطابقت ندارد",
-    "ARIA_LABEL": "انتخاب اموجی"
+    "PLACEHOLDER": "جستجوی ایموجی",
+    "NOT_FOUND": "هیچ ایموجی با جستجوی شما مطابقت ندارد"
   },
   "CSAT": {
     "TITLE": "به گفتگوی خود امتیاز دهید",
@@ -146,8 +133,5 @@
     "fallback": {
       "CONTENT": "یک آدرس URL به اشتراک گذاشته شده"
     }
-  },
-  "FOOTER_REPLY_TO": {
-    "REPLY_TO": "در حال پاسخ دهی به:"
   }
 }

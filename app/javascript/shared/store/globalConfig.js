@@ -1,6 +1,3 @@
-import { parseBoolean } from '@chatwoot/utils';
-import { resolveMaximumFileUploadSize } from 'shared/helpers/FileHelper';
-
 const {
   API_CHANNEL_NAME: apiChannelName,
   API_CHANNEL_THUMBNAIL: apiChannelThumbnail,
@@ -8,18 +5,17 @@ const {
   AZURE_APP_ID: azureAppId,
   BRAND_NAME: brandName,
   CHATWOOT_INBOX_TOKEN: chatwootInboxToken,
+  CSML_EDITOR_HOST: csmlEditorHost,
   CREATE_NEW_ACCOUNT_FROM_DASHBOARD: createNewAccountFromDashboard,
   DIRECT_UPLOADS_ENABLED: directUploadsEnabled,
   DISPLAY_MANIFEST: displayManifest,
   GIT_SHA: gitSha,
-  MAXIMUM_FILE_UPLOAD_SIZE: maximumFileUploadSize,
   HCAPTCHA_SITE_KEY: hCaptchaSiteKey,
   INSTALLATION_NAME: installationName,
   LOGO_THUMBNAIL: logoThumbnail,
   LOGO: logo,
   LOGO_DARK: logoDark,
   PRIVACY_URL: privacyURL,
-  IS_ENTERPRISE: isEnterprise,
   TERMS_URL: termsURL,
   WIDGET_BRAND_URL: widgetBrandURL,
   DISABLE_USER_PROFILE_UPDATE: disableUserProfileUpdate,
@@ -33,13 +29,13 @@ const state = {
   azureAppId,
   brandName,
   chatwootInboxToken,
+  csmlEditorHost,
   deploymentEnv,
   createNewAccountFromDashboard,
-  directUploadsEnabled: parseBoolean(directUploadsEnabled),
-  disableUserProfileUpdate: parseBoolean(disableUserProfileUpdate),
+  directUploadsEnabled: directUploadsEnabled === 'true',
+  disableUserProfileUpdate: disableUserProfileUpdate === 'true',
   displayManifest,
   gitSha,
-  maximumFileUploadSize: resolveMaximumFileUploadSize(maximumFileUploadSize),
   hCaptchaSiteKey,
   installationName,
   logo,
@@ -48,7 +44,6 @@ const state = {
   privacyURL,
   termsURL,
   widgetBrandURL,
-  isEnterprise: parseBoolean(isEnterprise),
 };
 
 export const getters = {

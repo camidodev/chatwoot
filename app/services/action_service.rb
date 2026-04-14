@@ -18,14 +18,6 @@ class ActionService
     @conversation.resolved!
   end
 
-  def open_conversation(_params)
-    @conversation.open!
-  end
-
-  def pending_conversation(_params)
-    @conversation.pending!
-  end
-
   def change_status(status)
     @conversation.update!(status: status[0])
   end
@@ -47,9 +39,7 @@ class ActionService
 
     @agent = @account.users.find_by(id: agent_ids)
 
-    return unless @agent.present? && @agent.confirmed?
-
-    @conversation.update!(assignee_id: @agent.id)
+    @conversation.update!(assignee_id: @agent.id) if @agent.present?
   end
 
   def remove_label(labels)
@@ -60,11 +50,7 @@ class ActionService
   end
 
   def assign_team(team_ids = [])
-    # FIXME: The explicit checks for zero or nil (string) is bad. Move
-    # this to a separate unassign action.
-    should_unassign = team_ids.blank? || %w[nil 0].include?(team_ids[0].to_s)
-    return @conversation.update!(team_id: nil) if should_unassign
-
+    return unassign_team if team_ids[0]&.zero?
     # check if team belongs to account only if team_id is present
     # if team_id is nil, then it means that the team is being unassigned
     return unless !team_ids[0].nil? && team_belongs_to_account?(team_ids)
@@ -77,16 +63,11 @@ class ActionService
   end
 
   def send_email_transcript(emails)
-    return unless @account.email_transcript_enabled?
-
     emails = emails[0].gsub(/\s+/, '').split(',')
 
     emails.each do |email|
-      break unless @account.within_email_rate_limit?
-
       email = parse_email_variables(@conversation, email)
       ConversationReplyMailer.with(account: @conversation.account).conversation_transcript(@conversation, email)&.deliver_later
-      @account.increment_email_sent_count
     end
   end
 

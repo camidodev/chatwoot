@@ -1,42 +1,21 @@
 {
   "SLA": {
-    "HEADER": "Acuerdos de Nivel de Servicio",
+    "HEADER": "SLA",
     "ADD_ACTION": "Añadir SLA",
-    "ADD_ACTION_LONG": "Crear una nueva política de SLA",
+    "ADD_ACTION_LONG": "Create a new SLA Policy",
     "DESCRIPTION": "Los Acuerdos de Nivel de Servicio (SLA) son contratos que definen expectativas claras entre su equipo y sus clientes. Establecen normas para los tiempos de respuesta y resolución, creando un marco para la responsabilidad y garantiza una experiencia coherente y de alta calidad.",
     "LEARN_MORE": "Más información sobre SLA",
-    "COUNT": "{n} SLA | {n} SLAs",
     "LOADING": "Obteniendo SLAs",
-    "SEARCH_PLACEHOLDER": "Search SLA...",
-    "SEARCH": {
-      "NO_RESULTS": "No SLA found matching your search"
-    },
-    "PAYWALL": {
-      "TITLE": "Actualiza para crear SLAs",
-      "AVAILABLE_ON": "La función SLA sólo está disponible en los planes Empresariales (Business) y Corporativos (Enterprise).",
-      "UPGRADE_PROMPT": "Actualiza tu plan para tener acceso a funciones avanzadas como gestión de equipos, automatizaciones, atributos personalizados y más.",
-      "UPGRADE_NOW": "Actualizar ahora",
-      "CANCEL_ANYTIME": "Puede cambiar o cancelar su plan en cualquier momento"
-    },
-    "ENTERPRISE_PAYWALL": {
-      "AVAILABLE_ON": "La función de SLA sólo está disponible en los planes de pago.",
-      "UPGRADE_PROMPT": "Actualice a un plan pago para acceder a funciones avanzadas como registros de auditoría, capacidad de agente y más.",
-      "ASK_ADMIN": "Por favor, comuníquese con su administrador para la actualización."
-    },
     "LIST": {
       "404": "No hay SLAs disponibles en esta cuenta.",
-      "TABLE_HEADER": {
-        "SLA": "SLA",
-        "BUSINESS_HOURS": "Business hours"
-      },
       "EMPTY": {
-        "TITLE_1": "Empresa P0",
-        "DESC_1": "Problemas planteados por los clientes empresariales, que requieren una atención inmediata.",
-        "TITLE_2": "Empresa P1",
-        "DESC_2": "Problemas planteados por los clientes empresariales, deben reconocerse con rapidez."
+        "TITLE_1": "Enterprise P0",
+        "DESC_1": "Issues raised by enterprise customers, that require immediate attention.",
+        "TITLE_2": "Enterprise P1",
+        "DESC_2": "Issues raised by enterprise customers, that needs to be acknowledged quickly."
       },
-      "BUSINESS_HOURS_ON": "Turned on",
-      "BUSINESS_HOURS_OFF": "Turned off",
+      "BUSINESS_HOURS_ON": "Horas laborables",
+      "BUSINESS_HOURS_OFF": "Horas de descanso",
       "RESPONSE_TYPES": {
         "FRT": "Umbral de tiempo de primera respuesta",
         "NRT": "Umbral de tiempo de siguiente respuesta",
@@ -86,7 +65,7 @@
     },
     "ADD": {
       "TITLE": "Añadir SLA",
-      "DESC": "¡Promesas amigables para un servicio excelente!",
+      "DESC": "Friendly promises for great service!",
       "API": {
         "SUCCESS_MESSAGE": "SLA añadido correctamente",
         "ERROR_MESSAGE": "Hubo un error, por favor inténtelo de nuevo"
@@ -106,12 +85,12 @@
       }
     },
     "EVENTS": {
-      "TITLE": "SLA perdidos",
+      "TITLE": "SLA Misses",
       "FRT": "Primera respuesta",
-      "NRT": "Tiempo de respuesta siguiente",
-      "RT": "Tiempo de resolución",
-      "SHOW_MORE": "{count} más",
-      "HIDE": "Esconder {count} filas"
+      "NRT": "Next response time",
+      "RT": "Resolution time",
+      "SHOW_MORE": "{count} more",
+      "HIDE": "Hide {count} rows"
     }
   }
 }

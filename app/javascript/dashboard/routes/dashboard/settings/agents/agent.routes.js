@@ -1,28 +1,28 @@
-import { FEATURE_FLAGS } from '../../../../featureFlags';
 import { frontendURL } from '../../../../helper/URLHelper';
-import SettingsWrapper from '../SettingsWrapper.vue';
-import AgentHome from './Index.vue';
+const SettingsContent = () => import('../Wrapper.vue');
+const AgentHome = () => import('./Index.vue');
 
 export default {
   routes: [
     {
       path: frontendURL('accounts/:accountId/settings/agents'),
-      component: SettingsWrapper,
+      component: SettingsContent,
+      props: {
+        headerTitle: 'AGENT_MGMT.HEADER',
+        icon: 'people',
+        showNewButton: false,
+      },
       children: [
         {
           path: '',
-          redirect: to => {
-            return { name: 'agent_list', params: to.params };
-          },
+          name: 'agents_wrapper',
+          redirect: 'list',
         },
         {
           path: 'list',
           name: 'agent_list',
           component: AgentHome,
-          meta: {
-            featureFlag: FEATURE_FLAGS.AGENT_MANAGEMENT,
-            permissions: ['administrator'],
-          },
+          roles: ['administrator'],
         },
       ],
     },

@@ -12,7 +12,7 @@ import {
 
 import { ON_CONVERSATION_CREATED } from 'widget/constants/widgetBusEvents';
 import { createTemporaryMessage, getNonDeletedMessages } from './helpers';
-import { emitter } from 'shared/helpers/mitt';
+
 export const actions = {
   createConversation: async ({ commit, dispatch }, params) => {
     commit('setConversationUIFlag', { isCreating: true });
@@ -23,47 +23,27 @@ export const actions = {
       commit('pushMessageToConversation', message);
       dispatch('conversationAttributes/getAttributes', {}, { root: true });
       // Emit event to notify that conversation is created and show the chat screen
-      emitter.emit(ON_CONVERSATION_CREATED);
+      bus.$emit(ON_CONVERSATION_CREATED);
     } catch (error) {
       // Ignore error
     } finally {
       commit('setConversationUIFlag', { isCreating: false });
     }
   },
-  sendMessage: async ({ dispatch, state: conversationState }, params) => {
+  sendMessage: async ({ dispatch }, params) => {
     const { content, replyTo } = params;
     const message = createTemporaryMessage({ content, replyTo });
-    const { pendingCustomAttributes, pendingLabels } = conversationState;
-    dispatch('sendMessageWithData', {
-      message,
-      pendingCustomAttributes,
-      pendingLabels,
-    });
+    dispatch('sendMessageWithData', message);
   },
-  sendMessageWithData: async (
-    { commit },
-    { message, pendingCustomAttributes = {}, pendingLabels = [] }
-  ) => {
+  sendMessageWithData: async ({ commit }, message) => {
     const { id, content, replyTo, meta = {} } = message;
-    const hasPendingMetadata =
-      Object.keys(pendingCustomAttributes).length > 0 ||
-      pendingLabels.length > 0;
 
     commit('pushMessageToConversation', message);
     commit('updateMessageMeta', { id, meta: { ...meta, error: '' } });
     try {
-      const { data } = await sendMessageAPI(content, replyTo, {
-        customAttributes: hasPendingMetadata
-          ? pendingCustomAttributes
-          : undefined,
-        labels: hasPendingMetadata ? pendingLabels : undefined,
-      });
-      if (hasPendingMetadata) {
-        commit('clearPendingConversationMetadata');
-      }
+      const { data } = await sendMessageAPI(content, replyTo);
 
-      // [VITE] Don't delete this manually, since `pushMessageToConversation` does the replacement for us anyway
-      // commit('deleteMessage', message.id);
+      commit('deleteMessage', message.id);
       commit('pushMessageToConversation', { ...data, status: 'sent' });
     } catch (error) {
       commit('pushMessageToConversation', { ...message, status: 'failed' });
@@ -78,7 +58,7 @@ export const actions = {
     commit('setLastMessageId');
   },
 
-  sendAttachment: async ({ commit, state: conversationState }, params) => {
+  sendAttachment: async ({ commit }, params) => {
     const {
       attachment: { thumbUrl, fileType },
       meta = {},
@@ -93,22 +73,9 @@ export const actions = {
       attachments: [attachment],
       replyTo: params.replyTo,
     });
-    const { pendingCustomAttributes, pendingLabels } = conversationState;
-    const hasPendingMetadata =
-      Object.keys(pendingCustomAttributes).length > 0 ||
-      pendingLabels.length > 0;
-
     commit('pushMessageToConversation', tempMessage);
     try {
-      const { data } = await sendAttachmentAPI(params, {
-        customAttributes: hasPendingMetadata
-          ? pendingCustomAttributes
-          : undefined,
-        labels: hasPendingMetadata ? pendingLabels : undefined,
-      });
-      if (hasPendingMetadata) {
-        commit('clearPendingConversationMetadata');
-      }
+      const { data } = await sendAttachmentAPI(params);
       commit('updateAttachmentMessageStatus', {
         message: data,
         tempId: tempMessage.id,
@@ -212,14 +179,7 @@ export const actions = {
     await toggleStatus();
   },
 
-  setCustomAttributes: async (
-    { commit, rootGetters },
-    customAttributes = {}
-  ) => {
-    if (!rootGetters['conversationAttributes/getConversationParams']?.id) {
-      commit('setPendingCustomAttributes', customAttributes);
-      return;
-    }
+  setCustomAttributes: async (_, customAttributes = {}) => {
     try {
       await setCustomAttributes(customAttributes);
     } catch (error) {
@@ -227,11 +187,7 @@ export const actions = {
     }
   },
 
-  deleteCustomAttribute: async ({ commit, rootGetters }, customAttribute) => {
-    if (!rootGetters['conversationAttributes/getConversationParams']?.id) {
-      commit('removePendingCustomAttribute', customAttribute);
-      return;
-    }
+  deleteCustomAttribute: async (_, customAttribute) => {
     try {
       await deleteCustomAttribute(customAttribute);
     } catch (error) {

@@ -9,13 +9,8 @@ class MessageTemplates::Template::CsatSurvey
 
   private
 
-  delegate :contact, :account, :inbox, to: :conversation
-
-  def message_content
-    return I18n.t('conversations.templates.csat_input_message_body') if csat_config.blank? || csat_config['message'].blank?
-
-    csat_config['message']
-  end
+  delegate :contact, :account, to: :conversation
+  delegate :inbox, to: :message
 
   def csat_survey_message_params
     {
@@ -23,18 +18,7 @@ class MessageTemplates::Template::CsatSurvey
       inbox_id: @conversation.inbox_id,
       message_type: :template,
       content_type: :input_csat,
-      content: message_content,
-      content_attributes: content_attributes
-    }
-  end
-
-  def csat_config
-    inbox.csat_config || {}
-  end
-
-  def content_attributes
-    {
-      display_type: csat_config['display_type'] || 'emoji'
+      content: I18n.t('conversations.templates.csat_input_message_body')
     }
   end
 end

@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import NotificationSubscriptions from '../api/notificationSubscription';
 import auth from '../api/auth';
-import { useAlert } from 'dashboard/composables';
 
 export const verifyServiceWorkerExistence = (callback = () => {}) => {
   if (!('serviceWorker' in navigator)) {
@@ -68,18 +67,20 @@ export const registerSubscription = (onSuccess = () => {}) => {
     .then(() => {
       onSuccess();
     })
-    .catch(error => {
-      // eslint-disable-next-line no-console
-      console.error('Push subscription registration failed:', error);
-      useAlert('This browser does not support desktop notification');
+    .catch(() => {
+      window.bus.$emit(
+        'newToastMessage',
+        'This browser does not support desktop notification'
+      );
     });
 };
 
 export const requestPushPermissions = ({ onSuccess }) => {
   if (!('Notification' in window)) {
-    // eslint-disable-next-line no-console
-    console.warn('Notification is not supported');
-    useAlert('This browser does not support desktop notification');
+    window.bus.$emit(
+      'newToastMessage',
+      'This browser does not support desktop notification'
+    );
   } else if (Notification.permission === 'granted') {
     registerSubscription(onSuccess);
   } else if (Notification.permission !== 'denied') {

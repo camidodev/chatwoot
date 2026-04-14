@@ -1,3 +1,15 @@
+<template>
+  <mention-box
+    v-if="items.length"
+    :items="items"
+    @mention-select="handleMentionClick"
+  >
+    <template slot-scope="{ item }">
+      <strong>{{ item.label }}</strong> - {{ item.description }}
+    </template>
+  </mention-box>
+</template>
+
 <script>
 import { mapGetters } from 'vuex';
 import MentionBox from '../mentions/MentionBox.vue';
@@ -10,7 +22,6 @@ export default {
       default: '',
     },
   },
-  emits: ['replace'],
   computed: {
     ...mapGetters({
       cannedMessages: 'getCannedResponses',
@@ -36,17 +47,8 @@ export default {
       this.$store.dispatch('getCannedResponse', { searchKey: this.searchKey });
     },
     handleMentionClick(item = {}) {
-      this.$emit('replace', item.description);
+      this.$emit('click', item.description);
     },
   },
 };
 </script>
-
-<!-- eslint-disable-next-line vue/no-root-v-if -->
-<template>
-  <MentionBox
-    v-if="items.length"
-    :items="items"
-    @mention-select="handleMentionClick"
-  />
-</template>

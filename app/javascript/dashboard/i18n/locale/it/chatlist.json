@@ -1,84 +1,80 @@
 {
   "CHAT_LIST": {
-    "LOADING": "Caricamento conversazioni",
+    "LOADING": "Recupero delle conversazioni",
     "LOAD_MORE_CONVERSATIONS": "Carica altre conversazioni",
     "EOF": "Tutte le conversazioni caricate 🎉",
     "LIST": {
       "404": "Non ci sono conversazioni attive in questo gruppo."
     },
-    "FAILED_TO_SEND": "Invio non riuscito",
     "TAB_HEADING": "Conversazioni",
     "MENTION_HEADING": "Menzioni",
-    "UNATTENDED_HEADING": "Non Partecipate",
+    "UNATTENDED_HEADING": "Non partecipate",
     "SEARCH": {
-      "INPUT": "Cerca persone, chat, risposte salvate .."
+      "INPUT": "Cerca persone, Chat, risposte salvate .."
     },
-    "FILTER_ALL": "Tutte",
+    "FILTER_ALL": "Tutti",
     "ASSIGNEE_TYPE_TABS": {
       "me": "Mie",
-      "unassigned": "Non Assegnate",
-      "all": "Tutte"
+      "unassigned": "Non assegnate",
+      "all": "Tutti"
     },
     "CHAT_STATUS_FILTER_ITEMS": {
       "open": {
         "TEXT": "Aperte"
       },
       "resolved": {
-        "TEXT": "Risolte"
+        "TEXT": "Risolti"
       },
       "pending": {
-        "TEXT": "In Sospeso"
+        "TEXT": "In sospeso"
       },
       "snoozed": {
-        "TEXT": "Posticipate"
+        "TEXT": "Posticipato"
       },
       "all": {
-        "TEXT": "Tutte"
+        "TEXT": "Tutti"
       }
     },
     "VIEW_FILTER": "Visualizza",
-    "SORT_TOOLTIP_LABEL": "Ordina conversazioni",
+    "SORT_TOOLTIP_LABEL": "Sort conversations",
     "CHAT_SORT": {
       "STATUS": "Stato",
-      "ORDER_BY": "Ordina per"
+      "ORDER_BY": "Order by"
     },
     "CHAT_TIME_STAMP": {
       "CREATED": {
-        "LATEST": "Creata",
-        "OLDEST": "Creata il:"
+        "LATEST": "Created",
+        "OLDEST": "Creato il:"
       },
       "LAST_ACTIVITY": {
-        "NOT_ACTIVE": "Ultima attività:",
-        "ACTIVE": "Ultima attività"
+        "NOT_ACTIVE": "Last activity:",
+        "ACTIVE": "Last activity"
       }
     },
     "SORT_ORDER_ITEMS": {
       "last_activity_at_asc": {
-        "TEXT": "Ultima attività: prima le più vecchie"
+        "TEXT": "Last activity: Oldest first"
       },
       "last_activity_at_desc": {
-        "TEXT": "Ultima attività: prima le più recenti"
+        "TEXT": "Last activity: Newest first"
       },
       "created_at_desc": {
-        "TEXT": "Data creazione: prima le più recenti"
+        "TEXT": "Created at: Newest first"
       },
       "created_at_asc": {
-        "TEXT": "Data creazione: prima le più vecchie"
+        "TEXT": "Created at: Oldest first"
       },
       "priority_desc": {
-        "TEXT": "Priorità: prima le più importanti"
+        "TEXT": "Priority: Highest first"
       },
       "priority_asc": {
-        "TEXT": "Priorità: prima le meno importanti"
+        "TEXT": "Priority: Lowest first"
       },
       "waiting_since_asc": {
-        "TEXT": "In attesa di risposta: prima più tempo in attesa"
+        "TEXT": "Pending Response: Longest first"
       },
       "waiting_since_desc": {
-        "TEXT": "In attesa di risposta: prima meno tempo in attesa"
-      },
-      "priority_desc_created_at_asc": {
-        "TEXT": "Priorità: prima le più importanti, Data creazione: prima le più vecchie"
+        "TEXT": "Pending Response: Shortest first"
       }
     },
     "ATTACHMENTS": {
@@ -92,54 +88,44 @@
         "CONTENT": "Messaggio video"
       },
       "file": {
-        "CONTENT": "File Allegato"
+        "CONTENT": "File allegato"
       },
       "location": {
         "CONTENT": "Posizione"
       },
-      "ig_reel": {
-        "CONTENT": "Reel Instagram"
-      },
       "fallback": {
         "CONTENT": "ha condiviso un url"
-      },
-      "contact": {
-        "CONTENT": "Contatto condiviso"
-      },
-      "embed": {
-        "CONTENT": "Contenuto embeddato"
       }
     },
     "CHAT_SORT_BY_FILTER": {
-      "TITLE": "Ordina conversazione",
+      "TITLE": "Sort conversation",
       "DROPDOWN_TITLE": "Ordina per",
       "ITEMS": {
         "LATEST": {
-          "NAME": "Ultima attività",
-          "LABEL": "Ultima attività"
+          "NAME": "Last activity at",
+          "LABEL": "Last activity"
         },
         "CREATED_AT": {
-          "NAME": "Creata alle",
-          "LABEL": "Creata alle"
+          "NAME": "Creato il",
+          "LABEL": "Creato il"
         },
         "LAST_USER_MESSAGE_AT": {
-          "NAME": "Ultimo messaggio dell'utente alle",
-          "LABEL": "Ultimo messaggio"
+          "NAME": "Last user message at",
+          "LABEL": "Last message"
         }
       }
     },
     "RECEIVED_VIA_EMAIL": "Ricevuto via email",
     "VIEW_TWEET_IN_TWITTER": "Visualizza tweet su Twitter",
     "REPLY_TO_TWEET": "Rispondi a questo tweet",
-    "LINK_TO_STORY": "Vai alla storia di Instagram",
+    "LINK_TO_STORY": "Vai alla storia di instagram",
     "SENT": "Inviato correttamente",
-    "READ": "Letto correttamente",
-    "DELIVERED": "Consegnato correttamente",
-    "NO_MESSAGES": "Nessun Messaggio",
+    "READ": "Read successfully",
+    "DELIVERED": "Delivered successfully",
+    "NO_MESSAGES": "Nessun messaggio",
     "NO_CONTENT": "Nessun contenuto disponibile",
-    "HIDE_QUOTED_TEXT": "Nascondi Testo Citato",
-    "SHOW_QUOTED_TEXT": "Mostra Testo Citato",
-    "MESSAGE_READ": "Letto",
-    "SENDING": "Invio"
+    "HIDE_QUOTED_TEXT": "Nascondi testo citato",
+    "SHOW_QUOTED_TEXT": "Mostra testo citato",
+    "MESSAGE_READ": "Leggi"
   }
 }

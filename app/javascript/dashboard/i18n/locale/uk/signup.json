@@ -1,7 +1,6 @@
 {
   "REGISTER": {
     "TRY_WOOT": "Створити акаунт",
-    "GET_STARTED": "Get started with Chatwoot",
     "TITLE": "Реєстрація",
     "TESTIMONIAL_HEADER": "Один крок і вперед",
     "TESTIMONIAL_CONTENT": "Ви за один крок від залучення своїх клієнтів, утримання їх та пошуку нових.",
@@ -21,27 +20,22 @@
     },
     "EMAIL": {
       "LABEL": "Робоча електронна пошта",
-      "PLACEHOLDER": "Enter your work email address. E.g., bruce{'@'}wayne{'.'}enterprises",
+      "PLACEHOLDER": "Введіть робочу адресу електронної пошти. Наприклад, bruce@wayne.enterprises",
       "ERROR": "Будь ласка, введіть робочу адресу електронної пошти."
     },
     "PASSWORD": {
       "LABEL": "Пароль",
       "PLACEHOLDER": "Пароль",
       "ERROR": "Пароль занадто короткий.",
-      "IS_INVALID_PASSWORD": "Пароль повинен містити принаймні 1 велику літеру, хоча б 1 малу літеру, 1 цифру та 1 спеціальний символ.",
-      "REQUIREMENTS_LENGTH": "At least 6 characters long",
-      "REQUIREMENTS_UPPERCASE": "At least one uppercase letter",
-      "REQUIREMENTS_LOWERCASE": "At least one lowercase letter",
-      "REQUIREMENTS_NUMBER": "At least one number",
-      "REQUIREMENTS_SPECIAL": "At least one special character"
+      "IS_INVALID_PASSWORD": "Пароль повинен містити принаймні 1 велику літеру, хоча б 1 малу літеру, 1 цифру та 1 спеціальний символ."
     },
     "CONFIRM_PASSWORD": {
       "LABEL": "Підтвердити пароль",
       "PLACEHOLDER": "Підтвердити пароль",
-      "ERROR": "Паролі не збігаються."
+      "ERROR": "Пароль не підходить."
     },
     "API": {
-      "SUCCESS_MESSAGE": "Registration Successful",
+      "SUCCESS_MESSAGE": "Реєстрація пройшла успішно",
       "ERROR_MESSAGE": "Не вдалося підключитися до Woot сервера. Будь ласка, спробуйте ще раз."
     },
     "SUBMIT": "Створити акаунт",

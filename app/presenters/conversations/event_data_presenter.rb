@@ -24,14 +24,13 @@ class Conversations::EventDataPresenter < SimpleDelegator
   private
 
   def push_messages
-    [messages.where(account_id: account_id).chat.last&.push_event_data].compact
+    [messages.chat.last&.push_event_data].compact
   end
 
   def push_meta
     {
       sender: contact.push_event_data,
-      assignee: assigned_entity&.push_event_data,
-      assignee_type: assignee_type,
+      assignee: assignee&.push_event_data,
       team: team&.push_event_data,
       hmac_verified: contact_inbox&.hmac_verified
     }
@@ -41,10 +40,8 @@ class Conversations::EventDataPresenter < SimpleDelegator
     {
       agent_last_seen_at: agent_last_seen_at.to_i,
       contact_last_seen_at: contact_last_seen_at.to_i,
-      last_activity_at: last_activity_at.to_i,
       timestamp: last_activity_at.to_i,
-      created_at: created_at.to_i,
-      updated_at: updated_at.to_f
+      created_at: created_at.to_i
     }
   end
 end

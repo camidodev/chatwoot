@@ -30,9 +30,6 @@
       "is_lesser_than": "Меньше чем",
       "days_before": "x дней до"
     },
-    "ERRORS": {
-      "VALUE_REQUIRED": "Необходимо указать значение"
-    },
     "ATTRIBUTES": {
       "NAME": "Имя",
       "EMAIL": "Email",
@@ -48,8 +45,7 @@
       "CREATED_AT": "Дата создания",
       "LAST_ACTIVITY": "Последние действия",
       "REFERER_LINK": "Реферальная ссылка",
-      "BLOCKED": "Заблокирован",
-      "LABELS": "Категории"
+      "BLOCKED": "Заблокирован"
     },
     "GROUPS": {
       "STANDARD_FILTERS": "Стандартные фильтры",

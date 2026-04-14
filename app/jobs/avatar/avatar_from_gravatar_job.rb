@@ -1,5 +1,5 @@
 class Avatar::AvatarFromGravatarJob < ApplicationJob
-  queue_as :purgable
+  queue_as :low
 
   def perform(avatarable, email)
     return if GlobalConfigService.load('DISABLE_GRAVATAR', '').present?

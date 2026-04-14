@@ -35,25 +35,6 @@ module Redis::Alfred
       $alfred.with { |conn| conn.exists?(key) }
     end
 
-    # set expiry on a key in seconds
-    def expire(key, seconds)
-      $alfred.with { |conn| conn.expire(key, seconds) }
-    end
-
-    # scan keys matching a pattern
-    def scan_each(match: nil, count: 100, &)
-      $alfred.with do |conn|
-        conn.scan_each(match: match, count: count, &)
-      end
-    end
-
-    # count keys matching a pattern
-    def keys_count(pattern)
-      count = 0
-      scan_each(match: pattern) { count += 1 }
-      count
-    end
-
     # list operations
 
     def llen(key)
@@ -100,15 +81,8 @@ module Redis::Alfred
     # sorted set operations
 
     # add score and value for a key
-    # Modern Redis syntax: zadd(key, [[score, member], ...])
-    def zadd(key, score, value = nil)
-      if value.nil? && score.is_a?(Array)
-        # New syntax: score is actually an array of [score, member] pairs
-        $alfred.with { |conn| conn.zadd(key, score) }
-      else
-        # Support old syntax for backward compatibility
-        $alfred.with { |conn| conn.zadd(key, [[score, value]]) }
-      end
+    def zadd(key, score, value)
+      $alfred.with { |conn| conn.zadd(key, score, value) }
     end
 
     # get score of a value for key
@@ -116,22 +90,9 @@ module Redis::Alfred
       $alfred.with { |conn| conn.zscore(key, value) }
     end
 
-    # count members in a sorted set with scores within the given range
-    def zcount(key, min_score, max_score)
-      $alfred.with { |conn| conn.zcount(key, min_score, max_score) }
-    end
-
-    # get the number of members in a sorted set
-    def zcard(key)
-      $alfred.with { |conn| conn.zcard(key) }
-    end
-
     # get values by score
-    def zrangebyscore(key, range_start, range_end, with_scores: false, limit: nil)
-      options = {}
-      options[:with_scores] = with_scores if with_scores
-      options[:limit] = limit if limit
-      $alfred.with { |conn| conn.zrangebyscore(key, range_start, range_end, **options) }
+    def zrangebyscore(key, range_start, range_end)
+      $alfred.with { |conn| conn.zrangebyscore(key, range_start, range_end) }
     end
 
     # remove values by score

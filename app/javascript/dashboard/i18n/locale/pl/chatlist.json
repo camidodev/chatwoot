@@ -6,7 +6,6 @@
     "LIST": {
       "404": "W tej grupie nie ma aktywnych konwersacji."
     },
-    "FAILED_TO_SEND": "Failed to send",
     "TAB_HEADING": "Rozmowy",
     "MENTION_HEADING": "Wzmianki",
     "UNATTENDED_HEADING": "Nieobsługiwane",
@@ -76,9 +75,6 @@
       },
       "waiting_since_desc": {
         "TEXT": "Pending Response: Shortest first"
-      },
-      "priority_desc_created_at_asc": {
-        "TEXT": "Priority: Highest first, Created: Oldest first"
       }
     },
     "ATTACHMENTS": {
@@ -97,17 +93,8 @@
       "location": {
         "CONTENT": "Lokalizacja"
       },
-      "ig_reel": {
-        "CONTENT": "Instagram Reel"
-      },
       "fallback": {
         "CONTENT": "udostępnił adres URL"
-      },
-      "contact": {
-        "CONTENT": "Shared contact"
-      },
-      "embed": {
-        "CONTENT": "Embedded content"
       }
     },
     "CHAT_SORT_BY_FILTER": {
@@ -139,7 +126,6 @@
     "NO_CONTENT": "Brak treści",
     "HIDE_QUOTED_TEXT": "Ukryj cytat",
     "SHOW_QUOTED_TEXT": "Pokaż cytat",
-    "MESSAGE_READ": "Przeczytane",
-    "SENDING": "Sending"
+    "MESSAGE_READ": "Przeczytane"
   }
 }

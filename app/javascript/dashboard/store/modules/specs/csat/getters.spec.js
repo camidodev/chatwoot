@@ -86,19 +86,4 @@ describe('#getters', () => {
       })
     ).toEqual('50.00');
   });
-
-  it('getRatingCount', () => {
-    const state = {
-      metrics: {
-        ratingsCount: { 1: 10, 2: 20, 3: 15, 4: 3, 5: 2 },
-      },
-    };
-    expect(getters.getRatingCount(state)).toEqual({
-      1: 10,
-      2: 20,
-      3: 15,
-      4: 3,
-      5: 2,
-    });
-  });
 });

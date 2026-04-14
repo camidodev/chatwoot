@@ -1,7 +1,6 @@
 import articlesAPI from 'dashboard/api/helpCenter/articles';
-import { uploadExternalImage, uploadFile } from 'dashboard/helper/uploadHelper';
+import { uploadFile } from 'dashboard/helper/uploadHelper';
 import { throwErrorMessage } from 'dashboard/store/utils/api';
-import camelcaseKeys from 'camelcase-keys';
 
 import types from '../../mutation-types';
 export const actions = {
@@ -11,7 +10,9 @@ export const actions = {
   ) => {
     try {
       commit(types.SET_UI_FLAG, { isFetching: true });
-      const { data } = await articlesAPI.getArticles({
+      const {
+        data: { payload, meta },
+      } = await articlesAPI.getArticles({
         pageNumber,
         portalSlug,
         locale,
@@ -19,8 +20,6 @@ export const actions = {
         authorId,
         categorySlug,
       });
-      const payload = camelcaseKeys(data.payload);
-      const meta = camelcaseKeys(data.meta);
       const articleIds = payload.map(article => article.id);
       commit(types.CLEAR_ARTICLES);
       commit(types.ADD_MANY_ARTICLES, payload);
@@ -37,11 +36,12 @@ export const actions = {
   create: async ({ commit, dispatch }, { portalSlug, ...articleObj }) => {
     commit(types.SET_UI_FLAG, { isCreating: true });
     try {
-      const { data } = await articlesAPI.createArticle({
+      const {
+        data: { payload },
+      } = await articlesAPI.createArticle({
         portalSlug,
         articleObj,
       });
-      const payload = camelcaseKeys(data.payload);
       const { id: articleId } = payload;
       commit(types.ADD_ARTICLE, payload);
       commit(types.ADD_ARTICLE_ID, articleId);
@@ -58,33 +58,16 @@ export const actions = {
   show: async ({ commit }, { id, portalSlug }) => {
     commit(types.SET_UI_FLAG, { isFetching: true });
     try {
-      const { data } = await articlesAPI.getArticle({ id, portalSlug });
-      const payload = camelcaseKeys(data.payload);
+      const response = await articlesAPI.getArticle({ id, portalSlug });
+      const {
+        data: { payload },
+      } = response;
       const { id: articleId } = payload;
       commit(types.ADD_ARTICLE, payload);
       commit(types.ADD_ARTICLE_ID, articleId);
       commit(types.SET_UI_FLAG, { isFetching: false });
     } catch (error) {
       commit(types.SET_UI_FLAG, { isFetching: false });
-    }
-  },
-
-  updateAsync: async ({ commit }, { portalSlug, articleId, ...articleObj }) => {
-    commit(types.UPDATE_ARTICLE_FLAG, {
-      uiFlags: { isUpdating: true },
-      articleId,
-    });
-
-    try {
-      await articlesAPI.updateArticle({ portalSlug, articleId, articleObj });
-      return articleId;
-    } catch (error) {
-      return throwErrorMessage(error);
-    } finally {
-      commit(types.UPDATE_ARTICLE_FLAG, {
-        uiFlags: { isUpdating: false },
-        articleId,
-      });
     }
   },
 
@@ -97,12 +80,14 @@ export const actions = {
     });
 
     try {
-      const { data } = await articlesAPI.updateArticle({
+      const {
+        data: { payload },
+      } = await articlesAPI.updateArticle({
         portalSlug,
         articleId,
         articleObj,
       });
-      const payload = camelcaseKeys(data.payload);
+
       commit(types.UPDATE_ARTICLE, payload);
 
       return articleId;
@@ -115,21 +100,6 @@ export const actions = {
         },
         articleId,
       });
-    }
-  },
-
-  updateArticleMeta: async ({ commit }, { portalSlug, locale }) => {
-    try {
-      const { data } = await articlesAPI.getArticles({
-        pageNumber: 1,
-        portalSlug,
-        locale,
-      });
-      const meta = camelcaseKeys(data.meta);
-      const { currentPage, ...metaWithoutCurrentPage } = meta;
-      commit(types.SET_ARTICLES_META, metaWithoutCurrentPage);
-    } catch (error) {
-      throwErrorMessage(error);
     }
   },
 
@@ -162,22 +132,7 @@ export const actions = {
     return fileUrl;
   },
 
-  uploadExternalImage: async (_, { url }) => {
-    const { fileUrl } = await uploadExternalImage(url);
-    return fileUrl;
-  },
-
-  reorder: async (
-    { commit, state },
-    { portalSlug, categorySlug, reorderedGroup }
-  ) => {
-    // Save old positions so we can rollback on failure
-    const oldPositions = Object.keys(reorderedGroup).reduce((map, id) => {
-      map[id] = state.articles.byId[id]?.position;
-      return map;
-    }, {});
-    // Update positions in the store immediately so subsequent mutations preserve correct positions
-    commit(types.SET_ARTICLE_POSITIONS, reorderedGroup);
+  reorder: async (_, { portalSlug, categorySlug, reorderedGroup }) => {
     try {
       await articlesAPI.reorderArticles({
         portalSlug,
@@ -185,8 +140,9 @@ export const actions = {
         categorySlug,
       });
     } catch (error) {
-      commit(types.SET_ARTICLE_POSITIONS, oldPositions);
-      throw error;
+      throwErrorMessage(error);
     }
+
+    return '';
   },
 };
