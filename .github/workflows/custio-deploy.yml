@@ -9,8 +9,10 @@
 # Packages: enable "Read and write" for GITHUB_TOKEN under Workflow permissions
 # so the image can be pushed to ghcr.io/<owner>/chatwoot-custio.
 #
-# Server must have docker-compose.production.yaml + .env in DEPLOY_PATH.
-# Image is selected via CHATWOOT_DOCKER_IMAGE (set in compose).
+# Server: .env + a compose file in DEPLOY_PATH (default /root/chatwoot).
+# Uses docker-compose.production.yaml if present, else docker-compose.yaml.
+# Optional repo variable DEPLOY_COMPOSE_FILE forces a specific filename.
+# Image: set CHATWOOT_DOCKER_IMAGE in compose (this workflow exports it before up).
 #
 # Push trigger: only branch named "local" (push = build + deploy to server).
 # Manual runs: workflow_dispatch (any branch).
@@ -67,16 +69,30 @@ jobs:
           GHCR_USER: ${{ github.actor }}
           IMAGE: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           DEPLOY_PATH: ${{ vars.DEPLOY_PATH || '/root/chatwoot' }}
+          DEPLOY_COMPOSE_FILE: ${{ vars.DEPLOY_COMPOSE_FILE }}
         with:
           host: ${{ vars.DEPLOY_HOST || '204.168.133.160' }}
           username: root
           key: ${{ secrets.DEPLOY_SSH_KEY }}
-          envs: GITHUB_TOKEN,GHCR_USER,IMAGE,DEPLOY_PATH
+          envs: GITHUB_TOKEN,GHCR_USER,IMAGE,DEPLOY_PATH,DEPLOY_COMPOSE_FILE
           script: |
             set -euo pipefail
             cd "$DEPLOY_PATH"
+            COMPOSE_FILE="${DEPLOY_COMPOSE_FILE:-}"
+            if [ -z "$COMPOSE_FILE" ]; then
+              if [ -f docker-compose.production.yaml ]; then
+                COMPOSE_FILE=docker-compose.production.yaml
+              elif [ -f docker-compose.yaml ]; then
+                COMPOSE_FILE=docker-compose.yaml
+              else
+                echo "No docker-compose.production.yaml or docker-compose.yaml in $PWD" >&2
+                ls -la
+                exit 1
+              fi
+            fi
+            echo "Using compose file: $COMPOSE_FILE"
             echo "$GITHUB_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
             export CHATWOOT_DOCKER_IMAGE="$IMAGE"
-            docker compose -f docker-compose.production.yaml pull rails sidekiq
-            docker compose -f docker-compose.production.yaml up -d --no-deps rails sidekiq
+            docker compose -f "$COMPOSE_FILE" pull rails sidekiq
+            docker compose -f "$COMPOSE_FILE" up -d --no-deps rails sidekiq
             echo "Deploy complete."
