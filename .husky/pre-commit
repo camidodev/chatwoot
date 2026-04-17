@@ -1,19 +1,24 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# lint js and vue files (local bin: avoids npx fetching packages in non-interactive Git UI)
-if [ ! -f "node_modules/.bin/lint-staged" ] && [ ! -f "node_modules/.bin/lint-staged.cmd" ]; then
-  echo "husky: lint-staged is missing. Run yarn install in the repo root, then try again."
-  exit 1
-fi
-if [ -f "node_modules/.bin/lint-staged" ]; then
-  ./node_modules/.bin/lint-staged
-else
-  ./node_modules/.bin/lint-staged.cmd
+STAGED=$(git diff --cached --name-only --diff-filter=ACM)
+
+# lint-staged only when staged files match its globs (skip for .yml-only commits, etc.)
+if echo "$STAGED" | grep -qE '^app/.*\.(js|vue)$|\.scss$'; then
+  if [ ! -f "node_modules/.bin/lint-staged" ] && [ ! -f "node_modules/.bin/lint-staged.cmd" ]; then
+    echo "husky: lint-staged is missing. Run yarn install in the repo root, then try again."
+    exit 1
+  fi
+  if [ -f "node_modules/.bin/lint-staged" ]; then
+    ./node_modules/.bin/lint-staged
+  else
+    ./node_modules/.bin/lint-staged.cmd
+  fi
 fi
 
-# lint only staged ruby files
-git diff --name-only --cached | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs bundle exec rubocop --force-exclusion -a
-
-# stage rubocop changes to files
-git diff --name-only --cached | xargs git add
+# lint only staged ruby files (skip when none)
+RB=$(echo "$STAGED" | grep '\.rb$' || true)
+if [ -n "$RB" ]; then
+  echo "$RB" | xargs ls -1 2>/dev/null | xargs bundle exec rubocop --force-exclusion -a
+  echo "$RB" | xargs git add
+fi
