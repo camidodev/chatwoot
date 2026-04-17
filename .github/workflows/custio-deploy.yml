@@ -91,6 +91,13 @@ jobs:
               fi
             fi
             echo "Using compose file: $COMPOSE_FILE"
+            # Server compose often still references the old org image (403 on pull). Rewrite to this repo's GHCR image.
+            if grep -qE 'joop102030/chatwoot-custio|chatwoot/chatwoot:' "$COMPOSE_FILE" 2>/dev/null; then
+              cp -a "$COMPOSE_FILE" "${COMPOSE_FILE}.bak-$(date +%Y%m%d%H%M%S)" || true
+              sed -i "s|ghcr.io/joop102030/chatwoot-custio[^[:space:]]*|${IMAGE}|g" "$COMPOSE_FILE"
+              sed -i "s|chatwoot/chatwoot:[^[:space:]]*|${IMAGE}|g" "$COMPOSE_FILE"
+              echo "Updated image references in $COMPOSE_FILE to ${IMAGE}"
+            fi
             echo "$GITHUB_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
             export CHATWOOT_DOCKER_IMAGE="$IMAGE"
             docker compose -f "$COMPOSE_FILE" pull rails sidekiq
