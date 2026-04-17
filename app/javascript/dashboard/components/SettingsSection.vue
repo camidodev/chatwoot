@@ -1,36 +1,3 @@
-<template>
-  <div
-    class="ml-0 mr-0 flex py-8 w-full xl:w-3/4 flex-col xl:flex-row"
-    :class="{
-      'border-b border-solid border-slate-50 dark:border-slate-700/30':
-        showBorder,
-    }"
-  >
-    <div class="w-full xl:w-1/4 min-w-0 xl:max-w-[30%] pr-12">
-      <p
-        v-if="title"
-        class="text-base text-woot-500 dark:text-woot-500 mb-0 font-medium"
-      >
-        {{ title }}
-      </p>
-      <p
-        class="text-sm mb-2 text-slate-700 dark:text-slate-300 leading-5 tracking-normal mt-2"
-      >
-        <slot v-if="subTitle" name="subTitle">
-          {{ subTitle }}
-        </slot>
-      </p>
-      <p v-if="note">
-        <span class="font-semibold">{{ $t('INBOX_MGMT.NOTE') }}</span>
-        {{ note }}
-      </p>
-    </div>
-    <div class="w-full xl:w-1/2 min-w-0 xl:max-w-[50%]">
-      <slot />
-    </div>
-  </div>
-</template>
-
 <script>
 export default {
   props: {
@@ -53,3 +20,34 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div
+    class="ml-0 mr-0 py-10 w-full"
+    :class="{
+      'border-b border-solid border-[rgba(var(--slate-12),0.06)] dark:border-n-weak': showBorder,
+    }"
+  >
+    <div class="grid grid-cols-1 lg:grid-cols-8 gap-8 items-start">
+      <div class="col-span-2">
+        <p v-if="title" class="text-[1.1rem] text-n-slate-12 mb-0 font-semibold tracking-[-0.015em]">
+          {{ title }}
+        </p>
+        <p class="text-sm mb-2 text-n-slate-10 leading-6 tracking-normal mt-2 max-w-sm">
+          <slot v-if="subTitle" name="subTitle">
+            {{ subTitle }}
+          </slot>
+        </p>
+        <p v-if="note">
+          <span class="font-semibold">{{ $t('INBOX_MGMT.NOTE') }}</span>
+          {{ note }}
+        </p>
+      </div>
+      <div
+        class="col-span-6 xl:col-span-5 bg-white rounded-[24px] border border-[rgba(var(--slate-12),0.06)] px-6 py-6 shadow-[0_8px_24px_rgba(15,23,42,0.035)]"
+      >
+        <slot />
+      </div>
+    </div>
+  </div>
+</template>

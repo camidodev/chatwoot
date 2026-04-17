@@ -1,27 +1,46 @@
+<script setup>
+import Spinner from 'shared/components/Spinner.vue';
+
+defineProps({
+  header: {
+    type: String,
+    default: '',
+  },
+  isLoading: {
+    type: Boolean,
+    default: false,
+  },
+  loadingMessage: {
+    type: String,
+    default: '',
+  },
+});
+</script>
+
 <template>
   <div
-    class="metric-card flex flex-col m-2 p-4 border border-solid overflow-hidden rounded-md flex-grow shadow-sm text-slate-700 dark:text-slate-100 bg-white dark:bg-slate-800 border-slate-75 dark:border-slate-700 min-h-[10rem]"
+    class="flex flex-col m-0 px-6 py-6 rounded-[24px] flex-grow text-n-slate-12 border border-[rgba(var(--slate-12),0.06)] bg-white min-h-[10rem] shadow-[0_10px_28px_rgba(15,23,42,0.035)]"
   >
-    <div class="card-header">
+    <div
+      class="card-header grid w-full mb-6 grid-cols-[repeat(auto-fit,minmax(max-content,50%))] gap-y-3 items-start"
+    >
       <slot name="header">
-        <div class="flex items-center gap-0.5 flex-row">
-          <h5
-            class="mb-0 text-slate-800 dark:text-slate-100 font-medium text-xl"
-          >
+        <div class="flex items-center gap-2 flex-row">
+          <h5 class="mb-0 text-n-slate-12 font-semibold text-[15px] tracking-[-0.01em]">
             {{ header }}
           </h5>
           <span
-            class="flex flex-row items-center pr-2 pl-2 m-1 rounded-sm text-green-400 dark:text-green-400 text-xs bg-green-100/30 dark:bg-green-100/20"
+            class="flex flex-row items-center py-1 px-2 rounded-full bg-[rgba(var(--sage-accent),0.28)] text-xs"
           >
             <span
-              class="bg-green-500 dark:bg-green-500 h-1 w-1 rounded-full mr-1 rtl:mr-0 rtl:ml-0"
+              class="bg-n-slate-12 h-1.5 w-1.5 rounded-full mr-1 rtl:mr-0 rtl:ml-0"
             />
-            <span>
+            <span class="text-[11px] text-n-slate-12 font-medium">
               {{ $t('OVERVIEW_REPORTS.LIVE') }}
             </span>
           </span>
         </div>
-        <div class="card-header--control-area">
+        <div class="flex flex-row items-center justify-end gap-2">
           <slot name="control" />
         </div>
       </slot>
@@ -34,74 +53,12 @@
     </div>
     <div
       v-else-if="isLoading"
-      class="items-center flex text-base justify-center px-12 py-6"
+      class="items-center flex text-base justify-center gap-3 px-12 py-8 text-n-slate-10"
     >
-      <spinner />
-      <span class="text-slate-300 dark:text-slate-200">
+      <Spinner />
+      <span class="text-n-slate-10">
         {{ loadingMessage }}
       </span>
     </div>
   </div>
 </template>
-<script>
-import Spinner from 'shared/components/Spinner.vue';
-
-export default {
-  name: 'MetricCard',
-  components: {
-    Spinner,
-  },
-  props: {
-    header: {
-      type: String,
-      default: '',
-    },
-    isLoading: {
-      type: Boolean,
-      default: false,
-    },
-    loadingMessage: {
-      type: String,
-      default: '',
-    },
-  },
-};
-</script>
-<style lang="scss" scoped>
-.metric-card {
-  @apply flex flex-col mb-2 p-4 border border-solid overflow-hidden rounded-md flex-grow shadow-sm text-slate-700 dark:text-slate-100 bg-white dark:bg-slate-800 border-slate-75 dark:border-slate-700 min-h-[10rem];
-
-  .card-header--control-area {
-    transition: opacity 0.2s ease-in-out;
-    @apply opacity-20;
-  }
-
-  &:hover {
-    .card-header--control-area {
-      @apply opacity-100;
-    }
-  }
-}
-
-.card-header {
-  grid-template-columns: repeat(auto-fit, minmax(max-content, 50%));
-  gap: var(--space-small) 0px;
-  @apply grid flex-grow w-full mb-6;
-
-  .card-header--control-area {
-    @apply flex flex-row items-center justify-end gap-2;
-  }
-}
-
-.card-body {
-  .metric-content {
-    @apply pb-2;
-    .heading {
-      @apply text-base text-slate-700 dark:text-slate-100;
-    }
-    .metric {
-      @apply text-woot-800 dark:text-woot-300 text-3xl mb-0 mt-1;
-    }
-  }
-}
-</style>

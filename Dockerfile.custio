@@ -1,0 +1,27 @@
+# Custio: production Chatwoot image + branded UI overlay + asset rebuild.
+# Requires: bash scripts/prepare_custio_docker_overlay.sh (populates docker/custio_overlay/)
+#
+# Override base if needed:
+#   docker build -f Dockerfile.custio --build-arg CUSTIO_BASE_IMAGE=chatwoot/chatwoot:v4.12.0 .
+ARG CUSTIO_BASE_IMAGE=chatwoot/chatwoot:latest
+FROM ${CUSTIO_BASE_IMAGE}
+
+ENV RAILS_ENV=production \
+    NODE_ENV=production \
+    INSTALLATION_ENV=docker \
+    NODE_OPTIONS=--openssl-legacy-provider
+
+WORKDIR /app
+
+COPY docker/custio_overlay/ ./
+
+USER root
+
+# Runtime image normally omits Node; add it to recompile packs after overlay.
+RUN apk add --no-cache nodejs-current yarn python3 git build-base \
+  && yarn install --frozen-lockfile 2>/dev/null || yarn install \
+  && SECRET_KEY_BASE=precompile_placeholder RAILS_LOG_TO_STDOUT=enabled bundle exec rake assets:precompile \
+  && rm -rf node_modules tmp/cache /tmp/* \
+  && apk del yarn python3 git build-base || true
+
+EXPOSE 3000

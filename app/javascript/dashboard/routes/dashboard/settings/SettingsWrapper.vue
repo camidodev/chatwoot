@@ -1,21 +1,27 @@
 <script setup>
+import { useRoute } from 'vue-router';
+
 defineProps({
   keepAlive: {
     type: Boolean,
     default: true,
   },
 });
+
+const route = useRoute();
 </script>
 
 <template>
   <div
-    class="flex flex-col w-full h-full px-5 pt-8 pb-3 m-0 overflow-auto bg-white sm:px-16 sm:pt-16 dark:bg-slate-900"
+    class="flex flex-col w-full h-full m-0 px-10 pt-10 pb-12 overflow-auto bg-[rgb(var(--sand-accent))]"
   >
-    <div class="flex items-start max-w-[900px] w-full">
-      <keep-alive v-if="keepAlive">
-        <router-view />
-      </keep-alive>
-      <router-view v-else />
+    <div class="flex items-start w-full max-w-[112rem] mx-auto">
+      <router-view v-slot="{ Component }">
+        <keep-alive v-if="keepAlive">
+          <component :is="Component" :key="route.fullPath" />
+        </keep-alive>
+        <component :is="Component" v-else :key="route.fullPath" />
+      </router-view>
     </div>
   </div>
 </template>
