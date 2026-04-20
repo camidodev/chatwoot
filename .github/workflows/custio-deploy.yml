@@ -1,0 +1,178 @@
+# Build Custio Docker image (GHCR) and rolling-restart Rails + Sidekiq on Hetzner.
+#
+# Repo secrets (Settings → Secrets and variables → Actions):
+#   DEPLOY_SSH_KEY     — private key for SSH (e.g. root@204.168.133.160)
+#   DEPLOY_HOST        — optional repository variable (Settings → Variables); default 204.168.133.160
+#   DEPLOY_USER        — optional secret; default root
+#   DEPLOY_PATH        — optional variable; default /root/chatwoot
+#   GHCR_PULL_TOKEN    — optional PAT with read:packages; use if server pull is denied with GITHUB_TOKEN
+#
+# Packages: enable "Read and write" for GITHUB_TOKEN under Workflow permissions
+# so the image can be pushed to ghcr.io/<owner>/chatwoot-custio.
+#
+# Server: only needs a `.env` in DEPLOY_PATH (default /root/chatwoot).
+# This workflow uploads docker-compose.production.yaml from the repo as
+#   docker-compose.deploy.yml on the server, then runs everything with that file.
+# That way the server cannot drift / keep an old compose with bind-mounts or stale
+# `packs` volumes that mask the new image.
+# Image: pinned to ghcr.io/<owner>/chatwoot-custio:<github.sha> for each deploy.
+#
+# Push trigger: only branch named "dev-local" (push = build + deploy to server).
+# Manual runs: workflow_dispatch (any branch).
+
+name: Custio build & deploy
+
+on:
+  push:
+    branches:
+      - dev-local
+  workflow_dispatch:
+    inputs:
+      wipe_data:
+        description: "DANGER: wipe Postgres + storage on the server before deploy (fresh install)"
+        required: false
+        default: "false"
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository_owner }}/chatwoot-custio
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Build from the FULL repo using Chatwoot's official multi-stage Dockerfile.
+      # This guarantees `/app` and the precompiled assets reflect this commit
+      # (no overlay drift, no mix of base-image source vs repo source).
+      # Notes:
+      # - RAILS_ENV defaults to "production" in docker/Dockerfile, no override needed.
+      # - NODE_OPTIONS defaults to "--max-old-space-size=4096 --openssl-legacy-provider"
+      #   in docker/Dockerfile; do NOT override or the asset build can OOM on large bundles.
+      # - Build manager is pnpm (Node 24, Ruby 3.4); pnpm-lock.yaml ships in repo.
+      - name: Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/Dockerfile
+          push: true
+          pull: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+
+      - name: Upload compose file to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ vars.DEPLOY_HOST || '204.168.133.160' }}
+          username: root
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          source: docker-compose.production.yaml
+          target: ${{ vars.DEPLOY_PATH || '/root/chatwoot' }}
+          strip_components: 0
+          overwrite: true
+
+      - name: Deploy to production server
+        uses: appleboy/ssh-action@v1.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GHCR_PULL_TOKEN: ${{ secrets.GHCR_PULL_TOKEN }}
+          GHCR_USER: ${{ github.actor }}
+          IMAGE_REF: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          IMAGE_LATEST: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          DEPLOY_PATH: ${{ vars.DEPLOY_PATH || '/root/chatwoot' }}
+          WIPE_DATA: ${{ github.event.inputs.wipe_data }}
+        with:
+          host: ${{ vars.DEPLOY_HOST || '204.168.133.160' }}
+          username: root
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          envs: GITHUB_TOKEN,GHCR_PULL_TOKEN,GHCR_USER,IMAGE_REF,IMAGE_LATEST,DEPLOY_PATH,WIPE_DATA
+          script: |
+            set -euo pipefail
+            cd "$DEPLOY_PATH"
+
+            # Canonical compose file uploaded from the repo this run.
+            COMPOSE_FILE=docker-compose.deploy.yml
+            mv -f docker-compose.production.yaml "$COMPOSE_FILE"
+
+            echo "==> Using compose: $COMPOSE_FILE"
+            echo "==> Deploy image:  $IMAGE_REF"
+
+            # GHCR auth (PAT if provided, else workflow token).
+            if [ -n "${GHCR_PULL_TOKEN:-}" ]; then
+              echo "$GHCR_PULL_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+            else
+              echo "$GITHUB_TOKEN"   | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+            fi
+
+            # Per-deploy override that pins the exact image SHA.
+            export CHATWOOT_DOCKER_IMAGE="$IMAGE_REF"
+            OVERRIDE=docker-compose.deploy.override.yml
+            printf '%s\n' \
+              'services:' \
+              '  rails:' \
+              "    image: ${IMAGE_REF}" \
+              '  sidekiq:' \
+              "    image: ${IMAGE_REF}" \
+              > "$OVERRIDE"
+
+            # Stop / remove any containers from a previous compose project name
+            # (e.g. chatwoot from docker-compose.yaml) so they don't shadow ours.
+            for legacy in docker-compose.production.yaml docker-compose.yaml; do
+              if [ -f "$legacy" ] && [ "$legacy" != "$COMPOSE_FILE" ]; then
+                echo "==> Stopping legacy stack from $legacy"
+                docker compose -f "$legacy" down --remove-orphans || true
+                mv -f "$legacy" "${legacy}.bak-$(date +%Y%m%d%H%M%S)" || true
+              fi
+            done
+
+            # Drop stale named volumes that mask new image assets (Webpack/Vite output, node_modules).
+            for vol in $(docker volume ls --format '{{.Name}}' | grep -E '_(packs|node_modules|cache|bundle)$' || true); do
+              echo "==> Removing stale asset volume: $vol"
+              docker volume rm -f "$vol" || true
+            done
+
+            # Optional fresh-install: wipe Postgres + storage volumes (DESTRUCTIVE).
+            # Triggered only via workflow_dispatch with wipe_data=true.
+            if [ "${WIPE_DATA:-false}" = "true" ]; then
+              echo "==> WIPE_DATA=true — removing app containers + data volumes"
+              docker compose -f "$COMPOSE_FILE" down --remove-orphans --volumes || true
+              for vol in $(docker volume ls --format '{{.Name}}' | grep -E '_(postgres_data|storage_data|redis_data)$' || true); do
+                echo "==> Removing data volume: $vol"
+                docker volume rm -f "$vol" || true
+              done
+            fi
+
+            docker compose -f "$COMPOSE_FILE" up -d postgres redis
+            docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" pull rails sidekiq
+
+            if [ "${WIPE_DATA:-false}" = "true" ]; then
+              echo "==> Bootstrapping fresh database (db:chatwoot_prepare)"
+              docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" run --rm --no-deps rails bundle exec rails db:chatwoot_prepare
+            else
+              docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" run --rm --no-deps rails bundle exec rails db:migrate
+            fi
+
+            docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" up -d --force-recreate --no-deps rails sidekiq
+
+            echo "==> Final state:"
+            docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" ps
+            docker image inspect "$IMAGE_REF" --format '{{.RepoDigests}} created={{.Created}}'
+            echo "Deploy complete."
