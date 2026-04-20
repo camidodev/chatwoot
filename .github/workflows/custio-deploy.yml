@@ -10,11 +10,12 @@
 # Packages: enable "Read and write" for GITHUB_TOKEN under Workflow permissions
 # so the image can be pushed to ghcr.io/<owner>/chatwoot-custio.
 #
-# Server: .env + a compose file in DEPLOY_PATH (default /root/chatwoot).
-# Uses docker-compose.production.yaml if present, else docker-compose.yaml.
-# Optional repo variable DEPLOY_COMPOSE_FILE forces a specific filename.
-# Image: deploy pins ghcr.io/<owner>/chatwoot-custio:<github.sha> via a generated compose override
-# (no manual docker pull / login on the server).
+# Server: only needs a `.env` in DEPLOY_PATH (default /root/chatwoot).
+# This workflow uploads docker-compose.production.yaml from the repo as
+#   docker-compose.deploy.yml on the server, then runs everything with that file.
+# That way the server cannot drift / keep an old compose with bind-mounts or stale
+# `packs` volumes that mask the new image.
+# Image: pinned to ghcr.io/<owner>/chatwoot-custio:<github.sha> for each deploy.
 #
 # Push trigger: only branch named "local" (push = build + deploy to server).
 # Manual runs: workflow_dispatch (any branch).
@@ -67,52 +68,50 @@ jobs:
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
+      - name: Upload compose file to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ vars.DEPLOY_HOST || '204.168.133.160' }}
+          username: root
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          source: docker-compose.production.yaml
+          target: ${{ vars.DEPLOY_PATH || '/root/chatwoot' }}
+          strip_components: 0
+          overwrite: true
+
       - name: Deploy to production server
         uses: appleboy/ssh-action@v1.2.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GHCR_PULL_TOKEN: ${{ secrets.GHCR_PULL_TOKEN }}
           GHCR_USER: ${{ github.actor }}
-          # Immutable tag for this commit (already pushed); avoids :latest drift and manual pulls.
           IMAGE_REF: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           IMAGE_LATEST: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           DEPLOY_PATH: ${{ vars.DEPLOY_PATH || '/root/chatwoot' }}
-          DEPLOY_COMPOSE_FILE: ${{ vars.DEPLOY_COMPOSE_FILE }}
         with:
           host: ${{ vars.DEPLOY_HOST || '204.168.133.160' }}
           username: root
           key: ${{ secrets.DEPLOY_SSH_KEY }}
-          envs: GITHUB_TOKEN,GHCR_PULL_TOKEN,GHCR_USER,IMAGE_REF,IMAGE_LATEST,DEPLOY_PATH,DEPLOY_COMPOSE_FILE
+          envs: GITHUB_TOKEN,GHCR_PULL_TOKEN,GHCR_USER,IMAGE_REF,IMAGE_LATEST,DEPLOY_PATH
           script: |
             set -euo pipefail
             cd "$DEPLOY_PATH"
-            COMPOSE_FILE="${DEPLOY_COMPOSE_FILE:-}"
-            if [ -z "$COMPOSE_FILE" ]; then
-              if [ -f docker-compose.production.yaml ]; then
-                COMPOSE_FILE=docker-compose.production.yaml
-              elif [ -f docker-compose.yaml ]; then
-                COMPOSE_FILE=docker-compose.yaml
-              else
-                echo "No docker-compose.production.yaml or docker-compose.yaml in $PWD" >&2
-                ls -la
-                exit 1
-              fi
-            fi
-            echo "Using compose file: $COMPOSE_FILE"
-            echo "Deploy image: ${IMAGE_REF}"
-            # One-time fix: server compose still references old org image (403 on pull).
-            if grep -qE 'joop102030/chatwoot-custio|chatwoot/chatwoot:' "$COMPOSE_FILE" 2>/dev/null; then
-              cp -a "$COMPOSE_FILE" "${COMPOSE_FILE}.bak-$(date +%Y%m%d%H%M%S)" || true
-              sed -i "s|ghcr.io/joop102030/chatwoot-custio[^[:space:]]*|${IMAGE_LATEST}|g" "$COMPOSE_FILE"
-              sed -i "s|chatwoot/chatwoot:[^[:space:]]*|${IMAGE_LATEST}|g" "$COMPOSE_FILE"
-              echo "Updated legacy image references in $COMPOSE_FILE"
-            fi
-            # Prefer dedicated PAT for pulls if the default token is denied (private GHCR, org policy, etc.).
+
+            # Canonical compose file uploaded from the repo this run.
+            COMPOSE_FILE=docker-compose.deploy.yml
+            mv -f docker-compose.production.yaml "$COMPOSE_FILE"
+
+            echo "==> Using compose: $COMPOSE_FILE"
+            echo "==> Deploy image:  $IMAGE_REF"
+
+            # GHCR auth (PAT if provided, else workflow token).
             if [ -n "${GHCR_PULL_TOKEN:-}" ]; then
               echo "$GHCR_PULL_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
             else
-              echo "$GITHUB_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+              echo "$GITHUB_TOKEN"   | docker login ghcr.io -u "$GHCR_USER" --password-stdin
             fi
+
+            # Per-deploy override that pins the exact image SHA.
             export CHATWOOT_DOCKER_IMAGE="$IMAGE_REF"
             OVERRIDE=docker-compose.deploy.override.yml
             printf '%s\n' \
@@ -122,8 +121,29 @@ jobs:
               '  sidekiq:' \
               "    image: ${IMAGE_REF}" \
               > "$OVERRIDE"
+
+            # Stop / remove any containers from a previous compose project name
+            # (e.g. chatwoot from docker-compose.yaml) so they don't shadow ours.
+            for legacy in docker-compose.production.yaml docker-compose.yaml; do
+              if [ -f "$legacy" ] && [ "$legacy" != "$COMPOSE_FILE" ]; then
+                echo "==> Stopping legacy stack from $legacy"
+                docker compose -f "$legacy" down --remove-orphans || true
+                mv -f "$legacy" "${legacy}.bak-$(date +%Y%m%d%H%M%S)" || true
+              fi
+            done
+
+            # Drop stale named volumes that mask new image assets (Webpack/Vite output, node_modules).
+            for vol in $(docker volume ls --format '{{.Name}}' | grep -E '_(packs|node_modules|cache|bundle)$' || true); do
+              echo "==> Removing stale asset volume: $vol"
+              docker volume rm -f "$vol" || true
+            done
+
             docker compose -f "$COMPOSE_FILE" up -d postgres redis
             docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" pull rails sidekiq
-            docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" up -d --no-deps rails sidekiq
+            docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" up -d --force-recreate --no-deps rails sidekiq
             docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" run --rm --no-deps rails bundle exec rails db:migrate
+
+            echo "==> Final state:"
+            docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" ps
+            docker image inspect "$IMAGE_REF" --format '{{.RepoDigests}} created={{.Created}}'
             echo "Deploy complete."
