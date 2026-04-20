@@ -27,6 +27,11 @@ on:
     branches:
       - local
   workflow_dispatch:
+    inputs:
+      wipe_data:
+        description: "DANGER: wipe Postgres + storage on the server before deploy (fresh install)"
+        required: false
+        default: "false"
 
 env:
   REGISTRY: ghcr.io
@@ -42,9 +47,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Prepare Custio Docker overlay
-        run: bash scripts/prepare_custio_docker_overlay.sh
-
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -55,15 +57,21 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      # Build from the FULL repo using Chatwoot's official multi-stage Dockerfile.
+      # This guarantees `/app` and the precompiled `/app/public/packs/*` reflect this commit
+      # (no overlay drift, no mix of base-image source vs repo source).
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: Dockerfile.custio
+          file: docker/Dockerfile
           push: true
           pull: true
           build-args: |
-            GIT_COMMIT=${{ github.sha }}
+            RAILS_ENV=production
+            NODE_OPTIONS=--openssl-legacy-provider
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
@@ -88,11 +96,12 @@ jobs:
           IMAGE_REF: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           IMAGE_LATEST: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           DEPLOY_PATH: ${{ vars.DEPLOY_PATH || '/root/chatwoot' }}
+          WIPE_DATA: ${{ github.event.inputs.wipe_data }}
         with:
           host: ${{ vars.DEPLOY_HOST || '204.168.133.160' }}
           username: root
           key: ${{ secrets.DEPLOY_SSH_KEY }}
-          envs: GITHUB_TOKEN,GHCR_PULL_TOKEN,GHCR_USER,IMAGE_REF,IMAGE_LATEST,DEPLOY_PATH
+          envs: GITHUB_TOKEN,GHCR_PULL_TOKEN,GHCR_USER,IMAGE_REF,IMAGE_LATEST,DEPLOY_PATH,WIPE_DATA
           script: |
             set -euo pipefail
             cd "$DEPLOY_PATH"
@@ -138,10 +147,28 @@ jobs:
               docker volume rm -f "$vol" || true
             done
 
+            # Optional fresh-install: wipe Postgres + storage volumes (DESTRUCTIVE).
+            # Triggered only via workflow_dispatch with wipe_data=true.
+            if [ "${WIPE_DATA:-false}" = "true" ]; then
+              echo "==> WIPE_DATA=true — removing app containers + data volumes"
+              docker compose -f "$COMPOSE_FILE" down --remove-orphans --volumes || true
+              for vol in $(docker volume ls --format '{{.Name}}' | grep -E '_(postgres_data|storage_data|redis_data)$' || true); do
+                echo "==> Removing data volume: $vol"
+                docker volume rm -f "$vol" || true
+              done
+            fi
+
             docker compose -f "$COMPOSE_FILE" up -d postgres redis
             docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" pull rails sidekiq
+
+            if [ "${WIPE_DATA:-false}" = "true" ]; then
+              echo "==> Bootstrapping fresh database (db:chatwoot_prepare)"
+              docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" run --rm --no-deps rails bundle exec rails db:chatwoot_prepare
+            else
+              docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" run --rm --no-deps rails bundle exec rails db:migrate
+            fi
+
             docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" up -d --force-recreate --no-deps rails sidekiq
-            docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" run --rm --no-deps rails bundle exec rails db:migrate
 
             echo "==> Final state:"
             docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" ps

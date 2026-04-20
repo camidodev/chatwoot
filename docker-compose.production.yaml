@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   base: &base
     image: ${CHATWOOT_DOCKER_IMAGE:-chatwoot/chatwoot:latest}
