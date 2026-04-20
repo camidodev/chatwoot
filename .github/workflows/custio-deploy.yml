@@ -60,6 +60,9 @@ jobs:
           context: .
           file: Dockerfile.custio
           push: true
+          pull: true
+          build-args: |
+            GIT_COMMIT=${{ github.sha }}
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}

@@ -1,11 +1,23 @@
+const fs = require('fs');
+const path = require('path');
+
+const extendsList = [
+  'airbnb-base/legacy',
+  'prettier',
+  'plugin:vue/recommended',
+];
+// Optional: Windows/Cursor sometimes has an incomplete node_modules; CI has full install.
+if (
+  fs.existsSync(
+    path.join(__dirname, 'node_modules', 'eslint-plugin-storybook', 'package.json')
+  )
+) {
+  extendsList.push('plugin:storybook/recommended');
+}
+extendsList.push('plugin:cypress/recommended');
+
 module.exports = {
-  extends: [
-    'airbnb-base/legacy',
-    'prettier',
-    'plugin:vue/recommended',
-    'plugin:storybook/recommended',
-    'plugin:cypress/recommended',
-  ],
+  extends: extendsList,
   parserOptions: {
     parser: '@babel/eslint-parser',
     ecmaVersion: 2020,

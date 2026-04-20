@@ -25,11 +25,13 @@ const hasAnUpdateAvailable = computed(() => {
 });
 
 const gitSha = computed(() => {
-  return globalConfig.value.gitSha.substring(0, 7);
+  const raw = globalConfig.value.gitSha || '';
+  return raw.length >= 7 ? raw.substring(0, 7) : raw || '—';
 });
 
 const copyGitSha = () => {
-  copyTextToClipboard(globalConfig.value.gitSha);
+  const raw = globalConfig.value.gitSha || '';
+  if (raw) copyTextToClipboard(raw);
 };
 </script>
 

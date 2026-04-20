@@ -15,6 +15,10 @@ WORKDIR /app
 
 COPY docker/custio_overlay/ ./
 
+# config/initializers/git_sha.rb reads this when .git is absent (production images).
+ARG GIT_COMMIT=unknown
+RUN printf '%s' "$GIT_COMMIT" > /app/.git_sha
+
 USER root
 
 # Runtime image normally omits Node; add it to recompile packs after overlay.

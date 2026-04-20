@@ -5,6 +5,7 @@ services:
     image: ${CHATWOOT_DOCKER_IMAGE:-chatwoot/chatwoot:latest}
     env_file: .env ## Change this file for customized env variables
     volumes:
+      # Only storage here — do not mount /app/public/packs or the repo over /app or you will keep stale JS/CSS from an old image.
       - storage_data:/app/storage
 
   rails:

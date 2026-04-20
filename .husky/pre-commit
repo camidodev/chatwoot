@@ -5,14 +5,17 @@ STAGED=$(git diff --cached --name-only --diff-filter=ACM)
 
 # lint-staged only when staged files match its globs (skip for .yml-only commits, etc.)
 if echo "$STAGED" | grep -qE '^app/.*\.(js|vue)$|\.scss$'; then
-  if [ ! -f "node_modules/.bin/lint-staged" ] && [ ! -f "node_modules/.bin/lint-staged.cmd" ]; then
-    echo "husky: lint-staged is missing. Run yarn install in the repo root, then try again."
-    exit 1
-  fi
-  if [ -f "node_modules/.bin/lint-staged" ]; then
-    ./node_modules/.bin/lint-staged
+  if [ -f "node_modules/.bin/lint-staged" ] || [ -f "node_modules/.bin/lint-staged.cmd" ]; then
+    # --no-stash: avoid "Backing up original state..." (git stash) which often hangs
+    # or errors under Cursor/Windows when committing from the UI.
+    # CI=true: plainer task output (fewer ANSI escape codes in the Git error dialog).
+    if [ -f "node_modules/.bin/lint-staged" ]; then
+      CI=true ./node_modules/.bin/lint-staged --no-stash
+    else
+      CI=true ./node_modules/.bin/lint-staged.cmd --no-stash
+    fi
   else
-    ./node_modules/.bin/lint-staged.cmd
+    echo "husky: lint-staged not found — skipping JS/SCSS pre-commit. Run yarn install for local lint."
   fi
 fi
 
