@@ -167,3 +167,11 @@ export default {
   display: none;
 }
 </style>
+<!--
+  Custom dashboard overrides live in their OWN style block so Vite HMR
+  only recompiles `_custom.scss` (and not Tailwind + `_woot.scss`) on save.
+  This keeps SCSS edits near-instant in the browser.
+-->
+<style lang="scss">
+@import './assets/scss/custom';
+</style>

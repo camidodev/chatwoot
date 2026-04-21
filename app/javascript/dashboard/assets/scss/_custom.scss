@@ -1,0 +1,165 @@
+// =============================================================================
+// CUSTOM STYLES
+// =============================================================================
+// Source of truth for all custom UI overrides for the Chatwoot dashboard.
+//
+// HOW IT WORKS
+// ------------
+// This file is imported as its OWN top-level <style> block in
+// `app/javascript/dashboard/App.vue`:
+//
+//     <style lang="scss" src="./assets/scss/_custom.scss"></style>
+//
+// Keeping it isolated from `app.scss` (which pulls in Tailwind + `_woot.scss`)
+// means Vite HMR only recompiles this small file on save, so changes appear
+// in the browser almost instantly — even in Docker on Windows.
+//
+// Because it loads AFTER the main app stylesheet, any rule with equal-or-higher
+// specificity declared here will override the default Chatwoot styles.
+//
+// Replaces the old runtime overrides previously injected by
+// `public/custom-theme.css` + `public/custom-theme.js`.
+//
+// CONVENTIONS
+// -----------
+// 1. Use the Sass variables below for palette values — never hard-code hex
+//    codes inside selectors.
+// 2. Wrap everything inside the `#app` scope (already done at the bottom of
+//    this file) so widget / portal / super-admin pages stay untouched.
+// 3. Put dark-mode tweaks under the `.dark &` block.
+// =============================================================================
+
+
+// -----------------------------------------------------------------------------
+// 1. Theme palette
+// -----------------------------------------------------------------------------
+$custom-bg-cream:     #f4f0e7;
+$custom-bg-card:      #fff;
+$custom-fg-strong:    #222;
+$custom-border-muted: #9f9b98;
+
+$custom-radius-sm:    12px;
+$custom-radius-md:    16px;
+$custom-radius-lg:    20px;
+
+$custom-pad-card:     12px;
+$custom-pad-shell:    13px;
+$custom-pad-main:     16px;
+
+
+// -----------------------------------------------------------------------------
+// 2. Dashboard overrides (scoped to #app to avoid leaking)
+// -----------------------------------------------------------------------------
+#app {
+
+  // Dashboard background
+  > div.bg-n-background,
+  aside.bg-n-background {
+    background-color: $custom-bg-cream;
+  }
+
+  // -- Sidebar shell ----------------------------------------------------------
+  aside.bg-n-background {
+    border-width: 0;
+    padding: $custom-pad-shell;
+
+    > section:nth-child(1) {
+
+      // Account / brand card at the top of the sidebar
+      > div:first-child {
+        background-color: $custom-bg-card;
+        padding: $custom-pad-card;
+        border-radius: $custom-radius-sm;
+
+        > div:nth-child(1) {
+          padding: 2px;
+          box-sizing: content-box;
+        }
+      }
+
+      // Action row (avatar + primary action button)
+      > div:last-child {
+        > a {
+          padding: 5px 14px;
+          border-radius: $custom-radius-lg;
+          border: 1px solid $custom-fg-strong;
+          box-sizing: content-box;
+        }
+
+        > div button {
+          padding: 6px;
+          background-color: $custom-fg-strong;
+          box-sizing: content-box;
+          border-radius: 35px;
+
+          span {
+            background-color: $custom-bg-card;
+          }
+        }
+      }
+    }
+
+    // Secondary navigation panel
+    > section:nth-child(3) {
+      border-radius: $custom-radius-md;
+      background-color: $custom-bg-card;
+      padding: 2px 6px;
+
+      .from-n-background {
+        background: $custom-bg-cream;
+      }
+
+      .border-n-weak {
+        border-width: 0;
+      }
+    }
+  }
+
+  // -- Main content area ------------------------------------------------------
+  main.bg-n-surface-1 {
+    padding: $custom-pad-main;
+    background: transparent;
+
+    > section.flex {
+      gap: $custom-pad-main;
+    }
+  }
+
+  // -- Conversations list -----------------------------------------------------
+  .conversations-list-wrap {
+    border: 1px solid $custom-border-muted;
+    border-radius: $custom-radius-lg;
+
+    > div {
+      padding: 0 $custom-pad-main;
+
+      .bg-n-background {
+        background-color: transparent;
+      }
+    }
+
+    > div:nth-child(1) {
+      border-bottom: 1px solid $custom-fg-strong;
+    }
+  }
+
+  // -- Conversation details panel --------------------------------------------
+  .conversation-details-wrap {
+    overflow: hidden;
+    border: 1px solid $custom-border-muted;
+    border-radius: $custom-radius-lg;
+
+    > div:nth-child(1) {
+      padding: 18px !important;
+      height: auto;
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // 3. Dark mode overrides
+  // ---------------------------------------------------------------------------
+  // Chatwoot toggles a `.dark` class on <html>. Use the `.dark &` parent
+  // selector to scope dark-mode tweaks. Add rules below as needed.
+  // .dark & { ... }
+}
