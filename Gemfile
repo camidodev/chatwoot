@@ -228,8 +228,8 @@ group :development do
   # When we want to squash migrations
   gem 'squasher'
 
-  # profiling
-  gem 'rack-mini-profiler', '>= 3.2.0', require: false
+  # profiling (4.0.1+ fixes Rack 3: Rack::File removed → Rack::Files)
+  gem 'rack-mini-profiler', '>= 4.0.1', require: false
   gem 'stackprof'
   # Should install the associated chrome extension to view query logs
   gem 'meta_request', '>= 0.8.3'

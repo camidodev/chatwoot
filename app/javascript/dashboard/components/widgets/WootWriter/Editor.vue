@@ -929,7 +929,7 @@ useEmitter(BUS_EVENTS.INSERT_INTO_RICH_EDITOR, insertContentIntoEditor);
     @apply items-center gap-4 flex pb-0 bg-transparent text-n-slate-11 relative ltr:-left-[3px] rtl:-right-[3px];
 
     .ProseMirror-menu-active {
-      @apply bg-n-slate-5 dark:bg-n-solid-3 !important;
+      @apply bg-n-slate-5 dark:bg-n-solid-3;
     }
 
     .ProseMirror-menuitem {
@@ -992,7 +992,7 @@ useEmitter(BUS_EVENTS.INSERT_INTO_RICH_EDITOR, insertContentIntoEditor);
 }
 
 .ProseMirror-prompt {
-  @apply bg-n-alpha-3 border border-n-strong p-6 shadow-xl rounded-xl w-96 !important;
+  @apply bg-n-alpha-3 border border-n-strong p-6 shadow-xl rounded-xl w-96;
 
   h5 {
     @apply text-n-slate-12 mb-3;
@@ -1079,7 +1079,7 @@ useEmitter(BUS_EVENTS.INSERT_INTO_RICH_EDITOR, insertContentIntoEditor);
     }
 
     .ProseMirror-menubar {
-      @apply rounded-lg !px-3 !py-1.5 z-50 bg-n-background items-center gap-4 ml-0 mb-0 shadow-md outline outline-1 outline-n-weak;
+      @apply rounded-lg px-3 py-1.5 z-50 bg-n-background items-center gap-4 ml-0 mb-0 shadow-md outline outline-1 outline-n-weak;
       display: flex;
       width: fit-content !important;
       position: absolute !important;

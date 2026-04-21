@@ -17,6 +17,6 @@ export default {
 
 <style lang="scss">
 kbd.hotkey {
-  @apply inline-flex leading-[0.625rem] rounded tracking-wide flex-shrink-0 items-center select-none justify-center;
+  @apply inline-flex leading-[0.625rem] rounded  tracking-wide flex-shrink-0 items-center select-none justify-center;
 }
 </style>

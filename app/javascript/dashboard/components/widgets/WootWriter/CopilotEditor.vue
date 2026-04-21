@@ -242,7 +242,7 @@ onMounted(() => {
     min-height: 5rem;
     max-height: 7.5rem !important;
     overflow: auto;
-    @apply px-2 !important;
+    @apply px-2;
 
     .empty-node {
       &::before {

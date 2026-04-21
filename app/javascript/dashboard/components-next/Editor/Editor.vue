@@ -146,11 +146,11 @@ watch(
     .ProseMirror-menubar-wrapper {
       .ProseMirror.ProseMirror-woot-style {
         p {
-          @apply first:mt-0 !important;
+          @apply first:mt-0;
         }
 
         .empty-node {
-          @apply m-0 !important;
+          @apply m-0;
 
           &::before {
             @apply text-n-slate-11 dark:text-n-slate-11;
@@ -162,7 +162,7 @@ watch(
         width: fit-content !important;
         position: relative !important;
         top: unset !important;
-        @apply ltr:left-[-0.188rem] rtl:right-[-0.188rem] !important;
+        @apply ltr:left-[-0.188rem] rtl:right-[-0.188rem];
       }
     }
   }
