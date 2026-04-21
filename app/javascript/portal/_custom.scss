@@ -1,0 +1,325 @@
+// =============================================================================
+// PORTAL (Help Center) CUSTOM STYLES
+// =============================================================================
+// Source of truth for all custom UI overrides for the public portal pages
+// (everything served under /hc/*).
+//
+// HOW IT WORKS
+// ------------
+// Imported once from `app/javascript/portal/application.scss`. After that
+// initial wiring, ALL portal design work belongs in this file — do not edit
+// `application.scss`, the layout (`portal.html.erb`), or the ERB partials.
+//
+// Save this file → Vite recompiles → browser refreshes (Turbolinks) and the
+// new styles apply.
+//
+// PORTAL DATA vs STYLING
+// ----------------------
+// Some pieces of the design are NOT styling — they live in portal settings:
+//   • Brand name + triangle logo  → admin: Help Center → Portal Logo & Name
+//   • "How can we help you today?" headline → Header Text
+//   • Sub-title under the headline → Sub-title
+//   • Language pill (e.g. Swedish) → Locale set in portal config
+//   • Contact / Instagram buttons  → Homepage Link
+// =============================================================================
+
+
+// -----------------------------------------------------------------------------
+// 1. Theme palette
+// -----------------------------------------------------------------------------
+$portal-bg-page:     #faf6ef; // soft cream page background
+$portal-bg-hero:     #f6cfcd; // pink hero band
+$portal-bg-card:     #ffffff; // white card surface
+$portal-border:      #e7e2db; // soft warm border
+$portal-text-strong: #1a1a1a; // headlines
+$portal-text-soft:   #6b6b6b; // body / meta text
+
+$portal-radius-card:  16px;
+$portal-radius-pill:  999px;
+$portal-card-padding: 24px;
+$portal-card-shadow:  0 1px 2px rgba(0, 0, 0, 0.03);
+
+
+// -----------------------------------------------------------------------------
+// 2. Page chrome (body + header)
+// -----------------------------------------------------------------------------
+// #portal background is left to the surrounding layout (cream is applied
+// via dark-mode-aware rules below). Re-enable the lines if you want to
+// force the cream tone in light mode regardless of theme settings.
+// #portal { background-color: $portal-bg-page; }
+// #portal main.main-content { background-color: $portal-bg-page !important; }
+
+#portal header {
+  box-shadow: none !important;
+  border-bottom: 0;
+}
+#portal header nav div:nth-child(1) {
+  padding: 6px 0;
+}
+
+
+// -----------------------------------------------------------------------------
+// 3. Hero band
+// -----------------------------------------------------------------------------
+// `#portal-bg` is set by an inline <style> tag in portal.html.erb that uses
+// the dynamic portal color. We override with !important to lock in the
+// pink theme regardless of the portal color setting.
+#portal #portal-bg {
+  background: $portal-bg-hero !important;
+  box-shadow: none !important;
+}
+
+#portal #portal-bg-gradient {
+  background-image: none !important;
+
+  // Center the hero content (default layout aligns to the start).
+  > div {
+    align-items: center !important;
+    text-align: center;
+  }
+
+  h1 {
+    color: $portal-text-strong !important;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  p {
+    color: $portal-text-soft !important;
+    text-align: center;
+    font-size: 1rem;
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// 4. Search input
+// -----------------------------------------------------------------------------
+#portal #search-wrap {
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  input {
+    border-radius: $portal-radius-pill !important;
+    padding: 14px 20px !important;
+    background-color: $portal-bg-card !important;
+    font-size: 0.95rem;
+
+    &:focus {
+      outline: none !important;
+      border-color: darken($portal-bg-hero, 15%) !important;
+      box-shadow: 0 0 0 3px rgba($portal-bg-hero, 0.4) !important;
+    }
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// 5. Card surfaces
+//    Both the Featured Articles block and each Category block render their
+//    body inside `<section class="lg:container"> > <div class="... rounded-lg border ...">`
+//    so we target the inner wrapper that already has `rounded-lg` + `border`.
+// -----------------------------------------------------------------------------
+#portal section > div.rounded-lg.border {
+  background-color: $portal-bg-card !important;
+  border: 1px solid $portal-border !important;
+  border-radius: $portal-radius-card !important;
+  padding: $portal-card-padding !important;
+  box-shadow: $portal-card-shadow;
+}
+
+// Featured Articles heading — center it like the reference design.
+#portal .max-w-5xl > div:first-child section > div > div:first-child {
+  justify-content: center;
+
+  h3 {
+    text-align: center;
+    font-size: 1.25rem;
+    color: $portal-text-strong;
+  }
+}
+
+// Category card titles
+#portal #category-name,
+#portal section > div.rounded-lg.border h3 {
+  color: $portal-text-strong;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+
+// -----------------------------------------------------------------------------
+// 6. Article links inside cards
+// -----------------------------------------------------------------------------
+#portal #category-item {
+  padding: 6px 8px !important;
+  border-radius: 8px;
+  color: $portal-text-strong;
+  transition: background-color 0.15s ease;
+  span{
+    display: none;
+  }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+  }
+}
+
+#portal #category-block > div:first-child 
+
+
+#portal #category-block {
+  & > div:first-child {
+    justify-content: center;
+
+    div {
+      align-items: center;
+    }
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// 7. Header action buttons (locale pill, homepage link, etc.)
+// -----------------------------------------------------------------------------
+#portal header .locale-switcher {
+  background-color: $portal-bg-card;
+}
+
+#portal header [class*="locale-switcher"],
+#portal header #header-action-button {
+  // Make the locale switcher container look like a pill button.
+  &:not(button) {
+    border: 1px solid $portal-border;
+    border-radius: $portal-radius-pill;
+    padding: 4px 12px !important;
+    background-color: $portal-bg-card;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// 8. Footer (subtle, matches the cream page)
+// -----------------------------------------------------------------------------
+#portal footer {
+  background-color: $portal-bg-page !important;
+  border-top: 1px solid $portal-border;
+}
+
+
+// -----------------------------------------------------------------------------
+// 9. Dark mode
+//    Portal toggles `.dark` on <html>. We keep the pink hero (deepened to
+//    a dusty mauve so light text reads well) and switch the page + cards
+//    to a slate palette that matches Chatwoot's slate-900/-800 surfaces.
+// -----------------------------------------------------------------------------
+$portal-bg-page-dark:     #0f172a; // slate-900
+$portal-bg-card-dark:     #1e293b; // slate-800
+$portal-bg-hero-dark:     #7d3a4a; // dusty mauve (deeper pink for contrast)
+$portal-border-dark:      #334155; // slate-700
+$portal-text-strong-dark: #f1f5f9; // slate-100
+$portal-text-soft-dark:   #cbd5e1; // slate-300
+
+html.dark {
+  // Page chrome
+  #portal,
+  #portal main.main-content {
+    background-color: $portal-bg-page-dark !important;
+  }
+
+  #portal header {
+    background-color: $portal-bg-page-dark !important;
+    border-bottom: 1px solid $portal-border-dark;
+  }
+
+  // Brand name + header text/icons
+  #portal header span,
+  #portal header a,
+  #portal header button:not(.theme-button) {
+    color: $portal-text-strong-dark !important;
+  }
+
+  // Hero band — keep it pink, just deeper so white text pops
+  #portal #portal-bg {
+    background: $portal-bg-hero-dark !important;
+  }
+
+  #portal #portal-bg-gradient {
+    h1 {
+      color: $portal-text-strong-dark !important;
+    }
+    p {
+      color: rgba($portal-text-strong-dark, 0.9) !important;
+    }
+  }
+
+  // Search input — dark surface so it blends with the hero band
+  #portal #search-wrap input {
+    background-color: rgba(15, 23, 42, 0.6) !important; // translucent slate-900
+    border-color: rgba(255, 255, 255, 0.18) !important;
+    color: $portal-text-strong-dark !important;
+
+    &::placeholder {
+      color: rgba($portal-text-strong-dark, 0.6) !important;
+    }
+
+    &:focus {
+      border-color: rgba(255, 255, 255, 0.4) !important;
+      box-shadow: 0 0 0 3px rgba($portal-bg-hero-dark, 0.5) !important;
+    }
+  }
+
+  // Cards (Featured + Categories + Uncategorized)
+  #portal section > div.rounded-lg.border {
+    background-color: $portal-bg-card-dark !important;
+    border-color: $portal-border-dark !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  // Card titles
+  #portal #category-name,
+  #portal section > div.rounded-lg.border h3 {
+    color: $portal-text-strong-dark !important;
+  }
+
+  // Article rows + meta text inside cards
+  #portal section > div.rounded-lg.border a,
+  #portal section > div.rounded-lg.border span {
+    color: $portal-text-strong-dark;
+  }
+
+  #portal #category-item {
+    color: $portal-text-strong-dark !important;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.06) !important;
+    }
+  }
+
+  // Locale switcher pill + homepage link pill
+  #portal header .locale-switcher {
+    background-color: $portal-bg-card-dark !important;
+    color: $portal-text-strong-dark !important;
+  }
+
+  #portal header [class*="locale-switcher"]:not(button),
+  #portal header #header-action-button:not(button) {
+    background-color: $portal-bg-card-dark;
+    border-color: $portal-border-dark;
+  }
+
+  // Footer
+  #portal footer {
+    background-color: $portal-bg-page-dark !important;
+    border-top-color: $portal-border-dark;
+  }
+}
