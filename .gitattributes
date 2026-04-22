@@ -1,0 +1,4 @@
+# Shell scripts and Ruby binstubs must use LF so Linux containers can execute them
+# (Windows CRLF breaks shebangs as /bin/sh\r when bind-mounting the repo into Docker).
+*.sh text eol=lf
+bin/* text eol=lf
