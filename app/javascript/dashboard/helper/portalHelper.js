@@ -7,19 +7,21 @@ const formatCustomDomain = customDomain =>
   customDomain.startsWith('https') ? customDomain : `https://${customDomain}`;
 
 /**
- * Gets the default base URL from configuration
+ * Gets the default base URL from configuration.
+ * Falls back to `window.location.origin` when neither HELPCENTER_URL nor
+ * FRONTEND_URL is configured (typical local-dev / fresh-install case),
+ * so the help center pages render instead of crashing the whole route.
  * @returns {string} The default base URL
- * @throws {Error} If no valid base URL is found
  */
 const getDefaultBaseURL = () => {
-  const { hostURL, helpCenterURL } = window.chatwootConfig || {};
-  const baseURL = helpCenterURL || hostURL || '';
+  const config = window.LumeConfig || window.chatwootConfig || {};
+  const { hostURL, helpCenterURL } = config;
+  const fallbackOrigin =
+    typeof window !== 'undefined' && window.location
+      ? window.location.origin
+      : '';
 
-  if (!baseURL) {
-    throw new Error('No valid base URL found in configuration');
-  }
-
-  return baseURL;
+  return helpCenterURL || hostURL || fallbackOrigin || '';
 };
 
 /**

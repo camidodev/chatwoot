@@ -1,10 +1,12 @@
 import { useConfig } from '../useConfig';
 
 describe('useConfig', () => {
+  const originalLumeConfig = window.LumeConfig;
   const originalChatwootConfig = window.chatwootConfig;
 
   beforeEach(() => {
-    window.chatwootConfig = {
+    window.chatwootConfig = undefined;
+    window.LumeConfig = {
       hostURL: 'https://example.com',
       vapidPublicKey: 'vapid-key',
       enabledLanguages: ['en', 'fr'],
@@ -14,6 +16,7 @@ describe('useConfig', () => {
   });
 
   afterEach(() => {
+    window.LumeConfig = originalLumeConfig;
     window.chatwootConfig = originalChatwootConfig;
   });
 
@@ -28,24 +31,37 @@ describe('useConfig', () => {
   });
 
   it('handles missing configuration values', () => {
-    window.chatwootConfig = {};
+    window.LumeConfig = {};
     const config = useConfig();
 
     expect(config.hostURL).toBeUndefined();
     expect(config.vapidPublicKey).toBeUndefined();
-    expect(config.enabledLanguages).toBeUndefined();
+    // enabledLanguages is normalized to an array so consumers can spread/iterate safely.
+    expect(config.enabledLanguages).toEqual([]);
     expect(config.isEnterprise).toBe(false);
     expect(config.enterprisePlanName).toBeUndefined();
   });
 
-  it('handles undefined window.chatwootConfig', () => {
-    window.chatwootConfig = undefined;
+  it('handles undefined window.LumeConfig', () => {
+    window.LumeConfig = undefined;
     const config = useConfig();
 
     expect(config.hostURL).toBeUndefined();
     expect(config.vapidPublicKey).toBeUndefined();
-    expect(config.enabledLanguages).toBeUndefined();
+    expect(config.enabledLanguages).toEqual([]);
     expect(config.isEnterprise).toBe(false);
     expect(config.enterprisePlanName).toBeUndefined();
+  });
+
+  it('falls back to window.chatwootConfig when LumeConfig is missing', () => {
+    window.LumeConfig = undefined;
+    window.chatwootConfig = {
+      hostURL: 'https://legacy.example.com',
+      enabledLanguages: ['en'],
+    };
+    const config = useConfig();
+
+    expect(config.hostURL).toBe('https://legacy.example.com');
+    expect(config.enabledLanguages).toEqual(['en']);
   });
 });

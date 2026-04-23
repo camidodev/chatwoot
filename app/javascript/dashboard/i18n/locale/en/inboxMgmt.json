@@ -1124,7 +1124,7 @@
         "AGENT_MESSAGE": "Hello"
       },
       "BRANDING_TEXT": "Powered by Lume",
-      "SCRIPT_SETTINGS": "\n      window.chatwootSettings = {options};"
+      "SCRIPT_SETTINGS": "\n      window.LumeSettings = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": {

@@ -26,7 +26,9 @@ const { accountId, currentAccount } = useAccount();
 const { isEnterprise } = useConfig();
 const { isAdmin } = useAdmin();
 
-const isOnChatwootCloud = useMapGetter('globalConfig/isOnChatwootCloud');
+// `isOnLumeCloud` was renamed to `isOnChatwootCloud` upstream; using the
+// existing getter avoids a "[vuex] unknown getter" warning in self-hosted.
+const isOnLumeCloud = useMapGetter('globalConfig/isOnChatwootCloud');
 
 const testLimit = ({ allowed, consumed }) => {
   return consumed > allowed;
@@ -86,7 +88,7 @@ const isLimitExceeded = computed(() => {
 const shouldShowUpgradePage = computed(() => {
   // Skip upgrade page in Billing, Inbox, and Agent pages
   if (props.bypassUpgradePage) return false;
-  if (!isOnChatwootCloud.value) return false;
+  if (!isOnLumeCloud.value) return false;
   if (isTrialAccount.value) return false;
   return isLimitExceeded.value;
 });
@@ -103,7 +105,10 @@ const routeToBilling = () => {
 };
 
 onMounted(() => {
-  if (isEnterprise) {
+  // The /enterprise/api/v1/accounts/:id/limits endpoint requires
+  // chatwoot_cloud?; calling it on self-hosted enterprise installs returns
+  // 404. Skip the request unless we are on cloud.
+  if (isEnterprise && isOnLumeCloud.value) {
     fetchLimits();
   }
 });

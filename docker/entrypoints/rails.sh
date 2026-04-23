@@ -30,5 +30,12 @@ do
   sleep 2;
 done
 
+# Apply branding overrides (idempotent; safe to run on every boot).
+# Wrapped in `|| true` so a not-yet-migrated DB does not block startup.
+bundle exec rails runner "
+  InstallationConfig.find_or_initialize_by(name: 'INSTALLATION_NAME').update(value: 'Lume')
+  InstallationConfig.find_or_initialize_by(name: 'BRAND_NAME').update(value: 'Lume')
+" || true
+
 # Execute the main process of the container
 exec "$@"

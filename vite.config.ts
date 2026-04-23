@@ -44,10 +44,6 @@ if (isLibraryMode) {
 
 export default defineConfig({
   plugins: plugins,
-  // Maps injected <style> tags in DevTools back to .vue / .scss sources (not just "<style>").
-  css: {
-    devSourcemap: true,
-  },
   // vite_ruby DevServerProxy sets Host to the Vite hostname (e.g. `vite` in Docker). Vite 5+ rejects
   // unknown hosts (DNS rebinding protection), which causes 403 on /vite-dev/* when proxied via Rails.
   server: {

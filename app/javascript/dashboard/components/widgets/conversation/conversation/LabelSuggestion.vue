@@ -237,7 +237,7 @@ export default {
             hideOnClick: true,
           }"
           :size="16"
-          name="chatwoot-ai"
+          name="Lume-ai"
           icon-name="i-lucide-sparkles"
         />
       </div>

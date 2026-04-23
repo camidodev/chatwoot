@@ -3,10 +3,12 @@
  * @returns {Object} An object containing configuration values.
  */
 export function useConfig() {
-  const config = window.chatwootConfig || {};
+  // Read from either global; the ERB layout sets both names during the
+  // Chatwoot -> Lume rename so we stay compatible with code that hasn't migrated yet.
+  const config = window.LumeConfig || window.chatwootConfig || {};
 
   /**
-   * The host URL of the Chatwoot instance.
+   * The host URL of the Lume instance.
    * @type {string|undefined}
    */
   const hostURL = config.hostURL;
@@ -18,10 +20,13 @@ export function useConfig() {
   const vapidPublicKey = config.vapidPublicKey;
 
   /**
-   * An array of enabled languages in the Chatwoot instance.
-   * @type {string[]|undefined}
+   * An array of enabled languages in the Lume instance.
+   * Always an array so consumers can safely spread/iterate without null checks.
+   * @type {Array<{ name: string, iso_639_1_code: string }>}
    */
-  const enabledLanguages = config.enabledLanguages;
+  const enabledLanguages = Array.isArray(config.enabledLanguages)
+    ? config.enabledLanguages
+    : [];
 
   /**
    * Indicates whether the current instance is an enterprise version.
