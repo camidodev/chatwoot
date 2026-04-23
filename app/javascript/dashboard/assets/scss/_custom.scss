@@ -1,7 +1,7 @@
 // =============================================================================
 // CUSTOM STYLES
 // =============================================================================
-// Source of truth for all custom UI overrides for the Chatwoot dashboard.
+// Source of truth for all custom UI overrides for the Lume dashboard.
 //
 // HOW IT WORKS
 // ------------
@@ -15,7 +15,7 @@
 // in the browser almost instantly — even in Docker on Windows.
 //
 // Because it loads AFTER the main app stylesheet, any rule with equal-or-higher
-// specificity declared here will override the default Chatwoot styles.
+// specificity declared here will override the default Lume styles.
 //
 // Replaces the old runtime overrides previously injected by
 // `public/custom-theme.css` + `public/custom-theme.js`.
@@ -159,7 +159,7 @@ $custom-pad-main:     16px;
   // ---------------------------------------------------------------------------
   // 3. Dark mode overrides
   // ---------------------------------------------------------------------------
-  // Chatwoot toggles a `.dark` class on <html>. Use the `.dark &` parent
+  // Lume toggles a `.dark` class on <html>. Use the `.dark &` parent
   // selector to scope dark-mode tweaks. Add rules below as needed.
   // .dark & { ... }
 }

@@ -141,10 +141,8 @@ export default {
       <PendingEmailVerificationBanner v-if="hideOnOnboardingView" />
       <PaymentPendingBanner v-if="hideOnOnboardingView" />
     </template>
-    <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
-        <component :is="Component" />
-      </transition>
+    <router-view v-slot="{ Component, route }">
+      <component :is="Component" :key="route.path" />
     </router-view>
     <WootSnackbarBox />
     <NetworkNotification />

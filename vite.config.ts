@@ -44,6 +44,25 @@ if (isLibraryMode) {
 
 export default defineConfig({
   plugins: plugins,
+  // vite_ruby DevServerProxy sets Host to the Vite hostname (e.g. `vite` in Docker). Vite 5+ rejects
+  // unknown hosts (DNS rebinding protection), which causes 403 on /vite-dev/* when proxied via Rails.
+  server: {
+    host: '0.0.0.0',
+    allowedHosts: ['vite', 'localhost', '127.0.0.1', '.localhost'],
+    // Docker Desktop on Windows/macOS does not deliver native filesystem events
+    // across bind mounts, so chokidar never sees edits. Polling fixes HMR.
+    watch: {
+      usePolling: true,
+      interval: 300,
+      ignored: ['**/node_modules/**', '**/tmp/**', '**/log/**', '**/.git/**'],
+    },
+    // HMR websocket must point at the host port the *browser* can reach (3036 mapped on host).
+    hmr: {
+      host: 'localhost',
+      protocol: 'ws',
+      clientPort: 3036,
+    },
+  },
   build: {
     rollupOptions: {
       output: {

@@ -7,33 +7,33 @@ import {
 describe('PortalHelper', () => {
   describe('buildPortalURL', () => {
     it('returns the correct url', () => {
-      window.chatwootConfig = {
-        hostURL: 'https://app.chatwoot.com',
-        helpCenterURL: 'https://help.chatwoot.com',
+      window.LumeConfig = {
+        hostURL: 'https://app.Lume.com',
+        helpCenterURL: 'https://help.Lume.com',
       };
       expect(buildPortalURL('handbook')).toEqual(
-        'https://help.chatwoot.com/hc/handbook'
+        'https://help.Lume.com/hc/handbook'
       );
-      window.chatwootConfig = {};
+      window.LumeConfig = {};
     });
   });
 
   describe('buildPortalArticleURL', () => {
     it('returns the correct url', () => {
-      window.chatwootConfig = {
-        hostURL: 'https://app.chatwoot.com',
-        helpCenterURL: 'https://help.chatwoot.com',
+      window.LumeConfig = {
+        hostURL: 'https://app.Lume.com',
+        helpCenterURL: 'https://help.Lume.com',
       };
       expect(
         buildPortalArticleURL('handbook', 'culture', 'fr', 'article-slug')
-      ).toEqual('https://help.chatwoot.com/hc/handbook/articles/article-slug');
-      window.chatwootConfig = {};
+      ).toEqual('https://help.Lume.com/hc/handbook/articles/article-slug');
+      window.LumeConfig = {};
     });
 
     it('returns the correct url with custom domain', () => {
-      window.chatwootConfig = {
-        hostURL: 'https://app.chatwoot.com',
-        helpCenterURL: 'https://help.chatwoot.com',
+      window.LumeConfig = {
+        hostURL: 'https://app.Lume.com',
+        helpCenterURL: 'https://help.Lume.com',
       };
       expect(
         buildPortalArticleURL(
@@ -47,9 +47,9 @@ describe('PortalHelper', () => {
     });
 
     it('handles https in custom domain correctly', () => {
-      window.chatwootConfig = {
-        hostURL: 'https://app.chatwoot.com',
-        helpCenterURL: 'https://help.chatwoot.com',
+      window.LumeConfig = {
+        hostURL: 'https://app.Lume.com',
+        helpCenterURL: 'https://help.Lume.com',
       };
       expect(
         buildPortalArticleURL(
@@ -63,13 +63,23 @@ describe('PortalHelper', () => {
     });
 
     it('uses hostURL when helpCenterURL is not available', () => {
-      window.chatwootConfig = {
-        hostURL: 'https://app.chatwoot.com',
+      window.LumeConfig = {
+        hostURL: 'https://app.Lume.com',
         helpCenterURL: '',
       };
       expect(
         buildPortalArticleURL('handbook', 'culture', 'fr', 'article-slug')
-      ).toEqual('https://app.chatwoot.com/hc/handbook/articles/article-slug');
+      ).toEqual('https://app.Lume.com/hc/handbook/articles/article-slug');
+    });
+
+    it('falls back to window.location.origin when no URLs are configured', () => {
+      window.LumeConfig = { hostURL: '', helpCenterURL: '' };
+      // jsdom default origin is http://localhost
+      expect(
+        buildPortalArticleURL('handbook', 'culture', 'fr', 'article-slug')
+      ).toEqual(
+        `${window.location.origin}/hc/handbook/articles/article-slug`
+      );
     });
   });
 

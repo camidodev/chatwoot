@@ -1,7 +1,7 @@
-export const CHATWOOT_ERROR = 'chatwoot:error';
-export const CHATWOOT_ON_MESSAGE = 'chatwoot:on-message';
-export const CHATWOOT_ON_START_CONVERSATION = 'chatwoot:on-start-conversation';
-export const CHATWOOT_POSTBACK = 'chatwoot:postback';
-export const CHATWOOT_READY = 'chatwoot:ready';
-export const CHATWOOT_OPENED = 'chatwoot:opened';
-export const CHATWOOT_CLOSED = 'chatwoot:closed';
+export const Lume_ERROR = 'Lume:error';
+export const Lume_ON_MESSAGE = 'Lume:on-message';
+export const Lume_ON_START_CONVERSATION = 'Lume:on-start-conversation';
+export const Lume_POSTBACK = 'Lume:postback';
+export const Lume_READY = 'Lume:ready';
+export const Lume_OPENED = 'Lume:opened';
+export const Lume_CLOSED = 'Lume:closed';
