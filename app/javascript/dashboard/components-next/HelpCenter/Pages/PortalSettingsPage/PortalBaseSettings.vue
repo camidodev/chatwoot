@@ -97,7 +97,7 @@ const homePageLinkError = computed(() =>
     ? t('HELP_CENTER.PORTAL_SETTINGS.FORM.HOME_PAGE_LINK.ERROR')
     : ''
 );
-
+    
 const isUpdatingPortal = computed(() => {
   const slug = props.activePortal?.slug;
   if (slug) return getters['portals/uiFlagsIn'].value(slug)?.isUpdating;
