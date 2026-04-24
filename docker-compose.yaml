@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   base: &base
     build:
@@ -28,18 +26,31 @@ services:
       - cache:/app/tmp/cache
       - bundle:/usr/local/bundle
     depends_on:
-      - postgres
-      - redis
-      - vite
-      - mailhog
-      - sidekiq
+      postgres:
+        condition: service_started
+      redis:
+        condition: service_started
+      mailhog:
+        condition: service_started
+      sidekiq:
+        condition: service_started
+      vite:
+        condition: service_healthy
     ports:
       - 3000:3000
     env_file: .env
     environment:
+      - POSTGRES_DATABASE=chatwoot
       - VITE_DEV_SERVER_HOST=vite
+      # vite_ruby must reach the Vite container; localhost would miss the dev server and trigger a blocking auto-build.
+      - VITE_RUBY_HOST=vite
       - NODE_ENV=development
       - RAILS_ENV=development
+      # Larger pool avoids ConnectionTimeoutError when Vite builds compete with web requests (Docker dev).
+      - RAILS_MAX_THREADS=10
+      # Branding (see config/initializers/installation_branding_from_env.rb); remove or change if you prefer defaults.
+      - CHATWOOT_OVERRIDE_INSTALLATION_NAME=Lume
+      - CHATWOOT_OVERRIDE_BRAND_NAME=Lume
     entrypoint: docker/entrypoints/rails.sh
     command: ["bundle", "exec", "rails", "s", "-p", "3000", "-b", "0.0.0.0"]
 
@@ -57,8 +68,11 @@ services:
       - redis
       - mailhog
     environment:
+      - POSTGRES_DATABASE=chatwoot
       - NODE_ENV=development
       - RAILS_ENV=development
+      - CHATWOOT_OVERRIDE_INSTALLATION_NAME=Lume
+      - CHATWOOT_OVERRIDE_BRAND_NAME=Lume
     command: ["bundle", "exec", "sidekiq", "-C", "config/sidekiq.yml"]
 
   vite:
@@ -76,11 +90,30 @@ services:
     ports:
       - "3036:3036" # Vite dev server
     environment:
-      - VITE_DEV_SERVER_HOST=0.0.0.0
+      - POSTGRES_DATABASE=chatwoot
+      # vite-plugin-ruby reads VITE_RUBY_HOST for bind address in this container (rails uses vite: separately).
+      - VITE_RUBY_HOST=0.0.0.0
       - NODE_ENV=development
       - RAILS_ENV=development
+      # Force chokidar to poll: Docker Desktop on Windows/macOS doesn't propagate fs events
+      # across bind mounts, so without polling Vite never sees edits and HMR never fires.
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=300
+      - WATCHPACK_POLLING=true
     entrypoint: docker/entrypoints/vite.sh
-    command: bin/vite dev
+    # Use Node/pnpm so we do not depend on Bundler in bin/vite (vite image GEM_PATH differs from rails).
+    command: ["pnpm", "exec", "vite", "dev"]
+    healthcheck:
+      # TCP-only: Vite often returns 404 on /; wget would mark the container unhealthy.
+      test:
+        [
+          "CMD-SHELL",
+          "node -e \"require('net').connect(3036,'127.0.0.1').on('connect',()=>process.exit(0)).on('error',()=>process.exit(1))\"",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 80
+      start_period: 900s
 
   postgres:
     image: pgvector/pgvector:pg16
@@ -88,11 +121,15 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - postgres:/data/postgres
+      # Named separately from older `postgres` volumes so PG16+ can init cleanly after
+      # upgrades from images that used PostgreSQL 12 data directories.
+      - postgres_pg16:/data/postgres
+    env_file: .env
     environment:
       - POSTGRES_DB=chatwoot
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=
+      # Must be non-empty for a fresh cluster; use the same value as POSTGRES_PASSWORD in .env
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 
   redis:
     image: redis:alpine
@@ -111,9 +148,10 @@ services:
       - 8025:8025
 
 volumes:
-  postgres:
+  postgres_pg16:
   redis:
   packs:
   node_modules:
   cache:
   bundle:
+  
