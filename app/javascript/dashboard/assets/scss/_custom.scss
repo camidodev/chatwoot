@@ -33,10 +33,13 @@
 // -----------------------------------------------------------------------------
 // 1. Theme palette
 // -----------------------------------------------------------------------------
+
+
 $custom-bg-cream:     #f4f0e7;
-$custom-bg-card:      #fff;
-$custom-fg-strong:    #222;
-$custom-border-muted: #9f9b98;
+
+$custom-bg-card:      rgb(var(--surface-1) / 1);
+//$custom-border-muted: #9f9b98;
+$custom-border-muted: rgb(var(--slate-12) / 0.4);
 
 $custom-radius-sm:    12px;
 $custom-radius-md:    16px;
@@ -46,17 +49,15 @@ $custom-pad-card:     12px;
 $custom-pad-shell:    13px;
 $custom-pad-main:     16px;
 
+:root{
+  --background-color: 244 240 231;
+}
 
 // -----------------------------------------------------------------------------
 // 2. Dashboard overrides (scoped to #app to avoid leaking)
 // -----------------------------------------------------------------------------
 #app {
 
-  // Dashboard background
-  > div.bg-n-background,
-  aside.bg-n-background {
-    background-color: $custom-bg-cream;
-  }
 
   // -- Sidebar shell ----------------------------------------------------------
   aside.bg-n-background {
@@ -64,7 +65,6 @@ $custom-pad-main:     16px;
     padding: $custom-pad-shell;
 
     > section:nth-child(1) {
-
       // Account / brand card at the top of the sidebar
       > div:first-child {
         background-color: $custom-bg-card;
@@ -82,13 +82,13 @@ $custom-pad-main:     16px;
         > a {
           padding: 5px 14px;
           border-radius: $custom-radius-lg;
-          border: 1px solid $custom-fg-strong;
+          border: 1px solid $custom-border-muted;
           box-sizing: content-box;
         }
 
         > div button {
           padding: 6px;
-          background-color: $custom-fg-strong;
+          background-color: $custom-border-muted;
           box-sizing: content-box;
           border-radius: 35px;
 
@@ -105,12 +105,13 @@ $custom-pad-main:     16px;
       background-color: $custom-bg-card;
       padding: 2px 6px;
 
-      .from-n-background {
-        background: $custom-bg-cream;
-      }
 
       .border-n-weak {
         border-width: 0;
+
+        button + div.absolute ul.n-dropdown-body{
+          border: 1px solid $custom-border-muted;
+        }
       }
     }
   }
@@ -122,33 +123,52 @@ $custom-pad-main:     16px;
 
     > section.flex {
       gap: $custom-pad-main;
-    }
-  }
+      background-color: transparent;
 
-  // -- Conversations list -----------------------------------------------------
-  .conversations-list-wrap {
-    border: 1px solid $custom-border-muted;
-    border-radius: $custom-radius-lg;
+      // -- Conversations list -----------------------------------------------------
+      > div:nth-child(1) {
+        background-color: $custom-bg-card;
+        border: 1px solid $custom-border-muted;
+        border-radius: $custom-radius-lg;
 
-    > div {
-      padding: 0 $custom-pad-main;
+        > div {
+          padding: 0 $custom-pad-main;
 
-      .bg-n-background {
-        background-color: transparent;
+          .bg-n-background {
+            background-color: transparent;
+          }
+        }
+
+        > div:nth-child(1) {
+          border-bottom: 1px solid $custom-border-muted;
+        }
+      }
+      
+      // -- Conversation details panel --------------------------------------------
+      & > div:nth-child(2) {
+        border: 1px solid $custom-border-muted;
+        border-radius: $custom-radius-lg;
       }
     }
-
-    > div:nth-child(1) {
-      border-bottom: 1px solid $custom-fg-strong;
+    > div:nth-child(2){
+      background-color: $custom-bg-card;
+      border-radius: $custom-radius-lg;
+      padding: $custom-pad-main;
+      outline: 1px solid $custom-border-muted;
+      &.overflow-auto {
+        border-width: 6px 6px 6px 0;
+        border-style: solid;
+        border-color: transparent;
+      } 
     }
   }
+
+
+  
 
   // -- Conversation details panel --------------------------------------------
   .conversation-details-wrap {
     overflow: hidden;
-    border: 1px solid $custom-border-muted;
-    border-radius: $custom-radius-lg;
-
     > div:nth-child(1) {
       padding: 18px !important;
       height: auto;
