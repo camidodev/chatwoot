@@ -35,21 +35,22 @@
 // -----------------------------------------------------------------------------
 
 
-$custom-bg-cream:     #f4f0e7;
+$custom-bg-cream: #f4f0e7;
 
-$custom-bg-card:      rgb(var(--surface-1) / 1);
+$custom-bg-card: rgb(var(--surface-1) / 1);
 //$custom-border-muted: #9f9b98;
 $custom-border-muted: rgb(var(--slate-12) / 0.4);
+$custom-border-light: rgb(152 153 154 / 40%);
 
-$custom-radius-sm:    12px;
-$custom-radius-md:    16px;
-$custom-radius-lg:    20px;
+$custom-radius-sm: 12px;
+$custom-radius-md: 16px;
+$custom-radius-lg: 20px;
 
-$custom-pad-card:     12px;
-$custom-pad-shell:    13px;
-$custom-pad-main:     16px;
+$custom-pad-card: 12px;
+$custom-pad-shell: 13px;
+$custom-pad-main: 16px;
 
-:root{
+:root {
   --background-color: 244 240 231;
 }
 
@@ -57,36 +58,57 @@ $custom-pad-main:     16px;
 // 2. Dashboard overrides (scoped to #app to avoid leaking)
 // -----------------------------------------------------------------------------
 #app {
-
+  .bg-n-background {
+    background: #F9F8F6;
+  }
 
   // -- Sidebar shell ----------------------------------------------------------
   aside.bg-n-background {
     border-width: 0;
     padding: $custom-pad-shell;
 
-    > section:nth-child(1) {
+    .truncate {
+      font-size: 13px !important;
+    }
+
+    .text-sm.font-medium.leading-5 {
+      font-size: 13px !important;
+    }
+
+    nav {
+      ul {
+        gap: 0px !important;
+
+        li {
+          padding-block: 0px !important;
+        }
+      }
+    }
+
+    >section:nth-child(1) {
+
       // Account / brand card at the top of the sidebar
-      > div:first-child {
+      >div:first-child {
         background-color: $custom-bg-card;
         padding: $custom-pad-card;
         border-radius: $custom-radius-sm;
 
-        > div:nth-child(1) {
+        >div:nth-child(1) {
           padding: 2px;
           box-sizing: content-box;
         }
       }
 
       // Action row (avatar + primary action button)
-      > div:last-child {
-        > a {
+      >div:last-child {
+        >a {
           padding: 5px 14px;
           border-radius: $custom-radius-lg;
           border: 1px solid $custom-border-muted;
           box-sizing: content-box;
         }
 
-        > div > button {
+        >div>button {
           padding: 6px;
           --alpha-2: var(--slate-12);
           box-sizing: content-box;
@@ -101,7 +123,7 @@ $custom-pad-main:     16px;
     }
 
     // Secondary navigation panel
-    > section:nth-child(3) {
+    >section:nth-child(3) {
       border-radius: $custom-radius-md;
       background-color: $custom-bg-card;
       padding: 2px 6px;
@@ -110,7 +132,7 @@ $custom-pad-main:     16px;
       .border-n-weak {
         border-width: 0;
 
-        button + div.absolute ul.n-dropdown-body{
+        button+div.absolute ul.n-dropdown-body {
           border: 1px solid $custom-border-muted;
         }
       }
@@ -118,59 +140,100 @@ $custom-pad-main:     16px;
   }
 
   // -- Main content area ------------------------------------------------------
-  main.bg-n-surface-1 {
-    padding: $custom-pad-main;
-    background: transparent;
+  main {
+    &.bg-n-surface-1 {
+      padding: $custom-pad-main;
+      background: transparent;
 
-    > section.flex {
-      gap: $custom-pad-main;
-      background-color: transparent;
+      >section.flex {
+        gap: $custom-pad-main;
+        background-color: transparent;
 
-      // -- Conversations list -----------------------------------------------------
-      > div:nth-child(1) {
-        background-color: $custom-bg-card;
-        border: 1px solid $custom-border-muted;
-        border-radius: $custom-radius-lg;
+        // -- Conversations list -----------------------------------------------------
+        >div:nth-child(1) {
+          background-color: $custom-bg-card;
+          border: 1px solid $custom-border-light;
+          border-radius: $custom-radius-lg;
 
-        > div {
-          padding: 0 $custom-pad-main;
+          >div {
+            padding: 0 $custom-pad-main;
 
-          .bg-n-background {
-            background-color: transparent;
+            .bg-n-background {
+              background-color: transparent;
+            }
+          }
+
+          >div:nth-child(1) {
+            border-bottom: 1px solid $custom-border-muted;
           }
         }
 
-        > div:nth-child(1) {
-          border-bottom: 1px solid $custom-border-muted;
+        // -- Conversation details panel --------------------------------------------
+        &>div:nth-child(2) {
+          border: 1px solid $custom-border-light;
+          border-radius: $custom-radius-lg;
+        }
+
+        &>div:nth-child(3) {
+          border-radius: $custom-radius-lg;
+          background: transparent !important;
+          border: none !important;
         }
       }
-      
-      // -- Conversation details panel --------------------------------------------
-      & > div:nth-child(2) {
-        border: 1px solid $custom-border-muted;
+
+      >div:nth-child(2) {
+        background-color: $custom-bg-card;
         border-radius: $custom-radius-lg;
+        padding: $custom-pad-main;
+        // outline: 1px solid $custom-border-muted;
+
+        &.overflow-auto {
+          border-width: 6px 6px 6px 0;
+          border-style: solid;
+          border-color: transparent;
+        }
       }
     }
-    > div:nth-child(2){
-      background-color: $custom-bg-card;
-      border-radius: $custom-radius-lg;
-      padding: $custom-pad-main;
-      outline: 1px solid $custom-border-muted;
-      &.overflow-auto {
-        border-width: 6px 6px 6px 0;
-        border-style: solid;
-        border-color: transparent;
-      } 
+
+    .bg-n-surface-2 {
+      >div>.w-full {
+
+        >.flex.items-center.justify-between {
+          background-color: white;
+        }
+
+        >[channel-type="Channel::WebWidget"] {
+          background-color: white;
+          margin-bottom: 12px;
+          border-bottom-left-radius: 13px;
+          border-bottom-right-radius: 13px;
+        }
+
+        .px-2.pb-8.list-group {
+          // background-color: white !important;
+          padding-inline: 0px;
+
+          .text-sm {
+            background-color: white !important;
+            border-radius: 6px !important;
+          }
+
+          button {
+            background-color: white !important;
+          }
+        }
+      }
     }
   }
 
 
-  
+
 
   // -- Conversation details panel --------------------------------------------
   .conversation-details-wrap {
     overflow: hidden;
-    > div:nth-child(1) {
+
+    >div:nth-child(1) {
       padding: 18px !important;
       height: auto;
     }

@@ -35,25 +35,25 @@
 // The Sass variables are kept as the source of truth ONLY because Sass color
 // functions (`darken()`, `rgba($color, …)`) require real colors at compile
 // time. For runtime mixing/alpha, prefer the CSS `color-mix()` function.
-$portal-bg-page:     #faf6ef; // soft cream page background
-$portal-bg-hero:     #f6cfcd; // pink hero band
-$portal-bg-card:     #ffffff; // white card surface
-$portal-border:      #e7e2db; // soft warm border
+$portal-bg-page: #faf6ef; // soft cream page background
+$portal-bg-hero: #f6cfcd; // pink hero band
+$portal-bg-card: #ffffff; // white card surface
+$portal-border: #e7e2db; // soft warm border
 $portal-text-strong: #1a1a1a; // headlines
-$portal-text-soft:   #6b6b6b; // body / meta text
+$portal-text-soft: #6b6b6b; // body / meta text
 
-$portal-radius-card:  16px;
-$portal-radius-pill:  999px;
+$portal-radius-card: 16px;
+$portal-radius-pill: 999px;
 $portal-card-padding: 24px;
-$portal-card-shadow:  0 1px 2px rgba(0, 0, 0, 0.03);
+$portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 
 #portal {
-  --portal-bg-page:     #{$portal-bg-page};
-  --portal-bg-hero:     #{$portal-bg-hero};
-  --portal-bg-card:     #{$portal-bg-card};
-  --portal-border:      #{$portal-border};
+  --portal-bg-page: #{$portal-bg-page};
+  --portal-bg-hero: #{$portal-bg-hero};
+  --portal-bg-card: #{$portal-bg-card};
+  --portal-border: #{$portal-border};
   --portal-text-strong: #{$portal-text-strong};
-  --portal-text-soft:   #{$portal-text-soft};
+  --portal-text-soft: #{$portal-text-soft};
 }
 
 
@@ -70,6 +70,7 @@ $portal-card-shadow:  0 1px 2px rgba(0, 0, 0, 0.03);
   box-shadow: none !important;
   border-bottom: 0;
 }
+
 #portal header nav div:nth-child(1) {
   padding: 6px 0;
 }
@@ -90,7 +91,7 @@ $portal-card-shadow:  0 1px 2px rgba(0, 0, 0, 0.03);
   background-image: none !important;
 
   // Center the hero content (default layout aligns to the start).
-  > div {
+  >div {
     align-items: center !important;
     text-align: center;
   }
@@ -149,16 +150,20 @@ $portal-card-shadow:  0 1px 2px rgba(0, 0, 0, 0.03);
 //    body inside `<section class="lg:container"> > <div class="... rounded-lg border ...">`
 //    so we target the inner wrapper that already has `rounded-lg` + `border`.
 // -----------------------------------------------------------------------------
-#portal section > div.rounded-lg.border {
+#portal section>div.rounded-lg.border {
   background-color: var(--portal-bg-card) !important;
   border: 1px solid var(--portal-border) !important;
   border-radius: $portal-radius-card !important;
   padding: $portal-card-padding !important;
   box-shadow: $portal-card-shadow;
+
+  .grid {
+    gap: 20px !important;
+  }
 }
 
 // Featured Articles heading — center it like the reference design.
-#portal .max-w-5xl > div:first-child section > div > div:first-child {
+#portal .max-w-5xl>div:first-child section>div>div:first-child {
   justify-content: center;
 
   h3 {
@@ -170,7 +175,7 @@ $portal-card-shadow:  0 1px 2px rgba(0, 0, 0, 0.03);
 
 // Category card titles
 #portal #category-name,
-#portal section > div.rounded-lg.border h3 {
+#portal section>div.rounded-lg.border h3 {
   color: var(--portal-text-strong);
   font-size: 1.25rem;
   font-weight: 600;
@@ -182,14 +187,15 @@ $portal-card-shadow:  0 1px 2px rgba(0, 0, 0, 0.03);
 // -----------------------------------------------------------------------------
 #portal #category-item {
   padding: 6px 8px !important;
-  border-radius: 8px;
+  border-radius: 0px;
   color: var(--portal-text-strong);
   transition: background-color 0.15s ease;
   font-weight: 500;
+  border-bottom: 1px solid #e6e6e6;
 
-  span {
-    display: none;
-  }
+  // span {
+  //   display: none;
+  // }
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.04) !important;
@@ -197,17 +203,19 @@ $portal-card-shadow:  0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 #portal #category-block {
-  & > div:first-child {
+  &>div:first-child {
     justify-content: center;
 
     div {
       align-items: center;
     }
   }
+
   #category-name {
     transition: color 0.3s ease;
   }
-  &:hover{
+
+  &:hover {
     #category-name {
       color: var(--portal-text-soft) !important;
     }
@@ -224,6 +232,7 @@ $portal-card-shadow:  0 1px 2px rgba(0, 0, 0, 0.03);
 
 #portal header [class*="locale-switcher"],
 #portal header #header-action-button {
+
   // Make the locale switcher container look like a pill button.
   &:not(button) {
     border: 1px solid var(--portal-border);
@@ -268,23 +277,24 @@ $portal-card-shadow:  0 1px 2px rgba(0, 0, 0, 0.03);
 //    in dark mode (e.g. translucent search input, header text color, hero
 //    paragraph alpha) rather than just a different color value.
 // -----------------------------------------------------------------------------
-$portal-bg-page-dark:     #0f172a; // slate-900
-$portal-bg-card-dark:     #1e293b; // slate-800
-$portal-bg-hero-dark:     #7d3a4a; // dusty mauve (deeper pink for contrast)
-$portal-border-dark:      #334155; // slate-700
+$portal-bg-page-dark: #0f172a; // slate-900
+$portal-bg-card-dark: #1e293b; // slate-800
+$portal-bg-hero-dark: #7d3a4a; // dusty mauve (deeper pink for contrast)
+$portal-border-dark: #334155; // slate-700
 $portal-text-strong-dark: #f1f5f9; // slate-100
-$portal-text-soft-dark:   #cbd5e1; // slate-300
+$portal-text-soft-dark: #cbd5e1; // slate-300
 
 html.dark #portal {
-  --portal-bg-page:     #{$portal-bg-page};
-  --portal-bg-hero:     #{$portal-bg-hero};
-  --portal-bg-card:     #{$portal-bg-card};
-  --portal-border:      #{$portal-border};
+  --portal-bg-page: #{$portal-bg-page};
+  --portal-bg-hero: #{$portal-bg-hero};
+  --portal-bg-card: #{$portal-bg-card};
+  --portal-border: #{$portal-border};
   --portal-text-strong: #{$portal-text-strong};
-  --portal-text-soft:   #{$portal-text-soft};
+  --portal-text-soft: #{$portal-text-soft};
 }
 
 html.dark {
+
   // Page chrome — needs explicit rules because the layout sets its own
   // background; CSS-variable inheritance alone isn't enough.
   #portal,
@@ -309,10 +319,11 @@ html.dark {
   // (intentionally different from the solid white card used in light mode).
 
   #portal #search-wrap {
-    & > div > div {
+    &>div>div {
       background-color: rgba(255, 255, 255, 1) !important; // translucent slate-900
     }
   }
+
   #portal #search-wrap input {
     &::placeholder {
       color: color-mix(in srgb, var(--portal-text-strong) 60%, transparent) !important;
@@ -331,14 +342,14 @@ html.dark {
 
   // Card box-shadow needs to be deeper in dark mode (pure-black shadow on a
   // light card is invisible; deeper shadow on dark card reads as elevation).
-  #portal section > div.rounded-lg.border {
+  #portal section>div.rounded-lg.border {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   // Article rows + meta text inside cards — light mode inherits, but in
   // dark mode the default link color is too dim against slate-800.
-  #portal section > div.rounded-lg.border a,
-  #portal section > div.rounded-lg.border span {
+  #portal section>div.rounded-lg.border a,
+  #portal section>div.rounded-lg.border span {
     color: var(--portal-text-strong);
   }
 
@@ -347,8 +358,9 @@ html.dark {
     background-color: rgba(255, 255, 255, 0.06) !important;
   }
 
-  #portal #category-block > div:last-child > div:last-child a {
+  #portal #category-block>div:last-child>div:last-child a {
     color: var(--portal-text-strong) !important;
+
     &:hover {
       color: var(--portal-text-soft) !important;
     }
