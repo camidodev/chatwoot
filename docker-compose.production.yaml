@@ -1,10 +1,9 @@
-version: '3'
-
 services:
   base: &base
-    image: chatwoot/chatwoot:latest
+    image: ${CHATWOOT_DOCKER_IMAGE:-chatwoot/chatwoot:latest}
     env_file: .env ## Change this file for customized env variables
     volumes:
+      # Only storage here — do not mount /app/public/packs or the repo over /app or you will keep stale JS/CSS from an old image.
       - storage_data:/app/storage
 
   rails:
@@ -41,11 +40,12 @@ services:
       - '127.0.0.1:5432:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    # Reads POSTGRES_PASSWORD from /root/chatwoot/.env (compose auto-loads sibling .env).
+    # Fails fast if the variable is empty/unset, instead of crash-looping postgres.
     environment:
       - POSTGRES_DB=chatwoot
       - POSTGRES_USER=postgres
-      # Please provide your own password.
-      - POSTGRES_PASSWORD=
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set in .env}
 
   redis:
     image: redis:alpine
