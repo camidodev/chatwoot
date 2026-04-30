@@ -86,11 +86,12 @@ $custom-pad-main:     16px;
           box-sizing: content-box;
         }
 
-        > div button {
+        > div > button {
           padding: 6px;
-          background-color: $custom-border-muted;
+          --alpha-2: var(--slate-12);
           box-sizing: content-box;
           border-radius: 35px;
+          background-color: rgba(var(--slate-12) / 1);
 
           span {
             background-color: $custom-bg-card;
@@ -177,7 +178,31 @@ $custom-pad-main:     16px;
 
 
   // ---------------------------------------------------------------------------
-  // 3. Dark mode overrides
+  // 3. Primary actions: black instead of brand blue
+  // ---------------------------------------------------------------------------
+  // Dashboard's solid primary button uses `bg-n-brand` (#2781F6). Override to
+  // black with a slightly-lighter hover so every primary action — Create
+  // campaign, New article, etc. — picks up the new brand without needing a
+  // Vue/template change. Scoped to clickable elements so checkboxes and tiny
+  // brand-tinted indicators that also use `bg-n-brand` are left alone.
+  button.bg-n-brand,
+  a.bg-n-brand,
+  [role="button"].bg-n-brand {
+    background-color: #111 !important;
+    color: #fff !important;
+    filter: none !important; // Disable the default brightness-110 hover.
+    transition: background-color 0.15s ease;
+
+    &:hover,
+    &:hover:enabled,
+    &:focus-visible {
+      background-color: #2a2a2a !important;
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // 4. Dark mode overrides
   // ---------------------------------------------------------------------------
   // Chatwoot toggles a `.dark` class on <html>. Use the `.dark &` parent
   // selector to scope dark-mode tweaks. Add rules below as needed.

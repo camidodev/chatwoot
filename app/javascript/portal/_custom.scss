@@ -233,6 +233,19 @@ $portal-card-shadow:  0 1px 2px rgba(0, 0, 0, 0.03);
   }
 }
 
+// Hide the appearance / colour-theme switcher in both desktop & mobile headers.
+// The theme can still be set via ?theme= URL param, but users no longer see
+// the System / Light / Dark dropdown in the UI.
+#portal #toggle-appearance,
+#portal #appearance-dropdown,
+#portal #mobile-appearance-dropdown,
+#portal .appearance-menu,
+// `:has()` covers the wrapping `<div class="relative …">` that holds the
+// toggle, so the empty space disappears with the button.
+#portal header div.relative:has(#toggle-appearance) {
+  display: none !important;
+}
+
 
 // -----------------------------------------------------------------------------
 // 8. Footer (subtle, matches the cream page)
@@ -263,12 +276,12 @@ $portal-text-strong-dark: #f1f5f9; // slate-100
 $portal-text-soft-dark:   #cbd5e1; // slate-300
 
 html.dark #portal {
-  --portal-bg-page:     #{$portal-bg-page-dark};
-  --portal-bg-hero:     #{$portal-bg-hero-dark};
-  --portal-bg-card:     #{$portal-bg-card-dark};
-  --portal-border:      #{$portal-border-dark};
-  --portal-text-strong: #{$portal-text-strong-dark};
-  --portal-text-soft:   #{$portal-text-soft-dark};
+  --portal-bg-page:     #{$portal-bg-page};
+  --portal-bg-hero:     #{$portal-bg-hero};
+  --portal-bg-card:     #{$portal-bg-card};
+  --portal-border:      #{$portal-border};
+  --portal-text-strong: #{$portal-text-strong};
+  --portal-text-soft:   #{$portal-text-soft};
 }
 
 html.dark {
@@ -294,11 +307,13 @@ html.dark {
 
   // Search input — translucent dark surface so it blends with the hero band
   // (intentionally different from the solid white card used in light mode).
-  #portal #search-wrap input {
-    background-color: rgba(15, 23, 42, 0.6) !important; // translucent slate-900
-    border-color: rgba(255, 255, 255, 0.18) !important;
-    color: var(--portal-text-strong) !important;
 
+  #portal #search-wrap {
+    & > div > div {
+      background-color: rgba(255, 255, 255, 1) !important; // translucent slate-900
+    }
+  }
+  #portal #search-wrap input {
     &::placeholder {
       color: color-mix(in srgb, var(--portal-text-strong) 60%, transparent) !important;
     }
