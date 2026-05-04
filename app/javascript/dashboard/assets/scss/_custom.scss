@@ -34,7 +34,6 @@
 // 1. Theme palette
 // -----------------------------------------------------------------------------
 
-
 $custom-bg-cream: #f4f0e7;
 
 $custom-bg-card: rgb(var(--surface-1) / 1);
@@ -131,7 +130,6 @@ $custom-brand-color: #52785B;
       background-color: $custom-bg-card;
       padding: 2px 6px;
 
-
       .border-n-weak {
         border-width: 0;
 
@@ -152,7 +150,7 @@ $custom-brand-color: #52785B;
         gap: $custom-pad-main;
         background-color: transparent;
 
-        // -- Conversations list -----------------------------------------------------
+        // -- Conversations list ---------------------------------------------
         >div:nth-child(1) {
           background-color: $custom-bg-card;
           border: 1px solid $custom-border-light;
@@ -171,7 +169,7 @@ $custom-brand-color: #52785B;
           }
         }
 
-        // -- Conversation details panel --------------------------------------------
+        // -- Conversation details panel -------------------------------------
         &>div:nth-child(2) {
           border: 1px solid $custom-border-light;
           border-radius: 12px !important;
@@ -200,11 +198,11 @@ $custom-brand-color: #52785B;
 
     .bg-n-surface-2 {
       >div>.w-full {
-        padding:1px !important;
+        padding: 1px !important;
 
         >.flex.items-center.justify-between {
           background-color: white;
-          border:1px solid $custom-border-light;
+          border: 1px solid $custom-border-light;
           border-top-left-radius: 12px;
           border-top-right-radius: 12px;
         }
@@ -214,7 +212,7 @@ $custom-brand-color: #52785B;
           margin-bottom: 12px;
           border-bottom-left-radius: 13px;
           border-bottom-right-radius: 13px;
-          border:1px solid $custom-border-light;
+          border: 1px solid $custom-border-light;
           border-top: none;
         }
 
@@ -235,9 +233,6 @@ $custom-brand-color: #52785B;
     }
   }
 
-
-
-
   // -- Conversation details panel --------------------------------------------
   .conversation-details-wrap {
     overflow: hidden;
@@ -247,7 +242,6 @@ $custom-brand-color: #52785B;
       height: auto;
     }
   }
-
 
   // ---------------------------------------------------------------------------
   // 3. Primary actions: black instead of brand blue
@@ -272,7 +266,6 @@ $custom-brand-color: #52785B;
       background-color: #2a2a2a !important;
     }
   }
-
 
   // ---------------------------------------------------------------------------
   // 4. Dark mode overrides

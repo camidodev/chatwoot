@@ -84,18 +84,20 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 // pink theme regardless of the portal color setting.
 #portal #portal-bg {
   // background: var(--portal-bg-hero) !important;
-  &.w-full.bg-white.dark\:bg-slate-900.shadow-inner{
-  box-shadow: none !important;
-  background-image:url('/brand-assets/Klippkant_Support_bg.png') ;
-  background-size: cover;
-  background-position: 50% 40%;
-  background-repeat: no-repeat;
+  &.w-full.bg-white.dark\:bg-slate-900.shadow-inner {
+    box-shadow: none !important;
+    background-image: url('/brand-assets/Klippkant_Support_bg.png');
+    background-size: cover;
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
   }
-  &.bg-white.dark\:bg-slate-900.shadow-inner, &.bg-white.dark\:bg-slate-900{
-    background-image:url('/brand-assets/Klippkant_Single_page.png') ;
-  background-size: cover;
-  background-position: 50% 40%;
-  background-repeat: no-repeat;
+
+  &.bg-white.dark\:bg-slate-900.shadow-inner,
+  &.bg-white.dark\:bg-slate-900 {
+    background-image: url('/brand-assets/Klippkant_Single_page.png');
+    background-size: cover;
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
   }
 }
 
@@ -187,18 +189,19 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     text-align: center;
     font-size: 1.25rem;
     color: var(--portal-text-strong);
-    &::before{
+
+    &::before {
       content: '';
       display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    margin-right: 0.2rem;
-    vertical-align: middle;
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E76E91'><polygon points='12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2'/></svg>") no-repeat center / contain;
-    background-color: rgba($portal-bg-hero,0.5);
-    background-size: 70%;
-    padding: 1px;
-    border-radius: 10px;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.2rem;
+      vertical-align: middle;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E76E91'><polygon points='12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2'/></svg>") no-repeat center / contain;
+      background-color: rgba($portal-bg-hero, 0.5);
+      background-size: 70%;
+      padding: 1px;
+      border-radius: 10px;
     }
   }
 }
@@ -211,22 +214,23 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   font-weight: 600;
 
   a[href*="/hc/klippkant-support/sv/categories/bokning-avbokning"] {
-    &::before{
+    &::before {
       content: '';
-          display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        margin-right: 0.2rem;
-        vertical-align: middle;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4DE6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>") no-repeat center / contain;
-        background-color: rgba(#6B4DE6,0.1);
-        background-size: 58%;
-        padding: 1px;
-        border-radius: 10px;
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.2rem;
+      vertical-align: middle;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4DE6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>") no-repeat center / contain;
+      background-color: rgba(#6B4DE6, 0.1);
+      background-size: 58%;
+      padding: 1px;
+      border-radius: 10px;
     }
   }
-  
 }
+
+
 // -----------------------------------------------------------------------------
 // 6. Article links inside cards
 // -----------------------------------------------------------------------------
@@ -239,7 +243,7 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid #e6e6e6;
 
   span {
-    svg{
+    svg {
       color: black;
     }
   }
@@ -258,70 +262,73 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     }
   }
 
+
   #category-name {
     transition: color 0.3s ease;
 
-    a[href*="bokning-avbokning"]{
-      &::before{
+    a[href*="bokning-avbokning"] {
+      &::before {
         content: '';
-          display: inline-block;
+        display: inline-block;
         width: 2rem;
         height: 2rem;
         margin-right: 0.2rem;
         vertical-align: middle;
         background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4DE6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>") no-repeat center / contain;
-        background-color: rgba(#6B4DE6,0.1);
-        background-size: 58%;
-        padding: 1px;
-        border-radius: 10px;
-      }
-    }
-    a[href*="oppettider-sasong"]{
-      &::before{
-        content: '';
-          display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        margin-right: 0.2rem;
-        vertical-align: middle;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23c02222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>") no-repeat center / contain;
-        background-color: rgba(#c02222,0.1);
-        background-size: 58%;
-        padding: 1px;
-        border-radius: 10px;
-      }
-    }
-    a[href*="praktisk-info"]{
-      &::before{
-        content: '';
-          display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        margin-right: 0.2rem;
-        vertical-align: middle;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23229bc0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18h6'/><path d='M10 22h4'/><path d='M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2V17h6v-.3c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z'/></svg>") no-repeat center / contain;
-        background-color: rgba(#229bc0,0.1);
-        background-size: 58%;
-        padding: 1px;
-        border-radius: 10px;
-      }
-    }
-    a[href*="activiteter"]{
-      &::before{
-        content: '';
-          display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        margin-right: 0.2rem;
-        vertical-align: middle;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2339852f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2'/><path d='M16 2v4M8 2v4M3 10h18'/><path d='M9 16l2 2 4-4'/></svg>") no-repeat center / contain;
-        background-color: rgba(#39852f,0.1);
+        background-color: rgba(#6B4DE6, 0.1);
         background-size: 58%;
         padding: 1px;
         border-radius: 10px;
       }
     }
 
+    a[href*="oppettider-sasong"] {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.2rem;
+        vertical-align: middle;
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23c02222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>") no-repeat center / contain;
+        background-color: rgba(#c02222, 0.1);
+        background-size: 58%;
+        padding: 1px;
+        border-radius: 10px;
+      }
+    }
+
+    a[href*="praktisk-info"] {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.2rem;
+        vertical-align: middle;
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23229bc0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18h6'/><path d='M10 22h4'/><path d='M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2V17h6v-.3c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z'/></svg>") no-repeat center / contain;
+        background-color: rgba(#229bc0, 0.1);
+        background-size: 58%;
+        padding: 1px;
+        border-radius: 10px;
+      }
+    }
+
+    a[href*="activiteter"] {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.2rem;
+        vertical-align: middle;
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2339852f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2'/><path d='M16 2v4M8 2v4M3 10h18'/><path d='M9 16l2 2 4-4'/></svg>") no-repeat center / contain;
+        background-color: rgba(#39852f, 0.1);
+        background-size: 58%;
+        padding: 1px;
+        border-radius: 10px;
+      }
+    }
   }
 
   &:hover {
@@ -341,7 +348,6 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 
 #portal header [class*="locale-switcher"],
 #portal header #header-action-button {
-
   // Make the locale switcher container look like a pill button.
   &:not(button) {
     border: 1px solid var(--portal-border);
@@ -394,16 +400,15 @@ $portal-text-strong-dark: #f1f5f9; // slate-100
 $portal-text-soft-dark: #cbd5e1; // slate-300
 
 html.dark #portal {
-  --portal-bg-page: #{$portal-bg-page};
-  --portal-bg-hero: #{$portal-bg-hero};
-  --portal-bg-card: #{$portal-bg-card};
-  --portal-border: #{$portal-border};
-  --portal-text-strong: #{$portal-text-strong};
-  --portal-text-soft: #{$portal-text-soft};
+  --portal-bg-page: #{$portal-bg-page-dark};
+  --portal-bg-hero: #{$portal-bg-hero-dark};
+  --portal-bg-card: #{$portal-bg-card-dark};
+  --portal-border: #{$portal-border-dark};
+  --portal-text-strong: #{$portal-text-strong-dark};
+  --portal-text-soft: #{$portal-text-soft-dark};
 }
 
 html.dark {
-
   // Page chrome — needs explicit rules because the layout sets its own
   // background; CSS-variable inheritance alone isn't enough.
   #portal,
@@ -426,7 +431,6 @@ html.dark {
 
   // Search input — translucent dark surface so it blends with the hero band
   // (intentionally different from the solid white card used in light mode).
-
   #portal #search-wrap {
     &>div>div {
       background-color: rgba(255, 255, 255, 1) !important; // translucent slate-900
