@@ -40,7 +40,7 @@ $custom-bg-cream: #f4f0e7;
 $custom-bg-card: rgb(var(--surface-1) / 1);
 //$custom-border-muted: #9f9b98;
 $custom-border-muted: rgb(var(--slate-12) / 0.4);
-$custom-border-light: rgb(152 153 154 / 40%);
+$custom-border-light: rgb(234 234 234);
 
 $custom-radius-sm: 12px;
 $custom-radius-md: 16px;
@@ -49,6 +49,8 @@ $custom-radius-lg: 20px;
 $custom-pad-card: 12px;
 $custom-pad-shell: 13px;
 $custom-pad-main: 16px;
+
+$custom-brand-color: #52785B;
 
 :root {
   --background-color: 244 240 231;
@@ -77,7 +79,7 @@ $custom-pad-main: 16px;
 
     nav {
       ul {
-        gap: 0px !important;
+        gap: 1px !important;
 
         li {
           padding-block: 0px !important;
@@ -86,6 +88,7 @@ $custom-pad-main: 16px;
     }
 
     >section:nth-child(1) {
+      gap: 20px !important;
 
       // Account / brand card at the top of the sidebar
       >div:first-child {
@@ -113,7 +116,7 @@ $custom-pad-main: 16px;
           --alpha-2: var(--slate-12);
           box-sizing: content-box;
           border-radius: 35px;
-          background-color: rgba(var(--slate-12) / 1);
+          background-color: $custom-brand-color;
 
           span {
             background-color: $custom-bg-card;
@@ -124,7 +127,7 @@ $custom-pad-main: 16px;
 
     // Secondary navigation panel
     >section:nth-child(3) {
-      border-radius: $custom-radius-md;
+      border-radius: 8px !important;
       background-color: $custom-bg-card;
       padding: 2px 6px;
 
@@ -153,7 +156,7 @@ $custom-pad-main: 16px;
         >div:nth-child(1) {
           background-color: $custom-bg-card;
           border: 1px solid $custom-border-light;
-          border-radius: $custom-radius-lg;
+          border-radius: 12px !important;
 
           >div {
             padding: 0 $custom-pad-main;
@@ -164,18 +167,18 @@ $custom-pad-main: 16px;
           }
 
           >div:nth-child(1) {
-            border-bottom: 1px solid $custom-border-muted;
+            border-bottom: 1px solid $custom-border-light;
           }
         }
 
         // -- Conversation details panel --------------------------------------------
         &>div:nth-child(2) {
           border: 1px solid $custom-border-light;
-          border-radius: $custom-radius-lg;
+          border-radius: 12px !important;
         }
 
         &>div:nth-child(3) {
-          border-radius: $custom-radius-lg;
+          border-radius: 12px !important;
           background: transparent !important;
           border: none !important;
         }
@@ -197,9 +200,13 @@ $custom-pad-main: 16px;
 
     .bg-n-surface-2 {
       >div>.w-full {
+        padding:1px !important;
 
         >.flex.items-center.justify-between {
           background-color: white;
+          border:1px solid $custom-border-light;
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
         }
 
         >[channel-type="Channel::WebWidget"] {
@@ -207,6 +214,8 @@ $custom-pad-main: 16px;
           margin-bottom: 12px;
           border-bottom-left-radius: 13px;
           border-bottom-right-radius: 13px;
+          border:1px solid $custom-border-light;
+          border-top: none;
         }
 
         .px-2.pb-8.list-group {
@@ -251,10 +260,11 @@ $custom-pad-main: 16px;
   button.bg-n-brand,
   a.bg-n-brand,
   [role="button"].bg-n-brand {
-    background-color: #111 !important;
+    background-color: $custom-brand-color !important;
     color: #fff !important;
     filter: none !important; // Disable the default brightness-110 hover.
     transition: background-color 0.15s ease;
+    opacity: 1;
 
     &:hover,
     &:hover:enabled,
