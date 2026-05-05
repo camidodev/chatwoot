@@ -50,6 +50,7 @@ $custom-pad-shell: 13px;
 $custom-pad-main: 16px;
 
 $custom-brand-color: #52785B;
+$custom-icon-color:rgb(96, 100, 108);
 
 :root {
   --background-color: 244 240 231;
@@ -205,6 +206,9 @@ $custom-brand-color: #52785B;
           border: 1px solid $custom-border-light;
           border-top-left-radius: 12px;
           border-top-right-radius: 12px;
+          div div button span{
+            color: $custom-icon-color !important;
+          }
         }
 
         >[channel-type="Channel::WebWidget"] {
@@ -227,6 +231,11 @@ $custom-brand-color: #52785B;
 
           button {
             background-color: white !important;
+            div:nth-child(2) {
+              div{
+                color: $custom-icon-color !important;
+              }
+            }
           }
         }
       }
