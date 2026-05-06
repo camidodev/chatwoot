@@ -75,6 +75,20 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   padding: 6px 0;
 }
 
+// #portal main .max-w-5xl.w-full {
+//  padding-inline: 0px !important;
+//  &:nth-child(2){
+//   grid-template-columns: repeat(3, minmax(0, 1fr));
+//  }
+// }
+#portal main > .max-w-5xl{
+  padding-inline: 0px !important;
+  &> div:nth-of-type(2) {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 1.5rem;
+  }
+}
 
 // -----------------------------------------------------------------------------
 // 3. Hero band
@@ -173,7 +187,7 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   background-color: var(--portal-bg-card) !important;
   border: 1px solid var(--portal-border) !important;
   border-radius: $portal-radius-card !important;
-  padding: $portal-card-padding !important;
+  padding: 20px 16px !important;
   box-shadow: $portal-card-shadow;
 
   .grid {
@@ -183,7 +197,7 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 
 // Featured Articles heading — center it like the reference design.
 #portal .max-w-5xl>div:first-child section>div>div:first-child {
-  justify-content: center;
+  // justify-content: center;
 
   h3 {
     text-align: center;
@@ -193,15 +207,15 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     &::before {
       content: '';
       display: inline-block;
-      width: 2rem;
-      height: 2rem;
-      margin-right: 0.2rem;
-      vertical-align: middle;
-      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E76E91'><polygon points='12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2'/></svg>") no-repeat center / contain;
-      background-color: rgba($portal-bg-hero, 0.5);
-      background-size: 70%;
-      padding: 1px;
-      border-radius: 10px;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 10px;
+    vertical-align: middle;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E76E91'><polygon points='12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2'/></svg>") no-repeat center / contain;
+    background-color: rgba($portal-bg-hero,0.5);
+    background-size: 60%;
+    padding: 1px;
+    border-radius: 10px;
     }
   }
 }
@@ -212,22 +226,7 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   color: var(--portal-text-strong);
   font-size: 1.25rem;
   font-weight: 600;
-
-  a[href*="/hc/klippkant-support/sv/categories/bokning-avbokning"] {
-    &::before {
-      content: '';
-      display: inline-block;
-      width: 2rem;
-      height: 2rem;
-      margin-right: 0.2rem;
-      vertical-align: middle;
-      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4DE6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>") no-repeat center / contain;
-      background-color: rgba(#6B4DE6, 0.1);
-      background-size: 58%;
-      padding: 1px;
-      border-radius: 10px;
-    }
-  }
+  
 }
 
 
@@ -255,79 +254,102 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 
 #portal #category-block {
   &>div:first-child {
-    justify-content: center;
-
-    div {
-      align-items: center;
+    justify-content: start;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+      padding: 1px;
+      border-radius: 10px;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
-
-
-  #category-name {
-    transition: color 0.3s ease;
-
-    a[href*="bokning-avbokning"] {
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        margin-right: 0.2rem;
-        vertical-align: middle;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4DE6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>") no-repeat center / contain;
-        background-color: rgba(#6B4DE6, 0.1);
-        background-size: 58%;
-        padding: 1px;
-        border-radius: 10px;
-      }
+  
+  &:has(a[href*="bokning-avbokning"]) {
+    > div:first-child::before {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4DE6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'/><line x1='16' y1='2' x2='16' y2='6'/><line x1='8' y1='2' x2='8' y2='6'/><line x1='3' y1='10' x2='21' y2='10'/></svg>");
+      background-color: rgba(#6B4DE6, 0.1);
+      background-size: 50%;
     }
-
-    a[href*="oppettider-sasong"] {
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        margin-right: 0.2rem;
-        vertical-align: middle;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23c02222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>") no-repeat center / contain;
-        background-color: rgba(#c02222, 0.1);
+  }
+  &:has(a[href*="oppettider-sasong"]) {
+    > div:first-child::before {
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23c02222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>") no-repeat center / contain;
+        background-color: rgba(#c02222,0.1);
         background-size: 58%;
-        padding: 1px;
-        border-radius: 10px;
-      }
     }
-
-    a[href*="praktisk-info"] {
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        margin-right: 0.2rem;
-        vertical-align: middle;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23229bc0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18h6'/><path d='M10 22h4'/><path d='M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2V17h6v-.3c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z'/></svg>") no-repeat center / contain;
-        background-color: rgba(#229bc0, 0.1);
+  }
+  &:has(a[href*="praktisk-info"]) {
+    > div:first-child::before {
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23229bc0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18h6'/><path d='M10 22h4'/><path d='M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2V17h6v-.3c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z'/></svg>") no-repeat center / contain;
+        background-color: rgba(#229bc0,0.1);
         background-size: 58%;
-        padding: 1px;
-        border-radius: 10px;
-      }
     }
-    a[href*="aktiviteter"]{
+  }
+  &:has(a[href*="aktiviteter"]) {
+    > div:first-child::before {
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2339852f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2'/><path d='M16 2v4M8 2v4M3 10h18'/><path d='M9 16l2 2 4-4'/></svg>") no-repeat center / contain;
+        background-color: rgba(#39852f,0.1);
+        background-size: 58%;
+    }
+  }
+  &>div:nth-child(3){
+    &>div:first-child{
+      gap: 6px !important;
+      div.w-5.h-5.rounded-full{
+        display: none;
+      }
       &::before{
         content: '';
         display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        margin-right: 0.2rem;
+        width: 1.25rem;
+        height: 1.25rem;
         vertical-align: middle;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2339852f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2'/><path d='M16 2v4M8 2v4M3 10h18'/><path d='M9 16l2 2 4-4'/></svg>") no-repeat center / contain;
-        background-color: rgba(#39852f, 0.1);
-        background-size: 58%;
         padding: 1px;
-        border-radius: 10px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
       }
     }
+    &:has(a[href*="bokning-avbokning"])>div:first-child::before{
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4DE6' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='2.5' fill='%236B4DE6' stroke='none'/%3E%3C/svg%3E");
+    }
+    &:has(a[href*="oppettider-sasong"])>div:first-child::before{
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c02222' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='2.5' fill='%23c02222' stroke='none'/%3E%3C/svg%3E");
+    }
+    &:has(a[href*="praktisk-info"])>div:first-child::before{
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23229bc0' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='2.5' fill='%23229bc0' stroke='none'/%3E%3C/svg%3E");
+    }
+    &:has(a[href*="aktiviteter"])>div:first-child::before{
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2339852f' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='2.5' fill='%2339852f' stroke='none'/%3E%3C/svg%3E");
+    }
+    a[href*="bokning-avbokning"]{
+      color: #6B4DE6 !important;
+    }
+    a[href*="oppettider-sasong"]{
+      color: #c02222 !important;
+    }
+    a[href*="praktisk-info"]{
+      color: #229bc0 !important;
+    }
+    a[href*="aktiviteter"]{
+      color: #39852f !important;
+    }
+
+  }
+  div {
+    gap:0 !important;
+    span{
+      font-size: 14px !important;
+    }
+  }
+  
+  #category-name {
+    transition: color 0.3s ease;
   }
 
   &:hover {
