@@ -130,6 +130,11 @@ $custom-icon-color:rgb(96, 100, 108);
       border-radius: 8px !important;
       background-color: $custom-bg-card;
       padding: 2px 6px;
+      span.group\/avatar{
+        div{
+          display: none;
+        }
+      }
 
       .border-n-weak {
         border-width: 0;
@@ -164,6 +169,20 @@ $custom-icon-color:rgb(96, 100, 108);
 
           >div {
             padding: 0 $custom-pad-main;
+            ul{
+              gap:10px;
+              li a.text-n-blue-11{
+                color: black !important;
+                div.rounded-full{
+                  background-color: rgba($custom-brand-color,0.1) !important;
+                  color: $custom-brand-color !important;
+                  font-weight: 700 !important;
+                }
+                &::after{
+                  background-color: $custom-brand-color !important;
+                }
+              }
+            }
 
             .bg-n-background {
               background-color: transparent;
@@ -172,6 +191,9 @@ $custom-icon-color:rgb(96, 100, 108);
 
           >div:nth-child(1) {
             border-bottom: 1px solid $custom-border-light;
+            button.flex-shrink-0.rtl\:rotate-180{
+              display: none;
+            }
           }
         }
 
@@ -240,6 +262,17 @@ $custom-icon-color:rgb(96, 100, 108);
           .text-sm {
             background-color: white !important;
             border-radius: 6px !important;
+            &:has(.label-wrap) {
+              > div.outline.outline-1,
+              div.outline.outline-1 {       // covers both direct child and descendant
+                padding-inline: 1rem !important;
+              }
+            }
+            span.group\/avatar{
+              div{
+                display: none;
+              }
+            }                                                                                       
             .label-wrap{
               button{
                 background-color: $custom-border-light !important;
@@ -276,10 +309,61 @@ $custom-icon-color:rgb(96, 100, 108);
   // -- Conversation details panel --------------------------------------------
   .conversation-details-wrap {
     overflow: hidden;
+    // .\[grid-area\:bubble\]{
+    //   .bg-n-solid-iris{
+    //     background-color: rgba($custom-brand-color,0.1) !important;
+    //   }
+    
+    // }
+    .message-bubble-container{
+      [class*="bg-n"]{
+        --tw-bg-opacity: 0.5;
+      }
+
+      .bg-n-solid-blue{
+        background-color: rgba($custom-brand-color,0.1) !important;
+      }
+
+     
+    }
+    .\[grid-area\:avatar\] {
+      span[role="img"].relative.inline-flex{
+        background-color: rgba($custom-brand-color,0.1) !important;
+        color: $custom-brand-color !important;
+        font-weight: 800;
+      }
+    }
 
     >div:nth-child(1) {
       padding: 18px !important;
       height: auto;
+    }
+    .reply-box{
+      background-color: white;
+      &>div:first-child{
+        button.flex.items-center.w-auto {
+          background-color: transparent;
+          div.absolute.shadow-sm{
+            border-bottom: 1px solid $custom-brand-color;
+            border-radius: 0 !important;
+          }
+          .flex.items-center{
+            padding-bottom: 6px;
+          }
+        }
+        &>div:last-child{
+          div{
+            display: none;
+          }
+        }
+        
+      }
+    }
+    .right-wrap{
+      button{
+        background-color: $custom-brand-color;
+        opacity: 1;
+      }
     }
   }
 
@@ -294,7 +378,7 @@ $custom-icon-color:rgb(96, 100, 108);
   button.bg-n-brand,
   a.bg-n-brand,
   [role="button"].bg-n-brand {
-    background-color: $custom-brand-color !important;
+    // background-color: $custom-brand-color !important;
     color: #fff !important;
     filter: none !important; // Disable the default brightness-110 hover.
     transition: background-color 0.15s ease;
