@@ -141,6 +141,11 @@ $custom-icon-color:rgb(96, 100, 108);
         }
       }
     }
+    span[role="img"].rounded-full{
+      background-color: rgba($custom-brand-color,0.2) !important;
+      color: $custom-brand-color !important;
+      font-weight: 700 !important;
+    }
   }
 
   // -- Main content area ------------------------------------------------------
@@ -176,6 +181,14 @@ $custom-icon-color:rgb(96, 100, 108);
         &>div:nth-child(2) {
           border: 1px solid $custom-border-light;
           border-radius: 12px !important;
+          // div:nth-child(2){
+          //   .\[grid-area\:bubble\]{
+          //     div>.flex.items-center.gap-2{
+          //       background-color: red !important;
+          //     }
+          //   }
+          // }
+          
         }
 
         &>div:nth-child(3) {
@@ -229,10 +242,28 @@ $custom-icon-color:rgb(96, 100, 108);
           .text-sm {
             background-color: white !important;
             border-radius: 6px !important;
+            .label-wrap{
+              button{
+                background-color: $custom-border-light !important;
+                color:$custom-icon-color
+              }
+            }
+            &>div.outline.outline-1.outline-n-weak:not(:has([inbox-id="1"])) button {
+              background-color: rgba($custom-brand-color, 0.1) !important;
+              color: $custom-brand-color !important;
+            }
+            span[role="img"].rounded-full{
+              background-color: rgba($custom-brand-color,0.2) !important;
+              color: $custom-brand-color !important;
+              font-weight: 700 !important;
+            }
           }
 
           button {
-            background-color: white !important;
+            &.flex.items-center.select-none{
+              background-color: white !important;
+            }
+            // background-color: white !important;
             div:nth-child(2) {
               div{
                 color: $custom-icon-color !important;
