@@ -10,18 +10,28 @@
     </div>
 
     <%# Go to homepage link section %>
-    <div class="flex items-center justify-between gap-2 sm:gap-5">
+    <div class="flex items-center justify-between gap-2 sm:gap-3">
       <% if @portal.homepage_link %>
         <div class="px-1 py-2 ltr:ml-8 rtl:mr-8 cursor-pointer block">
           <div class="flex-grow flex-shrink-0">
-            <a id="header-action-button" target="_blank" rel="noopener noreferrer nofollow" href="<%= @portal.homepage_link %>" class="flex flex-row items-center gap-1 text-sm font-medium whitespace-nowrap text-slate-800 dark:text-slate-100 stroke-slate-700 dark:stroke-slate-200">
+            <a id="header-homepage-link" target="_blank" rel="noopener noreferrer nofollow" href="<%= @portal.homepage_link %>" class="flex flex-row items-center gap-1 text-sm font-medium whitespace-nowrap text-slate-800 dark:text-slate-100 stroke-slate-700 dark:stroke-slate-200">
               <%= render partial: 'icons/redirect' %>
               <%= I18n.t('public_portal.header.go_to_homepage') %>
             </a>
           </div>
         </div>
       <% end %>
-
+      <%# Gålö Hjälpcenter only: static “Kontakta oss” (slug + URL in Portal model) %>
+      <% if @portal.galoh_help_center_portal? %>
+        <div class="px-1 py-2 cursor-pointer block">
+          <div class="flex-grow flex-shrink-0">
+            <a id="header-homepage-link-2" target="_blank" rel="noopener noreferrer nofollow" href="<%= Portal::GALOH_HELP_CENTER_CONTACT_URL %>" class="flex flex-row items-center gap-1 text-sm font-medium whitespace-nowrap text-slate-800 dark:text-slate-100 stroke-slate-700 dark:stroke-slate-200">
+              <%= render partial: 'icons/redirect' %>
+              <%= I18n.t('public_portal.header.galoh_contact_us') %>
+            </a>
+          </div>
+        </div>
+      <% end %>
       <%# Appearance toggle section %>
       <div class="relative flex-grow flex-shrink-0 px-1 py-2 cursor-pointer">
         <button id="toggle-appearance" class="flex justify-between min-w-[76px] flex-row items-center stroke-slate-700 dark:stroke-slate-200 text-slate-800 dark:text-slate-100 gap-1" type="button">

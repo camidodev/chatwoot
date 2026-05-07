@@ -29,6 +29,10 @@ class Portal < ApplicationRecord
 
   DEFAULT_COLOR = '#1f93ff'.freeze
 
+  # Gålö Hjälpcenter – static “Kontakta oss” link in the public portal header.
+  GALOH_HELP_CENTER_PORTAL_SLUG = 'hjalpcenter'.freeze
+  GALOH_HELP_CENTER_CONTACT_URL = 'https://galohavsbad.se/om-oss/kontakta-oss/'.freeze
+
   belongs_to :account
   has_many :categories, dependent: :destroy_async
   has_many :folders,  through: :categories
@@ -92,6 +96,10 @@ class Portal < ApplicationRecord
 
   def display_title
     page_title.presence || name
+  end
+
+  def galoh_help_center_portal?
+    slug == GALOH_HELP_CENTER_PORTAL_SLUG
   end
 
   private
