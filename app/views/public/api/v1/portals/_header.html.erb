@@ -32,6 +32,11 @@
           </div>
         </div>
       <% end %>
+      <% if @portal.galoh_help_center_portal? %>
+        <div class="px-1 py-2 flex items-center text-slate-800 dark:text-slate-100" aria-hidden="true">
+          <div class="i-ph-tray-arrow-down"></div>
+        </div>
+      <% end %>
       <%# Appearance toggle section %>
       <div class="relative flex-grow flex-shrink-0 px-1 py-2 cursor-pointer">
         <button id="toggle-appearance" class="flex justify-between min-w-[76px] flex-row items-center stroke-slate-700 dark:stroke-slate-200 text-slate-800 dark:text-slate-100 gap-1" type="button">
