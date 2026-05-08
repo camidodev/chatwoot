@@ -405,6 +405,10 @@ en:
       loading_placeholder: Searching...
       results_title: Search results
     toc_header: 'On this page'
+    article_sidebar:
+      aside_label: Article page sidebar
+      in_this_category: In this category
+      nav_label: Articles in this category
     hero:
       sub_title: Search for the articles here or browse the categories below.
     common:

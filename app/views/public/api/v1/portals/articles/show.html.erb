@@ -39,7 +39,56 @@
   <article id="cw-article-content" class="article-content flex-grow flex-2 mx-auto text-slate-800 dark:text-slate-50 text-lg max-w-3xl prose-h1:text-2xl prose-h2:text-xl prose-h2:mt-0 prose-h3:text-lg prose-code:[&>p]:p-1 prose-code:[&>p]:rounded-sm prose-code:[&>p]:bg-black-100 dark:prose-code:[&>p]:bg-black-600 prose-code:after:content-none prose-code:before:content-none prose dark:prose-invert break-words w-full <%= @is_plain_layout_enabled ? 'py-4' : 'pt-8 pb-12' %>">
     <%= @parsed_content %>
   </article>
-  <div class="flex-1" id="cw-hc-toc"></div>
+  <aside class="flex min-w-0 flex-1 flex-col items-stretch gap-0 self-start hidden lg:flex" aria-label="<%= I18n.t('public_portal.article_sidebar.aside_label') %>">
+    <div class="w-full shrink-0" id="cw-hc-toc"></div>
+    <% if @article.present? %>
+      <% category_articles_for_sidebar = if @article.category.present?
+           @article.category.articles.published.includes(:category).order(:position).to_a
+         else
+           @portal.articles.published.includes(:category).where(locale: @article.locale, category_id: nil).order(:position).to_a
+         end %>
+      <% if category_articles_for_sidebar.any? %>
+        <div class="flex flex-col gap-3 py-6 scroll-mt-24 ltr:pl-4 rtl:pr-4 border-t border-solid border-slate-100 dark:border-slate-800">
+          <h2 class="text-sm font-semibold tracking-wide text-slate-900 dark:text-slate-100 px-1">
+            <%= I18n.t('public_portal.article_sidebar.in_this_category') %>
+          </h2>
+          <nav class="<%= !@is_plain_layout_enabled ? 'overflow-hidden rounded-lg border border-solid border-slate-100 dark:border-slate-800' : '' %>" aria-label="<%= I18n.t('public_portal.article_sidebar.nav_label') %>">
+            <ul class="divide-y divide-solid divide-slate-100 dark:divide-slate-800">
+              <% category_articles_for_sidebar.each do |row| %>
+                <% is_current = row.id == @article.id %>
+                <% snippet = row.description.presence || render_category_content(row.content).squish %>
+                <li>
+                  <% if is_current %>
+                    <div
+                      class="flex items-start gap-3 <%= !@is_plain_layout_enabled ? 'bg-slate-50/80 px-3 py-3 dark:bg-slate-800/40' : 'py-2' %>"
+                      aria-current="page"
+                    >
+                      <div class="min-w-0 flex-1">
+                        <p class="text-sm font-semibold leading-snug text-red-600 dark:text-red-400">
+                          <%= row.title %>
+                        </p>
+                      </div>
+                    </div>
+                  <% else %>
+                    <a
+                      class="flex items-start gap-3 <%= !@is_plain_layout_enabled ? 'px-3 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/30' : 'group py-2' %>"
+                      href="<%= generate_article_link(@portal.slug, row.slug, @theme_from_params, @is_plain_layout_enabled) %>"
+                    >
+                      <div class="min-w-0 flex-1">
+                        <p class="text-sm font-medium leading-snug text-slate-900 dark:text-slate-100 <%= @is_plain_layout_enabled ? 'group-hover:underline' : '' %>">
+                          <%= row.title %>
+                        </p>
+                      </div>
+                    </a>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      <% end %>
+    <% end %>
+  </aside>
 </div>
 <style>
   .article-content li > p {

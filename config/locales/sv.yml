@@ -381,6 +381,10 @@ sv:
       loading_placeholder: Searching...
       results_title: Search results
     toc_header: 'På denna sida'
+    article_sidebar:
+      aside_label: Sidofält för artikelsida
+      in_this_category: I denna kategori
+      nav_label: Artiklar i denna kategori
     hero:
       sub_title: Sök efter artiklarna här eller bläddra i kategorierna nedan.
     common:
