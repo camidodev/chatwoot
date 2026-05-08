@@ -34,6 +34,7 @@
 // 1. Theme palette
 // -----------------------------------------------------------------------------
 
+
 $custom-bg-cream: #f4f0e7;
 
 $custom-bg-card: rgb(var(--surface-1) / 1);
@@ -136,6 +137,7 @@ $custom-icon-color:rgb(96, 100, 108);
         }
       }
 
+
       .border-n-weak {
         border-width: 0;
 
@@ -161,7 +163,7 @@ $custom-icon-color:rgb(96, 100, 108);
         gap: $custom-pad-main;
         background-color: transparent;
 
-        // -- Conversations list ---------------------------------------------
+        // -- Conversations list -----------------------------------------------------
         >div:nth-child(1) {
           background-color: $custom-bg-card;
           border: 1px solid $custom-border-light;
@@ -197,7 +199,7 @@ $custom-icon-color:rgb(96, 100, 108);
           }
         }
 
-        // -- Conversation details panel -------------------------------------
+        // -- Conversation details panel --------------------------------------------
         &>div:nth-child(2) {
           border: 1px solid $custom-border-light;
           border-radius: 12px !important;
@@ -234,11 +236,11 @@ $custom-icon-color:rgb(96, 100, 108);
 
     .bg-n-surface-2 {
       >div>.w-full {
-        padding: 1px !important;
+        padding:1px !important;
 
         >.flex.items-center.justify-between {
           background-color: white;
-          border: 1px solid $custom-border-light;
+          border:1px solid $custom-border-light;
           border-top-left-radius: 12px;
           border-top-right-radius: 12px;
           div div button span{
@@ -251,8 +253,16 @@ $custom-icon-color:rgb(96, 100, 108);
           margin-bottom: 12px;
           border-bottom-left-radius: 13px;
           border-bottom-right-radius: 13px;
-          border: 1px solid $custom-border-light;
+          border:1px solid $custom-border-light;
           border-top: none;
+          a[href^="tel:"]{
+            button.ltr\:-ml-1.rtl\:-mr-1{
+              display: none;
+            }
+          }
+          button.i-ph-trash {
+            color: $custom-icon-color !important;
+          }
         }
 
         .px-2.pb-8.list-group {
@@ -306,6 +316,9 @@ $custom-icon-color:rgb(96, 100, 108);
     }
   }
 
+
+
+
   // -- Conversation details panel --------------------------------------------
   .conversation-details-wrap {
     overflow: hidden;
@@ -338,17 +351,28 @@ $custom-icon-color:rgb(96, 100, 108);
       padding: 18px !important;
       height: auto;
     }
+
     .reply-box{
       background-color: white;
       &>div:first-child{
-        button.flex.items-center.w-auto {
+        button.bg-n-alpha-2{
           background-color: transparent;
           div.absolute.shadow-sm{
-            border-bottom: 1px solid $custom-brand-color;
+            border-bottom: 2px solid $custom-brand-color;
             border-radius: 0 !important;
           }
           .flex.items-center{
             padding-bottom: 6px;
+          }
+          &:has(.absolute[style*="--translate-x: 0px"]) > div:nth-child(1) {
+            color: $custom-brand-color !important;
+            font-weight: 700;
+          }
+        
+          // Private Note is active → chip has translate-x with non-zero value
+          &:has(.absolute[style*="--translate-x:"]:not([style*="--translate-x: 0px"])) > div:nth-child(2) {
+            color: $custom-brand-color !important;
+            font-weight: 700;
           }
         }
         &>div:last-child{
@@ -366,6 +390,7 @@ $custom-icon-color:rgb(96, 100, 108);
       }
     }
   }
+
 
   // ---------------------------------------------------------------------------
   // 3. Primary actions: black instead of brand blue
@@ -390,6 +415,7 @@ $custom-icon-color:rgb(96, 100, 108);
       background-color: #2a2a2a !important;
     }
   }
+
 
   // ---------------------------------------------------------------------------
   // 4. Dark mode overrides
