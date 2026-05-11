@@ -17,6 +17,8 @@ import CustomBrandPolicyWrapper from '../../components/CustomBrandPolicyWrapper.
 
 defineProps({
   isCollapsed: { type: Boolean, default: false },
+  /** Top bar: single-line name + chevron; menu opens below trigger */
+  headerLayout: { type: Boolean, default: false },
 });
 
 const emit = defineEmits(['close', 'openKeyShortcutModal']);
@@ -126,7 +128,10 @@ const allowedMenuItems = computed(() => {
 <template>
   <DropdownContainer
     class="relative min-w-0"
-    :class="isCollapsed ? 'w-auto' : 'w-full'"
+    :class="[
+      isCollapsed ? 'w-auto' : 'w-full',
+      headerLayout && '!w-auto',
+    ]"
     @close="emit('close')"
   >
     <template #trigger="{ toggle, isOpen }">
@@ -135,19 +140,22 @@ const allowedMenuItems = computed(() => {
         :class="[
           { 'bg-n-alpha-1': isOpen },
           isCollapsed ? 'justify-center' : 'w-full',
+          headerLayout &&
+            '!w-auto items-center gap-2 pr-1.5 pl-0.5 rounded-md hover:bg-n-alpha-2 dark:hover:bg-n-alpha-1',
         ]"
         :title="isCollapsed ? currentUser.available_name : undefined"
+        type="button"
         @click="toggle"
       >
         <Avatar
-          :size="32"
+          :size="headerLayout ? 28 : 32"
           :name="currentUser.available_name"
           :src="currentUser.avatar_url"
           :status="currentUserAvailability"
           class="flex-shrink-0"
           rounded-full
         />
-        <div v-if="!isCollapsed" class="min-w-0">
+        <div v-if="!isCollapsed && !headerLayout" class="min-w-0">
           <div class="text-sm font-medium leading-4 truncate text-n-slate-12">
             {{ currentUser.available_name }}
           </div>
@@ -155,9 +163,28 @@ const allowedMenuItems = computed(() => {
             {{ currentUser.email }}
           </div>
         </div>
+        <div v-else-if="headerLayout" class="min-w-0 max-w-[11rem]">
+          <div
+            class="text-sm font-normal leading-4 truncate text-n-slate-11 dark:text-n-slate-12"
+          >
+            {{ currentUser.available_name }}
+          </div>
+        </div>
+        <span
+          v-if="headerLayout"
+          aria-hidden="true"
+          class="i-lucide-chevron-down size-[0.9375rem] text-n-slate-11 flex-shrink-0 opacity-90"
+        />
       </button>
     </template>
-    <DropdownBody class="bottom-12 z-50 mb-2 w-80 ltr:left-0 rtl:right-0">
+    <DropdownBody
+      class="z-50 w-80"
+      :class="
+        headerLayout
+          ? 'top-full mt-2 bottom-auto mb-0 ltr:right-0 rtl:left-0'
+          : 'bottom-12 mb-2 ltr:left-0 rtl:right-0'
+      "
+    >
       <SidebarProfileMenuStatus />
       <DropdownSeparator />
       <template v-for="item in allowedMenuItems" :key="item.label">

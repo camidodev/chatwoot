@@ -19,6 +19,12 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  /** Top app bar: bold uppercase account name + chevron */
+  variant: {
+    type: String,
+    default: 'default',
+    validator: v => ['default', 'header'].includes(v),
+  },
 });
 
 const emit = defineEmits(['showCreateAccountModal']);
@@ -62,6 +68,35 @@ const emitNewAccount = () => {
         @click="toggle"
       >
         <Logo class="size-7" />
+      </button>
+      <!-- Top header: workspace-style title -->
+      <button
+        v-else-if="variant === 'header'"
+        id="header-account-switcher"
+        :data-account-id="accountId"
+        aria-haspopup="listbox"
+        aria-controls="account-options"
+        type="button"
+        class="flex max-w-full flex-nowrap items-center gap-2 rounded-md px-2 py-1.5 -mx-0.5 whitespace-nowrap"
+        :class="[
+          isOpen && 'bg-n-alpha-1',
+          showAccountSwitcher
+            ? 'hover:bg-n-alpha-2 dark:hover:bg-n-alpha-1 cursor-pointer'
+            : 'cursor-default',
+        ]"
+        @click="() => showAccountSwitcher && toggle()"
+      >
+        <span
+          class="text-sm font-bold uppercase tracking-[0.06em] leading-5 text-n-slate-12"
+          aria-live="polite"
+        >
+          {{ currentAccount.name }}
+        </span>
+        <span
+          v-if="showAccountSwitcher"
+          aria-hidden="true"
+          class="i-lucide-chevron-down size-[0.9375rem] text-n-slate-11 flex-shrink-0 opacity-90"
+        />
       </button>
       <!-- Expanded view: Account name trigger -->
       <button

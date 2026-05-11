@@ -7,8 +7,11 @@ const SidebarControl = Symbol('SidebarControl');
 
 const DEFAULT_WIDTH = 200;
 const MIN_WIDTH = 56;
-const COLLAPSED_THRESHOLD = 160;
+export const COLLAPSED_THRESHOLD = 160;
 const MAX_WIDTH = 320;
+
+/** Live sidebar width (px) for shell alignment; synced from Sidebar (includes mid-resize). */
+export const dashboardLayoutSidebarWidth = ref(DEFAULT_WIDTH);
 
 // Shared state for active popover (only one can be open at a time)
 const activePopover = ref(null);
