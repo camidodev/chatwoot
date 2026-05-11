@@ -255,14 +255,34 @@ $custom-icon-color:rgb(96, 100, 108);
           border-bottom-right-radius: 13px;
           border:1px solid $custom-border-light;
           border-top: none;
+          overflow: hidden;
+          position: relative;
           a[href^="tel:"]{
             button.ltr\:-ml-1.rtl\:-mr-1{
               display: none;
             }
           }
-          button.i-ph-trash {
-            color: $custom-icon-color !important;
+          // span.i-ph-trash {
+          //   background-color: rgb(139 141 152 / 10%);
+          //   color:black;
+          // }
+          button:has(span.i-ph-trash){
+            background-color: rgb(139 141 152 / 10%);
           }
+          span.i-ph-trash{
+            color: black !important;
+          }
+          &>div{
+            div.gap-1\.5.min-w-0.w-full{
+              div.min-w-0{
+                position: absolute;
+                top:25px;
+                left: 82px;
+
+              }
+            }
+          }
+          
         }
 
         .px-2.pb-8.list-group {
@@ -408,6 +428,7 @@ $custom-icon-color:rgb(96, 100, 108);
     filter: none !important; // Disable the default brightness-110 hover.
     transition: background-color 0.15s ease;
     opacity: 1;
+
 
     &:hover,
     &:hover:enabled,
