@@ -60,9 +60,41 @@ $custom-icon-color:rgb(96, 100, 108);
 // -----------------------------------------------------------------------------
 // 2. Dashboard overrides (scoped to #app to avoid leaking)
 // -----------------------------------------------------------------------------
+.profiler-results{
+  display: none;
+}
 #app {
   .bg-n-background {
     background: #F9F8F6;
+  }
+
+  header{
+    background-color: #F9F8F6;
+    &>div:first-child{
+      width: 300px !important;
+      border-bottom: 1px solid $custom-border-light;
+      margin-left: 12px;
+    }
+    #header-account-switcher{
+      width: 100%;
+      justify-content: space-between;
+      span.i-lucide-chevron-down{
+        color: black !important;
+      }
+    }
+    button{
+      span[role="img"].rounded-full{
+        background-color: rgba($custom-brand-color,0.2) !important;
+        color: $custom-brand-color !important;
+        font-weight: 700 !important;
+      }
+      div.absolute.rounded-full.bg-n-teal-10{
+        display: none;
+      }
+      div.text-sm.font-normal{
+        font-weight: 700;
+      }
+    }
   }
 
   // -- Sidebar shell ----------------------------------------------------------
@@ -158,6 +190,7 @@ $custom-icon-color:rgb(96, 100, 108);
     &.bg-n-surface-1 {
       padding: $custom-pad-main;
       background: transparent;
+      padding-top: 0px !important;
 
       >section.flex {
         gap: $custom-pad-main;
