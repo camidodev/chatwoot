@@ -21,6 +21,28 @@
   <% end %>
 <% end %>
 
+<% if @article.category %>
+  <% back_category_link_params = {
+    portal_slug: @portal.slug,
+    category_locale: @article.category.locale,
+    category_slug: @article.category.slug,
+    theme: @theme_from_params,
+    is_plain_layout_enabled: @is_plain_layout_enabled
+  } %>
+  <div class="back-to-category-wrap max-w-5xl px-4 md:px-8 mx-auto pt-6">
+    <a
+      href="<%= generate_category_link(back_category_link_params) %>"
+      class="inline-flex items-center gap-1 text-sm font-medium text-red-600 dark:text-red-400 hover:underline"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M19 12H5"/>
+        <path d="M12 19l-7-7 7-7"/>
+      </svg>
+      <span><%= I18n.t('public_portal.article.back_to_category', category_name: @article.category.name, default: "Back to #{@article.category.name}") %></span>
+    </a>
+  </div>
+<% end %>
+
 <div class="flex max-w-5xl w-full px-4 md:px-8 mx-auto">
   <article id="cw-article-content" class="article-content flex-grow flex-2 mx-auto text-slate-800 dark:text-slate-50 text-lg max-w-3xl prose-h1:text-2xl prose-h2:text-xl prose-h2:mt-0 prose-h3:text-lg prose-code:[&>p]:p-1 prose-code:[&>p]:rounded-sm prose-code:[&>p]:bg-black-100 dark:prose-code:[&>p]:bg-black-600 prose-code:after:content-none prose-code:before:content-none prose dark:prose-invert break-words w-full <%= @is_plain_layout_enabled ? 'py-4' : 'pt-8 pb-12' %>">
     <% if !@is_plain_layout_enabled %>
