@@ -91,11 +91,17 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     font-size: 25px;
   }
 }
-
+.permalink {
+  display: none;
+}
 .back-to-category-wrap{
   z-index: 1;
     width: 100%;
     padding-top: 60px !important;
+    max-width: 70rem !important;
+    a{
+      padding: 0 20px;
+    }
 }
 
 #portal header nav div:nth-child(1) {
@@ -149,6 +155,7 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   
   &>div:first-child>span.text-sm.text-slate-800{
     color: red !important;
+    font-size: 18px !important;
   }
   &>div:nth-child(2){
     gap: 15px !important;
@@ -275,7 +282,7 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     // border-top: 0 !important;
     padding: 20px !important;
     max-width: 70rem !important;
-    margin-top: 25px !important;
+    margin-top: 5px !important;
     // border-bottom-left-radius: 12px;
     // border-bottom-right-radius: 12px;
     background-color: #FDFBFB;
@@ -364,6 +371,13 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   }
 }
 
+#portal [data-category-slug] > div:nth-child(1){
+  padding: 0 0 10px 20px;
+  a{
+    font-size: 18px !important;
+  }
+
+}
 // Category detail page — match the icon to the slug.
 #portal [data-category-slug] > div:nth-child(2){
   position: relative;
