@@ -409,6 +409,8 @@ en:
       aside_label: Article page sidebar
       in_this_category: In this category
       nav_label: Articles in this category
+    article:
+      back_to_category: Back to %{category_name}
     hero:
       sub_title: Search for the articles here or browse the categories below.
     common:

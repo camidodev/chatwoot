@@ -385,6 +385,8 @@ sv:
       aside_label: Sidofält för artikelsida
       in_this_category: I denna kategori
       nav_label: Artiklar i denna kategori
+    article:
+      back_to_category: Tillbaka till %{category_name}
     hero:
       sub_title: Sök efter artiklarna här eller bläddra i kategorierna nedan.
     common:
