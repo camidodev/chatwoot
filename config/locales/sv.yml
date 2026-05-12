@@ -387,6 +387,10 @@ sv:
       nav_label: Artiklar i denna kategori
     article:
       back_to_category: Tillbaka till %{category_name}
+      was_this_helpful: Var detta till hjälp?
+      feedback_yes: Ja
+      feedback_no: Nej
+      feedback_thanks: Tack för din feedback!
     hero:
       sub_title: Sök efter artiklarna här eller bläddra i kategorierna nedan.
     common:

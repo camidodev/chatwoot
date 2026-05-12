@@ -411,6 +411,10 @@ en:
       nav_label: Articles in this category
     article:
       back_to_category: Back to %{category_name}
+      was_this_helpful: Was this helpful?
+      feedback_yes: Yes
+      feedback_no: No
+      feedback_thanks: Thanks for your feedback!
     hero:
       sub_title: Search for the articles here or browse the categories below.
     common:
