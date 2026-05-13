@@ -78,12 +78,13 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     display: none;
   }
   nav{
+    max-width: 70rem !important;
+    padding: 0px !important;
     div.gap-2.sm\:gap-3{
       div.cursor-pointer div{
         border: 1px solid $portal-border;
-        // padding: 6px 10px !important;
+        padding: 6px 10px !important;
         border-radius: 40px;
-        padding: 0px !important;
       }
     }
   }
@@ -100,9 +101,9 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     width: 100%;
     padding-top: 60px !important;
     max-width: 70rem !important;
-    a{
-      padding: 0 20px;
-    }
+    // a{
+    //   padding: 0 20px;
+    // }
 }
 
 #portal header nav div:nth-child(1) {
@@ -117,6 +118,7 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 // }
 #portal main > .max-w-5xl{
   padding-inline: 0px !important;
+  max-width: 70rem !important;
   &> div:nth-of-type(2) {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -296,9 +298,10 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   main > div.max-w-5xl.w-full{
     // border: 1px solid $portal-border !important;
     // border-top: 0 !important;
-    padding: 20px !important;
+    // padding: 20px !important;
     max-width: 70rem !important;
     margin-top: 5px !important;
+    padding: 20px 0px !important;
     // border-bottom-left-radius: 12px;
     // border-bottom-right-radius: 12px;
     background-color: #f8f9f8;
@@ -359,6 +362,7 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     align-items: start;
     flex-grow: 1;
     padding: 0 !important;
+    max-width: 70rem !important;
     h1{
       text-align: center !important;
       line-height: 1.2;
