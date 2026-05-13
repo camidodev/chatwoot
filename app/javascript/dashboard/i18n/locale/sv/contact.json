@@ -550,7 +550,7 @@
         "SEARCH_ERROR_MESSAGE": "Could not search for contacts. Please try again later.",
         "SUCCESS_MESSAGE": "Kontakten har slagits samman",
         "ERROR_MESSAGE": "Kunde inte slå samman kontakter, försök igen!",
-        "IS_SEARCHING": "Searching...",
+        "IS_SEARCHING": "Letar...",
         "BUTTONS": {
           "CANCEL": "Avbryt",
           "CONFIRM": "Slå samman kontakt"

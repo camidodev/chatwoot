@@ -220,6 +220,7 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
         h1{
           margin-bottom: 0px !important;
           font-size: 26px !important;
+          text-align: start !important;
           a.permalink {
             display: none;
           }
@@ -356,8 +357,9 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     text-align: start;
     align-items: start;
     flex-grow: 1;
+    padding: 0 !important;
     h1{
-      text-align: start !important;
+      text-align: center !important;
       line-height: 1.2;
       font-size: 2.5rem;
     }
@@ -386,7 +388,7 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 #portal [data-category-slug] > div:nth-child(1){
-  padding: 0 0 10px 20px;
+  padding-bottom: 10px;
   a{
     font-size: 18px !important;
   }
@@ -666,17 +668,20 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
       div.w-5.h-5.rounded-full{
         display: none;
       }
-      &::before{
-        content: '';
-        display: inline-block;
-        width: 1.25rem;
-        height: 1.25rem;
-        vertical-align: middle;
-        padding: 1px;
-        border-radius: 50%;
-        background-repeat: no-repeat;
-        background-position: center;
-        flex-shrink: 0;
+      // &::before{
+      //   content: '';
+      //   display: inline-block;
+      //   width: 1.25rem;
+      //   height: 1.25rem;
+      //   vertical-align: middle;
+      //   padding: 1px;
+      //   border-radius: 50%;
+      //   background-repeat: no-repeat;
+      //   background-position: center;
+      //   flex-shrink: 0;
+      // }
+      &>div.flex.flex-row,span:nth-child(2){
+        display: none;
       }
     }
     a[href*="bokning-avbokning"]{
@@ -932,10 +937,10 @@ html.dark {
     background-color: #FDFBFB;
   }
 }
-#portal:has(.grid #category-block){
-  #portal-bg-gradient{
-    &>div.max-w-5xl.px-4.md\:px-8{   
-      padding-left: 0px !important;
-    }
-  }
-}
+// #portal:has(.grid #category-block){
+//   #portal-bg-gradient{
+//     &>div.max-w-5xl.px-4.md\:px-8{   
+//       padding-left: 0px !important;
+//     }
+//   }
+// }
