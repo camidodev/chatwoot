@@ -69,7 +69,6 @@ $custom-icon-color:rgb(96, 100, 108);
   }
 
   header{
-    background-color: #F9F8F6;
     &>div:first-child{
       width: 300px !important;
       border-bottom: 1px solid $custom-border-light;
@@ -187,6 +186,11 @@ $custom-icon-color:rgb(96, 100, 108);
 
   // -- Main content area ------------------------------------------------------
   main {
+    header{
+      &>div.w-full.max-w-5xl.mx-auto{
+        border: 0 !important;
+      }
+    }
     &.bg-n-surface-1 {
       padding: $custom-pad-main;
       background: transparent;
