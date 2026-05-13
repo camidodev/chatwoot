@@ -101,9 +101,12 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     width: 100%;
     padding-top: 60px !important;
     max-width: 70rem !important;
-    // a{
-    //   padding: 0 20px;
-    // }
+    a{
+      color: #006838 !important;
+    }
+}
+#portal aside li:not(:has(> a)) p {
+  color: #006838 !important;
 }
 
 #portal header nav div:nth-child(1) {
