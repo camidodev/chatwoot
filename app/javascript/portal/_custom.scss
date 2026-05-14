@@ -97,7 +97,7 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
       #header-action-button{
         display: none;
       }
-      span.h-px:first-child{
+      span.h-px:first-of-type{
         display: none;
       }
       a{
@@ -176,6 +176,9 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     z-index: 1;
+    h1{
+      text-align: center !important;
+    }
   }
   &.bg-white.dark\:bg-slate-900.shadow-inner, &.bg-white.dark\:bg-slate-900{
     background-image:url('/brand-assets/Category-bg.png') ;
@@ -194,6 +197,9 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   }
   &>div:nth-child(2){
     gap: 15px !important;
+    @media (max-width: 479.98px) {
+      gap: 10px !important;
+    }
     &>div:nth-child(2){
       &>div{
         display: none;
@@ -213,9 +219,9 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
       // }
     }
   }
-  h1{
-    text-align: start !important;
-  }
+  // h1{
+  //   text-align: center !important;
+  // }
 }
   }
   
@@ -254,6 +260,9 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
         position: relative;
         padding-left:100px !important;
         margin-top: 10px;
+        @media (max-width: 479.98px) {
+          padding-left: 80px !important;
+        }
         
         h1{
           margin-bottom: 0px !important;
@@ -308,6 +317,10 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
             transform: translateY(-50%);
             position: absolute;
             left: 0;
+            @media (max-width: 479.98px) {
+              width: 4rem;
+              height: 4rem;
+            }
         }
         &[data-category-slug="allmanna-fragor"]::before{
           background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' fill='%23006838'><path d='M24.3066 4.22852C23.418 4.56055 23.9844 3.49609 13.75 23.9551L4.16016 43.1152L4.15039 43.75C4.15039 44.5801 4.48242 45.1855 5.15625 45.5762L5.61523 45.8496H25H44.3848L44.8438 45.5762C45.5176 45.1855 45.8496 44.5801 45.8496 43.75L45.8398 43.1152L36.2305 23.9258L26.6113 4.73633L26.1621 4.46289C25.625 4.13086 24.834 4.0332 24.3066 4.22852ZM19.0918 34.082L15.332 41.6016H12.5488C11.0156 41.6016 9.76562 41.582 9.76562 41.5527C9.76562 41.5234 12.6953 35.6348 16.2891 28.4668L22.8027 15.4297L22.832 20.9961L22.8516 26.5625L19.0918 34.082ZM40.2246 41.5234C40.2344 41.5723 38.9844 41.6016 37.4512 41.6016H34.668L30.9082 34.082L27.1484 26.5625L27.1582 20.9766V15.3809L33.6914 28.418C37.2852 35.5859 40.2246 41.4844 40.2246 41.5234ZM27.4707 36.7676L29.8828 41.6016H25H20.1172L22.5293 36.7676C23.8672 34.1113 24.9707 31.9336 25 31.9336C25.0293 31.9336 26.1328 34.1113 27.4707 36.7676Z'/></svg>") no-repeat center / contain;
@@ -464,6 +477,9 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 #portal [data-category-slug] > div:nth-child(2){
   position: relative;
   padding-left: 140px;
+  @media (max-width: 479.98px) {
+    padding-left: 103px !important;
+  }
   &::before {
     // Shared icon "chip" (size, padding, layout). Same for every category.
     content: '';
@@ -482,6 +498,10 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     transform: translateY(-50%);
     position: absolute;
     left: 0;
+    @media (max-width: 479.98px) {
+      width: 5.5rem;
+      height: 5.5rem;
+    }
   }
 }
 
