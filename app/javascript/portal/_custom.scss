@@ -436,7 +436,7 @@ $portal-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     padding: 0 20px !important;
     max-width: 70rem !important;
     h1{
-      text-align: center !important;
+      text-align: start !important;
       line-height: 1.2;
       font-size: 2.5rem;
     }
@@ -970,6 +970,9 @@ html.dark {
 #category-block:not(.grid #category-block){
   a{
     gap: 60px;
+    @media (max-width: 479.98px) {
+      gap: 10px;
+    }
     align-items: center;
     &::after{
       content: '';
@@ -997,6 +1000,7 @@ html.dark {
 
 #portal:not(.grid #category-block){
   .w-full.flex.flex-col.gap-6.flex-grow{
+    flex-direction: column !important;
     grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
     // gap:1rem !important;
     background-color: #f8f9f8;
