@@ -189,6 +189,9 @@ $custom-icon-color:rgb(96, 100, 108);
     header{
       &>div.w-full.max-w-5xl.mx-auto{
         border: 0 !important;
+        .ltr\:right-0:where([dir=ltr],[dir=ltr] *){
+          right: unset !important;
+        }
       }
     }
     &.bg-n-surface-1 {
@@ -235,7 +238,6 @@ $custom-icon-color:rgb(96, 100, 108);
             }
           }
         }
-
         // -- Conversation details panel --------------------------------------------
         &>div:nth-child(2) {
           border: 1px solid $custom-border-light;
