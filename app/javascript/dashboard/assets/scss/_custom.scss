@@ -70,9 +70,9 @@ $custom-icon-color:rgb(96, 100, 108);
 
   header{
     &>div:first-child{
-      width: 300px !important;
+      // width: 300px !important;
       border-bottom: 1px solid $custom-border-light;
-      margin-left: 12px;
+      // margin-left: 12px;
     }
     #header-account-switcher{
       width: 100%;
@@ -189,9 +189,6 @@ $custom-icon-color:rgb(96, 100, 108);
     header{
       &>div.w-full.max-w-5xl.mx-auto{
         border: 0 !important;
-        .ltr\:right-0:where([dir=ltr],[dir=ltr] *){
-          right: unset !important;
-        }
         div.flex.items-center.justify-between.w-full{
           gap: 1rem;
         }
@@ -201,6 +198,7 @@ $custom-icon-color:rgb(96, 100, 108);
       padding: $custom-pad-main;
       background: transparent;
       padding-top: 0px !important;
+      padding-bottom: 0px !important;
 
       >section.flex {
         gap: $custom-pad-main;
@@ -250,7 +248,7 @@ $custom-icon-color:rgb(96, 100, 108);
           //     div>.flex.items-center.gap-2{
           //       background-color: red !important;
           //     }
-          //   }
+          //   }.overflow-auto
           // }
           
         }
@@ -272,6 +270,7 @@ $custom-icon-color:rgb(96, 100, 108);
           border-width: 6px 6px 6px 0;
           border-style: solid;
           border-color: transparent;
+          padding-bottom: 0px !important;
         }
       }
     }
