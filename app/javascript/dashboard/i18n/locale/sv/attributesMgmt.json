@@ -1,145 +1,145 @@
 {
   "ATTRIBUTES_MGMT": {
-    "HEADER": "Egna egenskaper",
-    "HEADER_BTN_TXT": "Add Custom Attribute",
-    "LOADING": "Fetching custom attributes",
-    "DESCRIPTION": "A custom attribute tracks additional details about your contacts or conversations—such as the subscription plan or the date of their first purchase. You can add different types of custom attributes, such as text, lists, or numbers, to capture the specific information you need.",
-    "LEARN_MORE": "Learn more about custom attributes",
-    "COUNT": "{n} attribute | {n} attributes",
-    "SEARCH_PLACEHOLDER": "Search attributes...",
-    "NO_RESULTS": "No attributes found matching your search",
+    "HEADER": "Anpassade egenskaper",
+    "HEADER_BTN_TXT": "Lägg till anpassad egenskap",
+    "LOADING": "Hämtar anpassade egenskaper",
+    "DESCRIPTION": "Anpassade egenskaper används för att spara extra information om kunder eller konversationer, till exempel abonnemangsplan eller datum för första köp. Du kan skapa olika typer av egenskaper, som text, listor och nummer, för att fånga den information du behöver.",
+    "LEARN_MORE": "Läs mer om anpassade egenskaper",
+    "COUNT": "{n} egenskap | {n} egenskaper",
+    "SEARCH_PLACEHOLDER": "Sök egenskaper...",
+    "NO_RESULTS": "Inga egenskaper matchade din sökning",
     "ATTRIBUTE_MODELS": {
-      "CONVERSATION": "Conversation",
-      "CONTACT": "Contact"
+      "CONVERSATION": "Konversation",
+      "CONTACT": "Kund"
     },
     "ATTRIBUTE_TYPES": {
       "TEXT": "Text",
-      "NUMBER": "Number",
-      "LINK": "Link",
-      "DATE": "Date",
-      "LIST": "List",
-      "CHECKBOX": "Checkbox"
+      "NUMBER": "Nummer",
+      "LINK": "Länk",
+      "DATE": "Datum",
+      "LIST": "Lista",
+      "CHECKBOX": "Kryssruta"
     },
     "ADD": {
-      "TITLE": "Add Custom Attribute",
+      "TITLE": "Lägg till anpassad egenskap",
       "SUBMIT": "Skapa",
       "CANCEL_BUTTON_TEXT": "Avbryt",
       "FORM": {
         "NAME": {
-          "LABEL": "Display Name",
-          "PLACEHOLDER": "Enter custom attribute display name",
-          "ERROR": "Name is required"
+          "LABEL": "Visningsnamn",
+          "PLACEHOLDER": "Ange visningsnamn för egenskapen",
+          "ERROR": "Namn krävs"
         },
         "DESC": {
           "LABEL": "Beskrivning",
-          "PLACEHOLDER": "Enter custom attribute description",
-          "ERROR": "Description is required"
+          "PLACEHOLDER": "Ange en beskrivning av egenskapen",
+          "ERROR": "Beskrivning krävs"
         },
         "MODEL": {
-          "LABEL": "Applies to",
-          "PLACEHOLDER": "Please select one",
-          "ERROR": "Model is required"
+          "LABEL": "Gäller för",
+          "PLACEHOLDER": "Välj ett alternativ",
+          "ERROR": "Du behöver välja vad egenskapen gäller för"
         },
         "TYPE": {
-          "LABEL": "Type",
-          "PLACEHOLDER": "Please select a type",
-          "ERROR": "Type is required",
+          "LABEL": "Typ",
+          "PLACEHOLDER": "Välj en typ",
+          "ERROR": "Typ krävs",
           "LIST": {
-            "LABEL": "List Values",
-            "PLACEHOLDER": "Please enter value and press enter key",
-            "ERROR": "Must have at least one value"
+            "LABEL": "Listvärden",
+            "PLACEHOLDER": "Ange ett värde och tryck på Enter",
+            "ERROR": "Minst ett värde krävs"
           }
         },
         "KEY": {
-          "LABEL": "Key",
-          "PLACEHOLDER": "Enter custom attribute key",
-          "ERROR": "Key is required",
-          "IN_VALID": "Invalid key"
+          "LABEL": "Nyckel",
+          "PLACEHOLDER": "Ange nyckel för egenskapen",
+          "ERROR": "Nyckel krävs",
+          "IN_VALID": "Ogiltig nyckel"
         },
         "REGEX_PATTERN": {
-          "LABEL": "Regex Pattern",
-          "PLACEHOLDER": "Please enter custom attribute regex pattern. (Optional)"
+          "LABEL": "Regex-mönster",
+          "PLACEHOLDER": "Ange regex-mönster för egenskapen. (Valfritt)"
         },
         "REGEX_CUE": {
-          "LABEL": "Regex Cue",
-          "PLACEHOLDER": "Please enter regex pattern hint. (Optional)"
+          "LABEL": "Regex-hjälptext",
+          "PLACEHOLDER": "Ange en hjälptext för regex-mönstret. (Valfritt)"
         },
         "ENABLE_REGEX": {
-          "LABEL": "Enable regex validation"
+          "LABEL": "Aktivera regex-validering"
         },
         "BADGES": {
-          "PRE_CHAT": "Pre-chat",
-          "RESOLUTION": "Resolution"
+          "PRE_CHAT": "Före konversation",
+          "RESOLUTION": "Avslut"
         }
       },
       "API": {
-        "SUCCESS_MESSAGE": "Custom Attribute added successfully!",
-        "ERROR_MESSAGE": "Could not create a Custom Attribute. Please try again later."
+        "SUCCESS_MESSAGE": "Egenskapen har lagts till.",
+        "ERROR_MESSAGE": "Det gick inte att skapa egenskapen. Försök igen senare."
       }
     },
     "DELETE": {
       "BUTTON_TEXT": "Radera",
       "API": {
-        "SUCCESS_MESSAGE": "Custom Attribute deleted successfully.",
-        "ERROR_MESSAGE": "Couldn't delete the custom attribute. Try again."
+        "SUCCESS_MESSAGE": "Egenskapen har tagits bort.",
+        "ERROR_MESSAGE": "Det gick inte att ta bort egenskapen. Försök igen."
       },
       "CONFIRM": {
-        "TITLE": "Are you sure want to delete - {attributeName}",
-        "PLACE_HOLDER": "Please type {attributeName} to confirm",
-        "MESSAGE": "Deleting will remove the custom attribute",
+        "TITLE": "Är du säker på att du vill ta bort {attributeName}?",
+        "PLACE_HOLDER": "Skriv {attributeName} för att bekräfta",
+        "MESSAGE": "När du tar bort den här egenskapen försvinner den från systemet",
         "YES": "Radera ",
         "NO": "Avbryt"
       }
     },
     "EDIT": {
-      "TITLE": "Edit Custom Attribute",
+      "TITLE": "Redigera anpassad egenskap",
       "UPDATE_BUTTON_TEXT": "Uppdatera",
       "TYPE": {
         "LIST": {
-          "LABEL": "List Values",
-          "PLACEHOLDER": "Please enter values and press enter key"
+          "LABEL": "Listvärden",
+          "PLACEHOLDER": "Ange värden och tryck på Enter"
         }
       },
       "API": {
-        "SUCCESS_MESSAGE": "Custom Attribute updated successfully",
-        "ERROR_MESSAGE": "There was an error updating custom attribute, please try again"
+        "SUCCESS_MESSAGE": "Egenskapen har uppdaterats",
+        "ERROR_MESSAGE": "Det gick inte att uppdatera egenskapen. Försök igen"
       }
     },
     "TABS": {
-      "HEADER": "Egna egenskaper",
-      "CONVERSATION": "Conversation",
-      "CONTACT": "Contact"
+      "HEADER": "Anpassade egenskaper",
+      "CONVERSATION": "Konversation",
+      "CONTACT": "Kund"
     },
     "LIST": {
       "TABLE_HEADER": {
         "NAME": "Namn",
         "DESCRIPTION": "Beskrivning",
-        "TYPE": "Type",
-        "KEY": "Key"
+        "TYPE": "Typ",
+        "KEY": "Nyckel"
       },
       "BUTTONS": {
         "EDIT": "Redigera",
         "DELETE": "Radera"
       },
       "EMPTY_RESULT": {
-        "404": "There are no custom attributes created",
-        "NOT_FOUND": "There are no custom attributes configured"
+        "404": "Det finns inga anpassade egenskaper skapade",
+        "NOT_FOUND": "Det finns inga anpassade egenskaper konfigurerade"
       },
       "REGEX_PATTERN": {
-        "LABEL": "Regex Pattern",
-        "PLACEHOLDER": "Please enter custom attribute regex pattern. (Optional)"
+        "LABEL": "Regex-mönster",
+        "PLACEHOLDER": "Ange regex-mönster för egenskapen. (Valfritt)"
       },
       "REGEX_CUE": {
-        "LABEL": "Regex Cue",
-        "PLACEHOLDER": "Please enter regex pattern hint. (Optional)"
+        "LABEL": "Regex-hjälptext",
+        "PLACEHOLDER": "Ange en hjälptext för regex-mönstret. (Valfritt)"
       },
       "ENABLE_REGEX": {
-        "LABEL": "Enable regex validation"
+        "LABEL": "Aktivera regex-validering"
       }
     },
     "BADGES": {
-      "PRE_CHAT": "Pre-chat",
-      "RESOLUTION": "Resolution"
+      "PRE_CHAT": "Innan chatten",
+      "RESOLUTION": "Vid avslut"
     }
   }
 }

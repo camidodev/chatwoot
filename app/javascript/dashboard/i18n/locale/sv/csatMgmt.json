@@ -1,13 +1,13 @@
 {
   "CSAT": {
-    "TITLE": "Rate your conversation",
-    "PLACEHOLDER": "Tell us more...",
+    "TITLE": "Hur upplevde du konversationen?",
+    "PLACEHOLDER": "Berätta gärna mer...",
     "RATINGS": {
-      "POOR": "😞 Poor",
-      "FAIR": "😑 Fair",
-      "AVERAGE": "😐 Average",
-      "GOOD": "😀 Good",
-      "EXCELLENT": "😍 Excellent"
+      "POOR": "😞 Dålig",
+      "FAIR": "😑 Okej",
+      "AVERAGE": "😐 Genomsnittlig",
+      "GOOD": "😀 Bra",
+      "EXCELLENT": "😍 Utmärkt"
     }
   }
 }

@@ -1,33 +1,33 @@
 {
   "COMPANIES": {
-    "HEADER": "Companies",
+    "HEADER": "Företag",
     "SORT_BY": {
-      "LABEL": "Sort by",
+      "LABEL": "Sortera efter",
       "OPTIONS": {
         "NAME": "Namn",
-        "DOMAIN": "Domain",
-        "CREATED_AT": "Created at",
-        "CONTACTS_COUNT": "Contacts count"
+        "DOMAIN": "Domän",
+        "CREATED_AT": "Skapad den",
+        "CONTACTS_COUNT": "Antal kontakter"
       }
     },
     "ORDER": {
-      "LABEL": "Order",
+      "LABEL": "Ordning",
       "OPTIONS": {
-        "ASCENDING": "Ascending",
-        "DESCENDING": "Descending"
+        "ASCENDING": "Stigande",
+        "DESCENDING": "Fallande"
       }
     },
-    "SEARCH_PLACEHOLDER": "Search companies...",
-    "LOADING": "Loading companies...",
-    "UNNAMED": "Unnamed Company",
-    "CONTACTS_COUNT": "{n} contact | {n} contacts",
+    "SEARCH_PLACEHOLDER": "Sök företag...",
+    "LOADING": "Laddar företag...",
+    "UNNAMED": "Namnlöst företag",
+    "CONTACTS_COUNT": "{n} kontakt | {n} kontakter",
     "EMPTY_STATE": {
-      "TITLE": "No companies found"
+      "TITLE": "Inga företag hittades"
     }
   },
   "COMPANIES_LAYOUT": {
     "PAGINATION_FOOTER": {
-      "SHOWING": "Showing {startItem} – {endItem} of {totalItems} company | Showing {startItem} – {endItem} of {totalItems} companies"
+      "SHOWING": "Visar {startItem}–{endItem} av {totalItems} företag | Visar {startItem}–{endItem} av {totalItems} företag"
     }
   }
 }

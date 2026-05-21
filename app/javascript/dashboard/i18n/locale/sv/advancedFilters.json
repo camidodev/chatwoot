@@ -1,117 +1,117 @@
 {
   "FILTER": {
     "TITLE": "Filtrera konversationer",
-    "SUBTITLE": "Add your filters below and hit 'Apply filters' to cut through the chat clutter.",
-    "EDIT_CUSTOM_FILTER": "Edit Folder",
-    "CUSTOM_VIEWS_SUBTITLE": "Add or remove filters and update your folder.",
-    "ADD_NEW_FILTER": "Add filter",
-    "FILTER_DELETE_ERROR": "Oops, looks like we can't save nothing! Please add at least one filter to save it.",
-    "SUBMIT_BUTTON_LABEL": "Apply filters",
-    "UPDATE_BUTTON_LABEL": "Update folder",
+    "SUBTITLE": "Lägg till dina filter nedan och klicka på ”Använd filter” för att hitta rätt bland konversationerna.",
+    "EDIT_CUSTOM_FILTER": "Redigera mapp",
+    "CUSTOM_VIEWS_SUBTITLE": "Lägg till eller ta bort filter och uppdatera din mapp.",
+    "ADD_NEW_FILTER": "Lägg till filter",
+    "FILTER_DELETE_ERROR": "Hoppsan, det går inte att spara ett tomt filter. Lägg till minst ett filter för att kunna spara.",
+    "SUBMIT_BUTTON_LABEL": "Använd filter",
+    "UPDATE_BUTTON_LABEL": "Uppdatera mapp",
     "CANCEL_BUTTON_LABEL": "Avbryt",
-    "CLEAR_BUTTON_LABEL": "Clear filters",
-    "FOLDER_LABEL": "Folder Name",
-    "FOLDER_QUERY_LABEL": "Folder Query",
-    "EMPTY_VALUE_ERROR": "Value is required.",
-    "TOOLTIP_LABEL": "Filter conversations",
+    "CLEAR_BUTTON_LABEL": "Rensa filter",
+    "FOLDER_LABEL": "Mappnamn",
+    "FOLDER_QUERY_LABEL": "Mappfråga",
+    "EMPTY_VALUE_ERROR": "Värde krävs.",
+    "TOOLTIP_LABEL": "Filtrera konversationer",
     "QUERY_DROPDOWN_LABELS": {
-      "AND": "AND",
-      "OR": "OR"
+      "AND": "OCH",
+      "OR": "ELLER"
     },
-    "INPUT_PLACEHOLDER": "Enter value",
+    "INPUT_PLACEHOLDER": "Ange värde",
     "OPERATOR_LABELS": {
-      "equal_to": "Equal to",
-      "not_equal_to": "Not equal to",
-      "does_not_contain": "Does not contain",
-      "is_present": "Is present",
-      "is_not_present": "Is not present",
-      "is_greater_than": "Is greater than",
-      "is_less_than": "Is lesser than",
-      "days_before": "Is x days before",
-      "starts_with": "Starts with",
-      "equalTo": "Equal to",
-      "notEqualTo": "Not equal to",
-      "contains": "Contains",
-      "doesNotContain": "Does not contain",
-      "isPresent": "Is present",
-      "isNotPresent": "Is not present",
-      "isGreaterThan": "Is greater than",
-      "isLessThan": "Is lesser than",
-      "daysBefore": "Is x days before",
-      "startsWith": "Starts with"
+      "equal_to": "Är lika med",
+      "not_equal_to": "Är inte lika med",
+      "does_not_contain": "Innehåller inte",
+      "is_present": "Finns",
+      "is_not_present": "Finns inte",
+      "is_greater_than": "Är större än",
+      "is_less_than": "Är mindre än",
+      "days_before": "Är x dagar före",
+      "starts_with": "Börjar med",
+      "equalTo": "Är lika med",
+      "notEqualTo": "Är inte lika med",
+      "contains": "Innehåller",
+      "doesNotContain": "Innehåller inte",
+      "isPresent": "Finns",
+      "isNotPresent": "Finns inte",
+      "isGreaterThan": "Är större än",
+      "isLessThan": "Är mindre än",
+      "daysBefore": "Är x dagar före",
+      "startsWith": "Börjar med"
     },
     "ATTRIBUTE_LABELS": {
-      "TRUE": "True",
-      "FALSE": "False"
+      "TRUE": "Sant",
+      "FALSE": "Falskt"
     },
     "ATTRIBUTES": {
       "STATUS": "Status",
-      "ASSIGNEE_NAME": "Assignee name",
-      "INBOX_NAME": "Inbox name",
-      "TEAM_NAME": "Team name",
-      "CONVERSATION_IDENTIFIER": "Conversation identifier",
-      "CAMPAIGN_NAME": "Campaign name",
+      "ASSIGNEE_NAME": "Tilldelad till",
+      "INBOX_NAME": "Inkorg",
+      "TEAM_NAME": "Team",
+      "CONVERSATION_IDENTIFIER": "Konversations-ID",
+      "CAMPAIGN_NAME": "Kampanjnamn",
       "LABELS": "Etiketter",
-      "BROWSER_LANGUAGE": "Browser language",
-      "PRIORITY": "Priority",
-      "COUNTRY_NAME": "Country name",
-      "REFERER_LINK": "Referer link",
-      "CUSTOM_ATTRIBUTE_LIST": "List",
+      "BROWSER_LANGUAGE": "Webbläsarspråk",
+      "PRIORITY": "Prioritet",
+      "COUNTRY_NAME": "Land",
+      "REFERER_LINK": "Hänvisningslänk",
+      "CUSTOM_ATTRIBUTE_LIST": "Lista",
       "CUSTOM_ATTRIBUTE_TEXT": "Text",
-      "CUSTOM_ATTRIBUTE_NUMBER": "Number",
-      "CUSTOM_ATTRIBUTE_LINK": "Link",
-      "CUSTOM_ATTRIBUTE_CHECKBOX": "Checkbox",
+      "CUSTOM_ATTRIBUTE_NUMBER": "Nummer",
+      "CUSTOM_ATTRIBUTE_LINK": "Länk",
+      "CUSTOM_ATTRIBUTE_CHECKBOX": "Kryssruta",
       "CREATED_AT": "Skapad den",
       "LAST_ACTIVITY": "Senaste aktivitet"
     },
     "ERRORS": {
-      "VALUE_REQUIRED": "Value is required",
-      "ATTRIBUTE_KEY_REQUIRED": "Attribute key is required",
-      "FILTER_OPERATOR_REQUIRED": "Filter operator is required",
-      "VALUE_MUST_BE_BETWEEN_1_AND_998": "Value must be between 1 and 998"
+      "VALUE_REQUIRED": "Värde krävs",
+      "ATTRIBUTE_KEY_REQUIRED": "Attributnyckel krävs",
+      "FILTER_OPERATOR_REQUIRED": "Filteroperator krävs",
+      "VALUE_MUST_BE_BETWEEN_1_AND_998": "Värdet måste vara mellan 1 och 998"
     },
     "GROUPS": {
-      "STANDARD_FILTERS": "Standard filters",
-      "ADDITIONAL_FILTERS": "Additional filters",
-      "CUSTOM_ATTRIBUTES": "Custom attributes"
+      "STANDARD_FILTERS": "Standardfilter",
+      "ADDITIONAL_FILTERS": "Ytterligare filter",
+      "CUSTOM_ATTRIBUTES": "Anpassade attribut"
     },
     "CUSTOM_VIEWS": {
       "ADD": {
-        "TITLE": "Do you want to save this filter?",
-        "LABEL": "Name this filter",
-        "PLACEHOLDER": "Name your filter to refer it later.",
-        "ERROR_MESSAGE": "Name is required.",
-        "SAVE_BUTTON": "Save filter",
+        "TITLE": "Vill du spara det här filtret?",
+        "LABEL": "Namnge filtret",
+        "PLACEHOLDER": "Ge filtret ett namn så att du kan hitta det senare.",
+        "ERROR_MESSAGE": "Namn krävs.",
+        "SAVE_BUTTON": "Spara filter",
         "CANCEL_BUTTON": "Avbryt",
         "API_FOLDERS": {
-          "SUCCESS_MESSAGE": "Folder created successfully.",
-          "ERROR_MESSAGE": "Error while creating folder."
+          "SUCCESS_MESSAGE": "Mappen har skapats.",
+          "ERROR_MESSAGE": "Ett fel uppstod när mappen skulle skapas."
         },
         "API_SEGMENTS": {
-          "SUCCESS_MESSAGE": "Segment created successfully.",
-          "ERROR_MESSAGE": "Error while creating segment."
+          "SUCCESS_MESSAGE": "Segmentet har skapats.",
+          "ERROR_MESSAGE": "Ett fel uppstod när segmentet skulle skapas."
         }
       },
       "EDIT": {
-        "EDIT_BUTTON": "Edit folder"
+        "EDIT_BUTTON": "Redigera mapp"
       },
       "DELETE": {
-        "DELETE_BUTTON": "Delete filter",
+        "DELETE_BUTTON": "Ta bort filter",
         "MODAL": {
           "CONFIRM": {
-            "TITLE": "Confirm deletion",
-            "MESSAGE": "Are you sure to delete the filter ",
-            "YES": "Yes, delete",
-            "NO": "No, keep it"
+            "TITLE": "Bekräfta borttagning",
+            "MESSAGE": "Är du säker på att du vill ta bort filtret ",
+            "YES": "Ja, ta bort",
+            "NO": "Nej, behåll"
           }
         },
         "API_FOLDERS": {
-          "SUCCESS_MESSAGE": "Folder deleted successfully.",
-          "ERROR_MESSAGE": "Error while deleting folder."
+          "SUCCESS_MESSAGE": "Mappen har tagits bort.",
+          "ERROR_MESSAGE": "Ett fel uppstod när mappen skulle tas bort."
         },
         "API_SEGMENTS": {
-          "SUCCESS_MESSAGE": "Segment deleted successfully.",
-          "ERROR_MESSAGE": "Error while deleting segment."
+          "SUCCESS_MESSAGE": "Segmentet har tagits bort.",
+          "ERROR_MESSAGE": "Ett fel uppstod när segmentet skulle tas bort."
         }
       }
     }

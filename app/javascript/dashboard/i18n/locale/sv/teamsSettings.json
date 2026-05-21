@@ -1,124 +1,124 @@
 {
   "TEAMS_SETTINGS": {
-    "NEW_TEAM": "Create new team",
-    "HEADER": "Teams",
-    "LOADING": "Fetching teams",
-    "DESCRIPTION": "Teams allow you to organize agents into groups based on their responsibilities. An agent can belong to multiple teams. When working collaboratively, you can assign conversations to specific teams.",
-    "LEARN_MORE": "Learn more about teams",
-    "COUNT": "{n} team | {n} teams",
-    "SEARCH_PLACEHOLDER": "Sök efter team...",
-    "NO_RESULTS": "No teams found matching your search",
+    "NEW_TEAM": "Skapa nytt team",
+    "HEADER": "Team",
+    "LOADING": "Hämtar team",
+    "DESCRIPTION": "Team låter dig organisera medarbetare i grupper utifrån ansvar. En medarbetare kan tillhöra flera team. När ni samarbetar kan ni tilldela konversationer till specifika team.",
+    "LEARN_MORE": "Läs mer om team",
+    "COUNT": "{n} team | {n} team",
+    "SEARCH_PLACEHOLDER": "Sök team...",
+    "NO_RESULTS": "Inga team matchade din sökning",
     "LIST": {
-      "404": "There are no teams created on this account.",
-      "EDIT_TEAM": "Edit team",
+      "404": "Det finns inga team på det här kontot.",
+      "EDIT_TEAM": "Redigera team",
       "NONE": "Inget"
     },
     "CREATE_FLOW": {
       "CREATE": {
-        "TITLE": "Create a new team",
-        "DESC": "Add a title and description to your new team."
+        "TITLE": "Skapa ett nytt team",
+        "DESC": "Lägg till namn och beskrivning för ditt nya team."
       },
       "AGENTS": {
-        "BUTTON_TEXT": "Add agents to team",
-        "TITLE": "Add agents to team - {teamName}",
-        "DESC": "Add Agents to your newly created team. This lets you collaborate as a team on conversations, get notified on new events in the same conversation."
+        "BUTTON_TEXT": "Lägg till medarbetare i teamet",
+        "TITLE": "Lägg till medarbetare i teamet – {teamName}",
+        "DESC": "Lägg till medarbetare i ditt nya team. Det gör att ni kan samarbeta kring konversationer och få aviseringar om nya händelser i samma konversation."
       },
       "WIZARD_CREATE": {
         "TITLE": "Skapa",
-        "BODY": "Create a new team of agents."
+        "BODY": "Skapa ett nytt team med medarbetare."
       },
       "WIZARD_ADD_AGENTS": {
-        "TITLE": "Lägg till agenter",
-        "BODY": "Add agents to the team."
+        "TITLE": "Lägg till medarbetare",
+        "BODY": "Lägg till medarbetare i teamet."
       },
       "WIZARD_FINISH": {
-        "TITLE": "Finish",
+        "TITLE": "Klart",
         "BODY": "Ni är redo att köra!"
       }
     },
     "EDIT_FLOW": {
       "CREATE": {
-        "TITLE": "Edit your team details",
-        "DESC": "Edit title and description to your team.",
-        "BUTTON_TEXT": "Update team"
+        "TITLE": "Redigera teamdetaljer",
+        "DESC": "Redigera teamets namn och beskrivning.",
+        "BUTTON_TEXT": "Uppdatera team"
       },
       "AGENTS": {
-        "BUTTON_TEXT": "Update agents in team",
-        "TITLE": "Add agents to team - {teamName}",
-        "DESC": "Add Agents to your newly created team. All the added agents will be notified when a conversation is assigned to this team."
+        "BUTTON_TEXT": "Uppdatera medarbetare i teamet",
+        "TITLE": "Lägg till medarbetare i teamet – {teamName}",
+        "DESC": "Lägg till medarbetare i teamet. Alla tillagda medarbetare får aviseringar när en konversation tilldelas teamet."
       },
       "EDIT_WIZARD_DETAILS": {
-        "TITLE": "Team details",
+        "TITLE": "Teamdetaljer",
         "ROUTE": "settings_teams_edit",
-        "BODY": "Change name, description and other details."
+        "BODY": "Ändra namn, beskrivning och andra detaljer."
       },
       "EDIT_WIZARD_AGENTS": {
-        "TITLE": "Edit Agents",
+        "TITLE": "Redigera medarbetare",
         "ROUTE": "settings_teams_edit_members",
-        "BODY": "Edit agents in your team."
+        "BODY": "Redigera medarbetare i teamet."
       },
       "EDIT_WIZARD_FINISH": {
-        "TITLE": "Finish",
+        "TITLE": "Klart",
         "ROUTE": "settings_teams_edit_finish",
         "BODY": "Ni är redo att köra!"
       }
     },
     "TEAM_FORM": {
-      "ERROR_MESSAGE": "Couldn't save the team details. Try again."
+      "ERROR_MESSAGE": "Det gick inte att spara teamdetaljerna. Försök igen."
     },
     "AGENTS": {
-      "AGENT": "Agent",
+      "AGENT": "Medarbetare",
       "EMAIL": "E-post",
-      "BUTTON_TEXT": "Lägg till agenter",
-      "ADD_AGENTS": "Adding Agents to your Team...",
-      "SELECT": "select",
-      "SELECT_ALL": "select all agents",
-      "SELECTED_COUNT": "{selected} out of {total} agents selected."
+      "BUTTON_TEXT": "Lägg till medarbetare",
+      "ADD_AGENTS": "Lägger till medarbetare i teamet...",
+      "SELECT": "välj",
+      "SELECT_ALL": "välj alla medarbetare",
+      "SELECTED_COUNT": "{selected} av {total} medarbetare valda."
     },
     "ADD": {
-      "TITLE": "Add agents to team - {teamName}",
-      "DESC": "Add Agents to your newly created team. This lets you collaborate as a team on conversations, get notified on new events in the same conversation.",
-      "SELECT": "select",
-      "SELECT_ALL": "select all agents",
-      "SELECTED_COUNT": "{selected} out of {total} agents selected.",
-      "BUTTON_TEXT": "Lägg till agenter",
-      "AGENT_VALIDATION_ERROR": "Select at least one agent."
+      "TITLE": "Lägg till medarbetare i teamet – {teamName}",
+      "DESC": "Lägg till medarbetare i ditt nya team. Det gör att ni kan samarbeta kring konversationer och få aviseringar om nya händelser i samma konversation.",
+      "SELECT": "välj",
+      "SELECT_ALL": "välj alla medarbetare",
+      "SELECTED_COUNT": "{selected} av {total} medarbetare valda.",
+      "BUTTON_TEXT": "Lägg till medarbetare",
+      "AGENT_VALIDATION_ERROR": "Välj minst en medarbetare."
     },
     "FINISH": {
-      "TITLE": "Your team is ready!",
-      "MESSAGE": "You can now collaborate as a team on conversations. Happy supporting ",
-      "BUTTON_TEXT": "Finish"
+      "TITLE": "Teamet är redo!",
+      "MESSAGE": "Ni kan nu samarbeta som team kring konversationer. Lycka till med supporten ",
+      "BUTTON_TEXT": "Klart"
     },
     "DELETE": {
       "BUTTON_TEXT": "Radera",
       "API": {
-        "SUCCESS_MESSAGE": "Team deleted successfully.",
-        "ERROR_MESSAGE": "Couldn't delete the team. Try again."
+        "SUCCESS_MESSAGE": "Teamet har tagits bort.",
+        "ERROR_MESSAGE": "Det gick inte att ta bort teamet. Försök igen."
       },
       "CONFIRM": {
-        "TITLE": "Are you sure you want to delete the team?",
-        "PLACE_HOLDER": "Please type {teamName} to confirm",
-        "MESSAGE": "Deleting the team will remove the team assignment from the conversations assigned to this team.",
+        "TITLE": "Är du säker på att du vill ta bort teamet?",
+        "PLACE_HOLDER": "Skriv {teamName} för att bekräfta",
+        "MESSAGE": "När teamet tas bort försvinner teamtilldelningen från konversationer som är tilldelade teamet.",
         "YES": "Radera ",
         "NO": "Avbryt"
       }
     },
     "SETTINGS": "Inställningar",
     "FORM": {
-      "UPDATE": "Update team",
-      "CREATE": "Create team",
+      "UPDATE": "Uppdatera team",
+      "CREATE": "Skapa team",
       "NAME": {
-        "LABEL": "Team name",
-        "PLACEHOLDER": "Example: Sales, Customer Support"
+        "LABEL": "Teamnamn",
+        "PLACEHOLDER": "Exempel: Sälj, Kundsupport"
       },
       "DESCRIPTION": {
-        "LABEL": "Team Description",
-        "PLACEHOLDER": "Short description about this team."
+        "LABEL": "Teambeskrivning",
+        "PLACEHOLDER": "Kort beskrivning av teamet."
       },
       "AUTO_ASSIGN": {
-        "LABEL": "Allow auto assign for this team."
+        "LABEL": "Tillåt automatisk tilldelning för det här teamet."
       },
-      "SUBMIT_CREATE": "Create team"
+      "SUBMIT_CREATE": "Skapa team"
     }
   }
 }

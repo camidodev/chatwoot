@@ -1,50 +1,50 @@
 {
   "REGISTER": {
-    "TRY_WOOT": "Create an account",
-    "GET_STARTED": "Get started with Chatwoot",
-    "TITLE": "Registrera",
-    "TESTIMONIAL_HEADER": "All it takes is one step to move forward",
-    "TESTIMONIAL_CONTENT": "You're one step away from engaging your customers, retaining them and finding new ones.",
-    "TERMS_ACCEPT": "By creating an account, you agree to our <a href=\"https://www.chatwoot.com/terms\">T & C</a> and <a href=\"https://www.chatwoot.com/privacy-policy\">Privacy policy</a>",
+    "TRY_WOOT": "Skapa ett konto",
+    "GET_STARTED": "Kom igång med Custio",
+    "TITLE": "Registrera dig",
+    "TESTIMONIAL_HEADER": "Det krävs bara ett steg för att komma vidare",
+    "TESTIMONIAL_CONTENT": "Du är bara ett steg från att kunna möta dina kunder, behålla dem och hitta nya.",
+    "TERMS_ACCEPT": "Genom att skapa ett konto godkänner du våra <a href=\"https://www.getcustio.com/terms\">villkor</a> och vår <a href=\"https://www.getcustio.com/privacy-policy\">integritetspolicy</a>",
     "OAUTH": {
-      "GOOGLE_SIGNUP": "Sign up with Google"
+      "GOOGLE_SIGNUP": "Registrera dig med Google"
     },
     "COMPANY_NAME": {
-      "LABEL": "Company name",
-      "PLACEHOLDER": "Enter your company name. E.g., Wayne Enterprises",
-      "ERROR": "Company name is too short."
+      "LABEL": "Företagsnamn",
+      "PLACEHOLDER": "Ange företagets namn. T.ex. Wayne Enterprises",
+      "ERROR": "Företagsnamnet är för kort."
     },
     "FULL_NAME": {
       "LABEL": "Fullständigt namn",
-      "PLACEHOLDER": "Enter your full name. E.g., Bruce Wayne",
+      "PLACEHOLDER": "Ange ditt fullständiga namn. T.ex. Bruce Wayne",
       "ERROR": "Fullständigt namn är för kort."
     },
     "EMAIL": {
-      "LABEL": "E-postadress, arbete",
-      "PLACEHOLDER": "Enter your work email address. E.g., bruce{'@'}wayne{'.'}enterprises",
-      "ERROR": "Please enter a valid work email address."
+      "LABEL": "Jobbmail",
+      "PLACEHOLDER": "Ange din jobbmail. T.ex. bruce{'@'}wayne{'.'}enterprises",
+      "ERROR": "Ange en giltig jobbmail."
     },
     "PASSWORD": {
       "LABEL": "Lösenord",
       "PLACEHOLDER": "Lösenord",
       "ERROR": "Lösenordet är för kort.",
-      "IS_INVALID_PASSWORD": "Password should contain atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.",
-      "REQUIREMENTS_LENGTH": "At least 6 characters long",
-      "REQUIREMENTS_UPPERCASE": "At least one uppercase letter",
-      "REQUIREMENTS_LOWERCASE": "At least one lowercase letter",
-      "REQUIREMENTS_NUMBER": "At least one number",
-      "REQUIREMENTS_SPECIAL": "At least one special character"
+      "IS_INVALID_PASSWORD": "Lösenordet måste innehålla minst en stor bokstav, en liten bokstav, en siffra och ett specialtecken.",
+      "REQUIREMENTS_LENGTH": "Minst 6 tecken långt",
+      "REQUIREMENTS_UPPERCASE": "Minst en stor bokstav",
+      "REQUIREMENTS_LOWERCASE": "Minst en liten bokstav",
+      "REQUIREMENTS_NUMBER": "Minst en siffra",
+      "REQUIREMENTS_SPECIAL": "Minst ett specialtecken"
     },
     "CONFIRM_PASSWORD": {
-      "LABEL": "Confirm password",
-      "PLACEHOLDER": "Confirm password",
+      "LABEL": "Bekräfta lösenord",
+      "PLACEHOLDER": "Bekräfta lösenord",
       "ERROR": "Lösenorden matchar inte."
     },
     "API": {
-      "SUCCESS_MESSAGE": "Registration Successful",
-      "ERROR_MESSAGE": "Could not connect to Woot server. Please try again."
+      "SUCCESS_MESSAGE": "Registreringen lyckades",
+      "ERROR_MESSAGE": "Det gick inte att ansluta till servern. Försök igen."
     },
-    "SUBMIT": "Create account",
+    "SUBMIT": "Skapa konto",
     "HAVE_AN_ACCOUNT": "Har du redan ett konto?"
   }
 }

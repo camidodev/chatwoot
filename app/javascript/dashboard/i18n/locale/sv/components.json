@@ -1,30 +1,30 @@
 {
   "PAGINATION_FOOTER": {
-    "SHOWING": "Showing {startItem} - {endItem} of {totalItems} items",
-    "CURRENT_PAGE_INFO": "{currentPage} of {totalPages} pages"
+    "SHOWING": "Visar {startItem}–{endItem} av {totalItems} objekt",
+    "CURRENT_PAGE_INFO": "{currentPage} av {totalPages} sidor"
   },
   "COMBOBOX": {
-    "PLACEHOLDER": "Select an option...",
-    "EMPTY_SEARCH_RESULTS": "No items found for the search term `{searchTerm}`",
+    "PLACEHOLDER": "Välj ett alternativ...",
+    "EMPTY_SEARCH_RESULTS": "Inga objekt hittades för sökningen `{searchTerm}`",
     "EMPTY_STATE": "Inga resultat hittades.",
-    "SEARCH_PLACEHOLDER": "Search...",
-    "MORE": "+{count} more"
+    "SEARCH_PLACEHOLDER": "Sök...",
+    "MORE": "+{count} till"
   },
   "DROPDOWN_MENU": {
-    "SEARCH_PLACEHOLDER": "Search...",
+    "SEARCH_PLACEHOLDER": "Sök...",
     "EMPTY_STATE": "Inga resultat hittades.",
-    "SEARCHING": "Letar..."
+    "SEARCHING": "Söker..."
   },
   "DIALOG": {
     "BUTTONS": {
       "CANCEL": "Avbryt",
-      "CONFIRM": "Confirm"
+      "CONFIRM": "Bekräfta"
     }
   },
   "PHONE_INPUT": {
-    "SEARCH_PLACEHOLDER": "Search country",
-    "ERROR": "Phone number should be empty or in E.164 format",
-    "DIAL_CODE_ERROR": "Please select a dial code from the list"
+    "SEARCH_PLACEHOLDER": "Sök land",
+    "ERROR": "Telefonnumret ska vara tomt eller i E.164-format",
+    "DIAL_CODE_ERROR": "Välj en landskod från listan"
   },
   "THUMBNAIL": {
     "AUTHOR": {
@@ -32,25 +32,25 @@
     }
   },
   "BREADCRUMB": {
-    "ARIA_LABEL": "Breadcrumb"
+    "ARIA_LABEL": "Brödsmula"
   },
   "SWITCH": {
-    "TOGGLE": "Toggle switch"
+    "TOGGLE": "Växla reglage"
   },
   "LABEL": {
-    "TAG_BUTTON": "tag"
+    "TAG_BUTTON": "etikett"
   },
   "FEATURE_SPOTLIGHT": {
     "LEARN_MORE": "Läs mer",
-    "WATCH_VIDEO": "Watch video"
+    "WATCH_VIDEO": "Titta på video"
   },
   "DURATION_INPUT": {
-    "MINUTES": "Minutes",
-    "HOURS": "Hours",
-    "DAYS": "Days",
-    "PLACEHOLDER": "Enter duration"
+    "MINUTES": "Minuter",
+    "HOURS": "Timmar",
+    "DAYS": "Dagar",
+    "PLACEHOLDER": "Ange varaktighet"
   },
   "CHANNEL_SELECTOR": {
-    "COMING_SOON": "Coming Soon!"
+    "COMING_SOON": "Kommer snart!"
   }
 }

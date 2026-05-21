@@ -2,10 +2,10 @@
   "REPORT": {
     "HEADER": "Konversationer",
     "LOADING_CHART": "Laddar diagramdata...",
-    "NO_ENOUGH_DATA": "Vi har inte fått tillräckligt många datapunkter för att generera en rapport, försök igen senare.",
-    "DOWNLOAD_CONVERSATION_REPORTS": "Download conversation reports",
-    "DATA_FETCHING_FAILED": "Failed to fetch data, please try again later.",
-    "SUMMARY_FETCHING_FAILED": "Failed to fetch summary, please try again later.",
+    "NO_ENOUGH_DATA": "Vi har inte tillräckligt med data för att generera en rapport. Försök igen senare.",
+    "DOWNLOAD_CONVERSATION_REPORTS": "Ladda ner konversationsrapporter",
+    "DATA_FETCHING_FAILED": "Det gick inte att hämta data. Försök igen senare.",
+    "SUMMARY_FETCHING_FAILED": "Det gick inte att hämta sammanfattningen. Försök igen senare.",
     "METRICS": {
       "CONVERSATIONS": {
         "NAME": "Konversationer",
@@ -20,122 +20,122 @@
         "DESC": "( Totalt )"
       },
       "FIRST_RESPONSE_TIME": {
-        "NAME": "First Response Time",
+        "NAME": "Första svarstid",
         "DESC": "( Genomsnitt )",
-        "INFO_TEXT": "Total number of conversations used for computation:",
-        "TOOLTIP_TEXT": "First Response Time is {metricValue} (based on {conversationCount} conversations)"
+        "INFO_TEXT": "Totalt antal konversationer som används i beräkningen:",
+        "TOOLTIP_TEXT": "Första svarstid är {metricValue} (baserat på {conversationCount} konversationer)"
       },
       "RESOLUTION_TIME": {
         "NAME": "Lösningstid",
         "DESC": "( Genomsnitt )",
-        "INFO_TEXT": "Total number of conversations used for computation:",
-        "TOOLTIP_TEXT": "Resolution Time is {metricValue} (based on {conversationCount} conversations)"
+        "INFO_TEXT": "Totalt antal konversationer som används i beräkningen:",
+        "TOOLTIP_TEXT": "Lösningstiden är {metricValue} (baserat på {conversationCount} konversationer)"
       },
       "RESOLUTION_COUNT": {
         "NAME": "Antal lösta",
         "DESC": "( Totalt )"
       },
       "BOT_RESOLUTION_COUNT": {
-        "NAME": "Antal lösta",
+        "NAME": "Antal lösta av bot",
         "DESC": "( Totalt )"
       },
       "BOT_HANDOFF_COUNT": {
-        "NAME": "Handoff Count",
+        "NAME": "Antal överlämningar",
         "DESC": "( Totalt )"
       },
       "REPLY_TIME": {
-        "NAME": "Customer waiting time",
+        "NAME": "Kundens väntetid",
         "TOOLTIP_TEXT": "Väntetiden är {metricValue} (baserat på {conversationCount} svar)",
         "DESC": ""
       }
     },
     "DATE_RANGE_OPTIONS": {
-      "LAST_7_DAYS": "De senaste 7 dagarna",
-      "LAST_14_DAYS": "De senaste 14 dagarna",
-      "LAST_30_DAYS": "De senaste 30 dagarna",
-      "THIS_MONTH": "This month",
-      "LAST_MONTH": "Last month",
-      "LAST_3_MONTHS": "Last 3 months",
-      "LAST_6_MONTHS": "Last 6 months",
-      "LAST_YEAR": "Last year",
-      "CUSTOM_DATE_RANGE": "Custom date range"
+      "LAST_7_DAYS": "Senaste 7 dagarna",
+      "LAST_14_DAYS": "Senaste 14 dagarna",
+      "LAST_30_DAYS": "Senaste 30 dagarna",
+      "THIS_MONTH": "Den här månaden",
+      "LAST_MONTH": "Förra månaden",
+      "LAST_3_MONTHS": "Senaste 3 månaderna",
+      "LAST_6_MONTHS": "Senaste 6 månaderna",
+      "LAST_YEAR": "Senaste året",
+      "CUSTOM_DATE_RANGE": "Anpassat datumintervall"
     },
     "CUSTOM_DATE_RANGE": {
-      "CONFIRM": "Apply",
-      "PLACEHOLDER": "Select date range"
+      "CONFIRM": "Använd",
+      "PLACEHOLDER": "Välj datumintervall"
     },
-    "GROUP_BY_FILTER_DROPDOWN_LABEL": "Group By",
-    "DURATION_FILTER_LABEL": "Duration",
+    "GROUP_BY_FILTER_DROPDOWN_LABEL": "Gruppera efter",
+    "DURATION_FILTER_LABEL": "Period",
     "GROUPING_OPTIONS": {
-      "DAY": "Day",
-      "WEEK": "Week",
-      "MONTH": "Month",
-      "YEAR": "Month"
+      "DAY": "Dag",
+      "WEEK": "Vecka",
+      "MONTH": "Månad",
+      "YEAR": "Månad"
     },
     "GROUP_BY_DAY_OPTIONS": [
       {
         "id": 1,
-        "groupBy": "Day"
+        "groupBy": "Dag"
       }
     ],
     "GROUP_BY_WEEK_OPTIONS": [
       {
         "id": 1,
-        "groupBy": "Day"
+        "groupBy": "Dag"
       },
       {
         "id": 2,
-        "groupBy": "Week"
+        "groupBy": "Vecka"
       }
     ],
     "GROUP_BY_MONTH_OPTIONS": [
       {
         "id": 1,
-        "groupBy": "Day"
+        "groupBy": "Dag"
       },
       {
         "id": 2,
-        "groupBy": "Week"
+        "groupBy": "Vecka"
       },
       {
         "id": 3,
-        "groupBy": "Month"
+        "groupBy": "Månad"
       }
     ],
     "GROUP_BY_YEAR_OPTIONS": [
       {
         "id": 1,
-        "groupBy": "Day"
+        "groupBy": "Dag"
       },
       {
         "id": 2,
-        "groupBy": "Week"
+        "groupBy": "Vecka"
       },
       {
         "id": 3,
-        "groupBy": "Month"
+        "groupBy": "Månad"
       }
     ],
     "BUSINESS_HOURS": "Öppettider",
     "FILTER_ACTIONS": {
-      "CLEAR_FILTER": "Clear filter",
+      "CLEAR_FILTER": "Rensa filter",
       "EMPTY_LIST": "Inga resultat hittades"
     },
     "PAGINATION": {
-      "RESULTS": "Showing {start} to {end} of {total} results",
-      "PER_PAGE_TEMPLATE": "{size} / page"
+      "RESULTS": "Visar {start} till {end} av {total} resultat",
+      "PER_PAGE_TEMPLATE": "{size} / sida"
     }
   },
   "AGENT_REPORTS": {
-    "HEADER": "Agents Overview",
-    "DESCRIPTION": "Easily track agent performance with key metrics such as conversations, response times, resolution times, and resolved cases. Click an agent's name to learn more.",
+    "HEADER": "Översikt över medarbetare",
+    "DESCRIPTION": "Följ enkelt upp medarbetarnas resultat med nyckeltal som konversationer, svarstider, lösningstider och lösta ärenden. Klicka på en medarbetares namn för att se mer.",
     "LOADING_CHART": "Laddar diagramdata...",
-    "NO_ENOUGH_DATA": "Vi har inte fått tillräckligt många datapunkter för att generera en rapport, försök igen senare.",
-    "DOWNLOAD_AGENT_REPORTS": "Ladda ner agentrapporter",
-    "FILTER_DROPDOWN_LABEL": "Välj agent",
+    "NO_ENOUGH_DATA": "Vi har inte tillräckligt med data för att generera en rapport. Försök igen senare.",
+    "DOWNLOAD_AGENT_REPORTS": "Ladda ner medarbetarrapporter",
+    "FILTER_DROPDOWN_LABEL": "Välj medarbetare",
     "FILTERS": {
       "INPUT_PLACEHOLDER": {
-        "AGENTS": "Sök efter agenter"
+        "AGENTS": "Sök medarbetare"
       }
     },
     "METRICS": {
@@ -152,16 +152,16 @@
         "DESC": "( Totalt )"
       },
       "FIRST_RESPONSE_TIME": {
-        "NAME": "First Response Time",
+        "NAME": "Första svarstid",
         "DESC": "( Genomsnitt )",
-        "INFO_TEXT": "Total number of conversations used for computation:",
-        "TOOLTIP_TEXT": "First Response Time is {metricValue} (based on {conversationCount} conversations)"
+        "INFO_TEXT": "Totalt antal konversationer som används i beräkningen:",
+        "TOOLTIP_TEXT": "Första svarstid är {metricValue} (baserat på {conversationCount} konversationer)"
       },
       "RESOLUTION_TIME": {
         "NAME": "Lösningstid",
         "DESC": "( Genomsnitt )",
-        "INFO_TEXT": "Total number of conversations used for computation:",
-        "TOOLTIP_TEXT": "Resolution Time is {metricValue} (based on {conversationCount} conversations)"
+        "INFO_TEXT": "Totalt antal konversationer som används i beräkningen:",
+        "TOOLTIP_TEXT": "Lösningstiden är {metricValue} (baserat på {conversationCount} konversationer)"
       },
       "RESOLUTION_COUNT": {
         "NAME": "Antal lösta",
@@ -179,33 +179,33 @@
       },
       {
         "id": 2,
-        "name": "Last 3 months"
+        "name": "Senaste 3 månaderna"
       },
       {
         "id": 3,
-        "name": "Last 6 months"
+        "name": "Senaste 6 månaderna"
       },
       {
         "id": 4,
-        "name": "Last year"
+        "name": "Senaste året"
       },
       {
         "id": 5,
-        "name": "Custom date range"
+        "name": "Anpassat datumintervall"
       }
     ],
     "CUSTOM_DATE_RANGE": {
-      "CONFIRM": "Apply",
-      "PLACEHOLDER": "Select date range"
+      "CONFIRM": "Använd",
+      "PLACEHOLDER": "Välj datumintervall"
     }
   },
   "LABEL_REPORTS": {
-    "HEADER": "Labels Overview",
-    "DESCRIPTION": "Track label performance with key metrics including conversations, response times, resolution times, and resolved cases. Click a label name for detailed insights.",
+    "HEADER": "Översikt över etiketter",
+    "DESCRIPTION": "Följ upp hur etiketter används med nyckeltal som konversationer, svarstider, lösningstider och lösta ärenden. Klicka på en etikett för mer detaljer.",
     "LOADING_CHART": "Laddar diagramdata...",
-    "NO_ENOUGH_DATA": "Vi har inte fått tillräckligt många datapunkter för att generera en rapport, försök igen senare.",
-    "DOWNLOAD_LABEL_REPORTS": "Download label reports",
-    "FILTER_DROPDOWN_LABEL": "Select Label",
+    "NO_ENOUGH_DATA": "Vi har inte tillräckligt med data för att generera en rapport. Försök igen senare.",
+    "DOWNLOAD_LABEL_REPORTS": "Ladda ner etikettrapporter",
+    "FILTER_DROPDOWN_LABEL": "Välj etikett",
     "FILTERS": {
       "INPUT_PLACEHOLDER": {
         "LABELS": "Sök etiketter"
@@ -225,16 +225,16 @@
         "DESC": "( Totalt )"
       },
       "FIRST_RESPONSE_TIME": {
-        "NAME": "First Response Time",
+        "NAME": "Första svarstid",
         "DESC": "( Genomsnitt )",
-        "INFO_TEXT": "Total number of conversations used for computation:",
-        "TOOLTIP_TEXT": "First Response Time is {metricValue} (based on {conversationCount} conversations)"
+        "INFO_TEXT": "Totalt antal konversationer som används i beräkningen:",
+        "TOOLTIP_TEXT": "Första svarstid är {metricValue} (baserat på {conversationCount} konversationer)"
       },
       "RESOLUTION_TIME": {
         "NAME": "Lösningstid",
         "DESC": "( Genomsnitt )",
-        "INFO_TEXT": "Total number of conversations used for computation:",
-        "TOOLTIP_TEXT": "Resolution Time is {metricValue} (based on {conversationCount} conversations)"
+        "INFO_TEXT": "Totalt antal konversationer som används i beräkningen:",
+        "TOOLTIP_TEXT": "Lösningstiden är {metricValue} (baserat på {conversationCount} konversationer)"
       },
       "RESOLUTION_COUNT": {
         "NAME": "Antal lösta",
@@ -252,38 +252,38 @@
       },
       {
         "id": 2,
-        "name": "Last 3 months"
+        "name": "Senaste 3 månaderna"
       },
       {
         "id": 3,
-        "name": "Last 6 months"
+        "name": "Senaste 6 månaderna"
       },
       {
         "id": 4,
-        "name": "Last year"
+        "name": "Senaste året"
       },
       {
         "id": 5,
-        "name": "Custom date range"
+        "name": "Anpassat datumintervall"
       }
     ],
     "CUSTOM_DATE_RANGE": {
-      "CONFIRM": "Apply",
-      "PLACEHOLDER": "Select date range"
+      "CONFIRM": "Använd",
+      "PLACEHOLDER": "Välj datumintervall"
     }
   },
   "INBOX_REPORTS": {
-    "HEADER": "Inbox Overview",
-    "DESCRIPTION": "Quickly view your inbox performance with key metrics like conversations, response times, resolution times, and resolved cases—all in one place. Click an inbox name for more details.",
+    "HEADER": "Översikt över inkorgar",
+    "DESCRIPTION": "Få en snabb överblick över inkorgarnas resultat med nyckeltal som konversationer, svarstider, lösningstider och lösta ärenden. Klicka på en inkorg för mer detaljer.",
     "LOADING_CHART": "Laddar diagramdata...",
-    "NO_ENOUGH_DATA": "Vi har inte fått tillräckligt många datapunkter för att generera en rapport, försök igen senare.",
-    "DOWNLOAD_INBOX_REPORTS": "Download inbox reports",
-    "FILTER_DROPDOWN_LABEL": "Select Inbox",
-    "ALL_INBOXES": "All Inboxes",
-    "SEARCH_INBOX": "Search Inbox",
+    "NO_ENOUGH_DATA": "Vi har inte tillräckligt med data för att generera en rapport. Försök igen senare.",
+    "DOWNLOAD_INBOX_REPORTS": "Ladda ner inkorgsrapporter",
+    "FILTER_DROPDOWN_LABEL": "Välj inkorg",
+    "ALL_INBOXES": "Alla inkorgar",
+    "SEARCH_INBOX": "Sök inkorg",
     "FILTERS": {
       "INPUT_PLACEHOLDER": {
-        "INBOXES": "Search inboxes"
+        "INBOXES": "Sök inkorgar"
       }
     },
     "METRICS": {
@@ -300,16 +300,16 @@
         "DESC": "( Totalt )"
       },
       "FIRST_RESPONSE_TIME": {
-        "NAME": "First Response Time",
+        "NAME": "Första svarstid",
         "DESC": "( Genomsnitt )",
-        "INFO_TEXT": "Total number of conversations used for computation:",
-        "TOOLTIP_TEXT": "First Response Time is {metricValue} (based on {conversationCount} conversations)"
+        "INFO_TEXT": "Totalt antal konversationer som används i beräkningen:",
+        "TOOLTIP_TEXT": "Första svarstid är {metricValue} (baserat på {conversationCount} konversationer)"
       },
       "RESOLUTION_TIME": {
         "NAME": "Lösningstid",
         "DESC": "( Genomsnitt )",
-        "INFO_TEXT": "Total number of conversations used for computation:",
-        "TOOLTIP_TEXT": "Resolution Time is {metricValue} (based on {conversationCount} conversations)"
+        "INFO_TEXT": "Totalt antal konversationer som används i beräkningen:",
+        "TOOLTIP_TEXT": "Lösningstiden är {metricValue} (baserat på {conversationCount} konversationer)"
       },
       "RESOLUTION_COUNT": {
         "NAME": "Antal lösta",
@@ -327,11 +327,11 @@
       },
       {
         "id": 2,
-        "name": "Last 3 months"
+        "name": "Senaste 3 månaderna"
       },
       {
         "id": 3,
-        "name": "Last 6 months"
+        "name": "Senaste 6 månaderna"
       },
       {
         "id": 4,
@@ -339,27 +339,27 @@
       },
       {
         "id": 5,
-        "name": "Custom date range"
+        "name": "Anpassat datumintervall"
       }
     ],
     "CUSTOM_DATE_RANGE": {
-      "CONFIRM": "Apply",
-      "PLACEHOLDER": "Select date range"
+      "CONFIRM": "Använd",
+      "PLACEHOLDER": "Välj datumintervall"
     }
   },
   "TEAM_REPORTS": {
-    "HEADER": "Team Overview",
-    "DESCRIPTION": "Get a snapshot of your team's performance with essential metrics, including conversations, response times, resolution times, and resolved cases. Click a team name for more details.",
+    "HEADER": "Översikt över team",
+    "DESCRIPTION": "Få en överblick över teamets resultat med nyckeltal som konversationer, svarstider, lösningstider och lösta ärenden. Klicka på ett teamnamn för mer detaljer.",
     "LOADING_CHART": "Laddar diagramdata...",
-    "NO_ENOUGH_DATA": "Vi har inte fått tillräckligt många datapunkter för att generera en rapport, försök igen senare.",
-    "DOWNLOAD_TEAM_REPORTS": "Download team reports",
-    "FILTER_DROPDOWN_LABEL": "Select Team",
+    "NO_ENOUGH_DATA": "Vi har inte tillräckligt med data för att generera en rapport. Försök igen senare.",
+    "DOWNLOAD_TEAM_REPORTS": "Ladda ner teamrapporter",
+    "FILTER_DROPDOWN_LABEL": "Välj team",
     "FILTERS": {
-      "ADD_FILTER": "Add filter",
-      "CLEAR_ALL": "Clear all",
-      "NO_FILTER": "No filters available",
+      "ADD_FILTER": "Lägg till filter",
+      "CLEAR_ALL": "Rensa alla",
+      "NO_FILTER": "Inga filter tillgängliga",
       "INPUT_PLACEHOLDER": {
-        "TEAMS": "Sök efter team"
+        "TEAMS": "Sök team"
       }
     },
     "METRICS": {
@@ -376,16 +376,16 @@
         "DESC": "( Totalt )"
       },
       "FIRST_RESPONSE_TIME": {
-        "NAME": "First Response Time",
+        "NAME": "Första svarstid",
         "DESC": "( Genomsnitt )",
-        "INFO_TEXT": "Total number of conversations used for computation:",
-        "TOOLTIP_TEXT": "First Response Time is {metricValue} (based on {conversationCount} conversations)"
+        "INFO_TEXT": "Totalt antal konversationer som används i beräkningen:",
+        "TOOLTIP_TEXT": "Första svarstid är {metricValue} (baserat på {conversationCount} konversationer)"
       },
       "RESOLUTION_TIME": {
         "NAME": "Lösningstid",
         "DESC": "( Genomsnitt )",
-        "INFO_TEXT": "Total number of conversations used for computation:",
-        "TOOLTIP_TEXT": "Resolution Time is {metricValue} (based on {conversationCount} conversations)"
+        "INFO_TEXT": "Totalt antal konversationer som används i beräkningen:",
+        "TOOLTIP_TEXT": "Lösningstiden är {metricValue} (baserat på {conversationCount} konversationer)"
       },
       "RESOLUTION_COUNT": {
         "NAME": "Antal lösta",
@@ -403,11 +403,11 @@
       },
       {
         "id": 2,
-        "name": "De senaste 3 månaderna"
+        "name": "Senaste 3 månaderna"
       },
       {
         "id": 3,
-        "name": "De senaste 6 månaderna"
+        "name": "Senaste 6 månaderna"
       },
       {
         "id": 4,
@@ -415,32 +415,32 @@
       },
       {
         "id": 5,
-        "name": "Custom date range"
+        "name": "Anpassat datumintervall"
       }
     ],
     "CUSTOM_DATE_RANGE": {
-      "CONFIRM": "Apply",
-      "PLACEHOLDER": "Select date range"
+      "CONFIRM": "Använd",
+      "PLACEHOLDER": "Välj datumintervall"
     }
   },
   "CSAT_REPORTS": {
-    "HEADER": "CSAT Reports",
-    "NO_RECORDS": "No responses yet",
-    "NO_RECORDS_DESCRIPTION": "CSAT survey responses will appear here once customers start providing feedback.",
-    "DOWNLOAD": "Download CSAT Reports",
-    "DOWNLOAD_FAILED": "Failed to download CSAT Reports",
+    "HEADER": "Kundnöjdhet",
+    "NO_RECORDS": "Inga svar ännu",
+    "NO_RECORDS_DESCRIPTION": "Svar på kundnöjdhetsenkäter visas här när kunder börjar lämna feedback.",
+    "DOWNLOAD": "Ladda ner kundnöjdhetsrapport",
+    "DOWNLOAD_FAILED": "Det gick inte att ladda ner kundnöjdhetsrapporten",
     "FILTERS": {
-      "ADD_FILTER": "Add filter",
-      "CLEAR_ALL": "Clear all",
-      "NO_FILTER": "No filters available",
+      "ADD_FILTER": "Lägg till filter",
+      "CLEAR_ALL": "Rensa alla",
+      "NO_FILTER": "Inga filter tillgängliga",
       "INPUT_PLACEHOLDER": {
-        "AGENTS": "Sök efter agenter",
-        "INBOXES": "Search inboxes",
-        "TEAMS": "Sök efter team",
-        "RATINGS": "Search ratings"
+        "AGENTS": "Sök medarbetare",
+        "INBOXES": "Sök inkorgar",
+        "TEAMS": "Sök team",
+        "RATINGS": "Sök betyg"
       },
       "AGENTS": {
-        "LABEL": "Agent"
+        "LABEL": "Medarbetare"
       },
       "INBOXES": {
         "LABEL": "Inkorg"
@@ -454,197 +454,197 @@
     },
     "TABLE": {
       "HEADER": {
-        "CONTACT_NAME": "Contact",
-        "AGENT_NAME": "Agent",
+        "CONTACT_NAME": "Kontakt",
+        "AGENT_NAME": "Medarbetare",
         "RATING": "Betyg",
-        "FEEDBACK_TEXT": "Feedback comment",
-        "CONVERSATION": "Conversation",
-        "CUSTOMER": "Customer",
-        "RESPONSE": "Response",
-        "HANDLED_BY": "Handled by"
+        "FEEDBACK_TEXT": "Feedbackkommentar",
+        "CONVERSATION": "Konversation",
+        "CUSTOMER": "Kund",
+        "RESPONSE": "Svar",
+        "HANDLED_BY": "Hanterad av"
       },
-      "UNKNOWN_CUSTOMER": "Unknown customer"
+      "UNKNOWN_CUSTOMER": "Okänd kund"
     },
-    "NO_AGENT": "No assigned agent",
-    "NO_FEEDBACK": "No feedback provided",
+    "NO_AGENT": "Ingen tilldelad medarbetare",
+    "NO_FEEDBACK": "Ingen feedback angiven",
     "METRIC": {
       "TOTAL_RESPONSES": {
-        "LABEL": "Total responses",
-        "TOOLTIP": "Total number of responses collected"
+        "LABEL": "Totalt antal svar",
+        "TOOLTIP": "Totalt antal insamlade svar"
       },
       "SATISFACTION_SCORE": {
-        "LABEL": "Satisfaction score",
-        "TOOLTIP": "Total number of positive responses / Total number of responses * 100"
+        "LABEL": "Nöjdhetsgrad",
+        "TOOLTIP": "Totalt antal positiva svar / totalt antal svar * 100"
       },
       "RESPONSE_RATE": {
-        "LABEL": "Response rate",
-        "TOOLTIP": "Total number of responses / Total number of CSAT survey messages sent * 100"
+        "LABEL": "Svarsfrekvens",
+        "TOOLTIP": "Totalt antal svar / totalt antal skickade kundnöjdhetsenkäter * 100"
       },
-      "RATING_DISTRIBUTION": "Rating distribution"
+      "RATING_DISTRIBUTION": "Betygsfördelning"
     },
     "REVIEW_NOTES": {
-      "TITLE": "Review notes",
-      "PLACEHOLDER": "Add review notes about this rating...",
+      "TITLE": "Granskningsanteckningar",
+      "PLACEHOLDER": "Lägg till interna anteckningar om det här betyget...",
       "SAVE": "Spara",
       "CANCEL": "Avbryt",
-      "SAVING": "Saving...",
-      "SAVED": "Notes saved successfully",
-      "SAVE_ERROR": "Failed to save notes",
-      "UPDATED_BY": "Updated by {name} {time}",
-      "UPDATED_BY_LABEL": "Updated by",
+      "SAVING": "Sparar...",
+      "SAVED": "Anteckningarna har sparats",
+      "SAVE_ERROR": "Det gick inte att spara anteckningarna",
+      "UPDATED_BY": "Uppdaterad av {name} {time}",
+      "UPDATED_BY_LABEL": "Uppdaterad av",
       "PAYWALL": {
-        "TITLE": "Upgrade to add review notes",
-        "AVAILABLE_ON": "The review notes feature is only available in the Business and Enterprise plans.",
-        "UPGRADE_PROMPT": "Add internal context to every CSAT response with review notes. Capture what really happened, spot patterns faster, and make better decisions from your feedback.",
-        "UPGRADE_NOW": "Upgrade now",
-        "CANCEL_ANYTIME": "You can change or cancel your plan anytime"
+        "TITLE": "Uppgradera för att lägga till granskningsanteckningar",
+        "AVAILABLE_ON": "Funktionen för granskningsanteckningar är endast tillgänglig i Business- och Enterprise-planerna.",
+        "UPGRADE_PROMPT": "Lägg till intern kontext till varje kundnöjdhetssvar med granskningsanteckningar. Fånga vad som verkligen hände, upptäck mönster snabbare och fatta bättre beslut utifrån er feedback.",
+        "UPGRADE_NOW": "Uppgradera nu",
+        "CANCEL_ANYTIME": "Du kan ändra eller avsluta din plan när som helst"
       }
     }
   },
   "BOT_REPORTS": {
-    "HEADER": "Bot Reports",
+    "HEADER": "Botrapporter",
     "METRIC": {
       "TOTAL_CONVERSATIONS": {
-        "LABEL": "No. of Conversations",
-        "TOOLTIP": "Total number of conversations handled by the bot"
+        "LABEL": "Antal konversationer",
+        "TOOLTIP": "Totalt antal konversationer som hanterats av boten"
       },
       "TOTAL_RESPONSES": {
-        "LABEL": "Total Responses",
-        "TOOLTIP": "Total number of responses sent by the bot"
+        "LABEL": "Totalt antal svar",
+        "TOOLTIP": "Totalt antal svar som skickats av boten"
       },
       "RESOLUTION_RATE": {
-        "LABEL": "Resolution Rate",
-        "TOOLTIP": "Total number of conversations resolved by the bot / Total number of conversations handled by the bot * 100"
+        "LABEL": "Lösningsgrad",
+        "TOOLTIP": "Totalt antal konversationer lösta av boten / totalt antal konversationer hanterade av boten * 100"
       },
       "HANDOFF_RATE": {
-        "LABEL": "Handoff Rate",
-        "TOOLTIP": "Total number of conversations handed off to agents / Total number of conversations handled by the bot * 100"
+        "LABEL": "Överlämningsgrad",
+        "TOOLTIP": "Totalt antal konversationer överlämnade till medarbetare / totalt antal konversationer hanterade av boten * 100"
       }
     }
   },
   "OVERVIEW_REPORTS": {
-    "HEADER": "Overview",
+    "HEADER": "Översikt",
     "LIVE": "Live",
     "ACCOUNT_CONVERSATIONS": {
-      "HEADER": "Open Conversations",
-      "LOADING_MESSAGE": "Loading conversation metrics...",
+      "HEADER": "Öppna konversationer",
+      "LOADING_MESSAGE": "Laddar konversationsstatistik...",
       "OPEN": "Öppna",
-      "UNATTENDED": "Unattended",
+      "UNATTENDED": "Ej hanterade",
       "UNASSIGNED": "Otilldelade",
       "PENDING": "Väntande"
     },
     "CONVERSATION_HEATMAP": {
-      "HEADER": "Conversation Traffic",
-      "NO_CONVERSATIONS": "No conversations",
-      "CONVERSATION": "{count} conversation",
-      "CONVERSATIONS": "{count} conversations",
-      "DOWNLOAD_REPORT": "Download report"
+      "HEADER": "Konversationstrafik",
+      "NO_CONVERSATIONS": "Inga konversationer",
+      "CONVERSATION": "{count} konversation",
+      "CONVERSATIONS": "{count} konversationer",
+      "DOWNLOAD_REPORT": "Ladda ner rapport"
     },
     "RESOLUTION_HEATMAP": {
-      "HEADER": "Resolutions",
-      "NO_CONVERSATIONS": "No conversations",
-      "CONVERSATION": "{count} conversation",
-      "CONVERSATIONS": "{count} conversations",
-      "DOWNLOAD_REPORT": "Download report"
+      "HEADER": "Lösningar",
+      "NO_CONVERSATIONS": "Inga konversationer",
+      "CONVERSATION": "{count} konversation",
+      "CONVERSATIONS": "{count} konversationer",
+      "DOWNLOAD_REPORT": "Ladda ner rapport"
     },
     "AGENT_CONVERSATIONS": {
-      "HEADER": "Conversations by agents",
-      "LOADING_MESSAGE": "Loading agent metrics...",
-      "NO_AGENTS": "There are no conversations by agents",
+      "HEADER": "Konversationer per medarbetare",
+      "LOADING_MESSAGE": "Laddar medarbetarstatistik...",
+      "NO_AGENTS": "Det finns inga konversationer per medarbetare",
       "TABLE_HEADER": {
-        "AGENT": "Agent",
+        "AGENT": "Medarbetare",
         "OPEN": "Öppna",
-        "UNATTENDED": "Unattended",
+        "UNATTENDED": "Ej hanterade",
         "STATUS": "Status"
       }
     },
     "TEAM_CONVERSATIONS": {
-      "ALL_TEAMS": "All Teams",
-      "HEADER": "Conversations by teams",
-      "LOADING_MESSAGE": "Loading team metrics...",
-      "NO_TEAMS": "There is no data available",
+      "ALL_TEAMS": "Alla team",
+      "HEADER": "Konversationer per team",
+      "LOADING_MESSAGE": "Laddar teamstatistik...",
+      "NO_TEAMS": "Det finns ingen data tillgänglig",
       "TABLE_HEADER": {
         "TEAM": "Team",
         "OPEN": "Öppna",
-        "UNATTENDED": "Unattended",
+        "UNATTENDED": "Ej hanterade",
         "STATUS": "Status"
       }
     },
     "AGENT_STATUS": {
-      "HEADER": "Agent status",
+      "HEADER": "Medarbetarstatus",
       "ONLINE": "Online",
       "BUSY": "Upptagen",
       "OFFLINE": "Offline"
     }
   },
   "DAYS_OF_WEEK": {
-    "SUNDAY": "Sunday",
-    "MONDAY": "Monday",
-    "TUESDAY": "Tuesday",
-    "WEDNESDAY": "Wednesday",
-    "THURSDAY": "Thursday",
-    "FRIDAY": "Friday",
-    "SATURDAY": "Saturday"
+    "SUNDAY": "Söndag",
+    "MONDAY": "Måndag",
+    "TUESDAY": "Tisdag",
+    "WEDNESDAY": "Onsdag",
+    "THURSDAY": "Torsdag",
+    "FRIDAY": "Fredag",
+    "SATURDAY": "Lördag"
   },
   "SLA_REPORTS": {
-    "HEADER": "SLA Reports",
-    "NO_RECORDS": "SLA applied conversations are not available.",
-    "LOADING": "Loading SLA data...",
-    "DOWNLOAD_SLA_REPORTS": "Download SLA reports",
-    "DOWNLOAD_FAILED": "Failed to download SLA Reports",
+    "HEADER": "SLA-rapporter",
+    "NO_RECORDS": "Det finns inga konversationer med SLA.",
+    "LOADING": "Laddar SLA-data...",
+    "DOWNLOAD_SLA_REPORTS": "Ladda ner SLA-rapporter",
+    "DOWNLOAD_FAILED": "Det gick inte att ladda ner SLA-rapporter",
     "DROPDOWN": {
-      "ADD_FIlTER": "Add filter",
-      "CLEAR_ALL": "Clear all",
-      "CLEAR_FILTER": "Clear filter",
+      "ADD_FIlTER": "Lägg till filter",
+      "CLEAR_ALL": "Rensa alla",
+      "CLEAR_FILTER": "Rensa filter",
       "EMPTY_LIST": "Inga resultat hittades",
-      "NO_FILTER": "No filters available",
-      "SEARCH": "Search filter",
+      "NO_FILTER": "Inga filter tillgängliga",
+      "SEARCH": "Sök filter",
       "INPUT_PLACEHOLDER": {
-        "SLA": "SLA name",
-        "AGENTS": "Agent name",
-        "INBOXES": "Inbox name",
+        "SLA": "SLA-namn",
+        "AGENTS": "Medarbetarnamn",
+        "INBOXES": "Inkorgsnamn",
         "LABELS": "Etikettnamn",
-        "TEAMS": "Team name"
+        "TEAMS": "Teamnamn"
       },
-      "SLA": "SLA Policy",
+      "SLA": "SLA-policy",
       "INBOXES": "Inkorg",
-      "AGENTS": "Agent",
-      "LABELS": "Label",
+      "AGENTS": "Medarbetare",
+      "LABELS": "Etikett",
       "TEAMS": "Team"
     },
-    "WITH": "with",
+    "WITH": "med",
     "METRICS": {
       "HIT_RATE": {
-        "LABEL": "Hit Rate",
-        "TOOLTIP": "Percentage of SLAs created were completed successfully"
+        "LABEL": "Träffsäkerhet",
+        "TOOLTIP": "Andel skapade SLA:er som uppfylldes"
       },
       "NO_OF_MISSES": {
-        "LABEL": "Number of Misses",
-        "TOOLTIP": "Total SLA misses in a certain period"
+        "LABEL": "Antal missade",
+        "TOOLTIP": "Totalt antal missade SLA:er under en viss period"
       },
       "NO_OF_CONVERSATIONS": {
-        "LABEL": "Number of Conversations",
-        "TOOLTIP": "Total number of conversations with SLA"
+        "LABEL": "Antal konversationer",
+        "TOOLTIP": "Totalt antal konversationer med SLA"
       }
     },
     "TABLE": {
       "HEADER": {
         "POLICY": "Policy",
-        "CONVERSATION": "Conversation",
-        "AGENT": "Agent"
+        "CONVERSATION": "Konversation",
+        "AGENT": "Medarbetare"
       },
-      "VIEW_DETAILS": "View Details"
+      "VIEW_DETAILS": "Visa detaljer"
     }
   },
   "SUMMARY_REPORTS": {
     "INBOX": "Inkorg",
-    "AGENT": "Agent",
+    "AGENT": "Medarbetare",
     "TEAM": "Team",
-    "LABEL": "Label",
-    "AVG_RESOLUTION_TIME": "Avg. Resolution Time",
-    "AVG_FIRST_RESPONSE_TIME": "Avg. First Response Time",
-    "AVG_REPLY_TIME": "Avg. Customer Waiting Time",
+    "LABEL": "Etikett",
+    "AVG_RESOLUTION_TIME": "Genomsnittlig lösningstid",
+    "AVG_FIRST_RESPONSE_TIME": "Genomsnittlig första svarstid",
+    "AVG_REPLY_TIME": "Genomsnittlig väntetid för kund",
     "RESOLUTION_COUNT": "Antal lösta",
-    "CONVERSATIONS": "No. of conversations"
+    "CONVERSATIONS": "Antal konversationer"
   }
 }

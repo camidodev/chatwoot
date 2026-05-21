@@ -1,38 +1,38 @@
 {
   "INTEGRATION_APPS": {
-    "FETCHING": "Fetching Integrations",
-    "NO_HOOK_CONFIGURED": "There are no {integrationId} integrations configured in this account.",
+    "FETCHING": "Hämtar integrationer",
+    "NO_HOOK_CONFIGURED": "Det finns inga {integrationId}-integrationer konfigurerade för det här kontot.",
     "HEADER": "Applikationer",
-    "COUNT": "{n} integration | {n} integrations",
-    "SEARCH_PLACEHOLDER": "Search...",
-    "NO_RESULTS": "No results found matching your search",
+    "COUNT": "{n} integration | {n} integrationer",
+    "SEARCH_PLACEHOLDER": "Sök...",
+    "NO_RESULTS": "Inga resultat matchade din sökning",
     "STATUS": {
       "ENABLED": "Aktiverad",
       "DISABLED": "Inaktiverad"
     },
     "CONFIGURE": "Konfigurera",
-    "ADD_BUTTON": "Add a new hook",
+    "ADD_BUTTON": "Lägg till ny hook",
     "DELETE": {
       "TITLE": {
-        "INBOX": "Confirm deletion",
-        "ACCOUNT": "Disconnect"
+        "INBOX": "Bekräfta borttagning",
+        "ACCOUNT": "Koppla från"
       },
       "MESSAGE": {
-        "INBOX": "Är du säker på att ta bort?",
-        "ACCOUNT": "Are you sure to disconnect?"
+        "INBOX": "Är du säker på att du vill ta bort?",
+        "ACCOUNT": "Är du säker på att du vill koppla från?"
       },
       "CONFIRM_BUTTON_TEXT": {
         "INBOX": "Ja, ta bort",
-        "ACCOUNT": "Yes, Disconnect"
+        "ACCOUNT": "Ja, koppla från"
       },
       "CANCEL_BUTTON_TEXT": "Avbryt",
       "API": {
-        "SUCCESS_MESSAGE": "Hook deleted successfully",
-        "ERROR_MESSAGE": "Kunde inte ansluta till Woot Server, försök igen senare"
+        "SUCCESS_MESSAGE": "Hooken har tagits bort",
+        "ERROR_MESSAGE": "Det gick inte att ansluta till servern. Försök igen senare."
       }
     },
     "LIST": {
-      "FETCHING": "Fetching integration hooks",
+      "FETCHING": "Hämtar integrationshooks",
       "INBOX": "Inkorg",
       "ACTIONS": "Åtgärder",
       "DELETE": {
@@ -42,25 +42,25 @@
     "ADD": {
       "FORM": {
         "INBOX": {
-          "LABEL": "Select Inbox",
-          "PLACEHOLDER": "Select Inbox"
+          "LABEL": "Välj inkorg",
+          "PLACEHOLDER": "Välj inkorg"
         },
         "SUBMIT": "Skapa",
         "CANCEL": "Avbryt"
       },
       "API": {
-        "SUCCESS_MESSAGE": "Integration hook added successfully",
-        "ERROR_MESSAGE": "Kunde inte ansluta till Woot Server, försök igen senare"
+        "SUCCESS_MESSAGE": "Integrationshooken har lagts till",
+        "ERROR_MESSAGE": "Det gick inte att ansluta till servern. Försök igen senare."
       }
     },
     "CONNECT": {
       "BUTTON_TEXT": "Anslut"
     },
     "DISCONNECT": {
-      "BUTTON_TEXT": "Disconnect"
+      "BUTTON_TEXT": "Koppla från"
     },
     "SIDEBAR_DESCRIPTION": {
-      "DIALOGFLOW": "Dialogflow is a natural language processing platform for building conversational interfaces. Integrating it with {installationName} lets bots handle queries first and transfer them to agents when needed. It helps qualify leads and reduce agent workload by answering FAQs. To add Dialogflow, create a Service Account in Google Console and share the credentials. Refer to the docs for details"
+      "DIALOGFLOW": "Dialogflow är en plattform för språkförståelse som används för att bygga konversationsgränssnitt. Genom att integrera den med {installationName} kan botar hantera frågor först och lämna över till medarbetare vid behov. Det hjälper till att kvalificera leads och minska teamets arbetsbelastning genom att svara på vanliga frågor. För att lägga till Dialogflow skapar du ett Service Account i Google Console och delar autentiseringsuppgifterna. Se dokumentationen för mer information."
     }
   }
 }

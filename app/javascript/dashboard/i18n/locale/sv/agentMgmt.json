@@ -1,72 +1,35 @@
 {
   "AGENT_MGMT": {
-    "HEADER": "Agenter",
-    "HEADER_BTN_TXT": "Lägg till agent",
-    "LOADING": "Hämtar agentlista",
-    "DESCRIPTION": "An agent is a member of your customer support team who can view and respond to user messages. The list below shows all the agents in your account.",
-    "LEARN_MORE": "Learn about user roles",
+    "HEADER": "Medarbetare",
+    "HEADER_BTN_TXT": "Lägg till medarbetare",
+    "LOADING": "Hämtar medarbetare",
+    "DESCRIPTION": "En medarbetare är en person i ditt team som kan se och svara på kundmeddelanden. Listan nedan visar alla medarbetare på ditt konto.",
+    "LEARN_MORE": "Läs mer om användarroller",
     "AGENT_TYPES": {
       "ADMINISTRATOR": "Administratör",
-      "AGENT": "Agent"
+      "AGENT": "Medarbetare"
     },
-    "COUNT": "{n} agent | {n} agents",
+    "COUNT": "{n} medarbetare | {n} medarbetare",
     "LIST": {
-      "404": "Det finns inga agenter kopplade till detta konto",
-      "TITLE": "Hantera agenter i ditt team",
-      "DESC": "Du kan lägga till/ta bort agenter till/i ditt team.",
+      "404": "Det finns inga medarbetare kopplade till det här kontot",
+      "TITLE": "Hantera medarbetare i ditt team",
+      "DESC": "Här kan du lägga till och ta bort medarbetare i ditt team.",
       "NAME": "Namn",
-      "EMAIL": "E-POST",
+      "EMAIL": "E-post",
       "STATUS": "Status",
       "ACTIONS": "Åtgärder",
       "VERIFIED": "Verifierad",
-      "VERIFICATION_PENDING": "Verifiering väntar",
-      "AVAILABLE_CUSTOM_ROLE": "Available custom role permissions"
+      "VERIFICATION_PENDING": "Väntar på verifiering",
+      "AVAILABLE_CUSTOM_ROLE": "Tillgängliga behörigheter för anpassad roll"
     },
     "ADD": {
-      "TITLE": "Lägg till agent till ditt team",
-      "DESC": "Du kan lägga till personer som kommer att kunna hantera stöd för dina inkorgar.",
+      "TITLE": "Lägg till medarbetare i ditt team",
+      "DESC": "Lägg till personer som ska kunna hantera konversationer i dina inkorgar.",
       "CANCEL_BUTTON_TEXT": "Avbryt",
       "FORM": {
         "NAME": {
-          "LABEL": "Agentens namn",
-          "PLACEHOLDER": "Ange ett namn på agenten"
-        },
-        "AGENT_TYPE": {
-          "LABEL": "Roll",
-          "PLACEHOLDER": "Välj en typ",
-          "ERROR": "Roll krävs"
-        },
-        "EMAIL": {
-          "LABEL": "E-postadress",
-          "PLACEHOLDER": "Ange en e-postadress till agenten"
-        },
-        "SUBMIT": "Lägg till agent"
-      },
-      "API": {
-        "SUCCESS_MESSAGE": "Agenten har lagts till",
-        "EXIST_MESSAGE": "E-postadressen används redan, försök med en annan e-postadress",
-        "ERROR_MESSAGE": "Kunde inte ansluta till Woot Server, försök igen senare"
-      }
-    },
-    "DELETE": {
-      "BUTTON_TEXT": "Radera",
-      "API": {
-        "SUCCESS_MESSAGE": "Agenten har tagits bort",
-        "ERROR_MESSAGE": "Kunde inte ansluta till Woot Server, försök igen senare"
-      },
-      "CONFIRM": {
-        "TITLE": "Bekräfta borttagning",
-        "MESSAGE": "Är du säker på att ta bort ",
-        "YES": "Ja, ta bort ",
-        "NO": "Nej, behåll "
-      }
-    },
-    "EDIT": {
-      "TITLE": "Redigera agent",
-      "FORM": {
-        "NAME": {
-          "LABEL": "Agentens namn",
-          "PLACEHOLDER": "Ange ett namn på agenten"
+          "LABEL": "Namn",
+          "PLACEHOLDER": "Ange medarbetarens namn"
         },
         "AGENT_TYPE": {
           "LABEL": "Roll",
@@ -75,37 +38,74 @@
         },
         "EMAIL": {
           "LABEL": "E-postadress",
-          "PLACEHOLDER": "Ange en e-postadress till agenten"
+          "PLACEHOLDER": "Ange medarbetarens e-postadress"
+        },
+        "SUBMIT": "Lägg till medarbetare"
+      },
+      "API": {
+        "SUCCESS_MESSAGE": "Medarbetaren har lagts till",
+        "EXIST_MESSAGE": "E-postadressen används redan. Försök med en annan e-postadress",
+        "ERROR_MESSAGE": "Det gick inte att lägga till medarbetaren. Försök igen senare"
+      }
+    },
+    "DELETE": {
+      "BUTTON_TEXT": "Radera",
+      "API": {
+        "SUCCESS_MESSAGE": "Medarbetaren har tagits bort",
+        "ERROR_MESSAGE": "Det gick inte att ta bort medarbetaren. Försök igen senare"
+      },
+      "CONFIRM": {
+        "TITLE": "Bekräfta borttagning",
+        "MESSAGE": "Är du säker på att du vill ta bort ",
+        "YES": "Ja, ta bort ",
+        "NO": "Nej, behåll "
+      }
+    },
+    "EDIT": {
+      "TITLE": "Redigera medarbetare",
+      "FORM": {
+        "NAME": {
+          "LABEL": "Namn",
+          "PLACEHOLDER": "Ange medarbetarens namn"
+        },
+        "AGENT_TYPE": {
+          "LABEL": "Roll",
+          "PLACEHOLDER": "Välj en roll",
+          "ERROR": "Roll krävs"
+        },
+        "EMAIL": {
+          "LABEL": "E-postadress",
+          "PLACEHOLDER": "Ange medarbetarens e-postadress"
         },
         "AGENT_AVAILABILITY": {
           "LABEL": "Tillgänglighet",
-          "PLACEHOLDER": "Please select an availability status",
-          "ERROR": "Availability is required"
+          "PLACEHOLDER": "Välj tillgänglighetsstatus",
+          "ERROR": "Tillgänglighet krävs"
         },
-        "SUBMIT": "Redigera agent"
+        "SUBMIT": "Spara ändringar"
       },
       "BUTTON_TEXT": "Redigera",
       "CANCEL_BUTTON_TEXT": "Avbryt",
       "API": {
-        "SUCCESS_MESSAGE": "Agenten uppdaterad",
-        "ERROR_MESSAGE": "Kunde inte ansluta till Woot Server, försök igen senare"
+        "SUCCESS_MESSAGE": "Medarbetaren har uppdaterats",
+        "ERROR_MESSAGE": "Det gick inte att uppdatera medarbetaren. Försök igen senare"
       },
       "PASSWORD_RESET": {
         "ADMIN_RESET_BUTTON": "Återställ lösenord",
-        "ADMIN_SUCCESS_MESSAGE": "Ett e-postmeddelande med instruktioner för att återställa lösenordet har skickats till agenten",
-        "SUCCESS_MESSAGE": "Agentens lösenord återställd",
-        "ERROR_MESSAGE": "Kunde inte ansluta till Woot Server, försök igen senare"
+        "ADMIN_SUCCESS_MESSAGE": "Ett e-postmeddelande med instruktioner för att återställa lösenordet har skickats till medarbetaren",
+        "SUCCESS_MESSAGE": "Medarbetarens lösenord har återställts",
+        "ERROR_MESSAGE": "Det gick inte att återställa lösenordet. Försök igen senare"
       }
     },
-    "SEARCH_PLACEHOLDER": "Sök efter agenter...",
-    "NO_RESULTS": "No agents found matching your search",
+    "SEARCH_PLACEHOLDER": "Sök efter medarbetare...",
+    "NO_RESULTS": "Inga medarbetare matchade din sökning",
     "SEARCH": {
       "NO_RESULTS": "Inga resultat hittades."
     },
     "MULTI_SELECTOR": {
       "PLACEHOLDER": "Inget",
       "TITLE": {
-        "AGENT": "Välj agent",
+        "AGENT": "Välj medarbetare",
         "TEAM": "Välj team"
       },
       "LIST": {
@@ -113,13 +113,13 @@
       },
       "SEARCH": {
         "NO_RESULTS": {
-          "AGENT": "Inga agenter hittades",
+          "AGENT": "Inga medarbetare hittades",
           "TEAM": "Inga team hittades"
         },
         "PLACEHOLDER": {
-          "AGENT": "Sök efter agenter",
+          "AGENT": "Sök efter medarbetare",
           "TEAM": "Sök efter team",
-          "INPUT": "Search for agents"
+          "INPUT": "Sök efter medarbetare"
         }
       }
     }

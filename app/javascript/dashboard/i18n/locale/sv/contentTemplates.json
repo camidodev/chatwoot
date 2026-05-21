@@ -1,52 +1,52 @@
 {
   "CONTENT_TEMPLATES": {
     "MODAL": {
-      "TITLE": "Twilio Templates",
-      "SUBTITLE": "Select the Twilio template you want to send",
-      "TEMPLATE_SELECTED_SUBTITLE": "Configure template: {templateName}"
+      "TITLE": "Twilio-mallar",
+      "SUBTITLE": "Välj den Twilio-mall du vill skicka",
+      "TEMPLATE_SELECTED_SUBTITLE": "Konfigurera mall: {templateName}"
     },
     "PICKER": {
-      "SEARCH_PLACEHOLDER": "Search Templates",
-      "NO_TEMPLATES_FOUND": "No templates found for",
+      "SEARCH_PLACEHOLDER": "Sök mallar",
+      "NO_TEMPLATES_FOUND": "Inga mallar hittades för",
       "NO_CONTENT": "Inget innehåll",
-      "HEADER": "Header",
-      "BODY": "Body",
-      "FOOTER": "Footer",
-      "BUTTONS": "Buttons",
-      "CATEGORY": "Category",
-      "MEDIA_CONTENT": "Media Content",
-      "MEDIA_CONTENT_FALLBACK": "media content",
-      "NO_TEMPLATES_AVAILABLE": "No Twilio templates available. Click refresh to sync templates from Twilio.",
-      "REFRESH_BUTTON": "Refresh templates",
-      "REFRESH_SUCCESS": "Templates refresh initiated. It may take a couple of minutes to update.",
-      "REFRESH_ERROR": "Failed to refresh templates. Please try again.",
+      "HEADER": "Rubrik",
+      "BODY": "Innehåll",
+      "FOOTER": "Sidfot",
+      "BUTTONS": "Knappar",
+      "CATEGORY": "Kategori",
+      "MEDIA_CONTENT": "Mediainnehåll",
+      "MEDIA_CONTENT_FALLBACK": "mediainnehåll",
+      "NO_TEMPLATES_AVAILABLE": "Inga Twilio-mallar finns tillgängliga. Klicka på uppdatera för att synka mallar från Twilio.",
+      "REFRESH_BUTTON": "Uppdatera mallar",
+      "REFRESH_SUCCESS": "Uppdateringen av mallar har startats. Det kan ta ett par minuter innan de uppdateras.",
+      "REFRESH_ERROR": "Det gick inte att uppdatera mallarna. Försök igen.",
       "LABELS": {
-        "LANGUAGE": "Language",
-        "TEMPLATE_BODY": "Template Body",
-        "CATEGORY": "Category"
+        "LANGUAGE": "Språk",
+        "TEMPLATE_BODY": "Mallinnehåll",
+        "CATEGORY": "Kategori"
       },
       "TYPES": {
         "MEDIA": "Media",
-        "QUICK_REPLY": "Quick Reply",
-        "CALL_TO_ACTION": "Call to Action",
+        "QUICK_REPLY": "Snabbsvar",
+        "CALL_TO_ACTION": "Call to action",
         "TEXT": "Text"
       }
     },
     "PARSER": {
-      "VARIABLES_LABEL": "Variables",
-      "LANGUAGE": "Language",
-      "CATEGORY": "Category",
-      "VARIABLE_PLACEHOLDER": "Enter {variable} value",
-      "GO_BACK_LABEL": "Go Back",
-      "SEND_MESSAGE_LABEL": "Send Message",
-      "FORM_ERROR_MESSAGE": "Please fill all variables before sending",
-      "MEDIA_HEADER_LABEL": "{type} Header",
-      "MEDIA_URL_LABEL": "Enter full media URL",
+      "VARIABLES_LABEL": "Variabler",
+      "LANGUAGE": "Språk",
+      "CATEGORY": "Kategori",
+      "VARIABLE_PLACEHOLDER": "Ange värde för {variable}",
+      "GO_BACK_LABEL": "Gå tillbaka",
+      "SEND_MESSAGE_LABEL": "Skicka meddelande",
+      "FORM_ERROR_MESSAGE": "Fyll i alla variabler innan du skickar",
+      "MEDIA_HEADER_LABEL": "{type}-rubrik",
+      "MEDIA_URL_LABEL": "Ange fullständig media-URL",
       "MEDIA_URL_PLACEHOLDER": "https://example.com/image.jpg"
     },
     "FORM": {
       "BACK_BUTTON": "Tillbaka",
-      "SEND_MESSAGE_BUTTON": "Send Message"
+      "SEND_MESSAGE_BUTTON": "Skicka meddelande"
     }
   }
 }

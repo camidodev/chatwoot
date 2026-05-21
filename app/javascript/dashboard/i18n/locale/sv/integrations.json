@@ -3,115 +3,115 @@
     "SHOPIFY": {
       "HEADER": "Shopify",
       "DELETE": {
-        "TITLE": "Delete Shopify Integration",
-        "MESSAGE": "Are you sure you want to delete the Shopify integration?"
+        "TITLE": "Ta bort Shopify-integration",
+        "MESSAGE": "Är du säker på att du vill ta bort Shopify-integrationen?"
       },
       "STORE_URL": {
-        "TITLE": "Connect Shopify Store",
-        "LABEL": "Store URL",
-        "PLACEHOLDER": "your-store.myshopify.com",
-        "HELP": "Enter your Shopify store's myshopify.com URL",
+        "TITLE": "Anslut Shopify-butik",
+        "LABEL": "Butiks-URL",
+        "PLACEHOLDER": "din-butik.myshopify.com",
+        "HELP": "Ange din Shopify-butiks myshopify.com-URL",
         "CANCEL": "Avbryt",
-        "SUBMIT": "Connect Store"
+        "SUBMIT": "Anslut butik"
       },
-      "ERROR": "There was an error connecting to Shopify. Please try again or contact support if the issue persists."
+      "ERROR": "Ett fel uppstod vid anslutningen till Shopify. Försök igen eller kontakta supporten om problemet kvarstår."
     },
     "HEADER": "Integrationer",
-    "DESCRIPTION": "Chatwoot integrates with multiple tools and services to improve your team's efficiency. Explore the list below to configure your favorite apps.",
-    "LEARN_MORE": "Learn more about integrations",
-    "LOADING": "Fetching integrations",
-    "SEARCH_PLACEHOLDER": "Search integrations...",
-    "NO_RESULTS": "No integrations found matching your search",
+    "DESCRIPTION": "Custio integrerar med flera verktyg och tjänster för att effektivisera teamets arbete. Utforska listan nedan för att konfigurera dina favoritappar.",
+    "LEARN_MORE": "Läs mer om integrationer",
+    "LOADING": "Hämtar integrationer",
+    "SEARCH_PLACEHOLDER": "Sök integrationer...",
+    "NO_RESULTS": "Inga integrationer matchade din sökning",
     "CAPTAIN": {
-      "DISABLED": "Captain is not enabled on your account.",
-      "CLICK_HERE_TO_CONFIGURE": "Click here to configure",
-      "LOADING_CONSOLE": "Loading Captain Console...",
-      "FAILED_TO_LOAD_CONSOLE": "Failed to load Captain Console. Please refresh and try again."
+      "DISABLED": "Custio AI är inte aktiverat för ditt konto.",
+      "CLICK_HERE_TO_CONFIGURE": "Klicka här för att konfigurera",
+      "LOADING_CONSOLE": "Laddar Custio AI-konsolen...",
+      "FAILED_TO_LOAD_CONSOLE": "Det gick inte att ladda Custio AI-konsolen. Uppdatera sidan och försök igen."
     },
     "WEBHOOK": {
-      "SUBSCRIBED_EVENTS": "Subscribed Events",
-      "LEARN_MORE": "Learn more about webhooks",
+      "SUBSCRIBED_EVENTS": "Prenumererade händelser",
+      "LEARN_MORE": "Läs mer om webhooks",
       "SECRET": {
-        "LABEL": "Secret",
-        "COPY": "Copy secret to clipboard",
-        "COPY_SUCCESS": "Secret copied to clipboard",
-        "TOGGLE": "Toggle secret visibility",
-        "CREATED_DESC": "Your webhook has been created. Use the secret below to verify webhook signatures. Please copy it now — you can also find it later in the webhook edit form.",
-        "DONE": "Done"
+        "LABEL": "Hemlighet",
+        "COPY": "Kopiera hemlighet till urklipp",
+        "COPY_SUCCESS": "Hemlighet kopierad till urklipp",
+        "TOGGLE": "Visa eller dölj hemlighet",
+        "CREATED_DESC": "Din webhook har skapats. Använd hemligheten nedan för att verifiera webhook-signaturer. Kopiera den nu — du kan även hitta den senare i formuläret för att redigera webhooken.",
+        "DONE": "Klart"
       },
       "COUNT": "{n} webhook | {n} webhooks",
-      "SEARCH_PLACEHOLDER": "Search webhooks...",
-      "NO_RESULTS": "No webhooks found matching your search",
+      "SEARCH_PLACEHOLDER": "Sök webhooks...",
+      "NO_RESULTS": "Inga webhooks matchade din sökning",
       "FORM": {
         "CANCEL": "Avbryt",
-        "DESC": "Webbhook-händelser ger dig realtidsinformation om vad som händer i ditt Chatwoot-konto. Ange en giltig URL för att konfigurera en callback.",
+        "DESC": "Webhook-händelser ger dig realtidsinformation om vad som händer i ditt Custio-konto. Ange en giltig URL för att konfigurera en callback.",
         "SUBSCRIPTIONS": {
-          "LABEL": "Events",
+          "LABEL": "Händelser",
           "EVENTS": {
-            "CONVERSATION_CREATED": "Conversation Created",
-            "CONVERSATION_STATUS_CHANGED": "Conversation Status Changed",
-            "CONVERSATION_UPDATED": "Conversation Updated",
-            "MESSAGE_CREATED": "Message created",
-            "MESSAGE_UPDATED": "Message updated",
-            "WEBWIDGET_TRIGGERED": "Live chat widget opened by the user",
-            "CONTACT_CREATED": "Contact created",
-            "CONTACT_UPDATED": "Contact updated",
-            "CONVERSATION_TYPING_ON": "Conversation Typing On",
-            "CONVERSATION_TYPING_OFF": "Conversation Typing Off"
+            "CONVERSATION_CREATED": "Konversation skapad",
+            "CONVERSATION_STATUS_CHANGED": "Konversationsstatus ändrad",
+            "CONVERSATION_UPDATED": "Konversation uppdaterad",
+            "MESSAGE_CREATED": "Meddelande skapat",
+            "MESSAGE_UPDATED": "Meddelande uppdaterat",
+            "WEBWIDGET_TRIGGERED": "Livechatt-widget öppnad av användaren",
+            "CONTACT_CREATED": "Kontakt skapad",
+            "CONTACT_UPDATED": "Kontakt uppdaterad",
+            "CONVERSATION_TYPING_ON": "Skriver i konversation aktiverat",
+            "CONVERSATION_TYPING_OFF": "Skriver i konversation inaktiverat"
           }
         },
         "NAME": {
-          "LABEL": "Webhook Name",
-          "PLACEHOLDER": "Enter the name of the webhook"
+          "LABEL": "Webhook-namn",
+          "PLACEHOLDER": "Ange ett namn för webhooken"
         },
         "END_POINT": {
-          "LABEL": "Webhook URL",
-          "PLACEHOLDER": "Example: {webhookExampleURL}",
+          "LABEL": "Webhook-URL",
+          "PLACEHOLDER": "Exempel: {webhookExampleURL}",
           "ERROR": "Ange en giltig URL"
         },
-        "EDIT_SUBMIT": "Update webhook",
-        "ADD_SUBMIT": "Create webhook"
+        "EDIT_SUBMIT": "Uppdatera webhook",
+        "ADD_SUBMIT": "Skapa webhook"
       },
       "TITLE": "Webhook",
       "CONFIGURE": "Konfigurera",
       "HEADER": "Webhook-inställningar",
       "HEADER_BTN_TXT": "Lägg till ny webhook",
-      "LOADING": "Hämtar bifogade webhooks",
-      "SEARCH_404": "Det finns inga objekt som matchar denna fråga",
-      "SIDEBAR_TXT": "<p><b>Webhooks</b> </p> <p>Webhooks är HTTP-callbacks som kan definieras för varje konto. De utlöses av händelser som att skapa meddelanden i Chatwoot. Du kan skapa mer än en webhook för detta konto. <br /><br /> För att skapa en <b>webhook</b>, klicka på <b>Lägg till ny webhook</b> knappen. Du kan också ta bort alla befintliga webhook genom att klicka på knappen Radera.</p>",
+      "LOADING": "Hämtar webhooks",
+      "SEARCH_404": "Det finns inga objekt som matchar denna sökning",
+      "SIDEBAR_TXT": "<p><b>Webhooks</b> </p> <p>Webhooks är HTTP-callbacks som kan definieras för varje konto. De utlöses av händelser, till exempel när meddelanden skapas i Custio. Du kan skapa fler än en webhook för det här kontot. <br /><br /> För att skapa en <b>webhook</b>, klicka på knappen <b>Lägg till ny webhook</b>. Du kan också ta bort befintliga webhooks genom att klicka på knappen Radera.</p>",
       "LIST": {
         "404": "Det finns inga webhooks konfigurerade för det här kontot.",
         "TITLE": "Hantera webhooks",
         "TABLE_HEADER": {
-          "WEBHOOK_ENDPOINT": "Webhook slutpunkt",
+          "WEBHOOK_ENDPOINT": "Webhook-endpoint",
           "ACTIONS": "Åtgärder"
         }
       },
       "EDIT": {
         "BUTTON_TEXT": "Redigera",
-        "TITLE": "Edit webhook",
+        "TITLE": "Redigera webhook",
         "API": {
-          "SUCCESS_MESSAGE": "Webhook configuration updated successfully",
-          "ERROR_MESSAGE": "Kunde inte ansluta till Woot Server, försök igen senare"
+          "SUCCESS_MESSAGE": "Webhook-konfigurationen har uppdaterats",
+          "ERROR_MESSAGE": "Det gick inte att ansluta till servern. Försök igen senare."
         }
       },
       "ADD": {
         "CANCEL": "Avbryt",
         "TITLE": "Lägg till ny webhook",
         "API": {
-          "SUCCESS_MESSAGE": "Webhook configuration added successfully",
-          "ERROR_MESSAGE": "Kunde inte ansluta till Woot Server, försök igen senare"
+          "SUCCESS_MESSAGE": "Webhook-konfigurationen har lagts till",
+          "ERROR_MESSAGE": "Det gick inte att ansluta till servern. Försök igen senare."
         }
       },
       "DELETE": {
         "BUTTON_TEXT": "Radera",
         "API": {
-          "SUCCESS_MESSAGE": "Webhook har tagits bort",
-          "ERROR_MESSAGE": "Kunde inte ansluta till Woot Server, försök igen senare"
+          "SUCCESS_MESSAGE": "Webhooken har tagits bort",
+          "ERROR_MESSAGE": "Det gick inte att ansluta till servern. Försök igen senare."
         },
         "CONFIRM": {
           "TITLE": "Bekräfta borttagning",
-          "MESSAGE": "Are you sure to delete the webhook? ({webhookURL})",
+          "MESSAGE": "Är du säker på att du vill ta bort webhooken? ({webhookURL})",
           "YES": "Ja, ta bort ",
           "NO": "Nej, behåll"
         }
@@ -121,107 +121,107 @@
       "HEADER": "Slack",
       "DELETE": "Radera",
       "DELETE_CONFIRMATION": {
-        "TITLE": "Delete the integration",
-        "MESSAGE": "Are you sure you want to delete the integration? Doing so will result in the loss of access to conversations on your Slack workspace."
+        "TITLE": "Ta bort integrationen",
+        "MESSAGE": "Är du säker på att du vill ta bort integrationen? Det innebär att åtkomsten till konversationer i din Slack-arbetsyta försvinner."
       },
       "HELP_TEXT": {
-        "TITLE": "Using Slack Integration",
-        "BODY": "With this integration, all of your incoming conversations will be synced to the ***{selectedChannelName}*** channel in your Slack workspace. You can manage all your customer conversations right within the channel and never miss a message.\n\nHere are the main features of the integration:\n\n**Respond to conversations from within Slack:** To respond to a conversation in the ***{selectedChannelName}*** Slack channel, simply type out your message and send it as a thread. This will create a response back to the customer through Chatwoot. It's that simple!\n\n **Create private notes:** If you want to create private notes instead of replies, start your message with ***`note:`***. This ensures that your message is kept private and won't be visible to the customer.\n\n**Associate an agent profile:** If the person who replied on Slack has an agent profile in Chatwoot under the same email, the replies will be associated with that agent profile automatically. This means you can easily track who said what and when. On the other hand, when the replier doesn't have an associated agent profile, the replies will appear from the bot profile to the customer.",
-        "SELECTED": "selected"
+        "TITLE": "Använd Slack-integrationen",
+        "BODY": "Med den här integrationen synkas alla inkommande konversationer till kanalen ***{selectedChannelName}*** i din Slack-arbetsyta. Du kan hantera alla kundkonversationer direkt i kanalen och slipper missa meddelanden.\n\nHär är integrationens viktigaste funktioner:\n\n**Svara på konversationer direkt från Slack:** För att svara på en konversation i Slack-kanalen ***{selectedChannelName}*** skriver du bara ditt meddelande och skickar det som en tråd. Det skapar ett svar till kunden via Custio. Så enkelt är det!\n\n **Skapa privata anteckningar:** Om du vill skapa privata anteckningar i stället för svar, börja meddelandet med ***`note:`***. Då hålls meddelandet privat och visas inte för kunden.\n\n**Koppla en medarbetarprofil:** Om personen som svarar i Slack har en medarbetarprofil i Custio med samma e-postadress kopplas svaren automatiskt till den profilen. Det gör det enkelt att följa vem som skrev vad och när. Om personen som svarar inte har en kopplad medarbetarprofil visas svaren från botprofilen för kunden.",
+        "SELECTED": "vald"
       },
       "SELECT_CHANNEL": {
-        "OPTION_LABEL": "Select a channel",
+        "OPTION_LABEL": "Välj en kanal",
         "UPDATE": "Uppdatera",
-        "BUTTON_TEXT": "Connect channel",
-        "DESCRIPTION": "Your Slack workspace is now linked with Chatwoot. However, the integration is currently inactive. To activate the integration and connect a channel to Chatwoot, please click the button below.\n\n**Note:** If you are attempting to connect a private channel, add the Chatwoot app to the Slack channel before proceeding with this step.",
-        "ATTENTION_REQUIRED": "Attention required",
-        "EXPIRED": "Your Slack integration has expired. To continue receiving messages on Slack, please delete the integration and connect your workspace again."
+        "BUTTON_TEXT": "Anslut kanal",
+        "DESCRIPTION": "Din Slack-arbetsyta är nu kopplad till Custio. Integrationen är däremot inte aktiv ännu. För att aktivera integrationen och ansluta en kanal till Custio, klicka på knappen nedan.\n\n**Obs:** Om du försöker ansluta en privat kanal behöver du först lägga till Custio-appen i Slack-kanalen innan du fortsätter med detta steg.",
+        "ATTENTION_REQUIRED": "Åtgärd krävs",
+        "EXPIRED": "Din Slack-integration har gått ut. För att fortsätta ta emot meddelanden i Slack behöver du ta bort integrationen och ansluta arbetsytan igen."
       },
-      "UPDATE_ERROR": "There was an error updating the integration, please try again",
-      "UPDATE_SUCCESS": "The channel is connected successfully",
-      "FAILED_TO_FETCH_CHANNELS": "There was an error fetching the channels from Slack, please try again"
+      "UPDATE_ERROR": "Ett fel uppstod när integrationen skulle uppdateras. Försök igen.",
+      "UPDATE_SUCCESS": "Kanalen har anslutits",
+      "FAILED_TO_FETCH_CHANNELS": "Ett fel uppstod när kanalerna skulle hämtas från Slack. Försök igen."
     },
     "DYTE": {
-      "CLICK_HERE_TO_JOIN": "Click here to join",
-      "LEAVE_THE_ROOM": "Leave the room",
-      "START_VIDEO_CALL_HELP_TEXT": "Start a new video call with the customer",
-      "JOIN_ERROR": "There was an error joining the call, please try again",
-      "CREATE_ERROR": "There was an error creating a meeting link, please try again"
+      "CLICK_HERE_TO_JOIN": "Klicka här för att gå med",
+      "LEAVE_THE_ROOM": "Lämna rummet",
+      "START_VIDEO_CALL_HELP_TEXT": "Starta ett nytt videosamtal med kunden",
+      "JOIN_ERROR": "Ett fel uppstod när du skulle gå med i samtalet. Försök igen.",
+      "CREATE_ERROR": "Ett fel uppstod när möteslänken skulle skapas. Försök igen."
     },
     "OPEN_AI": {
-      "AI_ASSIST": "AI Assist",
-      "WITH_AI": " {option} with AI ",
+      "AI_ASSIST": "AI-assistans",
+      "WITH_AI": " {option} med AI ",
       "OPTIONS": {
-        "REPLY_SUGGESTION": "Reply Suggestion",
-        "SUMMARIZE": "Summarize",
-        "REPHRASE": "Improve Writing",
-        "FIX_SPELLING_GRAMMAR": "Fix Spelling and Grammar",
-        "SHORTEN": "Shorten",
-        "EXPAND": "Expand",
-        "MAKE_FRIENDLY": "Change message tone to friendly",
-        "MAKE_FORMAL": "Use formal tone",
-        "SIMPLIFY": "Simplify",
-        "CONFIDENT": "Use confident tone",
-        "PROFESSIONAL": "Use professional tone",
-        "CASUAL": "Use casual tone",
-        "STRAIGHTFORWARD": "Use straightforward tone"
+        "REPLY_SUGGESTION": "Svarsförslag",
+        "SUMMARIZE": "Sammanfatta",
+        "REPHRASE": "Förbättra text",
+        "FIX_SPELLING_GRAMMAR": "Rätta stavning och grammatik",
+        "SHORTEN": "Korta ner",
+        "EXPAND": "Utveckla",
+        "MAKE_FRIENDLY": "Ändra tonen till vänlig",
+        "MAKE_FORMAL": "Använd formell ton",
+        "SIMPLIFY": "Förenkla",
+        "CONFIDENT": "Använd självsäker ton",
+        "PROFESSIONAL": "Använd professionell ton",
+        "CASUAL": "Använd avslappnad ton",
+        "STRAIGHTFORWARD": "Använd rak ton"
       },
       "REPLY_OPTIONS": {
-        "IMPROVE_REPLY": "Improve reply",
-        "IMPROVE_REPLY_SELECTION": "Improve the selection",
+        "IMPROVE_REPLY": "Förbättra svar",
+        "IMPROVE_REPLY_SELECTION": "Förbättra markeringen",
         "CHANGE_TONE": {
-          "TITLE": "Change tone",
+          "TITLE": "Ändra ton",
           "OPTIONS": {
-            "PROFESSIONAL": "Professional",
-            "CASUAL": "Casual",
-            "STRAIGHTFORWARD": "Straightforward",
-            "CONFIDENT": "Confident",
-            "FRIENDLY": "Friendly"
+            "PROFESSIONAL": "Professionell",
+            "CASUAL": "Avslappnad",
+            "STRAIGHTFORWARD": "Rak",
+            "CONFIDENT": "Självsäker",
+            "FRIENDLY": "Vänlig"
           }
         },
-        "GRAMMAR": "Fix grammar & spelling",
-        "SUGGESTION": "Suggest a reply",
-        "SUMMARIZE": "Summarize the conversation",
-        "ASK_COPILOT": "Ask Copilot"
+        "GRAMMAR": "Rätta grammatik och stavning",
+        "SUGGESTION": "Föreslå ett svar",
+        "SUMMARIZE": "Sammanfatta konversationen",
+        "ASK_COPILOT": "Fråga Copilot"
       },
       "ASSISTANCE_MODAL": {
-        "DRAFT_TITLE": "Draft content",
-        "GENERATED_TITLE": "Generated content",
-        "AI_WRITING": "AI is writing",
+        "DRAFT_TITLE": "Utkast",
+        "GENERATED_TITLE": "Genererat innehåll",
+        "AI_WRITING": "AI skriver",
         "BUTTONS": {
-          "APPLY": "Use this suggestion",
+          "APPLY": "Använd detta förslag",
           "CANCEL": "Avbryt"
         }
       },
       "CTA_MODAL": {
-        "TITLE": "Integrate with OpenAI",
-        "DESC": "Bring advanced AI features to your dashboard with OpenAI's GPT models. To begin, enter the API key from your OpenAI account.",
-        "KEY_PLACEHOLDER": "Enter your OpenAI API key",
+        "TITLE": "Integrera med OpenAI",
+        "DESC": "Ta in avancerade AI-funktioner i din dashboard med OpenAI:s GPT-modeller. Ange API-nyckeln från ditt OpenAI-konto för att komma igång.",
+        "KEY_PLACEHOLDER": "Ange din OpenAI API-nyckel",
         "BUTTONS": {
-          "NEED_HELP": "Need help?",
-          "DISMISS": "Dismiss",
-          "FINISH": "Finish Setup"
+          "NEED_HELP": "Behöver du hjälp?",
+          "DISMISS": "Avvisa",
+          "FINISH": "Slutför konfiguration"
         },
-        "DISMISS_MESSAGE": "You can setup OpenAI integration later Whenever you want.",
-        "SUCCESS_MESSAGE": "OpenAI integration setup successfully"
+        "DISMISS_MESSAGE": "Du kan konfigurera OpenAI-integrationen senare när du vill.",
+        "SUCCESS_MESSAGE": "OpenAI-integrationen har konfigurerats"
       },
-      "TITLE": "Improve With AI",
-      "SUMMARY_TITLE": "Summary with AI",
-      "REPLY_TITLE": "Reply suggestion with AI",
-      "SUBTITLE": "An improved reply will be generated using AI, based on your current draft.",
+      "TITLE": "Förbättra med AI",
+      "SUMMARY_TITLE": "Sammanfattning med AI",
+      "REPLY_TITLE": "Svarsförslag med AI",
+      "SUBTITLE": "Ett förbättrat svar genereras med AI baserat på ditt nuvarande utkast.",
       "TONE": {
-        "TITLE": "Tone",
+        "TITLE": "Ton",
         "OPTIONS": {
-          "PROFESSIONAL": "Professional",
-          "FRIENDLY": "Friendly"
+          "PROFESSIONAL": "Professionell",
+          "FRIENDLY": "Vänlig"
         }
       },
       "BUTTONS": {
-        "GENERATE": "Generate",
-        "GENERATING": "Generating...",
+        "GENERATE": "Generera",
+        "GENERATING": "Genererar...",
         "CANCEL": "Avbryt"
       },
-      "GENERATE_ERROR": "There was an error processing the content, please try again"
+      "GENERATE_ERROR": "Ett fel uppstod när innehållet skulle bearbetas. Försök igen."
     },
     "DELETE": {
       "BUTTON_TEXT": "Radera",
@@ -233,178 +233,178 @@
       "BUTTON_TEXT": "Anslut"
     },
     "DASHBOARD_APPS": {
-      "TITLE": "Dashboard Apps",
-      "HEADER_BTN_TXT": "Add a new dashboard app",
-      "SIDEBAR_TXT": "<p><b>Dashboard Apps</b></p><p>Dashboard Apps allow organizations to embed an application inside the Chatwoot dashboard to provide the context for customer support agents. This feature allows you to create an application independently and embed that inside the dashboard to provide user information, their orders, or their previous payment history.</p><p>When you embed your application using the dashboard in Chatwoot, your application will get the context of the conversation and contact as a window event. Implement a listener for the message event on your page to receive the context.</p><p>To add a new dashboard app, click on the button 'Add a new dashboard app'.</p>",
-      "DESCRIPTION": "Dashboard Apps allow organizations to embed an application inside the dashboard to provide the context for customer support agents. This feature allows you to create an application independently and embed that to provide user information, their orders, or their previous payment history.",
-      "LEARN_MORE": "Learn more about Dashboard Apps",
-      "COUNT": "{n} dashboard app | {n} dashboard apps",
-      "SEARCH_PLACEHOLDER": "Search dashboard apps...",
-      "NO_RESULTS": "No dashboard apps found matching your search",
+      "TITLE": "Dashboard-appar",
+      "HEADER_BTN_TXT": "Lägg till ny dashboard-app",
+      "SIDEBAR_TXT": "<p><b>Dashboard-appar</b></p><p>Dashboard-appar gör det möjligt för organisationer att bädda in en applikation i Custio-dashboarden för att ge medarbetare mer kontext i kundsupporten. Funktionen gör att du kan skapa en fristående applikation och bädda in den i dashboarden för att visa användarinformation, ordrar eller tidigare betalningshistorik.</p><p>När du bäddar in din applikation via dashboarden i Custio får applikationen kontext om konversationen och kontakten som en window-händelse. Implementera en lyssnare för message-eventet på din sida för att ta emot kontexten.</p><p>För att lägga till en ny dashboard-app klickar du på knappen ”Lägg till ny dashboard-app”.</p>",
+      "DESCRIPTION": "Dashboard-appar gör det möjligt för organisationer att bädda in en applikation i dashboarden för att ge medarbetare mer kontext i kundsupporten. Funktionen gör att du kan skapa en fristående applikation och bädda in den för att visa användarinformation, ordrar eller tidigare betalningshistorik.",
+      "LEARN_MORE": "Läs mer om dashboard-appar",
+      "COUNT": "{n} dashboard-app | {n} dashboard-appar",
+      "SEARCH_PLACEHOLDER": "Sök dashboard-appar...",
+      "NO_RESULTS": "Inga dashboard-appar matchade din sökning",
       "LIST": {
-        "404": "There are no dashboard apps configured on this account yet",
-        "LOADING": "Fetching dashboard apps...",
+        "404": "Det finns inga dashboard-appar konfigurerade för det här kontot ännu",
+        "LOADING": "Hämtar dashboard-appar...",
         "TABLE_HEADER": {
           "NAME": "Namn",
           "ENDPOINT": "Endpoint",
           "ACTIONS": "Åtgärder"
         },
-        "EDIT_TOOLTIP": "Edit app",
-        "DELETE_TOOLTIP": "Delete app"
+        "EDIT_TOOLTIP": "Redigera app",
+        "DELETE_TOOLTIP": "Ta bort app"
       },
       "FORM": {
         "TITLE_LABEL": "Namn",
-        "TITLE_PLACEHOLDER": "Enter a name for your dashboard app",
-        "TITLE_ERROR": "A name for the dashboard app is required",
+        "TITLE_PLACEHOLDER": "Ange ett namn för din dashboard-app",
+        "TITLE_ERROR": "Ett namn krävs för dashboard-appen",
         "URL_LABEL": "Endpoint",
-        "URL_PLACEHOLDER": "Enter the endpoint URL where your app is hosted",
-        "URL_ERROR": "A valid URL is required"
+        "URL_PLACEHOLDER": "Ange endpoint-URL:en där din app finns",
+        "URL_ERROR": "En giltig URL krävs"
       },
       "CREATE": {
-        "HEADER": "Add a new dashboard app",
+        "HEADER": "Lägg till ny dashboard-app",
         "FORM_SUBMIT": "Skicka",
         "FORM_CANCEL": "Avbryt",
-        "API_SUCCESS": "Dashboard app configured successfully",
-        "API_ERROR": "We couldn't create an app. Please try again later"
+        "API_SUCCESS": "Dashboard-appen har konfigurerats",
+        "API_ERROR": "Det gick inte att skapa appen. Försök igen senare."
       },
       "UPDATE": {
-        "HEADER": "Edit dashboard app",
+        "HEADER": "Redigera dashboard-app",
         "FORM_SUBMIT": "Uppdatera",
         "FORM_CANCEL": "Avbryt",
-        "API_SUCCESS": "Dashboard app updated successfully",
-        "API_ERROR": "We couldn't update the app. Please try again later"
+        "API_SUCCESS": "Dashboard-appen har uppdaterats",
+        "API_ERROR": "Det gick inte att uppdatera appen. Försök igen senare."
       },
       "DELETE": {
-        "CONFIRM_YES": "Yes, delete it",
-        "CONFIRM_NO": "No, keep it",
-        "TITLE": "Confirm deletion",
-        "MESSAGE": "Are you sure to delete the app - {appName}?",
-        "API_SUCCESS": "Dashboard app deleted successfully",
-        "API_ERROR": "We couldn't delete the app. Please try again later"
+        "CONFIRM_YES": "Ja, ta bort",
+        "CONFIRM_NO": "Nej, behåll",
+        "TITLE": "Bekräfta borttagning",
+        "MESSAGE": "Är du säker på att du vill ta bort appen - {appName}?",
+        "API_SUCCESS": "Dashboard-appen har tagits bort",
+        "API_ERROR": "Det gick inte att ta bort appen. Försök igen senare."
       }
     },
     "LINEAR": {
       "HEADER": "Linear",
-      "ADD_OR_LINK_BUTTON": "Create/Link Linear Issue",
-      "LOADING": "Fetching linear issues...",
-      "LOADING_ERROR": "There was an error fetching the linear issues, please try again",
+      "ADD_OR_LINK_BUTTON": "Skapa/länka Linear-ärende",
+      "LOADING": "Hämtar Linear-ärenden...",
+      "LOADING_ERROR": "Ett fel uppstod när Linear-ärenden skulle hämtas. Försök igen.",
       "CREATE": "Skapa",
       "LINK": {
-        "SEARCH": "Search issues",
-        "SELECT": "Select issue",
-        "TITLE": "Link",
-        "EMPTY_LIST": "No linear issues found",
-        "LOADING": "Loading",
-        "ERROR": "There was an error fetching the linear issues, please try again",
-        "LINK_SUCCESS": "Issue linked successfully",
-        "LINK_ERROR": "There was an error linking the issue, please try again",
-        "LINK_TITLE": "Conversation (#{conversationId}) with {name}"
+        "SEARCH": "Sök ärenden",
+        "SELECT": "Välj ärende",
+        "TITLE": "Länka",
+        "EMPTY_LIST": "Inga Linear-ärenden hittades",
+        "LOADING": "Laddar",
+        "ERROR": "Ett fel uppstod när Linear-ärenden skulle hämtas. Försök igen.",
+        "LINK_SUCCESS": "Ärendet har länkats",
+        "LINK_ERROR": "Ett fel uppstod när ärendet skulle länkas. Försök igen.",
+        "LINK_TITLE": "Konversation (#{conversationId}) med {name}"
       },
       "ADD_OR_LINK": {
-        "TITLE": "Create/link linear issue",
-        "DESCRIPTION": "Create Linear issues from conversations, or link existing ones for seamless tracking.",
+        "TITLE": "Skapa/länka Linear-ärende",
+        "DESCRIPTION": "Skapa Linear-ärenden från konversationer eller länka befintliga ärenden för smidig uppföljning.",
         "FORM": {
           "TITLE": {
-            "LABEL": "Title",
-            "PLACEHOLDER": "Enter title",
-            "REQUIRED_ERROR": "Title is required"
+            "LABEL": "Titel",
+            "PLACEHOLDER": "Ange titel",
+            "REQUIRED_ERROR": "Titel krävs"
           },
           "DESCRIPTION": {
             "LABEL": "Beskrivning",
-            "PLACEHOLDER": "Enter description"
+            "PLACEHOLDER": "Ange beskrivning"
           },
           "TEAM": {
             "LABEL": "Team",
             "PLACEHOLDER": "Välj team",
-            "SEARCH": "Search team",
-            "REQUIRED_ERROR": "Team is required"
+            "SEARCH": "Sök team",
+            "REQUIRED_ERROR": "Team krävs"
           },
           "ASSIGNEE": {
-            "LABEL": "Assignee",
-            "PLACEHOLDER": "Select assignee",
-            "SEARCH": "Search assignee"
+            "LABEL": "Tilldelad",
+            "PLACEHOLDER": "Välj ansvarig",
+            "SEARCH": "Sök ansvarig"
           },
           "PRIORITY": {
             "LABEL": "Prioritet",
             "PLACEHOLDER": "Välj prioritet",
-            "SEARCH": "Search priority"
+            "SEARCH": "Sök prioritet"
           },
           "LABEL": {
-            "LABEL": "Label",
-            "PLACEHOLDER": "Select label",
-            "SEARCH": "Search label"
+            "LABEL": "Etikett",
+            "PLACEHOLDER": "Välj etikett",
+            "SEARCH": "Sök etikett"
           },
           "STATUS": {
             "LABEL": "Status",
-            "PLACEHOLDER": "Select status",
-            "SEARCH": "Search status"
+            "PLACEHOLDER": "Välj status",
+            "SEARCH": "Sök status"
           },
           "PROJECT": {
-            "LABEL": "Project",
-            "PLACEHOLDER": "Select project",
-            "SEARCH": "Search project"
+            "LABEL": "Projekt",
+            "PLACEHOLDER": "Välj projekt",
+            "SEARCH": "Sök projekt"
           }
         },
         "CREATE": "Skapa",
         "CANCEL": "Avbryt",
-        "CREATE_SUCCESS": "Issue created successfully",
-        "CREATE_ERROR": "There was an error creating the issue, please try again",
-        "LOADING_TEAM_ERROR": "There was an error fetching the teams, please try again",
-        "LOADING_TEAM_ENTITIES_ERROR": "There was an error fetching the team entities, please try again"
+        "CREATE_SUCCESS": "Ärendet har skapats",
+        "CREATE_ERROR": "Ett fel uppstod när ärendet skulle skapas. Försök igen.",
+        "LOADING_TEAM_ERROR": "Ett fel uppstod när teamen skulle hämtas. Försök igen.",
+        "LOADING_TEAM_ENTITIES_ERROR": "Ett fel uppstod när teamets objekt skulle hämtas. Försök igen."
       },
       "ISSUE": {
         "STATUS": "Status",
         "PRIORITY": "Prioritet",
-        "ASSIGNEE": "Assignee",
+        "ASSIGNEE": "Tilldelad",
         "LABELS": "Etiketter",
-        "CREATED_AT": "Created at {createdAt}"
+        "CREATED_AT": "Skapad {createdAt}"
       },
       "UNLINK": {
-        "TITLE": "Unlink",
-        "SUCCESS": "Issue unlinked successfully",
-        "ERROR": "There was an error unlinking the issue, please try again"
+        "TITLE": "Ta bort länk",
+        "SUCCESS": "Länken till ärendet har tagits bort",
+        "ERROR": "Ett fel uppstod när länken till ärendet skulle tas bort. Försök igen."
       },
-      "NO_LINKED_ISSUES": "No linked issues found",
+      "NO_LINKED_ISSUES": "Inga länkade ärenden hittades",
       "DELETE": {
-        "TITLE": "Are you sure you want to delete the integration?",
-        "MESSAGE": "Are you sure you want to delete the integration?",
+        "TITLE": "Är du säker på att du vill ta bort integrationen?",
+        "MESSAGE": "Är du säker på att du vill ta bort integrationen?",
         "CONFIRM": "Ja, ta bort",
         "CANCEL": "Avbryt"
       },
       "CTA": {
-        "TITLE": "Connect to Linear",
-        "AGENT_DESCRIPTION": "Linear workspace is not connected. Request your administrator to connect a workspace to use this integration.",
-        "DESCRIPTION": "Linear workspace is not connected. Click the button below to connect your workspace to use this integration.",
-        "BUTTON_TEXT": "Connect Linear workspace"
+        "TITLE": "Anslut till Linear",
+        "AGENT_DESCRIPTION": "Linear-arbetsytan är inte ansluten. Be din administratör att ansluta en arbetsyta för att använda integrationen.",
+        "DESCRIPTION": "Linear-arbetsytan är inte ansluten. Klicka på knappen nedan för att ansluta din arbetsyta och använda integrationen.",
+        "BUTTON_TEXT": "Anslut Linear-arbetsyta"
       }
     },
     "NOTION": {
       "HEADER": "Notion",
       "DELETE": {
-        "TITLE": "Are you sure you want to delete the Notion integration?",
-        "MESSAGE": "Deleting this integration will remove access to your Notion workspace and stop all related functionality.",
-        "CONFIRM": "Yes, delete",
+        "TITLE": "Är du säker på att du vill ta bort Notion-integrationen?",
+        "MESSAGE": "Om du tar bort integrationen försvinner åtkomsten till din Notion-arbetsyta och alla relaterade funktioner stoppas.",
+        "CONFIRM": "Ja, ta bort",
         "CANCEL": "Avbryt"
       }
     }
   },
   "CAPTAIN": {
-    "NAME": "Captain",
+    "NAME": "Custio AI",
     "HEADER_KNOW_MORE": "Läs mer",
     "ASSISTANT_SWITCHER": {
       "ASSISTANTS": "Assistenter",
       "SWITCH_ASSISTANT": "Växla mellan assistenter",
       "NEW_ASSISTANT": "Skapa assistent",
-      "EMPTY_LIST": "Inga assistenter hittades, vänligen skapa en för att komma igång"
+      "EMPTY_LIST": "Inga assistenter hittades. Skapa en för att komma igång"
     },
     "COPILOT": {
       "TITLE": "Copilot",
-      "TRY_THESE_PROMPTS": "Try these prompts",
+      "TRY_THESE_PROMPTS": "Testa de här prompterna",
       "PANEL_TITLE": "Kom igång med Copilot",
-      "KICK_OFF_MESSAGE": "Behöver du en snabb sammanfattning, vill kolla tidigare konversationer eller skriva ett bättre svar? Copilot är här för att snabba på processen.",
+      "KICK_OFF_MESSAGE": "Behöver du en snabb sammanfattning, vill du kolla tidigare konversationer eller skriva ett bättre svar? Copilot hjälper dig att komma vidare snabbare.",
       "SEND_MESSAGE": "Skicka meddelande...",
-      "EMPTY_MESSAGE": "Ett fel uppstod vid generering av svaret. Försök igen.",
-      "LOADER": "Captain tänker",
+      "EMPTY_MESSAGE": "Ett fel uppstod när svaret skulle genereras. Försök igen.",
+      "LOADER": "Custio AI tänker",
       "YOU": "Du",
       "USE": "Använd detta",
       "RESET": "Återställ",
@@ -413,23 +413,23 @@
       "PROMPTS": {
         "SUMMARIZE": {
           "LABEL": "Sammanfatta denna konversation",
-          "CONTENT": "Sammanfatta de viktigaste punkterna som diskuterats mellan kunden och supportagenten, inklusive kundens bekymmer, frågor och de lösningar eller svar som tillhandahållits av supportagenten."
+          "CONTENT": "Sammanfatta de viktigaste punkterna som diskuterats mellan kunden och supportmedarbetaren, inklusive kundens frågor, problem och de lösningar eller svar som supportmedarbetaren har gett."
         },
         "SUGGEST": {
           "LABEL": "Föreslå ett svar",
-          "CONTENT": "Analysera kundens förfrågan och utarbeta ett svar som effektivt tar itu med deras frågor eller bekymmer. Säkerställ att svaret är tydligt, koncist och ger hjälpsam information."
+          "CONTENT": "Analysera kundens fråga och skriv ett svar som hanterar deras frågor eller problem på ett tydligt sätt. Se till att svaret är enkelt att förstå, koncist och hjälpsamt."
         },
         "RATE": {
           "LABEL": "Betygsätt denna konversation",
-          "CONTENT": "Granska konversationen för att se hur väl den uppfyller kundens behov. Dela en bedömning från 1 till 5 baserat på ton, tydlighet och effektivitet."
+          "CONTENT": "Granska konversationen och bedöm hur väl den möter kundens behov. Ge ett betyg från 1 till 5 baserat på ton, tydlighet och effektivitet."
         },
         "HIGH_PRIORITY": {
           "LABEL": "Konversationer med hög prioritet",
-          "CONTENT": "Ge mig en sammanfattning av alla öppna konversationer med hög prioritet. Inkludera konversations-ID, kundens namn (om tillgängligt), innehållet i sista meddelandet och tilldelad agent. Gruppera efter status om relevant."
+          "CONTENT": "Ge mig en sammanfattning av alla öppna konversationer med hög prioritet. Inkludera konversations-ID, kundens namn om det finns, innehållet i det senaste meddelandet och tilldelad medarbetare. Gruppera efter status om det är relevant."
         },
         "LIST_CONTACTS": {
           "LABEL": "Lista kontakter",
-          "CONTENT": "Visa listan på topp 10 kontakter. Inkludera namn, e-post eller telefonnummer (om tillgängligt), senaste inloggningstid, taggar (om några)."
+          "CONTENT": "Visa en lista med de 10 viktigaste kontakterna. Inkludera namn, e-post eller telefonnummer om det finns, senaste inloggningstid och taggar om det finns."
         }
       }
     },
@@ -438,24 +438,24 @@
       "ASSISTANT": "Assistent",
       "MESSAGE_PLACEHOLDER": "Skriv ditt meddelande...",
       "HEADER": "Testmiljö",
-      "DESCRIPTION": "Använd denna testmiljö för att skicka meddelanden till din assistent och kontrollera om den svarar korrekt, snabbt och med den ton du förväntar dig.",
-      "CREDIT_NOTE": "Meddelanden som skickas här räknas mot dina Captain-krediter."
+      "DESCRIPTION": "Använd denna testmiljö för att skicka meddelanden till din assistent och kontrollera att den svarar korrekt, snabbt och med den ton du förväntar dig.",
+      "CREDIT_NOTE": "Meddelanden som skickas här räknas mot dina Custio AI-krediter."
     },
     "PAYWALL": {
-      "TITLE": "Uppgradera för att använda Captain AI",
-      "AVAILABLE_ON": "Captain är inte tillgängligt på gratisplanen.",
-      "UPGRADE_PROMPT": "Uppgradera din plan för att få tillgång till våra assistenter, copilot och mer.",
-      "UPGRADE_NOW": "Upgrade now",
-      "CANCEL_ANYTIME": "You can change or cancel your plan anytime"
+      "TITLE": "Uppgradera för att använda Custio AI",
+      "AVAILABLE_ON": "Custio AI är inte tillgängligt i gratisplanen.",
+      "UPGRADE_PROMPT": "Uppgradera ditt abonnemang för att få tillgång till assistenter, copilot och mer.",
+      "UPGRADE_NOW": "Uppgradera nu",
+      "CANCEL_ANYTIME": "Du kan ändra eller avsluta ditt abonnemang när som helst"
     },
     "ENTERPRISE_PAYWALL": {
-      "AVAILABLE_ON": "Captain AI finns endast tillgängligt i Enterprise-planerna.",
-      "UPGRADE_PROMPT": "Uppgradera din plan för att få tillgång till våra assistenter, copilot och mer.",
-      "ASK_ADMIN": "Please reach out to your administrator for the upgrade."
+      "AVAILABLE_ON": "Custio AI är endast tillgängligt i Enterprise-planerna.",
+      "UPGRADE_PROMPT": "Uppgradera ditt abonnemang för att få tillgång till assistenter, copilot och mer.",
+      "ASK_ADMIN": "Kontakta din administratör för att uppgradera."
     },
     "BANNER": {
-      "RESPONSES": "Du har använt över 80% av din svargräns. För att fortsätta använda Captain AI, vänligen uppgradera.",
-      "DOCUMENTS": "Dokumentgräns uppnådd. Uppgradera för att fortsätta använda Captain AI."
+      "RESPONSES": "Du har använt över 80 % av din svarsgräns. Uppgradera för att fortsätta använda Custio AI.",
+      "DOCUMENTS": "Dokumentgränsen är uppnådd. Uppgradera för att fortsätta använda Custio AI."
     },
     "FORM": {
       "CANCEL": "Avbryt",
@@ -463,247 +463,247 @@
       "EDIT": "Uppdatera"
     },
     "ASSISTANTS": {
-      "HEADER": "Assistants",
-      "NO_ASSISTANTS_AVAILABLE": "There are no assistants available in your account.",
-      "ADD_NEW": "Create a new assistant",
+      "HEADER": "Assistenter",
+      "NO_ASSISTANTS_AVAILABLE": "Det finns inga assistenter tillgängliga på ditt konto.",
+      "ADD_NEW": "Skapa ny assistent",
       "DELETE": {
-        "TITLE": "Are you sure to delete the assistant?",
-        "DESCRIPTION": "This action is permanent. Deleting this assistant will remove it from all connected inboxes and permanently erase all generated knowledge.",
+        "TITLE": "Är du säker på att du vill ta bort assistenten?",
+        "DESCRIPTION": "Den här åtgärden är permanent. Om du tar bort assistenten tas den bort från alla anslutna inkorgar och all genererad kunskap raderas permanent.",
         "CONFIRM": "Ja, ta bort",
-        "SUCCESS_MESSAGE": "The assistant has been successfully deleted",
-        "ERROR_MESSAGE": "There was an error deleting the assistant, please try again."
+        "SUCCESS_MESSAGE": "Assistenten har tagits bort",
+        "ERROR_MESSAGE": "Ett fel uppstod när assistenten skulle tas bort. Försök igen."
       },
-      "FORM_DESCRIPTION": "Fill out the details below to name your assistant, describe its purpose, and specify the product it will support.",
+      "FORM_DESCRIPTION": "Fyll i uppgifterna nedan för att namnge assistenten, beskriva dess syfte och ange vilken produkt den ska stödja.",
       "CREATE": {
-        "TITLE": "Create an assistant",
-        "SUCCESS_MESSAGE": "The assistant has been successfully created",
-        "ERROR_MESSAGE": "There was an error creating the assistant, please try again."
+        "TITLE": "Skapa assistent",
+        "SUCCESS_MESSAGE": "Assistenten har skapats",
+        "ERROR_MESSAGE": "Ett fel uppstod när assistenten skulle skapas. Försök igen."
       },
       "FORM": {
         "UPDATE": "Uppdatera",
         "SECTIONS": {
-          "BASIC_INFO": "Basic Information",
-          "SYSTEM_MESSAGES": "System Messages",
-          "INSTRUCTIONS": "Instructions",
+          "BASIC_INFO": "Grundinformation",
+          "SYSTEM_MESSAGES": "Systemmeddelanden",
+          "INSTRUCTIONS": "Instruktioner",
           "FEATURES": "Funktioner",
-          "TOOLS": "Tools "
+          "TOOLS": "Verktyg"
         },
         "NAME": {
           "LABEL": "Namn",
-          "PLACEHOLDER": "Enter assistant name",
-          "ERROR": "The name is required"
+          "PLACEHOLDER": "Ange assistentens namn",
+          "ERROR": "Namn krävs"
         },
         "TEMPERATURE": {
-          "LABEL": "Response Temperature",
-          "DESCRIPTION": "Adjust how creative or restrictive the assistant's responses should be. Lower values produce more focused and deterministic responses, while higher values allow for more creative and varied outputs."
+          "LABEL": "Svarstemperatur",
+          "DESCRIPTION": "Justera hur kreativ eller strikt assistentens svar ska vara. Lägre värden ger mer fokuserade och förutsägbara svar, medan högre värden ger mer kreativa och varierade svar."
         },
         "DESCRIPTION": {
           "LABEL": "Beskrivning",
-          "PLACEHOLDER": "Enter assistant description",
-          "ERROR": "The description is required"
+          "PLACEHOLDER": "Ange beskrivning för assistenten",
+          "ERROR": "Beskrivning krävs"
         },
         "PRODUCT_NAME": {
-          "LABEL": "Product Name",
-          "PLACEHOLDER": "Enter product name",
-          "ERROR": "The product name is required"
+          "LABEL": "Produktnamn",
+          "PLACEHOLDER": "Ange produktnamn",
+          "ERROR": "Produktnamn krävs"
         },
         "WELCOME_MESSAGE": {
-          "LABEL": "Welcome Message",
-          "PLACEHOLDER": "Enter welcome message"
+          "LABEL": "Välkomstmeddelande",
+          "PLACEHOLDER": "Ange välkomstmeddelande"
         },
         "HANDOFF_MESSAGE": {
-          "LABEL": "Handoff Message",
-          "PLACEHOLDER": "Enter handoff message"
+          "LABEL": "Överlämningsmeddelande",
+          "PLACEHOLDER": "Ange överlämningsmeddelande"
         },
         "RESOLUTION_MESSAGE": {
-          "LABEL": "Resolution Message",
-          "PLACEHOLDER": "Enter resolution message"
+          "LABEL": "Lösningsmeddelande",
+          "PLACEHOLDER": "Ange lösningsmeddelande"
         },
         "INSTRUCTIONS": {
-          "LABEL": "Instructions",
-          "PLACEHOLDER": "Enter instructions for the assistant"
+          "LABEL": "Instruktioner",
+          "PLACEHOLDER": "Ange instruktioner för assistenten"
         },
         "FEATURES": {
           "TITLE": "Funktioner",
-          "ALLOW_CONVERSATION_FAQS": "Generate FAQs from resolved conversations",
-          "ALLOW_MEMORIES": "Capture key details as memories from customer interactions.",
-          "ALLOW_CITATIONS": "Include source citations in responses",
-          "ALLOW_CONTACT_ATTRIBUTES": "Allow access to contact information"
+          "ALLOW_CONVERSATION_FAQS": "Generera FAQ:er från lösta konversationer",
+          "ALLOW_MEMORIES": "Spara viktiga detaljer som minnen från kundinteraktioner.",
+          "ALLOW_CITATIONS": "Inkludera källhänvisningar i svar",
+          "ALLOW_CONTACT_ATTRIBUTES": "Tillåt åtkomst till kontaktinformation"
         }
       },
       "EDIT": {
-        "TITLE": "Update the assistant",
-        "SUCCESS_MESSAGE": "The assistant has been successfully updated",
-        "ERROR_MESSAGE": "There was an error updating the assistant, please try again.",
-        "NOT_FOUND": "Could not find the assistant. Please try again."
+        "TITLE": "Uppdatera assistenten",
+        "SUCCESS_MESSAGE": "Assistenten har uppdaterats",
+        "ERROR_MESSAGE": "Ett fel uppstod när assistenten skulle uppdateras. Försök igen.",
+        "NOT_FOUND": "Det gick inte att hitta assistenten. Försök igen."
       },
       "SETTINGS": {
         "HEADER": "Inställningar",
         "BASIC_SETTINGS": {
-          "TITLE": "Basic settings",
-          "DESCRIPTION": "Customize what the assistant says when ending a conversation or transferring to a human."
+          "TITLE": "Grundinställningar",
+          "DESCRIPTION": "Anpassa vad assistenten säger när den avslutar en konversation eller lämnar över till en människa."
         },
         "SYSTEM_SETTINGS": {
-          "TITLE": "System settings",
-          "DESCRIPTION": "Customize what the assistant says when ending a conversation or transferring to a human."
+          "TITLE": "Systeminställningar",
+          "DESCRIPTION": "Anpassa vad assistenten säger när den avslutar en konversation eller lämnar över till en människa."
         },
         "CONTROL_ITEMS": {
-          "TITLE": "The Fun Stuff",
-          "DESCRIPTION": "Add more control to the assistant. (a bit more visual like a story : Query guardrail → scenarios → output) Nudges user to actually utilise these.",
+          "TITLE": "Finjustering",
+          "DESCRIPTION": "Ge assistenten mer styrning. Tänk: regler → scenarier → svar. Det hjälper assistenten att agera mer konsekvent.",
           "OPTIONS": {
             "GUARDRAILS": {
-              "TITLE": "Guardrails",
-              "DESCRIPTION": "Keeps things on track—only the kinds of questions you want your assistant to answer, nothing off-limits or off-topic."
+              "TITLE": "Regler",
+              "DESCRIPTION": "Håller assistenten på rätt spår – bara de typer av frågor du vill att den ska svara på, inget olämpligt eller utanför ämnet."
             },
             "RESPONSE_GUIDELINES": {
-              "TITLE": "Response guidelines",
-              "DESCRIPTION": "The vibe and structure of your assistant’s replies—clear and friendly? Short and snappy? Detailed and formal?"
+              "TITLE": "Svarsriktlinjer",
+              "DESCRIPTION": "Ton och struktur för assistentens svar – tydligt och vänligt? Kort och rakt? Utförligt och formellt?"
             }
           }
         },
         "DELETE": {
-          "TITLE": "Delete Assistant",
-          "DESCRIPTION": "This action is permanent. Deleting this assistant will remove it from all connected inboxes and permanently erase all generated knowledge.",
-          "BUTTON_TEXT": "Delete {assistantName}"
+          "TITLE": "Ta bort assistent",
+          "DESCRIPTION": "Den här åtgärden är permanent. Om du tar bort assistenten tas den bort från alla anslutna inkorgar och all genererad kunskap raderas permanent.",
+          "BUTTON_TEXT": "Ta bort {assistantName}"
         }
       },
       "OPTIONS": {
-        "EDIT_ASSISTANT": "Edit Assistant",
-        "DELETE_ASSISTANT": "Delete Assistant",
-        "VIEW_CONNECTED_INBOXES": "View connected inboxes"
+        "EDIT_ASSISTANT": "Redigera assistent",
+        "DELETE_ASSISTANT": "Ta bort assistent",
+        "VIEW_CONNECTED_INBOXES": "Visa anslutna inkorgar"
       },
       "EMPTY_STATE": {
-        "TITLE": "No assistants available",
-        "SUBTITLE": "Create an assistant to provide quick and accurate responses to your users. It can learn from your help articles and past conversations.",
+        "TITLE": "Inga assistenter tillgängliga",
+        "SUBTITLE": "Skapa en assistent för att ge snabba och korrekta svar till dina användare. Den kan lära sig från dina hjälpartiklar och tidigare konversationer.",
         "FEATURE_SPOTLIGHT": {
-          "TITLE": "Captain Assistant",
-          "NOTE": "Captain Assistant engages directly with customers, learns from your help docs and past conversations, and delivers instant, accurate responses. It handles the initial queries, providing quick resolutions before  transferring to an agent when needed."
+          "TITLE": "Custio AI-assistent",
+          "NOTE": "Custio AI-assistenten interagerar direkt med kunder, lär sig från dina hjälpdokument och tidigare konversationer och ger snabba, korrekta svar. Den hanterar de första frågorna och löser ärenden snabbt innan den lämnar över till en medarbetare vid behov."
         }
       },
       "GUARDRAILS": {
-        "TITLE": "Guardrails",
-        "DESCRIPTION": "Keeps things on track—only the kinds of questions you want your assistant to answer, nothing off-limits or off-topic.",
+        "TITLE": "Regler",
+        "DESCRIPTION": "Håller assistenten på rätt spår – bara de typer av frågor du vill att den ska svara på, inget olämpligt eller utanför ämnet.",
         "BULK_ACTION": {
-          "SELECTED": "{count} item selected | {count} items selected",
-          "SELECT_ALL": "Select all ({count})",
-          "UNSELECT_ALL": "Unselect all ({count})",
+          "SELECTED": "{count} objekt valt | {count} objekt valda",
+          "SELECT_ALL": "Välj alla ({count})",
+          "UNSELECT_ALL": "Avmarkera alla ({count})",
           "BULK_DELETE_BUTTON": "Radera"
         },
         "ADD": {
           "SUGGESTED": {
-            "TITLE": "Example guardrails",
-            "ADD": "Add all",
-            "ADD_SINGLE": "Add this",
-            "SAVE": "Add and save (↵)",
-            "PLACEHOLDER": "Type in another guardrail..."
+            "TITLE": "Exempel på regler",
+            "ADD": "Lägg till alla",
+            "ADD_SINGLE": "Lägg till detta",
+            "SAVE": "Lägg till och spara (↵)",
+            "PLACEHOLDER": "Skriv ett annat skyddsräcke..."
           },
           "NEW": {
-            "TITLE": "Add a guardrail",
+            "TITLE": "Lägg till skyddsräcke",
             "CREATE": "Skapa",
             "CANCEL": "Avbryt",
-            "PLACEHOLDER": "Type in another guardrail...",
-            "TEST_ALL": "Test all"
+            "PLACEHOLDER": "Skriv ett annat skyddsräcke...",
+            "TEST_ALL": "Testa alla"
           }
         },
         "LIST": {
-          "SEARCH_PLACEHOLDER": "Search..."
+          "SEARCH_PLACEHOLDER": "Sök..."
         },
-        "EMPTY_MESSAGE": "No guardrails found. Create or add examples to begin.",
-        "SEARCH_EMPTY_MESSAGE": "No guardrails found for this search.",
+        "EMPTY_MESSAGE": "Inga regler hittades. Skapa eller lägg till exempel för att komma igång.",
+        "SEARCH_EMPTY_MESSAGE": "Inga regler hittades för denna sökning.",
         "API": {
           "ADD": {
-            "SUCCESS": "Guardrails added successfully",
-            "ERROR": "There was an error adding guardrails, please try again."
+            "SUCCESS": "Reglerna har lagts till",
+            "ERROR": "Ett fel uppstod när regeln skulle läggas till. Försök igen."
           },
           "UPDATE": {
-            "SUCCESS": "Guardrails updated successfully",
-            "ERROR": "There was an error updating guardrails, please try again."
+            "SUCCESS": "Reglerna har uppdaterats",
+            "ERROR": "Ett fel uppstod när reglerna skulle uppdateras. Försök igen."
           },
           "DELETE": {
-            "SUCCESS": "Guardrails deleted successfully",
-            "ERROR": "There was an error deleting guardrails, please try again."
+            "SUCCESS": "Reglerna har tagits bort",
+            "ERROR": "Ett fel uppstod när reglerna skulle tas bort. Försök igen."
           }
         }
       },
       "RESPONSE_GUIDELINES": {
-        "TITLE": "Response Guidelines",
-        "DESCRIPTION": "The vibe and structure of your assistant’s replies—clear and friendly? Short and snappy? Detailed and formal?",
+        "TITLE": "Svarsriktlinjer",
+        "DESCRIPTION": "Ton och struktur för assistentens svar – tydligt och vänligt? Kort och rakt? Utförligt och formellt?",
         "BULK_ACTION": {
-          "SELECTED": "{count} item selected | {count} items selected",
-          "SELECT_ALL": "Select all ({count})",
-          "UNSELECT_ALL": "Unselect all ({count})",
+          "SELECTED": "{count} objekt valt | {count} objekt valda",
+          "SELECT_ALL": "Välj alla ({count})",
+          "UNSELECT_ALL": "Avmarkera alla ({count})",
           "BULK_DELETE_BUTTON": "Radera"
         },
         "ADD": {
           "SUGGESTED": {
-            "TITLE": "Example response guidelines",
-            "ADD": "Add all",
-            "ADD_SINGLE": "Add this",
-            "SAVE": "Add and save (↵)",
-            "PLACEHOLDER": "Type in another response guideline..."
+            "TITLE": "Exempel på svarsriktlinjer",
+            "ADD": "Lägg till alla",
+            "ADD_SINGLE": "Lägg till detta",
+            "SAVE": "Lägg till och spara (↵)",
+            "PLACEHOLDER": "Skriv en annan svarsriktlinje..."
           },
           "NEW": {
-            "TITLE": "Add a response guideline",
+            "TITLE": "Lägg till svarsriktlinje",
             "CREATE": "Skapa",
             "CANCEL": "Avbryt",
-            "PLACEHOLDER": "Type in another response guideline...",
-            "TEST_ALL": "Test all"
+            "PLACEHOLDER": "Skriv en annan svarsriktlinje...",
+            "TEST_ALL": "Testa alla"
           }
         },
         "LIST": {
-          "SEARCH_PLACEHOLDER": "Search..."
+          "SEARCH_PLACEHOLDER": "Sök..."
         },
-        "EMPTY_MESSAGE": "No response guidelines found. Create or add examples to begin.",
-        "SEARCH_EMPTY_MESSAGE": "No response guidelines found for this search.",
+        "EMPTY_MESSAGE": "Inga svarsriktlinjer hittades. Skapa eller lägg till exempel för att komma igång.",
+        "SEARCH_EMPTY_MESSAGE": "Inga svarsriktlinjer hittades för denna sökning.",
         "API": {
           "ADD": {
-            "SUCCESS": "Response Guidelines added successfully",
-            "ERROR": "There was an error adding response guidelines, please try again."
+            "SUCCESS": "Svarsriktlinjer har lagts till",
+            "ERROR": "Ett fel uppstod när svarsriktlinjer skulle läggas till. Försök igen."
           },
           "UPDATE": {
-            "SUCCESS": "Response Guidelines updated successfully",
-            "ERROR": "There was an error updating response guidelines, please try again."
+            "SUCCESS": "Svarsriktlinjer har uppdaterats",
+            "ERROR": "Ett fel uppstod när svarsriktlinjer skulle uppdateras. Försök igen."
           },
           "DELETE": {
-            "SUCCESS": "Response Guidelines deleted successfully",
-            "ERROR": "There was an error deleting response guidelines, please try again."
+            "SUCCESS": "Svarsriktlinjer har tagits bort",
+            "ERROR": "Ett fel uppstod när svarsriktlinjer skulle tas bort. Försök igen."
           }
         }
       },
       "SCENARIOS": {
-        "TITLE": "Scenarios",
-        "DESCRIPTION": "Give your assistant some context—like “what to do when a user is stuck,” or “how to act during a refund request.”",
+        "TITLE": "Scenarier",
+        "DESCRIPTION": "Ge assistenten mer kontext – till exempel vad den ska göra när en användare fastnar eller hur den ska agera vid en återbetalningsfråga.",
         "BULK_ACTION": {
-          "SELECTED": "{count} item selected | {count} items selected",
-          "SELECT_ALL": "Select all ({count})",
-          "UNSELECT_ALL": "Unselect all ({count})",
+          "SELECTED": "{count} objekt valt | {count} objekt valda",
+          "SELECT_ALL": "Välj alla ({count})",
+          "UNSELECT_ALL": "Avmarkera alla ({count})",
           "BULK_DELETE_BUTTON": "Radera"
         },
         "ADD": {
           "SUGGESTED": {
-            "TITLE": "Example scenarios",
-            "ADD": "Add all",
-            "ADD_SINGLE": "Add this",
-            "TOOLS_USED": "Tools used :"
+            "TITLE": "Exempel på scenarier",
+            "ADD": "Lägg till alla",
+            "ADD_SINGLE": "Lägg till detta",
+            "TOOLS_USED": "Verktyg som används:"
           },
           "NEW": {
-            "CREATE": "Add a scenario",
-            "TITLE": "Create a scenario",
+            "CREATE": "Lägg till scenario",
+            "TITLE": "Skapa scenario",
             "FORM": {
               "TITLE": {
-                "LABEL": "Title",
-                "PLACEHOLDER": "Enter a name for the scenario",
-                "ERROR": "Scenario name is required"
+                "LABEL": "Titel",
+                "PLACEHOLDER": "Ange ett namn för scenariot",
+                "ERROR": "Scenarionamn krävs"
               },
               "DESCRIPTION": {
                 "LABEL": "Beskrivning",
-                "PLACEHOLDER": "Describe how and where this scenario will be used",
-                "ERROR": "Scenario description is required"
+                "PLACEHOLDER": "Beskriv hur och var detta scenario ska användas",
+                "ERROR": "Scenariobeskrivning krävs"
               },
               "INSTRUCTION": {
-                "LABEL": "How to handle",
-                "PLACEHOLDER": "Describe how and where this scenario will be handled",
-                "ERROR": "Scenario content is required"
+                "LABEL": "Så ska det hanteras",
+                "PLACEHOLDER": "Beskriv hur detta scenario ska hanteras",
+                "ERROR": "Scenarioinnehåll krävs"
               },
               "CREATE": "Skapa",
               "CANCEL": "Avbryt"
@@ -712,329 +712,329 @@
         },
         "UPDATE": {
           "CANCEL": "Avbryt",
-          "UPDATE": "Update changes"
+          "UPDATE": "Uppdatera ändringar"
         },
         "LIST": {
-          "SEARCH_PLACEHOLDER": "Search..."
+          "SEARCH_PLACEHOLDER": "Sök..."
         },
-        "EMPTY_MESSAGE": "No scenarios found. Create or add examples to begin.",
-        "SEARCH_EMPTY_MESSAGE": "No scenarios found for this search.",
+        "EMPTY_MESSAGE": "Inga scenarier hittades. Skapa eller lägg till exempel för att komma igång.",
+        "SEARCH_EMPTY_MESSAGE": "Inga scenarier hittades för denna sökning.",
         "API": {
           "ADD": {
-            "SUCCESS": "Scenarios added successfully",
-            "ERROR": "There was an error adding scenarios, please try again."
+            "SUCCESS": "Scenarier har lagts till",
+            "ERROR": "Ett fel uppstod när scenarier skulle läggas till. Försök igen."
           },
           "UPDATE": {
-            "SUCCESS": "Scenarios updated successfully",
-            "ERROR": "There was an error updating scenarios, please try again."
+            "SUCCESS": "Scenarier har uppdaterats",
+            "ERROR": "Ett fel uppstod när scenarier skulle uppdateras. Försök igen."
           },
           "DELETE": {
-            "SUCCESS": "Scenarios deleted successfully",
-            "ERROR": "There was an error deleting scenarios, please try again."
+            "SUCCESS": "Scenarier har tagits bort",
+            "ERROR": "Ett fel uppstod när scenarier skulle tas bort. Försök igen."
           }
         }
       }
     },
     "DOCUMENTS": {
-      "HEADER": "Documents",
-      "ADD_NEW": "Create a new document",
-      "SELECTED": "{count} selected",
-      "SELECT_ALL": "Select all ({count})",
-      "UNSELECT_ALL": "Unselect all ({count})",
+      "HEADER": "Dokument",
+      "ADD_NEW": "Skapa nytt dokument",
+      "SELECTED": "{count} valda",
+      "SELECT_ALL": "Välj alla ({count})",
+      "UNSELECT_ALL": "Avmarkera alla ({count})",
       "BULK_DELETE_BUTTON": "Radera",
       "BULK_DELETE": {
-        "TITLE": "Delete documents?",
-        "DESCRIPTION": "Are you sure you want to delete the selected documents? This action cannot be undone.",
-        "CONFIRM": "Yes, delete all",
-        "SUCCESS_MESSAGE": "Documents deleted successfully",
-        "ERROR_MESSAGE": "There was an error deleting the documents, please try again."
+        "TITLE": "Ta bort dokument?",
+        "DESCRIPTION": "Är du säker på att du vill ta bort de valda dokumenten? Åtgärden kan inte ångras.",
+        "CONFIRM": "Ja, ta bort alla",
+        "SUCCESS_MESSAGE": "Dokumenten har tagits bort",
+        "ERROR_MESSAGE": "Ett fel uppstod när dokumenten skulle tas bort. Försök igen."
       },
       "RELATED_RESPONSES": {
-        "TITLE": "Related FAQs",
-        "DESCRIPTION": "These FAQs are generated directly from the document."
+        "TITLE": "Relaterade FAQ:er",
+        "DESCRIPTION": "Dessa FAQ:er genereras direkt från dokumentet."
       },
-      "FORM_DESCRIPTION": "Enter the URL of the document to add it as a knowledge source and choose the assistant to associate it with.",
+      "FORM_DESCRIPTION": "Ange dokumentets URL för att lägga till det som kunskapskälla och välj vilken assistent det ska kopplas till.",
       "CREATE": {
-        "TITLE": "Add a document",
-        "SUCCESS_MESSAGE": "The document has been successfully created",
-        "ERROR_MESSAGE": "There was an error creating the document, please try again."
+        "TITLE": "Lägg till dokument",
+        "SUCCESS_MESSAGE": "Dokumentet har skapats",
+        "ERROR_MESSAGE": "Ett fel uppstod när dokumentet skulle skapas. Försök igen."
       },
       "FORM": {
         "TYPE": {
-          "LABEL": "Document Type",
+          "LABEL": "Dokumenttyp",
           "URL": "URL",
-          "PDF": "PDF File"
+          "PDF": "PDF-fil"
         },
         "URL": {
           "LABEL": "URL",
-          "PLACEHOLDER": "Enter the URL of the document",
-          "ERROR": "Please provide a valid URL for the document"
+          "PLACEHOLDER": "Ange dokumentets URL",
+          "ERROR": "Ange en giltig URL för dokumentet"
         },
         "PDF_FILE": {
-          "LABEL": "PDF File",
-          "CHOOSE_FILE": "Choose PDF file",
-          "ERROR": "Please select a PDF file",
-          "HELP_TEXT": "Maximum file size: 10MB",
-          "INVALID_TYPE": "Please select a valid PDF file",
-          "TOO_LARGE": "File size exceeds 10MB limit"
+          "LABEL": "PDF-fil",
+          "CHOOSE_FILE": "Välj PDF-fil",
+          "ERROR": "Välj en PDF-fil",
+          "HELP_TEXT": "Maximal filstorlek: 10 MB",
+          "INVALID_TYPE": "Välj en giltig PDF-fil",
+          "TOO_LARGE": "Filstorleken överskrider gränsen på 10 MB"
         },
         "NAME": {
-          "LABEL": "Document Name (Optional)",
-          "PLACEHOLDER": "Enter a name for the document"
+          "LABEL": "Dokumentnamn (valfritt)",
+          "PLACEHOLDER": "Ange ett namn för dokumentet"
         }
       },
       "DELETE": {
-        "TITLE": "Are you sure to delete the document?",
-        "DESCRIPTION": "This action is permanent. Deleting this document will permanently erase all generated knowledge.",
+        "TITLE": "Är du säker på att du vill ta bort dokumentet?",
+        "DESCRIPTION": "Den här åtgärden är permanent. Om du tar bort dokumentet raderas all genererad kunskap permanent.",
         "CONFIRM": "Ja, ta bort",
-        "SUCCESS_MESSAGE": "The document has been successfully deleted",
-        "ERROR_MESSAGE": "There was an error deleting the document, please try again."
+        "SUCCESS_MESSAGE": "Dokumentet har tagits bort",
+        "ERROR_MESSAGE": "Ett fel uppstod när dokumentet skulle tas bort. Försök igen."
       },
       "OPTIONS": {
-        "VIEW_RELATED_RESPONSES": "View Related Responses",
-        "DELETE_DOCUMENT": "Delete Document"
+        "VIEW_RELATED_RESPONSES": "Visa relaterade svar",
+        "DELETE_DOCUMENT": "Ta bort dokument"
       },
       "EMPTY_STATE": {
-        "TITLE": "No documents available",
-        "SUBTITLE": "Documents are used by your assistant to generate FAQs. You can import documents to provide context for your assistant.",
+        "TITLE": "Inga dokument tillgängliga",
+        "SUBTITLE": "Dokument används av assistenten för att generera FAQ:er. Du kan importera dokument för att ge assistenten mer kontext.",
         "FEATURE_SPOTLIGHT": {
-          "TITLE": "Captain Document",
-          "NOTE": "A document in Captain serves as a knowledge resource for the assistant. By connecting your help center or guides, Captain can analyze the content and provide accurate responses for customer inquiries."
+          "TITLE": "Custio AI-dokument",
+          "NOTE": "Ett dokument i Custio AI fungerar som en kunskapskälla för assistenten. Genom att koppla in hjälpcenter eller guider kan Custio AI analysera innehållet och ge korrekta svar på kundfrågor."
         }
       }
     },
     "CUSTOM_TOOLS": {
-      "HEADER": "Tools",
-      "ADD_NEW": "Create a new tool",
-      "SOFT_LIMIT_WARNING": "Having more than 10 tools may reduce the assistant's reliability in selecting the right tool. Consider removing unused tools for better results.",
+      "HEADER": "Verktyg",
+      "ADD_NEW": "Skapa nytt verktyg",
+      "SOFT_LIMIT_WARNING": "Fler än 10 verktyg kan göra det svårare för assistenten att välja rätt verktyg. Överväg att ta bort verktyg som inte används för bättre resultat.",
       "EMPTY_STATE": {
-        "TITLE": "No custom tools available",
-        "SUBTITLE": "Create custom tools to connect your assistant with external APIs and services, enabling it to fetch data and perform actions on your behalf.",
+        "TITLE": "Inga anpassade verktyg tillgängliga",
+        "SUBTITLE": "Skapa anpassade verktyg för att koppla assistenten till externa API:er och tjänster, så att den kan hämta data och utföra åtgärder åt dig.",
         "FEATURE_SPOTLIGHT": {
-          "TITLE": "Custom Tools",
-          "NOTE": "Custom tools allow your assistant to interact with external APIs and services. Create tools to fetch data, perform actions, or integrate with your existing systems to enhance your assistant's capabilities."
+          "TITLE": "Anpassade verktyg",
+          "NOTE": "Anpassade verktyg gör att assistenten kan interagera med externa API:er och tjänster. Skapa verktyg för att hämta data, utföra åtgärder eller integrera med era befintliga system och stärka assistentens kapacitet."
         }
       },
-      "FORM_DESCRIPTION": "Configure your custom tool to connect with external APIs",
+      "FORM_DESCRIPTION": "Konfigurera ditt anpassade verktyg för att ansluta till externa API:er",
       "OPTIONS": {
-        "EDIT_TOOL": "Edit tool",
-        "DELETE_TOOL": "Delete tool"
+        "EDIT_TOOL": "Redigera verktyg",
+        "DELETE_TOOL": "Ta bort verktyg"
       },
       "CREATE": {
-        "TITLE": "Create Custom Tool",
-        "SUCCESS_MESSAGE": "Custom tool created successfully",
-        "ERROR_MESSAGE": "Failed to create custom tool"
+        "TITLE": "Skapa anpassat verktyg",
+        "SUCCESS_MESSAGE": "Det anpassade verktyget har skapats",
+        "ERROR_MESSAGE": "Det gick inte att skapa det anpassade verktyget"
       },
       "EDIT": {
-        "TITLE": "Edit Custom Tool",
-        "SUCCESS_MESSAGE": "Custom tool updated successfully",
-        "ERROR_MESSAGE": "Failed to update custom tool"
+        "TITLE": "Redigera anpassat verktyg",
+        "SUCCESS_MESSAGE": "Det anpassade verktyget har uppdaterats",
+        "ERROR_MESSAGE": "Det gick inte att uppdatera det anpassade verktyget"
       },
       "DELETE": {
-        "TITLE": "Delete Custom Tool",
-        "DESCRIPTION": "Are you sure you want to delete this custom tool? This action cannot be undone.",
-        "CONFIRM": "Yes, delete",
-        "SUCCESS_MESSAGE": "Custom tool deleted successfully",
-        "ERROR_MESSAGE": "Failed to delete custom tool"
+        "TITLE": "Ta bort anpassat verktyg",
+        "DESCRIPTION": "Är du säker på att du vill ta bort det här anpassade verktyget? Åtgärden kan inte ångras.",
+        "CONFIRM": "Ja, ta bort",
+        "SUCCESS_MESSAGE": "Det anpassade verktyget har tagits bort",
+        "ERROR_MESSAGE": "Det gick inte att ta bort det anpassade verktyget"
       },
       "TEST": {
-        "BUTTON": "Test connection",
-        "SUCCESS": "Endpoint returned HTTP {status}",
-        "ERROR": "Connection failed",
-        "DISABLED_HINT": "Testing is only available for endpoints without templates or request bodies."
+        "BUTTON": "Testa anslutning",
+        "SUCCESS": "Endpointen returnerade HTTP {status}",
+        "ERROR": "Anslutningen misslyckades",
+        "DISABLED_HINT": "Testning är endast tillgänglig för endpoints utan mallar eller request bodies."
       },
       "FORM": {
         "TITLE": {
-          "LABEL": "Tool Name",
-          "PLACEHOLDER": "Order Lookup",
-          "ERROR": "Tool name is required",
-          "MAX_LENGTH_ERROR": "Tool name must be {max} characters or fewer"
+          "LABEL": "Verktygsnamn",
+          "PLACEHOLDER": "Ordersökning",
+          "ERROR": "Verktygsnamn krävs",
+          "MAX_LENGTH_ERROR": "Verktygsnamnet får vara högst {max} tecken"
         },
         "DESCRIPTION": {
           "LABEL": "Beskrivning",
-          "PLACEHOLDER": "Looks up order details by order ID"
+          "PLACEHOLDER": "Hämtar orderdetaljer via order-ID"
         },
         "HTTP_METHOD": {
-          "LABEL": "Method"
+          "LABEL": "Metod"
         },
         "ENDPOINT_URL": {
-          "LABEL": "Endpoint URL",
+          "LABEL": "Endpoint-URL",
           "PLACEHOLDER": "https://api.example.com/orders/{'{{'} order_id {'}}'}",
-          "ERROR": "Valid URL is required"
+          "ERROR": "En giltig URL krävs"
         },
         "AUTH_TYPE": {
-          "LABEL": "Authentication Type"
+          "LABEL": "Autentiseringstyp"
         },
         "AUTH_TYPES": {
-          "NONE": "None",
+          "NONE": "Ingen",
           "BEARER": "Bearer Token",
           "BASIC": "Basic Auth",
-          "API_KEY": "API Key"
+          "API_KEY": "API-nyckel"
         },
         "AUTH_CONFIG": {
           "BEARER_TOKEN": "Bearer Token",
-          "BEARER_TOKEN_PLACEHOLDER": "Enter your bearer token",
-          "USERNAME": "Username",
-          "USERNAME_PLACEHOLDER": "Enter username",
+          "BEARER_TOKEN_PLACEHOLDER": "Ange din bearer-token",
+          "USERNAME": "Användarnamn",
+          "USERNAME_PLACEHOLDER": "Ange användarnamn",
           "PASSWORD": "Lösenord",
-          "PASSWORD_PLACEHOLDER": "Enter password",
-          "API_KEY": "Header Name",
+          "PASSWORD_PLACEHOLDER": "Ange lösenord",
+          "API_KEY": "Header-namn",
           "API_KEY_PLACEHOLDER": "X-API-Key",
-          "API_VALUE": "Header Value",
-          "API_VALUE_PLACEHOLDER": "Enter API key value"
+          "API_VALUE": "Header-värde",
+          "API_VALUE_PLACEHOLDER": "Ange API-nyckelvärde"
         },
         "PARAMETERS": {
-          "LABEL": "Parameters",
-          "HELP_TEXT": "Define the parameters that will be extracted from user queries"
+          "LABEL": "Parametrar",
+          "HELP_TEXT": "Definiera parametrarna som ska extraheras från användarens frågor"
         },
-        "ADD_PARAMETER": "Add Parameter",
+        "ADD_PARAMETER": "Lägg till parameter",
         "PARAM_NAME": {
-          "PLACEHOLDER": "Parameter name (e.g., order_id)"
+          "PLACEHOLDER": "Parameternamn, t.ex. order_id"
         },
         "PARAM_TYPE": {
-          "PLACEHOLDER": "Type"
+          "PLACEHOLDER": "Typ"
         },
         "PARAM_TYPES": {
-          "STRING": "String",
-          "NUMBER": "Number",
+          "STRING": "Sträng",
+          "NUMBER": "Nummer",
           "BOOLEAN": "Boolean",
           "ARRAY": "Array",
-          "OBJECT": "Object"
+          "OBJECT": "Objekt"
         },
         "PARAM_DESCRIPTION": {
-          "PLACEHOLDER": "Description of the parameter"
+          "PLACEHOLDER": "Beskrivning av parametern"
         },
         "PARAM_REQUIRED": {
-          "LABEL": "Required"
+          "LABEL": "Obligatorisk"
         },
         "REQUEST_TEMPLATE": {
-          "LABEL": "Request Body Template (Optional)",
+          "LABEL": "Request body-mall (valfritt)",
           "PLACEHOLDER": "{'{'}\n  \"order_id\": \"{'{{'} order_id {'}}'}\"\n{'}'}"
         },
         "RESPONSE_TEMPLATE": {
-          "LABEL": "Response Template (Optional)",
+          "LABEL": "Svarsmall (valfritt)",
           "PLACEHOLDER": "Order {'{{'} order_id {'}}'} status: {'{{'} status {'}}'}"
         },
         "ERRORS": {
-          "PARAM_NAME_REQUIRED": "Parameter name is required"
+          "PARAM_NAME_REQUIRED": "Parameternamn krävs"
         }
       }
     },
     "RESPONSES": {
-      "HEADER": "FAQs",
-      "PENDING_FAQS": "Pending FAQs",
-      "ADD_NEW": "Create new FAQ",
+      "HEADER": "FAQ:er",
+      "PENDING_FAQS": "Väntande FAQ:er",
+      "ADD_NEW": "Skapa ny FAQ",
       "DOCUMENTABLE": {
-        "CONVERSATION": "Conversation #{id}"
+        "CONVERSATION": "Konversation #{id}"
       },
-      "SELECTED": "{count} selected",
-      "SELECT_ALL": "Select all ({count})",
-      "UNSELECT_ALL": "Unselect all ({count})",
-      "SEARCH_PLACEHOLDER": "Search FAQs...",
-      "BULK_APPROVE_BUTTON": "Approve",
+      "SELECTED": "{count} valda",
+      "SELECT_ALL": "Välj alla ({count})",
+      "UNSELECT_ALL": "Avmarkera alla ({count})",
+      "SEARCH_PLACEHOLDER": "Sök FAQ:er...",
+      "BULK_APPROVE_BUTTON": "Godkänn",
       "BULK_DELETE_BUTTON": "Radera",
       "BULK_APPROVE": {
-        "SUCCESS_MESSAGE": "FAQs approved successfully",
-        "ERROR_MESSAGE": "There was an error approving the FAQs, please try again."
+        "SUCCESS_MESSAGE": "FAQ:er har godkänts",
+        "ERROR_MESSAGE": "Ett fel uppstod när FAQ:erna skulle godkännas. Försök igen."
       },
       "BULK_DELETE": {
-        "TITLE": "Delete FAQs?",
-        "DESCRIPTION": "Are you sure you want to delete the selected FAQs? This action cannot be undone.",
-        "CONFIRM": "Yes, delete all",
-        "SUCCESS_MESSAGE": "FAQs deleted successfully",
-        "ERROR_MESSAGE": "There was an error deleting the FAQs, please try again."
+        "TITLE": "Ta bort FAQ:er?",
+        "DESCRIPTION": "Är du säker på att du vill ta bort de valda FAQ:erna? Åtgärden kan inte ångras.",
+        "CONFIRM": "Ja, ta bort alla",
+        "SUCCESS_MESSAGE": "FAQ:erna har tagits bort",
+        "ERROR_MESSAGE": "Ett fel uppstod när FAQ:erna skulle tas bort. Försök igen."
       },
       "DELETE": {
-        "TITLE": "Are you sure to delete the FAQ?",
+        "TITLE": "Är du säker på att du vill ta bort FAQ:en?",
         "DESCRIPTION": "",
         "CONFIRM": "Ja, ta bort",
-        "SUCCESS_MESSAGE": "FAQ deleted successfully",
-        "ERROR_MESSAGE": "There was an error deleting the FAQ, please try again."
+        "SUCCESS_MESSAGE": "FAQ:en har tagits bort",
+        "ERROR_MESSAGE": "Ett fel uppstod när FAQ:en skulle tas bort. Försök igen."
       },
       "FILTER": {
-        "ASSISTANT": "Assistant: {selected}",
+        "ASSISTANT": "Assistent: {selected}",
         "STATUS": "Status: {selected}",
         "ALL_ASSISTANTS": "Alla"
       },
       "STATUS": {
         "TITLE": "Status",
         "PENDING": "Väntande",
-        "APPROVED": "Approved",
+        "APPROVED": "Godkänd",
         "ALL": "Alla"
       },
       "PENDING_BANNER": {
-        "TITLE": "Captain has found some FAQs your customers were looking for.",
-        "ACTION": "Click here to review"
+        "TITLE": "Custio AI har hittat FAQ:er som dina kunder verkar leta efter.",
+        "ACTION": "Klicka här för att granska"
       },
-      "FORM_DESCRIPTION": "Add a question and its corresponding answer to the knowledge base and select the assistant it should be associated with.",
+      "FORM_DESCRIPTION": "Lägg till en fråga och ett tillhörande svar i kunskapsbasen och välj vilken assistent den ska kopplas till.",
       "CREATE": {
-        "TITLE": "Add an FAQ",
-        "SUCCESS_MESSAGE": "The response has been added successfully.",
-        "ERROR_MESSAGE": "An error occurred while adding the response. Please try again."
+        "TITLE": "Lägg till FAQ",
+        "SUCCESS_MESSAGE": "Svaret har lagts till.",
+        "ERROR_MESSAGE": "Ett fel uppstod när svaret skulle läggas till. Försök igen."
       },
       "FORM": {
         "QUESTION": {
-          "LABEL": "Question",
-          "PLACEHOLDER": "Enter the question here",
-          "ERROR": "Please provide a valid question."
+          "LABEL": "Fråga",
+          "PLACEHOLDER": "Ange frågan här",
+          "ERROR": "Ange en giltig fråga."
         },
         "ANSWER": {
-          "LABEL": "Answer",
-          "PLACEHOLDER": "Enter the answer here",
-          "ERROR": "Please provide a valid answer."
+          "LABEL": "Svar",
+          "PLACEHOLDER": "Ange svaret här",
+          "ERROR": "Ange ett giltigt svar."
         }
       },
       "EDIT": {
-        "TITLE": "Update the FAQ",
-        "SUCCESS_MESSAGE": "The FAQ has been successfully updated",
-        "ERROR_MESSAGE": "There was an error updating the FAQ, please try again",
-        "APPROVE_SUCCESS_MESSAGE": "The FAQ was marked as approved"
+        "TITLE": "Uppdatera FAQ",
+        "SUCCESS_MESSAGE": "FAQ:en har uppdaterats",
+        "ERROR_MESSAGE": "Ett fel uppstod när FAQ:en skulle uppdateras. Försök igen.",
+        "APPROVE_SUCCESS_MESSAGE": "FAQ:en har markerats som godkänd"
       },
       "OPTIONS": {
-        "APPROVE": "Approve",
+        "APPROVE": "Godkänn",
         "EDIT_RESPONSE": "Redigera",
         "DELETE_RESPONSE": "Radera"
       },
       "EMPTY_STATE": {
-        "TITLE": "No FAQs Found",
-        "NO_PENDING_TITLE": "There are no more pending FAQs to review",
-        "SUBTITLE": "FAQs help your assistant provide quick and accurate answers to questions from your customers. They can be generated automatically from your content or can be added manually.",
-        "CLEAR_SEARCH": "Clear active filters",
+        "TITLE": "Inga FAQ:er hittades",
+        "NO_PENDING_TITLE": "Det finns inga fler väntande FAQ:er att granska",
+        "SUBTITLE": "FAQ:er hjälper assistenten att ge snabba och korrekta svar på kundernas frågor. De kan genereras automatiskt från ditt innehåll eller läggas till manuellt.",
+        "CLEAR_SEARCH": "Rensa aktiva filter",
         "FEATURE_SPOTLIGHT": {
-          "TITLE": "Captain FAQ",
-          "NOTE": "Captain FAQs detects common customer questions—whether missing from your knowledge base or frequently asked—and generates relevant FAQs to improve support. You can review each suggestion and decide whether to approve or reject it."
+          "TITLE": "Custio AI FAQ",
+          "NOTE": "Custio AI FAQ upptäcker vanliga kundfrågor – oavsett om de saknas i kunskapsbasen eller ställs ofta – och genererar relevanta FAQ:er för att förbättra supporten. Du kan granska varje förslag och välja om du vill godkänna eller avvisa det."
         }
       }
     },
     "INBOXES": {
-      "HEADER": "Connected Inboxes",
-      "ADD_NEW": "Connect a new inbox",
+      "HEADER": "Anslutna inkorgar",
+      "ADD_NEW": "Anslut ny inkorg",
       "OPTIONS": {
-        "DISCONNECT": "Disconnect"
+        "DISCONNECT": "Koppla från"
       },
       "DELETE": {
-        "TITLE": "Are you sure to disconnect the inbox?",
+        "TITLE": "Är du säker på att du vill koppla från inkorgen?",
         "DESCRIPTION": "",
         "CONFIRM": "Ja, ta bort",
-        "SUCCESS_MESSAGE": "The inbox was successfully disconnected.",
-        "ERROR_MESSAGE": "There was an error disconnecting the inbox, please try again."
+        "SUCCESS_MESSAGE": "Inkorgen har kopplats från.",
+        "ERROR_MESSAGE": "Ett fel uppstod när inkorgen skulle kopplas från. Försök igen."
       },
-      "FORM_DESCRIPTION": "Choose an inbox to connect with the assistant.",
+      "FORM_DESCRIPTION": "Välj en inkorg att koppla till assistenten.",
       "CREATE": {
-        "TITLE": "Connect an Inbox",
-        "SUCCESS_MESSAGE": "The inbox was successfully connected.",
-        "ERROR_MESSAGE": "An error occurred while connecting the inbox. Please try again."
+        "TITLE": "Anslut en inkorg",
+        "SUCCESS_MESSAGE": "Inkorgen har anslutits.",
+        "ERROR_MESSAGE": "Ett fel uppstod när inkorgen skulle anslutas. Försök igen."
       },
       "FORM": {
         "INBOX": {
           "LABEL": "Inkorg",
-          "PLACEHOLDER": "Choose the inbox to deploy the assistant.",
-          "ERROR": "An inbox selection is required."
+          "PLACEHOLDER": "Välj inkorgen där assistenten ska användas.",
+          "ERROR": "Du behöver välja en inkorg."
         }
       },
       "EMPTY_STATE": {
-        "TITLE": "No Connected Inboxes",
-        "SUBTITLE": "Connecting an inbox allows the assistant to handle initial questions from your customers before transferring them to you."
+        "TITLE": "Inga anslutna inkorgar",
+        "SUBTITLE": "Genom att ansluta en inkorg kan assistenten hantera de första frågorna från dina kunder innan den lämnar över till dig."
       }
     }
   }

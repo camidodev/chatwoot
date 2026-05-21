@@ -1,85 +1,85 @@
 {
   "AUTOMATION": {
-    "HEADER": "Automation",
-    "DESCRIPTION": "Automation can replace and streamline existing processes that require manual effort, such as adding labels and assigning conversations to the most suitable agent. This allows the team to focus on their strengths while reducing time spent on routine tasks.",
-    "LEARN_MORE": "Learn more about automation",
-    "COUNT": "{n} automation | {n} automations",
-    "HEADER_BTN_TXT": "Create Automation",
-    "LOADING": "Fetching automation rules",
-    "SEARCH_PLACEHOLDER": "Search automation rules...",
-    "NO_RESULTS": "No automation rules found matching your search",
+    "HEADER": "Automatiseringar",
+    "DESCRIPTION": "Automatiseringar kan ersätta och förenkla manuella arbetsflöden, till exempel att lägga till etiketter eller tilldela konversationer till rätt medarbetare. Det gör att teamet kan fokusera på det som kräver mänsklig hantering och lägga mindre tid på återkommande uppgifter.",
+    "LEARN_MORE": "Läs mer om automatiseringar",
+    "COUNT": "{n} automatisering | {n} automatiseringar",
+    "HEADER_BTN_TXT": "Skapa automatisering",
+    "LOADING": "Hämtar automatiseringar",
+    "SEARCH_PLACEHOLDER": "Sök automatiseringar...",
+    "NO_RESULTS": "Inga automatiseringar matchade din sökning",
     "ADD": {
-      "TITLE": "Add Automation Rule",
+      "TITLE": "Skapa automatisering",
       "SUBMIT": "Skapa",
       "CANCEL_BUTTON_TEXT": "Avbryt",
       "FORM": {
         "NAME": {
-          "LABEL": "Rule Name",
-          "PLACEHOLDER": "Enter rule name",
-          "ERROR": "Name is required"
+          "LABEL": "Namn",
+          "PLACEHOLDER": "Ange namn",
+          "ERROR": "Namn krävs"
         },
         "DESC": {
           "LABEL": "Beskrivning",
-          "PLACEHOLDER": "Enter rule description",
-          "ERROR": "Description is required"
+          "PLACEHOLDER": "Ange en beskrivning",
+          "ERROR": "Beskrivning krävs"
         },
         "EVENT": {
-          "LABEL": "Event",
-          "PLACEHOLDER": "Please select one",
-          "ERROR": "Event is required"
+          "LABEL": "Händelse",
+          "PLACEHOLDER": "Välj en händelse",
+          "ERROR": "Händelse krävs"
         },
         "CONDITIONS": {
-          "LABEL": "Conditions"
+          "LABEL": "Villkor"
         },
         "ACTIONS": {
           "LABEL": "Åtgärder"
         }
       },
-      "CONDITION_BUTTON_LABEL": "Add Condition",
-      "ACTION_BUTTON_LABEL": "Add Action",
+      "CONDITION_BUTTON_LABEL": "Lägg till villkor",
+      "ACTION_BUTTON_LABEL": "Lägg till åtgärd",
       "API": {
-        "SUCCESS_MESSAGE": "Automation rule added successfully",
-        "ERROR_MESSAGE": "Could not able to create a automation rule, Please try again later"
+        "SUCCESS_MESSAGE": "Automatiseringen har skapats",
+        "ERROR_MESSAGE": "Det gick inte att skapa automatiseringen. Försök igen senare"
       }
     },
     "LIST": {
       "TABLE_HEADER": {
         "NAME": "Namn",
-        "ACTIVE": "Active",
-        "CREATED_ON": "Created on",
+        "ACTIVE": "Aktiv",
+        "CREATED_ON": "Skapad",
         "ACTIONS": "Åtgärder"
       },
-      "404": "No automation rules found"
+      "404": "Inga automatiseringar hittades"
     },
     "DELETE": {
-      "TITLE": "Delete Automation Rule",
+      "TITLE": "Ta bort automatisering",
       "SUBMIT": "Radera",
       "CANCEL_BUTTON_TEXT": "Avbryt",
       "CONFIRM": {
         "TITLE": "Bekräfta borttagning",
-        "MESSAGE": "Är du säker på att ta bort ",
+        "MESSAGE": "Är du säker på att du vill ta bort ",
         "YES": "Ja, ta bort ",
         "NO": "Nej, behåll "
       },
       "API": {
-        "SUCCESS_MESSAGE": "Automation rule deleted successfully",
-        "ERROR_MESSAGE": "Could not able to delete a automation rule, Please try again later"
+        "SUCCESS_MESSAGE": "Automatiseringen har tagits bort",
+        "ERROR_MESSAGE": "Det gick inte att ta bort automatiseringen. Försök igen senare"
       }
     },
     "EDIT": {
-      "TITLE": "Edit Automation Rule",
+      "TITLE": "Redigera automatisering",
       "SUBMIT": "Uppdatera",
       "CANCEL_BUTTON_TEXT": "Avbryt",
       "API": {
-        "SUCCESS_MESSAGE": "Automation rule updated successfully",
-        "ERROR_MESSAGE": "Could not update automation rule, Please try again later"
+        "SUCCESS_MESSAGE": "Automatiseringen har uppdaterats",
+        "ERROR_MESSAGE": "Det gick inte att uppdatera automatiseringen. Försök igen senare"
       }
     },
     "CLONE": {
-      "TOOLTIP": "Clone",
+      "TOOLTIP": "Duplicera",
       "API": {
-        "SUCCESS_MESSAGE": "Automation cloned successfully",
-        "ERROR_MESSAGE": "Could not clone automation rule, Please try again later"
+        "SUCCESS_MESSAGE": "Automatiseringen har duplicerats",
+        "ERROR_MESSAGE": "Det gick inte att duplicera automatiseringen. Försök igen senare"
       }
     },
     "FORM": {
@@ -87,101 +87,101 @@
       "CREATE": "Skapa",
       "DELETE": "Radera",
       "CANCEL": "Avbryt",
-      "RESET_MESSAGE": "Changing event type will reset the conditions and events you have added below"
+      "RESET_MESSAGE": "Om du ändrar händelsetyp återställs villkoren och åtgärderna du har lagt till nedan"
     },
     "CONDITION": {
-      "DELETE_MESSAGE": "You need to have atleast one condition to save",
-      "CONTACT_CUSTOM_ATTR_LABEL": "Contact Custom Attributes",
-      "CONVERSATION_CUSTOM_ATTR_LABEL": "Conversation Custom Attributes"
+      "DELETE_MESSAGE": "Du behöver ha minst ett villkor för att kunna spara",
+      "CONTACT_CUSTOM_ATTR_LABEL": "Anpassade egenskaper för kunder",
+      "CONVERSATION_CUSTOM_ATTR_LABEL": "Anpassade egenskaper för konversationer"
     },
     "ACTION": {
-      "DELETE_MESSAGE": "You need to have atleast one action to save",
-      "TEAM_MESSAGE_INPUT_PLACEHOLDER": "Enter your message here",
-      "TEAM_DROPDOWN_PLACEHOLDER": "Select teams",
-      "EMAIL_INPUT_PLACEHOLDER": "Enter email",
-      "URL_INPUT_PLACEHOLDER": "Enter URL"
+      "DELETE_MESSAGE": "Du behöver ha minst en åtgärd för att kunna spara",
+      "TEAM_MESSAGE_INPUT_PLACEHOLDER": "Skriv ditt meddelande här",
+      "TEAM_DROPDOWN_PLACEHOLDER": "Välj team",
+      "EMAIL_INPUT_PLACEHOLDER": "Ange e-post",
+      "URL_INPUT_PLACEHOLDER": "Ange URL"
     },
     "TOGGLE": {
-      "ACTIVATION_TITLE": "Activate Automation Rule",
-      "DEACTIVATION_TITLE": "Deactivate Automation Rule",
-      "ACTIVATION_DESCRIPTION": "This action will activate the automation rule '{automationName}'. Are you sure you want to proceed?",
-      "DEACTIVATION_DESCRIPTION": "This action will deactivate the automation rule '{automationName}'. Are you sure you want to proceed?",
-      "ACTIVATION_SUCCESFUL": "Automation Rule Activated Successfully",
-      "DEACTIVATION_SUCCESFUL": "Automation Rule Deactivated Successfully",
-      "ACTIVATION_ERROR": "Could not Activate Automation, Please try again later",
-      "DEACTIVATION_ERROR": "Could not Deactivate Automation, Please try again later",
+      "ACTIVATION_TITLE": "Aktivera automatisering",
+      "DEACTIVATION_TITLE": "Inaktivera automatisering",
+      "ACTIVATION_DESCRIPTION": "Den här åtgärden aktiverar automatiseringen ”{automationName}”. Vill du fortsätta?",
+      "DEACTIVATION_DESCRIPTION": "Den här åtgärden inaktiverar automatiseringen ”{automationName}”. Vill du fortsätta?",
+      "ACTIVATION_SUCCESFUL": "Automatiseringen har aktiverats",
+      "DEACTIVATION_SUCCESFUL": "Automatiseringen har inaktiverats",
+      "ACTIVATION_ERROR": "Det gick inte att aktivera automatiseringen. Försök igen senare",
+      "DEACTIVATION_ERROR": "Det gick inte att inaktivera automatiseringen. Försök igen senare",
       "CONFIRMATION_LABEL": "Ja",
       "CANCEL_LABEL": "Nej"
     },
     "ATTACHMENT": {
-      "UPLOAD_ERROR": "Could not upload attachment, Please try again",
-      "LABEL_IDLE": "Upload Attachment",
+      "UPLOAD_ERROR": "Det gick inte att ladda upp bilagan. Försök igen",
+      "LABEL_IDLE": "Ladda upp bilaga",
       "LABEL_UPLOADING": "Laddar upp...",
-      "LABEL_UPLOADED": "Successfully Uploaded",
-      "LABEL_UPLOAD_FAILED": "Upload Failed"
+      "LABEL_UPLOADED": "Uppladdad",
+      "LABEL_UPLOAD_FAILED": "Uppladdningen misslyckades"
     },
     "ERRORS": {
-      "ATTRIBUTE_KEY_REQUIRED": "Attribute key is required",
-      "FILTER_OPERATOR_REQUIRED": "Filter operator is required",
-      "VALUE_REQUIRED": "Value is required",
-      "VALUE_MUST_BE_BETWEEN_1_AND_998": "Value must be between 1 and 998",
-      "ACTION_PARAMETERS_REQUIRED": "Action parameters are required",
-      "ATLEAST_ONE_CONDITION_REQUIRED": "At least one condition is required",
-      "ATLEAST_ONE_ACTION_REQUIRED": "At least one action is required"
+      "ATTRIBUTE_KEY_REQUIRED": "Egenskapsnyckel krävs",
+      "FILTER_OPERATOR_REQUIRED": "Filteroperator krävs",
+      "VALUE_REQUIRED": "Värde krävs",
+      "VALUE_MUST_BE_BETWEEN_1_AND_998": "Värdet måste vara mellan 1 och 998",
+      "ACTION_PARAMETERS_REQUIRED": "Åtgärdsparametrar krävs",
+      "ATLEAST_ONE_CONDITION_REQUIRED": "Minst ett villkor krävs",
+      "ATLEAST_ONE_ACTION_REQUIRED": "Minst en åtgärd krävs"
     },
     "NONE_OPTION": "Inget",
     "EVENTS": {
-      "CONVERSATION_CREATED": "Conversation Created",
-      "CONVERSATION_UPDATED": "Conversation Updated",
-      "MESSAGE_CREATED": "Message Created",
-      "CONVERSATION_RESOLVED": "Conversation Resolved",
-      "CONVERSATION_OPENED": "Conversation Opened"
+      "CONVERSATION_CREATED": "Konversation skapad",
+      "CONVERSATION_UPDATED": "Konversation uppdaterad",
+      "MESSAGE_CREATED": "Meddelande skapat",
+      "CONVERSATION_RESOLVED": "Konversation löst",
+      "CONVERSATION_OPENED": "Konversation öppnad"
     },
     "ACTIONS": {
-      "ASSIGN_AGENT": "Assign to Agent",
-      "ASSIGN_TEAM": "Assign a Team",
-      "ADD_LABEL": "Add a Label",
-      "REMOVE_LABEL": "Remove a Label",
-      "SEND_EMAIL_TO_TEAM": "Send an Email to Team",
-      "SEND_EMAIL_TRANSCRIPT": "Send an Email Transcript",
+      "ASSIGN_AGENT": "Tilldela medarbetare",
+      "ASSIGN_TEAM": "Tilldela team",
+      "ADD_LABEL": "Lägg till etikett",
+      "REMOVE_LABEL": "Ta bort etikett",
+      "SEND_EMAIL_TO_TEAM": "Skicka e-post till teamet",
+      "SEND_EMAIL_TRANSCRIPT": "Skicka konversation via e-post",
       "MUTE_CONVERSATION": "Tysta konversation",
-      "SNOOZE_CONVERSATION": "Snooze Conversation",
-      "RESOLVE_CONVERSATION": "Resolve Conversation",
-      "SEND_WEBHOOK_EVENT": "Send Webhook Event",
-      "SEND_ATTACHMENT": "Send Attachment",
-      "SEND_MESSAGE": "Send a Message",
-      "ADD_PRIVATE_NOTE": "Add a Private Note",
-      "CHANGE_PRIORITY": "Change Priority",
-      "ADD_SLA": "Add SLA",
-      "OPEN_CONVERSATION": "Open conversation",
-      "PENDING_CONVERSATION": "Mark conversation as pending"
+      "SNOOZE_CONVERSATION": "Pausa konversation",
+      "RESOLVE_CONVERSATION": "Markera konversation som löst",
+      "SEND_WEBHOOK_EVENT": "Skicka webhook-händelse",
+      "SEND_ATTACHMENT": "Skicka bilaga",
+      "SEND_MESSAGE": "Skicka meddelande",
+      "ADD_PRIVATE_NOTE": "Lägg till intern anteckning",
+      "CHANGE_PRIORITY": "Ändra prioritet",
+      "ADD_SLA": "Lägg till SLA",
+      "OPEN_CONVERSATION": "Öppna konversation",
+      "PENDING_CONVERSATION": "Markera konversation som väntande"
     },
     "MESSAGE_TYPES": {
-      "INCOMING": "Incoming Message",
-      "OUTGOING": "Outgoing Message"
+      "INCOMING": "Inkommande meddelande",
+      "OUTGOING": "Utgående meddelande"
     },
     "PRIORITY_TYPES": {
-      "NONE": "None",
+      "NONE": "Ingen",
       "LOW": "Låg",
       "MEDIUM": "Medel",
       "HIGH": "Hög",
       "URGENT": "Brådskande"
     },
     "ATTRIBUTES": {
-      "MESSAGE_TYPE": "Message Type",
-      "MESSAGE_CONTAINS": "Message Contains",
+      "MESSAGE_TYPE": "Meddelandetyp",
+      "MESSAGE_CONTAINS": "Meddelande innehåller",
       "EMAIL": "E-post",
       "INBOX": "Inkorg",
-      "CONVERSATION_LANGUAGE": "Conversation Language",
+      "CONVERSATION_LANGUAGE": "Konversationsspråk",
       "PHONE_NUMBER": "Telefonnummer",
       "STATUS": "Status",
-      "BROWSER_LANGUAGE": "Browser Language",
-      "MAIL_SUBJECT": "Email Subject",
-      "COUNTRY_NAME": "Country",
-      "REFERER_LINK": "Referrer Link",
-      "ASSIGNEE_NAME": "Assignee",
+      "BROWSER_LANGUAGE": "Webbläsarspråk",
+      "MAIL_SUBJECT": "E-postämne",
+      "COUNTRY_NAME": "Land",
+      "REFERER_LINK": "Hänvisningslänk",
+      "ASSIGNEE_NAME": "Tilldelad medarbetare",
       "TEAM_NAME": "Team",
-      "PRIORITY": "Priority",
+      "PRIORITY": "Prioritet",
       "LABELS": "Etiketter"
     }
   }

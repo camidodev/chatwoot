@@ -1,46 +1,46 @@
 {
   "SLA": {
-    "HEADER": "Service Level Agreements",
-    "ADD_ACTION": "Add SLA",
-    "ADD_ACTION_LONG": "Create a new SLA Policy",
-    "DESCRIPTION": "Service Level Agreements (SLAs) are contracts that define clear expectations between your team and customers. They establish standards for response and resolution times, creating a framework for accountability and ensures a consistent, high-quality experience.",
-    "LEARN_MORE": "Learn more about SLA",
-    "COUNT": "{n} SLA | {n} SLAs",
-    "LOADING": "Fetching SLAs",
-    "SEARCH_PLACEHOLDER": "Search SLA...",
+    "HEADER": "SLA",
+    "ADD_ACTION": "Lägg till SLA",
+    "ADD_ACTION_LONG": "Skapa ny SLA-policy",
+    "DESCRIPTION": "SLA:er definierar tydliga förväntningar mellan teamet och kunderna. De sätter ramar för svarstider och lösningstider, vilket gör det enklare att följa upp ansvar och skapa en konsekvent kundupplevelse.",
+    "LEARN_MORE": "Läs mer om SLA",
+    "COUNT": "{n} SLA | {n} SLA:er",
+    "LOADING": "Hämtar SLA:er",
+    "SEARCH_PLACEHOLDER": "Sök SLA...",
     "SEARCH": {
-      "NO_RESULTS": "No SLA found matching your search"
+      "NO_RESULTS": "Inga SLA:er matchade din sökning"
     },
     "PAYWALL": {
-      "TITLE": "Upgrade to create SLAs",
-      "AVAILABLE_ON": "The SLA feature is only available in the Business and Enterprise plans.",
-      "UPGRADE_PROMPT": "Upgrade your plan to get access to advanced features like team management, automations, custom attributes, and more.",
-      "UPGRADE_NOW": "Upgrade now",
-      "CANCEL_ANYTIME": "You can change or cancel your plan anytime"
+      "TITLE": "Uppgradera för att skapa SLA:er",
+      "AVAILABLE_ON": "SLA-funktionen är endast tillgänglig i Business- och Enterprise-planerna.",
+      "UPGRADE_PROMPT": "Uppgradera din plan för att få tillgång till avancerade funktioner som teamhantering, automatiseringar, anpassade egenskaper och mer.",
+      "UPGRADE_NOW": "Uppgradera nu",
+      "CANCEL_ANYTIME": "Du kan ändra eller avsluta din plan när som helst"
     },
     "ENTERPRISE_PAYWALL": {
-      "AVAILABLE_ON": "The SLA feature is only available in the paid plans.",
-      "UPGRADE_PROMPT": "Upgrade to a paid plan to access advanced features like audit logs, agent capacity, and more.",
-      "ASK_ADMIN": "Please reach out to your administrator for the upgrade."
+      "AVAILABLE_ON": "SLA-funktionen är endast tillgänglig i betalda planer.",
+      "UPGRADE_PROMPT": "Uppgradera till en betald plan för att få tillgång till avancerade funktioner som aktivitetsloggar, medarbetarkapacitet och mer.",
+      "ASK_ADMIN": "Kontakta din administratör för att uppgradera."
     },
     "LIST": {
-      "404": "There are no SLAs available in this account.",
+      "404": "Det finns inga SLA:er på det här kontot.",
       "TABLE_HEADER": {
         "SLA": "SLA",
-        "BUSINESS_HOURS": "Business hours"
+        "BUSINESS_HOURS": "Öppettider"
       },
       "EMPTY": {
         "TITLE_1": "Enterprise P0",
-        "DESC_1": "Issues raised by enterprise customers, that require immediate attention.",
+        "DESC_1": "Ärenden från enterprise-kunder som kräver omedelbar hantering.",
         "TITLE_2": "Enterprise P1",
-        "DESC_2": "Issues raised by enterprise customers, that needs to be acknowledged quickly."
+        "DESC_2": "Ärenden från enterprise-kunder som behöver bekräftas snabbt."
       },
-      "BUSINESS_HOURS_ON": "Turned on",
-      "BUSINESS_HOURS_OFF": "Turned off",
+      "BUSINESS_HOURS_ON": "Aktiverat",
+      "BUSINESS_HOURS_OFF": "Inaktiverat",
       "RESPONSE_TYPES": {
-        "FRT": "First response time threshold",
-        "NRT": "Next response time threshold",
-        "RT": "Resolution time threshold",
+        "FRT": "Gräns för första svarstid",
+        "NRT": "Gräns för nästa svarstid",
+        "RT": "Gräns för lösningstid",
         "SHORT_HAND": {
           "FRT": "FRT",
           "NRT": "NRT",
@@ -50,22 +50,22 @@
     },
     "FORM": {
       "NAME": {
-        "LABEL": "SLA Name",
-        "PLACEHOLDER": "SLA Name",
-        "REQUIRED_ERROR": "SLA name is required",
-        "MINIMUM_LENGTH_ERROR": "Minimum length 2 is required",
-        "VALID_ERROR": "Only Alphabets, Numbers, Hyphen and Underscore are allowed"
+        "LABEL": "SLA-namn",
+        "PLACEHOLDER": "SLA-namn",
+        "REQUIRED_ERROR": "SLA-namn krävs",
+        "MINIMUM_LENGTH_ERROR": "Minst 2 tecken krävs",
+        "VALID_ERROR": "Endast bokstäver, siffror, bindestreck och understreck är tillåtna"
       },
       "DESCRIPTION": {
         "LABEL": "Beskrivning",
-        "PLACEHOLDER": "SLA for premium customers"
+        "PLACEHOLDER": "SLA för premiumkunder"
       },
       "FIRST_RESPONSE_TIME": {
-        "LABEL": "First Response Time",
+        "LABEL": "Första svarstid",
         "PLACEHOLDER": "5"
       },
       "NEXT_RESPONSE_TIME": {
-        "LABEL": "Next Response Time",
+        "LABEL": "Nästa svarstid",
         "PLACEHOLDER": "5"
       },
       "RESOLUTION_TIME": {
@@ -74,10 +74,10 @@
       },
       "BUSINESS_HOURS": {
         "LABEL": "Öppettider",
-        "PLACEHOLDER": "Only during business hours"
+        "PLACEHOLDER": "Endast under öppettider"
       },
       "THRESHOLD_TIME": {
-        "INVALID_FORMAT_ERROR": "Threshold should be a number and greater than zero"
+        "INVALID_FORMAT_ERROR": "Gränsvärdet måste vara ett tal större än noll"
       },
       "EDIT": "Redigera",
       "CREATE": "Skapa",
@@ -85,33 +85,33 @@
       "CANCEL": "Avbryt"
     },
     "ADD": {
-      "TITLE": "Add SLA",
-      "DESC": "Friendly promises for great service!",
+      "TITLE": "Lägg till SLA",
+      "DESC": "Sätt tydliga löften för snabb och konsekvent service.",
       "API": {
-        "SUCCESS_MESSAGE": "SLA added successfully",
-        "ERROR_MESSAGE": "Ett fel uppstod, vänligen försök igen"
+        "SUCCESS_MESSAGE": "SLA har lagts till",
+        "ERROR_MESSAGE": "Ett fel uppstod. Försök igen"
       }
     },
     "DELETE": {
-      "TITLE": "Delete SLA",
+      "TITLE": "Ta bort SLA",
       "API": {
-        "SUCCESS_MESSAGE": "SLA deleted successfully",
-        "ERROR_MESSAGE": "Ett fel uppstod, vänligen försök igen"
+        "SUCCESS_MESSAGE": "SLA har tagits bort",
+        "ERROR_MESSAGE": "Ett fel uppstod. Försök igen"
       },
       "CONFIRM": {
         "TITLE": "Bekräfta borttagning",
-        "MESSAGE": "Are you sure you want to delete ",
+        "MESSAGE": "Är du säker på att du vill ta bort ",
         "YES": "Ja, ta bort ",
         "NO": "Nej, behåll "
       }
     },
     "EVENTS": {
-      "TITLE": "SLA Misses",
-      "FRT": "Första svarstiden",
-      "NRT": "Next response time",
-      "RT": "Resolution time",
-      "SHOW_MORE": "{count} more",
-      "HIDE": "Hide {count} rows"
+      "TITLE": "Missade SLA:er",
+      "FRT": "Första svarstid",
+      "NRT": "Nästa svarstid",
+      "RT": "Lösningstid",
+      "SHOW_MORE": "{count} till",
+      "HIDE": "Dölj {count} rader"
     }
   }
 }

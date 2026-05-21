@@ -1,94 +1,94 @@
 {
   "INBOX": {
     "LIST": {
-      "TITLE": "My Inbox",
-      "DISPLAY_DROPDOWN": "Display",
-      "LOADING": "Fetching notifications",
-      "404": "There are no active notifications in this group.",
-      "NO_NOTIFICATIONS": "No notifications",
-      "NOTE": "Notifications from all subscribed inboxes",
-      "NO_MESSAGES_AVAILABLE": "Oops! Not able to fetch messages",
-      "SNOOZED_UNTIL": "Snoozad till",
-      "SNOOZED_UNTIL_TOMORROW": "Snoozad till imorgon",
-      "SNOOZED_UNTIL_NEXT_WEEK": "Snoozad till nästa vecka"
+      "TITLE": "Min inkorg",
+      "DISPLAY_DROPDOWN": "Visa",
+      "LOADING": "Hämtar aviseringar",
+      "404": "Det finns inga aktiva aviseringar i den här gruppen.",
+      "NO_NOTIFICATIONS": "Inga aviseringar",
+      "NOTE": "Aviseringar från alla inkorgar du prenumererar på",
+      "NO_MESSAGES_AVAILABLE": "Det gick inte att hämta meddelanden",
+      "SNOOZED_UNTIL": "Pausad till",
+      "SNOOZED_UNTIL_TOMORROW": "Pausad till imorgon",
+      "SNOOZED_UNTIL_NEXT_WEEK": "Pausad till nästa vecka"
     },
     "ACTION_HEADER": {
-      "SNOOZE": "Snooze notification",
-      "DELETE": "Delete notification",
+      "SNOOZE": "Pausa avisering",
+      "DELETE": "Ta bort avisering",
       "BACK": "Tillbaka"
     },
     "TYPES": {
-      "CONVERSATION_MENTION": "You have been mentioned in a conversation",
-      "CONVERSATION_CREATION": "New conversation created",
-      "CONVERSATION_ASSIGNMENT": "A conversation has been assigned to you",
-      "ASSIGNED_CONVERSATION_NEW_MESSAGE": "New message in an assigned conversation",
-      "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "New message in a conversation you are participating in",
-      "SLA_MISSED_FIRST_RESPONSE": "SLA target first response missed for conversation",
-      "SLA_MISSED_NEXT_RESPONSE": "SLA target next response missed for conversation",
-      "SLA_MISSED_RESOLUTION": "SLA target resolution missed for conversation"
+      "CONVERSATION_MENTION": "Du har blivit nämnd i en konversation",
+      "CONVERSATION_CREATION": "Ny konversation skapad",
+      "CONVERSATION_ASSIGNMENT": "En konversation har tilldelats dig",
+      "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Nytt meddelande i en tilldelad konversation",
+      "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Nytt meddelande i en konversation du deltar i",
+      "SLA_MISSED_FIRST_RESPONSE": "SLA-mål för första svar missades för konversationen",
+      "SLA_MISSED_NEXT_RESPONSE": "SLA-mål för nästa svar missades för konversationen",
+      "SLA_MISSED_RESOLUTION": "SLA-mål för lösning missades för konversationen"
     },
     "TYPES_NEXT": {
-      "CONVERSATION_MENTION": "Mentioned",
-      "CONVERSATION_ASSIGNMENT": "Assigned to you",
-      "CONVERSATION_CREATION": "New Conversation",
-      "SLA_MISSED_FIRST_RESPONSE": "SLA breach",
-      "SLA_MISSED_NEXT_RESPONSE": "SLA breach",
-      "SLA_MISSED_RESOLUTION": "SLA breach",
+      "CONVERSATION_MENTION": "Nämnd",
+      "CONVERSATION_ASSIGNMENT": "Tilldelad till dig",
+      "CONVERSATION_CREATION": "Ny konversation",
+      "SLA_MISSED_FIRST_RESPONSE": "SLA missat",
+      "SLA_MISSED_NEXT_RESPONSE": "SLA missat",
+      "SLA_MISSED_RESOLUTION": "SLA missat",
       "PARTICIPATING_CONVERSATION_NEW_MESSAGE": "Nytt meddelande",
       "ASSIGNED_CONVERSATION_NEW_MESSAGE": "Nytt meddelande",
-      "SNOOZED_UNTIL": "Snoozed for {time}",
-      "SNOOZED_ENDS": "Snooze ended"
+      "SNOOZED_UNTIL": "Pausad i {time}",
+      "SNOOZED_ENDS": "Pausen är slut"
     },
     "NO_CONTENT": "Inget innehåll tillgängligt",
     "MENU_ITEM": {
-      "MARK_AS_READ": "Mark as read",
+      "MARK_AS_READ": "Markera som läst",
       "MARK_AS_UNREAD": "Markera som oläst",
-      "SNOOZE": "Snooza",
+      "SNOOZE": "Pausa",
       "DELETE": "Radera",
       "MARK_ALL_READ": "Markera alla som lästa",
-      "DELETE_ALL": "Delete all",
-      "DELETE_ALL_READ": "Delete all read"
+      "DELETE_ALL": "Radera alla",
+      "DELETE_ALL_READ": "Radera alla lästa"
     },
     "DISPLAY_MENU": {
-      "SORT": "Sort",
-      "DISPLAY": "Display :",
+      "SORT": "Sortera",
+      "DISPLAY": "Visa:",
       "SORT_OPTIONS": {
-        "NEWEST": "Newest",
-        "OLDEST": "Oldest",
+        "NEWEST": "Nyast",
+        "OLDEST": "Äldst",
         "PRIORITY": "Prioritet"
       },
       "DISPLAY_OPTIONS": {
-        "SNOOZED": "Pausad",
-        "READ": "Read",
+        "SNOOZED": "Pausade",
+        "READ": "Lästa",
         "LABELS": "Etiketter",
-        "CONVERSATION_ID": "Conversation ID"
+        "CONVERSATION_ID": "Konversations-ID"
       }
     },
     "ALERTS": {
-      "MARK_AS_READ": "Notification marked as read",
-      "MARK_AS_UNREAD": "Notification marked as unread",
-      "SNOOZE": "Notification snoozed",
-      "DELETE": "Notification deleted",
-      "MARK_ALL_READ": "All notifications marked as read",
-      "DELETE_ALL": "All notifications deleted",
-      "DELETE_ALL_READ": "All read notifications deleted"
+      "MARK_AS_READ": "Aviseringen har markerats som läst",
+      "MARK_AS_UNREAD": "Aviseringen har markerats som oläst",
+      "SNOOZE": "Aviseringen har pausats",
+      "DELETE": "Aviseringen har tagits bort",
+      "MARK_ALL_READ": "Alla aviseringar har markerats som lästa",
+      "DELETE_ALL": "Alla aviseringar har tagits bort",
+      "DELETE_ALL_READ": "Alla lästa aviseringar har tagits bort"
     },
     "REAUTHORIZE": {
-      "TITLE": "Reauthorization Required",
-      "DESCRIPTION": "Your WhatsApp connection has expired. Please reconnect to continue receiving and sending messages.",
-      "BUTTON_TEXT": "Reconnect WhatsApp",
-      "LOADING_FACEBOOK": "Loading Facebook SDK...",
-      "SUCCESS": "WhatsApp reconnected successfully",
-      "ERROR": "Failed to reconnect WhatsApp. Please try again.",
-      "WHATSAPP_APP_ID_MISSING": "WhatsApp App ID is not configured. Please contact your administrator.",
-      "WHATSAPP_CONFIG_ID_MISSING": "WhatsApp Configuration ID is not configured. Please contact your administrator.",
-      "CONFIGURATION_ERROR": "Configuration error occurred during reauthorization.",
-      "FACEBOOK_LOAD_ERROR": "Failed to load Facebook SDK. Please try again.",
+      "TITLE": "Ny auktorisering krävs",
+      "DESCRIPTION": "Din WhatsApp-anslutning har gått ut. Anslut igen för att fortsätta ta emot och skicka meddelanden.",
+      "BUTTON_TEXT": "Anslut WhatsApp igen",
+      "LOADING_FACEBOOK": "Laddar Facebook SDK...",
+      "SUCCESS": "WhatsApp har anslutits igen",
+      "ERROR": "Det gick inte att ansluta WhatsApp igen. Försök igen.",
+      "WHATSAPP_APP_ID_MISSING": "WhatsApp App ID är inte konfigurerat. Kontakta din administratör.",
+      "WHATSAPP_CONFIG_ID_MISSING": "WhatsApp Configuration ID är inte konfigurerat. Kontakta din administratör.",
+      "CONFIGURATION_ERROR": "Ett konfigurationsfel uppstod vid ny auktorisering.",
+      "FACEBOOK_LOAD_ERROR": "Det gick inte att ladda Facebook SDK. Försök igen.",
       "TROUBLESHOOTING": {
-        "TITLE": "Troubleshooting",
-        "POPUP_BLOCKED": "Ensure pop-ups are allowed for this site",
-        "COOKIES": "Third-party cookies must be enabled",
-        "ADMIN_ACCESS": "You need admin access to the WhatsApp Business Account"
+        "TITLE": "Felsökning",
+        "POPUP_BLOCKED": "Kontrollera att popup-fönster är tillåtna för den här webbplatsen",
+        "COOKIES": "Tredjepartscookies måste vara aktiverade",
+        "ADMIN_ACCESS": "Du behöver administratörsåtkomst till WhatsApp Business-kontot"
       }
     }
   }

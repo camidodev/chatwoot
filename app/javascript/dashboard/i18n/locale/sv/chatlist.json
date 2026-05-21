@@ -2,16 +2,16 @@
   "CHAT_LIST": {
     "LOADING": "Hämtar konversationer",
     "LOAD_MORE_CONVERSATIONS": "Ladda fler konversationer",
-    "EOF": "Alla konversationer laddade 🎉",
+    "EOF": "Alla konversationer har laddats 🎉",
     "LIST": {
-      "404": "Det finns inga aktiva konversationer i denna grupp."
+      "404": "Det finns inga aktiva konversationer i den här gruppen."
     },
-    "FAILED_TO_SEND": "Failed to send",
+    "FAILED_TO_SEND": "Kunde inte skickas",
     "TAB_HEADING": "Konversationer",
-    "MENTION_HEADING": "Mentions",
-    "UNATTENDED_HEADING": "Unattended",
+    "MENTION_HEADING": "Omnämnanden",
+    "UNATTENDED_HEADING": "Ej hanterade",
     "SEARCH": {
-      "INPUT": "Sök efter personer, chattar, sparade svar .."
+      "INPUT": "Sök efter personer, konversationer, svarsmallar..."
     },
     "FILTER_ALL": "Alla",
     "ASSIGNEE_TYPE_TABS": {
@@ -24,28 +24,28 @@
         "TEXT": "Öppna"
       },
       "resolved": {
-        "TEXT": "Löst"
+        "TEXT": "Lösta"
       },
       "pending": {
         "TEXT": "Väntande"
       },
       "snoozed": {
-        "TEXT": "Pausad"
+        "TEXT": "Pausade"
       },
       "all": {
         "TEXT": "Alla"
       }
     },
     "VIEW_FILTER": "Visa",
-    "SORT_TOOLTIP_LABEL": "Sort conversations",
+    "SORT_TOOLTIP_LABEL": "Sortera konversationer",
     "CHAT_SORT": {
       "STATUS": "Status",
-      "ORDER_BY": "Order by"
+      "ORDER_BY": "Sortera efter"
     },
     "CHAT_TIME_STAMP": {
       "CREATED": {
         "LATEST": "Skapad",
-        "OLDEST": "Skapad den:"
+        "OLDEST": "Skapad:"
       },
       "LAST_ACTIVITY": {
         "NOT_ACTIVE": "Senaste aktivitet:",
@@ -54,31 +54,31 @@
     },
     "SORT_ORDER_ITEMS": {
       "last_activity_at_asc": {
-        "TEXT": "Last activity: Oldest first"
+        "TEXT": "Senaste aktivitet: äldst först"
       },
       "last_activity_at_desc": {
-        "TEXT": "Last activity: Newest first"
+        "TEXT": "Senaste aktivitet: nyast först"
       },
       "created_at_desc": {
-        "TEXT": "Created at: Newest first"
+        "TEXT": "Skapad: nyast först"
       },
       "created_at_asc": {
-        "TEXT": "Created at: Oldest first"
+        "TEXT": "Skapad: äldst först"
       },
       "priority_desc": {
-        "TEXT": "Priority: Highest first"
+        "TEXT": "Prioritet: högst först"
       },
       "priority_asc": {
-        "TEXT": "Priority: Lowest first"
+        "TEXT": "Prioritet: lägst först"
       },
       "waiting_since_asc": {
-        "TEXT": "Pending Response: Longest first"
+        "TEXT": "Väntar på svar: längst först"
       },
       "waiting_since_desc": {
-        "TEXT": "Pending Response: Shortest first"
+        "TEXT": "Väntar på svar: kortast först"
       },
       "priority_desc_created_at_asc": {
-        "TEXT": "Priority: Highest first, Created: Oldest first"
+        "TEXT": "Prioritet: högst först, skapad: äldst först"
       }
     },
     "ATTACHMENTS": {
@@ -104,42 +104,42 @@
         "CONTENT": "har delat en webbadress"
       },
       "contact": {
-        "CONTENT": "Shared contact"
+        "CONTENT": "Delad kontakt"
       },
       "embed": {
-        "CONTENT": "Embedded content"
+        "CONTENT": "Inbäddat innehåll"
       }
     },
     "CHAT_SORT_BY_FILTER": {
-      "TITLE": "Sort conversation",
-      "DROPDOWN_TITLE": "Sort by",
+      "TITLE": "Sortera konversation",
+      "DROPDOWN_TITLE": "Sortera efter",
       "ITEMS": {
         "LATEST": {
-          "NAME": "Last activity at",
-          "LABEL": "Last activity"
+          "NAME": "Senaste aktivitet",
+          "LABEL": "Senaste aktivitet"
         },
         "CREATED_AT": {
-          "NAME": "Created at",
-          "LABEL": "Created at"
+          "NAME": "Skapad",
+          "LABEL": "Skapad"
         },
         "LAST_USER_MESSAGE_AT": {
-          "NAME": "Last user message at",
+          "NAME": "Senaste kundmeddelande",
           "LABEL": "Senaste meddelandet"
         }
       }
     },
     "RECEIVED_VIA_EMAIL": "Mottaget via e-post",
-    "VIEW_TWEET_IN_TWITTER": "Visa tweet i Twitter",
-    "REPLY_TO_TWEET": "Svara på detta tweet",
-    "LINK_TO_STORY": "Go to instagram story",
-    "SENT": "Skickades framgångsrikt",
-    "READ": "Read successfully",
-    "DELIVERED": "Delivered successfully",
+    "VIEW_TWEET_IN_TWITTER": "Visa tweet på Twitter",
+    "REPLY_TO_TWEET": "Svara på tweeten",
+    "LINK_TO_STORY": "Gå till Instagram-händelse",
+    "SENT": "Skickat",
+    "READ": "Läst",
+    "DELIVERED": "Levererat",
     "NO_MESSAGES": "Inga meddelanden",
     "NO_CONTENT": "Inget innehåll tillgängligt",
     "HIDE_QUOTED_TEXT": "Dölj citerad text",
     "SHOW_QUOTED_TEXT": "Visa citerad text",
-    "MESSAGE_READ": "Read",
-    "SENDING": "Sending"
+    "MESSAGE_READ": "Läst",
+    "SENDING": "Skickar"
   }
 }

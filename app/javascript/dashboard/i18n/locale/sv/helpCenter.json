@@ -2,402 +2,402 @@
   "HELP_CENTER": {
     "TITLE": "Hjälpcenter",
     "NEW_PAGE": {
-      "DESCRIPTION": "Create self-service help center portals for your customers. Help them find answers quickly, without waiting. Streamline inquiries, boost agent efficiency, and elevate customer support.",
-      "CREATE_PORTAL_BUTTON": "Create Portal"
+      "DESCRIPTION": "Skapa självserviceportaler för dina kunder. Hjälp dem att snabbt hitta svar utan att behöva vänta. Minska antalet inkommande frågor, effektivisera teamets arbete och förbättra kundupplevelsen.",
+      "CREATE_PORTAL_BUTTON": "Skapa portal"
     },
     "HEADER": {
-      "FILTER": "Filter by",
-      "SORT": "Sort by",
-      "LOCALE": "Locale",
+      "FILTER": "Filtrera efter",
+      "SORT": "Sortera efter",
+      "LOCALE": "Språkversion",
       "SETTINGS_BUTTON": "Inställningar",
-      "NEW_BUTTON": "New Article",
+      "NEW_BUTTON": "Ny artikel",
       "DROPDOWN_OPTIONS": {
-        "PUBLISHED": "Published",
-        "DRAFT": "Draft",
-        "ARCHIVED": "Archived"
+        "PUBLISHED": "Publicerad",
+        "DRAFT": "Utkast",
+        "ARCHIVED": "Arkiverad"
       },
       "TITLES": {
         "ALL_ARTICLES": "Alla artiklar",
         "MINE": "Mina artiklar",
-        "DRAFT": "Draft Articles",
-        "ARCHIVED": "Archived Articles"
+        "DRAFT": "Utkast",
+        "ARCHIVED": "Arkiverade artiklar"
       },
       "LOCALE_SELECT": {
-        "TITLE": "Select locale",
-        "PLACEHOLDER": "Select locale",
-        "NO_RESULT": "No locale found",
-        "SEARCH_PLACEHOLDER": "Search locale"
+        "TITLE": "Välj språkversion",
+        "PLACEHOLDER": "Välj språkversion",
+        "NO_RESULT": "Ingen språkversion hittades",
+        "SEARCH_PLACEHOLDER": "Sök språkversion"
       }
     },
     "EDIT_HEADER": {
       "ALL_ARTICLES": "Alla artiklar",
-      "PUBLISH_BUTTON": "Publish",
-      "MOVE_TO_ARCHIVE_BUTTON": "Move to archived",
-      "PREVIEW": "Preview",
-      "ADD_TRANSLATION": "Add translation",
-      "OPEN_SIDEBAR": "Open sidebar",
-      "CLOSE_SIDEBAR": "Close sidebar",
-      "SAVING": "Saving...",
-      "SAVED": "Saved"
+      "PUBLISH_BUTTON": "Publicera",
+      "MOVE_TO_ARCHIVE_BUTTON": "Flytta till arkiv",
+      "PREVIEW": "Förhandsvisa",
+      "ADD_TRANSLATION": "Lägg till översättning",
+      "OPEN_SIDEBAR": "Öppna sidopanel",
+      "CLOSE_SIDEBAR": "Stäng sidopanel",
+      "SAVING": "Sparar...",
+      "SAVED": "Sparad"
     },
     "ARTICLE_EDITOR": {
       "IMAGE_UPLOAD": {
         "TITLE": "Ladda upp bild",
         "UPLOADING": "Laddar upp...",
-        "SUCCESS": "Image uploaded successfully",
-        "ERROR": "Error while uploading image",
-        "UN_AUTHORIZED_ERROR": "You are not authorized to upload images",
-        "ERROR_FILE_SIZE": "Image size should be less than {size}MB",
-        "ERROR_FILE_FORMAT": "Image format should be jpg, jpeg or png",
-        "ERROR_FILE_DIMENSIONS": "Image dimensions should be less than 2000 x 2000"
+        "SUCCESS": "Bilden har laddats upp",
+        "ERROR": "Ett fel uppstod när bilden skulle laddas upp",
+        "UN_AUTHORIZED_ERROR": "Du har inte behörighet att ladda upp bilder",
+        "ERROR_FILE_SIZE": "Bildstorleken måste vara mindre än {size} MB",
+        "ERROR_FILE_FORMAT": "Bildformatet måste vara jpg, jpeg eller png",
+        "ERROR_FILE_DIMENSIONS": "Bildens mått måste vara mindre än 2000 x 2000"
       }
     },
     "ARTICLE_SETTINGS": {
-      "TITLE": "Article Settings",
+      "TITLE": "Artikelinställningar",
       "FORM": {
         "CATEGORY": {
           "LABEL": "Kategori",
-          "TITLE": "Select category",
-          "PLACEHOLDER": "Select category",
-          "NO_RESULT": "No category found",
-          "SEARCH_PLACEHOLDER": "Search category"
+          "TITLE": "Välj kategori",
+          "PLACEHOLDER": "Välj kategori",
+          "NO_RESULT": "Ingen kategori hittades",
+          "SEARCH_PLACEHOLDER": "Sök kategori"
         },
         "AUTHOR": {
           "LABEL": "Författare",
-          "TITLE": "Select author",
-          "PLACEHOLDER": "Select author",
-          "NO_RESULT": "No authors found",
-          "SEARCH_PLACEHOLDER": "Search author"
+          "TITLE": "Välj författare",
+          "PLACEHOLDER": "Välj författare",
+          "NO_RESULT": "Inga författare hittades",
+          "SEARCH_PLACEHOLDER": "Sök författare"
         },
         "META_TITLE": {
-          "LABEL": "Meta title",
-          "PLACEHOLDER": "Add a meta title"
+          "LABEL": "Metatitel",
+          "PLACEHOLDER": "Lägg till en metatitel"
         },
         "META_DESCRIPTION": {
-          "LABEL": "Meta description",
-          "PLACEHOLDER": "Add your meta description for better SEO results..."
+          "LABEL": "Metabeskrivning",
+          "PLACEHOLDER": "Lägg till en metabeskrivning för bättre SEO-resultat..."
         },
         "META_TAGS": {
-          "LABEL": "Meta tags",
-          "PLACEHOLDER": "Add meta tags separated by comma..."
+          "LABEL": "Metataggar",
+          "PLACEHOLDER": "Lägg till metataggar separerade med kommatecken..."
         }
       },
       "BUTTONS": {
-        "ARCHIVE": "Archive article",
-        "DELETE": "Delete article"
+        "ARCHIVE": "Arkivera artikel",
+        "DELETE": "Ta bort artikel"
       }
     },
     "ARTICLE_SEARCH_RESULT": {
-      "UNCATEGORIZED": "Uncategorized",
-      "SEARCH_RESULTS": "Search results for {query}",
-      "EMPTY_TEXT": "Search for articles to insert into replies.",
-      "SEARCH_LOADER": "Letar...",
-      "INSERT_ARTICLE": "Insert",
+      "UNCATEGORIZED": "Okategoriserad",
+      "SEARCH_RESULTS": "Sökresultat för {query}",
+      "EMPTY_TEXT": "Sök efter artiklar att infoga i svar.",
+      "SEARCH_LOADER": "Söker...",
+      "INSERT_ARTICLE": "Infoga",
       "NO_RESULT": "Inga artiklar hittades",
-      "COPY_LINK": "Copy article link to clipboard",
+      "COPY_LINK": "Kopiera artikellänk till urklipp",
       "OPEN_LINK": "Öppna artikeln i en ny flik",
-      "PREVIEW_LINK": "Preview article"
+      "PREVIEW_LINK": "Förhandsvisa artikel"
     },
     "PORTAL": {
-      "HEADER": "Portals",
-      "DEFAULT": "Default",
-      "NEW_BUTTON": "New Portal",
-      "ACTIVE_BADGE": "active",
-      "CHOOSE_LOCALE_LABEL": "Choose a locale",
-      "LOADING_MESSAGE": "Loading portals...",
+      "HEADER": "Portaler",
+      "DEFAULT": "Standard",
+      "NEW_BUTTON": "Ny portal",
+      "ACTIVE_BADGE": "aktiv",
+      "CHOOSE_LOCALE_LABEL": "Välj språkversion",
+      "LOADING_MESSAGE": "Laddar portaler...",
       "ARTICLES_LABEL": "artiklar",
-      "NO_PORTALS_MESSAGE": "There are no available portals",
-      "ADD_NEW_LOCALE": "Add a new locale",
+      "NO_PORTALS_MESSAGE": "Det finns inga portaler tillgängliga",
+      "ADD_NEW_LOCALE": "Lägg till ny språkversion",
       "POPOVER": {
-        "TITLE": "Portals",
-        "PORTAL_SETTINGS": "Portal settings",
-        "SUBTITLE": "You have multiple portals and can have different locales for each portal.",
+        "TITLE": "Portaler",
+        "PORTAL_SETTINGS": "Portalinställningar",
+        "SUBTITLE": "Du har flera portaler och kan ha olika språkversioner för varje portal.",
         "CANCEL_BUTTON_LABEL": "Avbryt",
-        "CHOOSE_LOCALE_BUTTON": "Choose Locale"
+        "CHOOSE_LOCALE_BUTTON": "Välj språkversion"
       },
       "PORTAL_SETTINGS": {
         "LIST_ITEM": {
           "HEADER": {
             "COUNT_LABEL": "artiklar",
-            "ADD": "Add locale",
-            "VISIT": "Visit site",
+            "ADD": "Lägg till språkversion",
+            "VISIT": "Besök webbplats",
             "SETTINGS": "Inställningar",
             "DELETE": "Radera"
           },
           "PORTAL_CONFIG": {
-            "TITLE": "Portal Configurations",
+            "TITLE": "Portalinställningar",
             "ITEMS": {
               "NAME": "Namn",
-              "DOMAIN": "Custom domain",
+              "DOMAIN": "Anpassad domän",
               "SLUG": "Slug",
-              "TITLE": "Portal title",
-              "THEME": "Theme color",
-              "SUB_TEXT": "Portal sub text"
+              "TITLE": "Portaltitel",
+              "THEME": "Temafärg",
+              "SUB_TEXT": "Portalens undertitel"
             }
           },
           "AVAILABLE_LOCALES": {
-            "TITLE": "Available locales",
+            "TITLE": "Tillgängliga språkversioner",
             "TABLE": {
-              "NAME": "Locale name",
-              "CODE": "Locale code",
-              "ARTICLE_COUNT": "No. of articles",
-              "CATEGORIES": "No. of categories",
-              "SWAP": "Swap",
+              "NAME": "Namn på språkversion",
+              "CODE": "Språkkod",
+              "ARTICLE_COUNT": "Antal artiklar",
+              "CATEGORIES": "Antal kategorier",
+              "SWAP": "Byt",
               "DELETE": "Radera",
-              "DEFAULT_LOCALE": "Default"
+              "DEFAULT_LOCALE": "Standard"
             }
           }
         },
         "DELETE_PORTAL": {
-          "TITLE": "Delete portal",
-          "MESSAGE": "Are you sure you want to delete this portal",
-          "YES": "Yes, delete portal",
-          "NO": "No, keep portal",
+          "TITLE": "Ta bort portal",
+          "MESSAGE": "Är du säker på att du vill ta bort den här portalen",
+          "YES": "Ja, ta bort portal",
+          "NO": "Nej, behåll portal",
           "API": {
-            "DELETE_SUCCESS": "Portal deleted successfully",
-            "DELETE_ERROR": "Error while deleting portal"
+            "DELETE_SUCCESS": "Portalen har tagits bort",
+            "DELETE_ERROR": "Ett fel uppstod när portalen skulle tas bort"
           }
         },
         "SEND_CNAME_INSTRUCTIONS": {
           "API": {
-            "SUCCESS_MESSAGE": "CNAME instructions sent successfully",
-            "ERROR_MESSAGE": "Error while sending CNAME instructions"
+            "SUCCESS_MESSAGE": "CNAME-instruktioner har skickats",
+            "ERROR_MESSAGE": "Ett fel uppstod när CNAME-instruktionerna skulle skickas"
           }
         }
       },
       "EDIT": {
-        "HEADER_TEXT": "Edit portal",
+        "HEADER_TEXT": "Redigera portal",
         "TABS": {
           "BASIC_SETTINGS": {
-            "TITLE": "Basic information"
+            "TITLE": "Grundinformation"
           },
           "CUSTOMIZATION_SETTINGS": {
-            "TITLE": "Portal customization"
+            "TITLE": "Anpassning av portal"
           },
           "CATEGORY_SETTINGS": {
-            "TITLE": "Categories"
+            "TITLE": "Kategorier"
           },
           "LOCALE_SETTINGS": {
-            "TITLE": "Locales"
+            "TITLE": "Språkversioner"
           }
         },
         "CATEGORIES": {
-          "TITLE": "Categories in",
-          "NEW_CATEGORY": "New category",
+          "TITLE": "Kategorier i",
+          "NEW_CATEGORY": "Ny kategori",
           "TABLE": {
             "NAME": "Namn",
             "DESCRIPTION": "Beskrivning",
-            "LOCALE": "Locale",
-            "ARTICLE_COUNT": "No. of articles",
+            "LOCALE": "Språkversion",
+            "ARTICLE_COUNT": "Antal artiklar",
             "ACTION_BUTTON": {
-              "EDIT": "Edit category",
-              "DELETE": "Delete category"
+              "EDIT": "Redigera kategori",
+              "DELETE": "Ta bort kategori"
             },
-            "EMPTY_TEXT": "No categories found"
+            "EMPTY_TEXT": "Inga kategorier hittades"
           }
         },
         "EDIT_BASIC_INFO": {
-          "BUTTON_TEXT": "Update basic settings"
+          "BUTTON_TEXT": "Uppdatera grundinställningar"
         }
       },
       "ADD": {
         "CREATE_FLOW": {
           "BASIC": {
-            "TITLE": "Help center information",
-            "BODY": "Basic information about portal"
+            "TITLE": "Information om hjälpcenter",
+            "BODY": "Grundinformation om portalen"
           },
           "CUSTOMIZATION": {
-            "TITLE": "Help center customization",
-            "BODY": "Customize portal"
+            "TITLE": "Anpassning av hjälpcenter",
+            "BODY": "Anpassa portalen"
           },
           "FINISH": {
-            "TITLE": "Voila! 🎉",
-            "BODY": "You're all set!"
+            "TITLE": "Klart! 🎉",
+            "BODY": "Allt är klart!"
           }
         },
         "CREATE_FLOW_PAGE": {
           "BACK_BUTTON": "Tillbaka",
           "BASIC_SETTINGS_PAGE": {
-            "HEADER": "Create Portal",
-            "TITLE": "Help center information",
-            "CREATE_BASIC_SETTING_BUTTON": "Create portal basic settings"
+            "HEADER": "Skapa portal",
+            "TITLE": "Information om hjälpcenter",
+            "CREATE_BASIC_SETTING_BUTTON": "Skapa portalens grundinställningar"
           },
           "CUSTOMIZATION_PAGE": {
-            "HEADER": "Portal customisation",
-            "TITLE": "Help center customization",
-            "UPDATE_PORTAL_BUTTON": "Update portal settings"
+            "HEADER": "Anpassning av portal",
+            "TITLE": "Anpassning av hjälpcenter",
+            "UPDATE_PORTAL_BUTTON": "Uppdatera portalinställningar"
           },
           "FINISH_PAGE": {
-            "TITLE": "Voila!🎉 You're all set up!",
-            "MESSAGE": "You can now see this created portal on your all portals page.",
-            "FINISH": "Go to all portals page"
+            "TITLE": "Klart! 🎉 Allt är redo!",
+            "MESSAGE": "Du kan nu se den skapade portalen på sidan med alla portaler.",
+            "FINISH": "Gå till alla portaler"
           }
         },
         "LOGO": {
-          "LABEL": "Logo",
-          "UPLOAD_BUTTON": "Upload logo",
-          "HELP_TEXT": "This logo will be displayed on the portal header.",
-          "IMAGE_UPLOAD_SUCCESS": "Logo uploaded successfully",
-          "IMAGE_UPLOAD_ERROR": "Logo deleted successfully",
-          "IMAGE_DELETE_ERROR": "Error while deleting logo"
+          "LABEL": "Logotyp",
+          "UPLOAD_BUTTON": "Ladda upp logotyp",
+          "HELP_TEXT": "Den här logotypen visas i portalens sidhuvud.",
+          "IMAGE_UPLOAD_SUCCESS": "Logotypen har laddats upp",
+          "IMAGE_UPLOAD_ERROR": "Logotypen har tagits bort",
+          "IMAGE_DELETE_ERROR": "Ett fel uppstod när logotypen skulle tas bort"
         },
         "NAME": {
           "LABEL": "Namn",
-          "PLACEHOLDER": "Portal name",
-          "HELP_TEXT": "The name will be used in the public facing portal internally.",
-          "ERROR": "Name is required"
+          "PLACEHOLDER": "Portalnamn",
+          "HELP_TEXT": "Namnet används internt för den publika portalen.",
+          "ERROR": "Namn krävs"
         },
         "SLUG": {
           "LABEL": "Slug",
-          "PLACEHOLDER": "Portal slug for urls",
-          "ERROR": "Slug is required"
+          "PLACEHOLDER": "Portalens slug för URL:er",
+          "ERROR": "Slug krävs"
         },
         "DOMAIN": {
-          "LABEL": "Custom Domain",
-          "PLACEHOLDER": "Portal custom domain",
-          "HELP_TEXT": "Add only If you want to use a custom domain for your portals. Eg: {exampleURL}",
-          "ERROR": "Enter a valid domain URL"
+          "LABEL": "Anpassad domän",
+          "PLACEHOLDER": "Portalens anpassade domän",
+          "HELP_TEXT": "Lägg bara till detta om du vill använda en egen domän för dina portaler. T.ex. {exampleURL}",
+          "ERROR": "Ange en giltig domän-URL"
         },
         "HOME_PAGE_LINK": {
           "LABEL": "Länk till startsida",
-          "PLACEHOLDER": "Portal home page link",
-          "HELP_TEXT": "The link used to return from the portal to the home page. Eg: {exampleURL}",
-          "ERROR": "Enter a valid home page URL"
+          "PLACEHOLDER": "Portalens länk till startsida",
+          "HELP_TEXT": "Länken som används för att gå från portalen tillbaka till startsidan. T.ex. {exampleURL}",
+          "ERROR": "Ange en giltig URL till startsidan"
         },
         "THEME_COLOR": {
-          "LABEL": "Portal theme color",
-          "HELP_TEXT": "This color will show as the theme color for the portal."
+          "LABEL": "Portalens temafärg",
+          "HELP_TEXT": "Den här färgen visas som portalens temafärg."
         },
         "PAGE_TITLE": {
-          "LABEL": "Page Title",
-          "PLACEHOLDER": "Portal page title",
-          "HELP_TEXT": "The page title will be used in the public facing portal.",
-          "ERROR": "Page title is required"
+          "LABEL": "Sidtitel",
+          "PLACEHOLDER": "Portalens sidtitel",
+          "HELP_TEXT": "Sidtiteln används i den publika portalen.",
+          "ERROR": "Sidtitel krävs"
         },
         "HEADER_TEXT": {
-          "LABEL": "Header Text",
-          "PLACEHOLDER": "Portal header text",
-          "HELP_TEXT": "The Portal header text will be used in the public facing portal.",
-          "ERROR": "Portal header text is required"
+          "LABEL": "Rubriktext",
+          "PLACEHOLDER": "Portalens rubriktext",
+          "HELP_TEXT": "Portalens rubriktext används i den publika portalen.",
+          "ERROR": "Portalens rubriktext krävs"
         },
         "API": {
-          "SUCCESS_MESSAGE_FOR_BASIC": "Portal created successfully.",
-          "ERROR_MESSAGE_FOR_BASIC": "Couldn't create the portal. Try again.",
-          "SUCCESS_MESSAGE_FOR_UPDATE": "Portal updated successfully.",
-          "ERROR_MESSAGE_FOR_UPDATE": "Couldn't update the portal. Try again."
+          "SUCCESS_MESSAGE_FOR_BASIC": "Portalen har skapats.",
+          "ERROR_MESSAGE_FOR_BASIC": "Det gick inte att skapa portalen. Försök igen.",
+          "SUCCESS_MESSAGE_FOR_UPDATE": "Portalen har uppdaterats.",
+          "ERROR_MESSAGE_FOR_UPDATE": "Det gick inte att uppdatera portalen. Försök igen."
         }
       },
       "ADD_LOCALE": {
-        "TITLE": "Add a new locale",
-        "SUB_TITLE": "This adds a new locale to your available translation list.",
+        "TITLE": "Lägg till ny språkversion",
+        "SUB_TITLE": "Detta lägger till en ny språkversion i listan över tillgängliga översättningar.",
         "PORTAL": "Portal",
         "LOCALE": {
-          "LABEL": "Locale",
-          "PLACEHOLDER": "Choose a locale",
-          "ERROR": "Locale is required"
+          "LABEL": "Språkversion",
+          "PLACEHOLDER": "Välj språkversion",
+          "ERROR": "Språkversion krävs"
         },
         "BUTTONS": {
-          "CREATE": "Create locale",
+          "CREATE": "Skapa språkversion",
           "CANCEL": "Avbryt"
         },
         "API": {
-          "SUCCESS_MESSAGE": "Locale added successfully",
-          "ERROR_MESSAGE": "Unable to add locale. Try again."
+          "SUCCESS_MESSAGE": "Språkversionen har lagts till",
+          "ERROR_MESSAGE": "Det gick inte att lägga till språkversionen. Försök igen."
         }
       },
       "CHANGE_DEFAULT_LOCALE": {
         "API": {
-          "SUCCESS_MESSAGE": "Default locale updated successfully",
-          "ERROR_MESSAGE": "Unable to update default locale. Try again."
+          "SUCCESS_MESSAGE": "Standardspråkversionen har uppdaterats",
+          "ERROR_MESSAGE": "Det gick inte att uppdatera standardspråkversionen. Försök igen."
         }
       },
       "DELETE_LOCALE": {
         "API": {
-          "SUCCESS_MESSAGE": "Locale removed from portal successfully",
-          "ERROR_MESSAGE": "Unable to remove locale from portal. Try again."
+          "SUCCESS_MESSAGE": "Språkversionen har tagits bort från portalen",
+          "ERROR_MESSAGE": "Det gick inte att ta bort språkversionen från portalen. Försök igen."
         }
       },
       "DRAFT_LOCALE": {
         "API": {
-          "SUCCESS_MESSAGE": "Locale moved to draft successfully",
-          "ERROR_MESSAGE": "Unable to move locale to draft. Try again."
+          "SUCCESS_MESSAGE": "Språkversionen har flyttats till utkast",
+          "ERROR_MESSAGE": "Det gick inte att flytta språkversionen till utkast. Försök igen."
         }
       },
       "PUBLISH_LOCALE": {
         "API": {
-          "SUCCESS_MESSAGE": "Locale published successfully",
-          "ERROR_MESSAGE": "Unable to publish locale. Try again."
+          "SUCCESS_MESSAGE": "Språkversionen har publicerats",
+          "ERROR_MESSAGE": "Det gick inte att publicera språkversionen. Försök igen."
         }
       }
     },
     "TABLE": {
       "LOADING_MESSAGE": "Laddar artiklar...",
-      "404": "No articles matches your search 🔍",
+      "404": "Inga artiklar matchar din sökning 🔍",
       "NO_ARTICLES": "Det finns inga tillgängliga artiklar",
       "HEADERS": {
-        "TITLE": "Title",
-        "CATEGORY": "Category",
+        "TITLE": "Titel",
+        "CATEGORY": "Kategori",
         "READ_COUNT": "Visningar",
         "STATUS": "Status",
         "LAST_EDITED": "Senast redigerad"
       },
       "COLUMNS": {
-        "BY": "by",
+        "BY": "av",
         "AUTHOR_NOT_AVAILABLE": "Författaren är inte tillgänglig"
       }
     },
     "EDIT_ARTICLE": {
       "LOADING": "Laddar artikel...",
-      "TITLE_PLACEHOLDER": "Article title goes here",
-      "CONTENT_PLACEHOLDER": "Write your article here",
+      "TITLE_PLACEHOLDER": "Artikelns titel skriver du här",
+      "CONTENT_PLACEHOLDER": "Skriv din artikel här",
       "API": {
-        "ERROR": "Error while saving article"
+        "ERROR": "Ett fel uppstod när artikeln skulle sparas"
       }
     },
     "PUBLISH_ARTICLE": {
       "API": {
-        "ERROR": "Error while publishing article",
-        "SUCCESS": "Article published successfully"
+        "ERROR": "Ett fel uppstod när artikeln skulle publiceras",
+        "SUCCESS": "Artikeln har publicerats"
       }
     },
     "ARCHIVE_ARTICLE": {
       "API": {
-        "ERROR": "Error while archiving article",
-        "SUCCESS": "Article archived successfully"
+        "ERROR": "Ett fel uppstod när artikeln skulle arkiveras",
+        "SUCCESS": "Artikeln har arkiverats"
       }
     },
     "DRAFT_ARTICLE": {
       "API": {
-        "ERROR": "Error while drafting article",
-        "SUCCESS": "Article drafted successfully"
+        "ERROR": "Ett fel uppstod när artikeln skulle flyttas till utkast",
+        "SUCCESS": "Artikeln har flyttats till utkast"
       }
     },
     "DELETE_ARTICLE": {
       "MODAL": {
         "CONFIRM": {
           "TITLE": "Bekräfta borttagning",
-          "MESSAGE": "Are you sure to delete the article?",
+          "MESSAGE": "Är du säker på att du vill ta bort artikeln?",
           "YES": "Ja, ta bort",
           "NO": "Nej, behåll"
         }
       },
       "API": {
-        "SUCCESS_MESSAGE": "Article deleted successfully",
-        "ERROR_MESSAGE": "Error while deleting article"
+        "SUCCESS_MESSAGE": "Artikeln har tagits bort",
+        "ERROR_MESSAGE": "Ett fel uppstod när artikeln skulle tas bort"
       }
     },
     "REORDER_ARTICLE": {
       "API": {
-        "ERROR_MESSAGE": "Unable to reorder articles. Please try again."
+        "ERROR_MESSAGE": "Det gick inte att ändra ordningen på artiklarna. Försök igen."
       }
     },
     "REORDER_CATEGORY": {
       "API": {
-        "ERROR_MESSAGE": "Unable to reorder categories. Please try again."
+        "ERROR_MESSAGE": "Det gick inte att ändra ordningen på kategorierna. Försök igen."
       }
     },
     "CREATE_ARTICLE": {
-      "ERROR_MESSAGE": "Please add the article heading and content then only you can update the settings"
+      "ERROR_MESSAGE": "Lägg till artikelns rubrik och innehåll innan du uppdaterar inställningarna"
     },
     "SIDEBAR": {
       "SEARCH": {
@@ -406,240 +406,240 @@
     },
     "CATEGORY": {
       "ADD": {
-        "TITLE": "Create a category",
-        "SUB_TITLE": "The category will be used in the public facing portal to categorize articles.",
+        "TITLE": "Skapa kategori",
+        "SUB_TITLE": "Kategorin används i den publika portalen för att kategorisera artiklar.",
         "PORTAL": "Portal",
-        "LOCALE": "Locale",
+        "LOCALE": "Språkversion",
         "NAME": {
           "LABEL": "Namn",
-          "PLACEHOLDER": "Category name",
-          "HELP_TEXT": "Kategorinamnet och ikonen kommer att användas i den publika portalen för att kategorisera artiklar.",
-          "ERROR": "Name is required"
+          "PLACEHOLDER": "Kategorinamn",
+          "HELP_TEXT": "Kategorinamnet och ikonen används i den publika portalen för att kategorisera artiklar.",
+          "ERROR": "Namn krävs"
         },
         "SLUG": {
           "LABEL": "Slug",
-          "PLACEHOLDER": "Category slug for urls",
-          "HELP_TEXT": "app.chatwoot.com/hc/my-portal/en-US/categories/my-slug",
-          "ERROR": "Slug is required"
+          "PLACEHOLDER": "Kategorins slug för URL:er",
+          "HELP_TEXT": "app.getcustio.com/hc/my-portal/en-US/categories/my-slug",
+          "ERROR": "Slug krävs"
         },
         "DESCRIPTION": {
           "LABEL": "Beskrivning",
-          "PLACEHOLDER": "Give a short description about the category.",
-          "ERROR": "Description is required"
+          "PLACEHOLDER": "Ge kategorin en kort beskrivning.",
+          "ERROR": "Beskrivning krävs"
         },
         "BUTTONS": {
-          "CREATE": "Create category",
+          "CREATE": "Skapa kategori",
           "CANCEL": "Avbryt"
         },
         "API": {
-          "SUCCESS_MESSAGE": "Category created successfully",
-          "ERROR_MESSAGE": "Unable to create category"
+          "SUCCESS_MESSAGE": "Kategorin har skapats",
+          "ERROR_MESSAGE": "Det gick inte att skapa kategorin"
         }
       },
       "EDIT": {
-        "TITLE": "Edit a category",
-        "SUB_TITLE": "Editing a category will update the category in the public facing portal.",
+        "TITLE": "Redigera kategori",
+        "SUB_TITLE": "När du redigerar en kategori uppdateras kategorin i den publika portalen.",
         "PORTAL": "Portal",
-        "LOCALE": "Locale",
+        "LOCALE": "Språkversion",
         "NAME": {
           "LABEL": "Namn",
-          "PLACEHOLDER": "Category name",
-          "HELP_TEXT": "Kategorinamnet och ikonen kommer att användas i den publika portalen för att kategorisera artiklar.",
-          "ERROR": "Name is required"
+          "PLACEHOLDER": "Kategorinamn",
+          "HELP_TEXT": "Kategorinamnet och ikonen används i den publika portalen för att kategorisera artiklar.",
+          "ERROR": "Namn krävs"
         },
         "SLUG": {
           "LABEL": "Slug",
-          "PLACEHOLDER": "Category slug for urls",
-          "HELP_TEXT": "app.chatwoot.com/hc/my-portal/en-US/categories/my-slug",
-          "ERROR": "Slug is required"
+          "PLACEHOLDER": "Kategorins slug för URL:er",
+          "HELP_TEXT": "app.getcustio.com/hc/my-portal/en-US/categories/my-slug",
+          "ERROR": "Slug krävs"
         },
         "DESCRIPTION": {
           "LABEL": "Beskrivning",
-          "PLACEHOLDER": "Give a short description about the category.",
-          "ERROR": "Description is required"
+          "PLACEHOLDER": "Ge kategorin en kort beskrivning.",
+          "ERROR": "Beskrivning krävs"
         },
         "BUTTONS": {
-          "CREATE": "Update category",
+          "CREATE": "Uppdatera kategori",
           "CANCEL": "Avbryt"
         },
         "API": {
-          "SUCCESS_MESSAGE": "Category updated successfully",
-          "ERROR_MESSAGE": "Unable to update category"
+          "SUCCESS_MESSAGE": "Kategorin har uppdaterats",
+          "ERROR_MESSAGE": "Det gick inte att uppdatera kategorin"
         }
       },
       "DELETE": {
         "API": {
-          "SUCCESS_MESSAGE": "Category deleted successfully",
-          "ERROR_MESSAGE": "Unable to delete category"
+          "SUCCESS_MESSAGE": "Kategorin har tagits bort",
+          "ERROR_MESSAGE": "Det gick inte att ta bort kategorin"
         }
       }
     },
     "ARTICLE_SEARCH": {
-      "TITLE": "Search articles",
-      "PLACEHOLDER": "Search articles",
+      "TITLE": "Sök artiklar",
+      "PLACEHOLDER": "Sök artiklar",
       "NO_RESULT": "Inga artiklar hittades",
-      "SEARCHING": "Letar...",
+      "SEARCHING": "Söker...",
       "SEARCH_BUTTON": "Sök",
-      "INSERT_ARTICLE": "Insert link",
-      "IFRAME_ERROR": "URL is empty or invalid. Unable to display content.",
-      "OPEN_ARTICLE_SEARCH": "Insert article from Help Center",
-      "SUCCESS_ARTICLE_INSERTED": "Article inserted successfully",
-      "PREVIEW_LINK": "Preview article",
+      "INSERT_ARTICLE": "Infoga länk",
+      "IFRAME_ERROR": "URL saknas eller är ogiltig. Det gick inte att visa innehållet.",
+      "OPEN_ARTICLE_SEARCH": "Infoga artikel från hjälpcenter",
+      "SUCCESS_ARTICLE_INSERTED": "Artikeln har infogats",
+      "PREVIEW_LINK": "Förhandsvisa artikel",
       "CANCEL": "Stäng",
       "BACK": "Tillbaka",
-      "BACK_RESULTS": "Back to results"
+      "BACK_RESULTS": "Tillbaka till resultat"
     },
     "UPGRADE_PAGE": {
       "TITLE": "Hjälpcenter",
-      "DESCRIPTION": "Create user-friendly self-service portals. Help your users to access the articles and get support 24/7. Upgrade your subscription to enable this feature.",
-      "SELF_HOSTED_DESCRIPTION": "Create user-friendly self-service portals. Help your users to access the articles and get support 24/7. Please contact your administrator to enable this feature.",
+      "DESCRIPTION": "Skapa användarvänliga självserviceportaler. Hjälp dina användare att läsa artiklar och få support dygnet runt. Uppgradera ditt abonnemang för att aktivera funktionen.",
+      "SELF_HOSTED_DESCRIPTION": "Skapa användarvänliga självserviceportaler. Hjälp dina användare att läsa artiklar och få support dygnet runt. Kontakta din administratör för att aktivera funktionen.",
       "BUTTON": {
         "LEARN_MORE": "Läs mer",
-        "UPGRADE": "Upgrade"
+        "UPGRADE": "Uppgradera"
       },
       "FEATURES": {
         "PORTALS": {
-          "TITLE": "Multiple portals",
-          "DESCRIPTION": "Create multiple help center portals for different products using the same account."
+          "TITLE": "Flera portaler",
+          "DESCRIPTION": "Skapa flera hjälpcenterportaler för olika produkter från samma konto."
         },
         "LOCALES": {
-          "TITLE": "Full support for locales",
-          "DESCRIPTION": "Localize the portal in your language. We support all locales and allow translations for every article."
+          "TITLE": "Fullt stöd för språkversioner",
+          "DESCRIPTION": "Lokalisera portalen till ditt språk. Vi stödjer alla språkversioner och gör det möjligt att översätta varje artikel."
         },
         "SEO": {
-          "TITLE": "SEO-friendly design",
-          "DESCRIPTION": "Customize your meta tags to improve your visibility on search engines with our SEO-friendly pages."
+          "TITLE": "SEO-vänlig design",
+          "DESCRIPTION": "Anpassa dina metataggar för att förbättra synligheten i sökmotorer med våra SEO-vänliga sidor."
         },
         "API": {
-          "TITLE": "Full API support",
-          "DESCRIPTION": "Use the portal as a headless CMS with third party front-end frameworks using our APIs."
+          "TITLE": "Fullt API-stöd",
+          "DESCRIPTION": "Använd portalen som ett headless CMS med tredjepartsramverk via våra API:er."
         }
       }
     },
-    "LOADING": "Loading...",
+    "LOADING": "Laddar...",
     "ARTICLES_PAGE": {
       "ARTICLE_CARD": {
         "CARD": {
-          "VIEWS": "{count} view | {count} views",
+          "VIEWS": "{count} visning | {count} visningar",
           "DROPDOWN_MENU": {
-            "PUBLISH": "Publish",
-            "DRAFT": "Draft",
-            "ARCHIVE": "Archive",
+            "PUBLISH": "Publicera",
+            "DRAFT": "Utkast",
+            "ARCHIVE": "Arkivera",
             "DELETE": "Radera"
           },
           "STATUS": {
-            "DRAFT": "Draft",
-            "PUBLISHED": "Published",
-            "ARCHIVED": "Archived"
+            "DRAFT": "Utkast",
+            "PUBLISHED": "Publicerad",
+            "ARCHIVED": "Arkiverad"
           },
           "CATEGORY": {
-            "UNCATEGORISED": "Uncategorised"
+            "UNCATEGORISED": "Okategoriserad"
           }
         }
       },
       "ARTICLES_HEADER": {
         "TABS": {
-          "ALL": "All articles",
+          "ALL": "Alla artiklar",
           "MINE": "Mina",
-          "DRAFT": "Draft",
-          "PUBLISHED": "Published",
-          "ARCHIVED": "Archived"
+          "DRAFT": "Utkast",
+          "PUBLISHED": "Publicerade",
+          "ARCHIVED": "Arkiverade"
         },
         "CATEGORY": {
-          "ALL": "All categories"
+          "ALL": "Alla kategorier"
         },
         "LOCALE": {
-          "ALL": "All locales"
+          "ALL": "Alla språkversioner"
         },
-        "NEW_ARTICLE": "New article"
+        "NEW_ARTICLE": "Ny artikel"
       },
       "EMPTY_STATE": {
         "ALL": {
-          "TITLE": "Write an article",
-          "SUBTITLE": "Write a rich article, let’s get started!",
-          "BUTTON_LABEL": "New article"
+          "TITLE": "Skriv en artikel",
+          "SUBTITLE": "Skriv en innehållsrik artikel – kom igång här!",
+          "BUTTON_LABEL": "Ny artikel"
         },
         "MINE": {
-          "TITLE": "You haven't written any articles here",
-          "SUBTITLE": "All articles written by you show up here for quick access."
+          "TITLE": "Du har inte skrivit några artiklar här",
+          "SUBTITLE": "Alla artiklar skrivna av dig visas här för snabb åtkomst."
         },
         "DRAFT": {
-          "TITLE": "There are no articles in drafts",
-          "SUBTITLE": "Draft articles will appear here"
+          "TITLE": "Det finns inga artiklar i utkast",
+          "SUBTITLE": "Utkastartiklar visas här"
         },
         "PUBLISHED": {
-          "TITLE": "There are no published articles",
-          "SUBTITLE": "Published articles will appear here"
+          "TITLE": "Det finns inga publicerade artiklar",
+          "SUBTITLE": "Publicerade artiklar visas här"
         },
         "ARCHIVED": {
-          "TITLE": "There are no articles in the archive",
-          "SUBTITLE": "Archived articles don't show up on the portal, you can use it to mark deprecated or outdated pages"
+          "TITLE": "Det finns inga artiklar i arkivet",
+          "SUBTITLE": "Arkiverade artiklar visas inte i portalen. Du kan använda arkivet för att markera inaktuella eller äldre sidor."
         },
         "CATEGORY": {
-          "TITLE": "There are no articles in this category",
-          "SUBTITLE": "Articles in this category will appear here"
+          "TITLE": "Det finns inga artiklar i den här kategorin",
+          "SUBTITLE": "Artiklar i den här kategorin visas här"
         }
       }
     },
     "CATEGORY_PAGE": {
       "CATEGORY_HEADER": {
-        "NEW_CATEGORY": "New category",
-        "EDIT_CATEGORY": "Edit category",
-        "CATEGORIES_COUNT": "{n} category | {n} categories",
+        "NEW_CATEGORY": "Ny kategori",
+        "EDIT_CATEGORY": "Redigera kategori",
+        "CATEGORIES_COUNT": "{n} kategori | {n} kategorier",
         "BREADCRUMB": {
-          "CATEGORY_LOCALE": "Categories ({localeCode})",
-          "ACTIVE_CATEGORY": "{categoryName} ({categoryCount} articles) | {categoryName} ({categoryCount} article)"
+          "CATEGORY_LOCALE": "Kategorier ({localeCode})",
+          "ACTIVE_CATEGORY": "{categoryName} ({categoryCount} artiklar) | {categoryName} ({categoryCount} artikel)"
         }
       },
       "CATEGORY_EMPTY_STATE": {
-        "TITLE": "No categories found",
-        "SUBTITLE": "Categories will appear here. You can add a category by clicking the 'New Category' button."
+        "TITLE": "Inga kategorier hittades",
+        "SUBTITLE": "Kategorier visas här. Du kan lägga till en kategori genom att klicka på knappen ”Ny kategori”."
       },
       "CATEGORY_CARD": {
-        "ARTICLES_COUNT": "{count} article | {count} articles"
+        "ARTICLES_COUNT": "{count} artikel | {count} artiklar"
       },
       "CATEGORY_DIALOG": {
         "CREATE": {
           "API": {
-            "SUCCESS_MESSAGE": "Category created successfully",
-            "ERROR_MESSAGE": "Unable to create category"
+            "SUCCESS_MESSAGE": "Kategorin har skapats",
+            "ERROR_MESSAGE": "Det gick inte att skapa kategorin"
           }
         },
         "EDIT": {
           "API": {
-            "SUCCESS_MESSAGE": "Category updated successfully",
-            "ERROR_MESSAGE": "Unable to update category"
+            "SUCCESS_MESSAGE": "Kategorin har uppdaterats",
+            "ERROR_MESSAGE": "Det gick inte att uppdatera kategorin"
           }
         },
         "DELETE": {
           "API": {
-            "SUCCESS_MESSAGE": "Category deleted successfully",
-            "ERROR_MESSAGE": "Unable to delete category"
+            "SUCCESS_MESSAGE": "Kategorin har tagits bort",
+            "ERROR_MESSAGE": "Det gick inte att ta bort kategorin"
           }
         },
         "HEADER": {
-          "CREATE": "Create category",
-          "EDIT": "Edit category",
-          "DESCRIPTION": "Editing a category will update the category in the public facing portal.",
+          "CREATE": "Skapa kategori",
+          "EDIT": "Redigera kategori",
+          "DESCRIPTION": "När du redigerar en kategori uppdateras kategorin i den publika portalen.",
           "PORTAL": "Portal",
-          "LOCALE": "Locale"
+          "LOCALE": "Språkversion"
         },
         "FORM": {
           "NAME": {
             "LABEL": "Namn",
-            "PLACEHOLDER": "Category name",
-            "ERROR": "Name is required"
+            "PLACEHOLDER": "Kategorinamn",
+            "ERROR": "Namn krävs"
           },
           "SLUG": {
             "LABEL": "Slug",
-            "PLACEHOLDER": "Category slug for urls",
-            "ERROR": "Slug is required",
-            "HELP_TEXT": "app.chatwoot.com/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
+            "PLACEHOLDER": "Kategorins slug för URL:er",
+            "ERROR": "Slug krävs",
+            "HELP_TEXT": "app.getcustio.com/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
           },
           "DESCRIPTION": {
             "LABEL": "Beskrivning",
-            "PLACEHOLDER": "Give a short description about the category.",
-            "ERROR": "Description is required"
+            "PLACEHOLDER": "Ge kategorin en kort beskrivning.",
+            "ERROR": "Beskrivning krävs"
           }
         },
         "BUTTONS": {
@@ -650,248 +650,248 @@
       }
     },
     "LOCALES_PAGE": {
-      "LOCALES_COUNT": "No locales available | {n} locale | {n} locales",
-      "NEW_LOCALE_BUTTON_TEXT": "New locale",
+      "LOCALES_COUNT": "Inga språkversioner tillgängliga | {n} språkversion | {n} språkversioner",
+      "NEW_LOCALE_BUTTON_TEXT": "Ny språkversion",
       "LOCALE_CARD": {
-        "ARTICLES_COUNT": "{count} article | {count} articles",
-        "CATEGORIES_COUNT": "{count} category | {count} categories",
-        "DEFAULT": "Default",
-        "DRAFT": "Draft",
+        "ARTICLES_COUNT": "{count} artikel | {count} artiklar",
+        "CATEGORIES_COUNT": "{count} kategori | {count} kategorier",
+        "DEFAULT": "Standard",
+        "DRAFT": "Utkast",
         "DROPDOWN_MENU": {
-          "MAKE_DEFAULT": "Make default",
-          "MOVE_TO_DRAFT": "Move to draft",
-          "PUBLISH_LOCALE": "Publish locale",
+          "MAKE_DEFAULT": "Gör till standard",
+          "MOVE_TO_DRAFT": "Flytta till utkast",
+          "PUBLISH_LOCALE": "Publicera språkversion",
           "DELETE": "Radera"
         }
       },
       "ADD_LOCALE_DIALOG": {
-        "TITLE": "Add a new locale",
-        "DESCRIPTION": "Select the language in which this article will be written. This will be added to your list of translations, and you can add more later.",
+        "TITLE": "Lägg till ny språkversion",
+        "DESCRIPTION": "Välj språket som artikeln ska skrivas på. Det läggs till i listan över översättningar, och du kan lägga till fler senare.",
         "COMBOBOX": {
-          "PLACEHOLDER": "Select locale..."
+          "PLACEHOLDER": "Välj språkversion..."
         },
         "STATUS": {
           "LABEL": "Status",
           "OPTIONS": {
-            "LIVE": "Published",
-            "DRAFT": "Draft"
+            "LIVE": "Publicerad",
+            "DRAFT": "Utkast"
           }
         },
         "API": {
-          "SUCCESS_MESSAGE": "Locale added successfully",
-          "ERROR_MESSAGE": "Unable to add locale. Try again."
+          "SUCCESS_MESSAGE": "Språkversionen har lagts till",
+          "ERROR_MESSAGE": "Det gick inte att lägga till språkversionen. Försök igen."
         }
       }
     },
     "EDIT_ARTICLE_PAGE": {
       "HEADER": {
         "STATUS": {
-          "SAVING": "Saving...",
-          "SAVED": "Saved"
+          "SAVING": "Sparar...",
+          "SAVED": "Sparad"
         },
-        "PREVIEW": "Preview",
-        "PUBLISH": "Publish",
-        "DRAFT": "Draft",
-        "ARCHIVE": "Archive",
-        "BACK_TO_ARTICLES": "Back to articles"
+        "PREVIEW": "Förhandsvisa",
+        "PUBLISH": "Publicera",
+        "DRAFT": "Utkast",
+        "ARCHIVE": "Arkivera",
+        "BACK_TO_ARTICLES": "Tillbaka till artiklar"
       },
       "EDIT_ARTICLE": {
-        "MORE_PROPERTIES": "More properties",
-        "UNCATEGORIZED": "Okategoriserade",
-        "EDITOR_PLACEHOLDER": "Write something..."
+        "MORE_PROPERTIES": "Fler egenskaper",
+        "UNCATEGORIZED": "Okategoriserad",
+        "EDITOR_PLACEHOLDER": "Skriv något..."
       },
       "ARTICLE_PROPERTIES": {
-        "ARTICLE_PROPERTIES": "Article properties",
-        "META_DESCRIPTION": "Meta description",
-        "META_DESCRIPTION_PLACEHOLDER": "Add meta description",
-        "META_TITLE": "Meta title",
-        "META_TITLE_PLACEHOLDER": "Add meta title",
-        "META_TAGS": "Meta tags",
-        "META_TAGS_PLACEHOLDER": "Add meta tags"
+        "ARTICLE_PROPERTIES": "Artikelegenskaper",
+        "META_DESCRIPTION": "Metabeskrivning",
+        "META_DESCRIPTION_PLACEHOLDER": "Lägg till metabeskrivning",
+        "META_TITLE": "Metatitel",
+        "META_TITLE_PLACEHOLDER": "Lägg till metatitel",
+        "META_TAGS": "Metataggar",
+        "META_TAGS_PLACEHOLDER": "Lägg till metataggar"
       },
       "API": {
-        "ERROR": "Error while saving article"
+        "ERROR": "Ett fel uppstod när artikeln skulle sparas"
       }
     },
     "PORTAL_SWITCHER": {
-      "NEW_PORTAL": "New portal",
-      "PORTALS": "Portals",
-      "CREATE_PORTAL": "Create and manage multiple portals",
+      "NEW_PORTAL": "Ny portal",
+      "PORTALS": "Portaler",
+      "CREATE_PORTAL": "Skapa och hantera flera portaler",
       "ARTICLES": "artiklar",
-      "DOMAIN": "domain",
-      "PORTAL_NAME": "Portal name"
+      "DOMAIN": "domän",
+      "PORTAL_NAME": "Portalnamn"
     },
     "CREATE_PORTAL_DIALOG": {
-      "TITLE": "Create new portal",
-      "DESCRIPTION": "Give your portal a name and create a user-friendly URL slug. You can modify both later in the settings.",
+      "TITLE": "Skapa ny portal",
+      "DESCRIPTION": "Ge portalen ett namn och skapa en användarvänlig URL-slug. Du kan ändra båda senare i inställningarna.",
       "CONFIRM_BUTTON_LABEL": "Skapa",
       "NAME": {
         "LABEL": "Namn",
-        "PLACEHOLDER": "User Guide | Chatwoot",
-        "MESSAGE": "Choose an name for your portal.",
-        "ERROR": "Name is required"
+        "PLACEHOLDER": "Användarguide | Custio",
+        "MESSAGE": "Välj ett namn för din portal.",
+        "ERROR": "Namn krävs"
       },
       "SLUG": {
         "LABEL": "Slug",
-        "PLACEHOLDER": "user-guide",
-        "ERROR": "Slug is required",
-        "FORMAT_ERROR": "Please enter a valid slug, for eg: user-guide"
+        "PLACEHOLDER": "anvandarguide",
+        "ERROR": "Slug krävs",
+        "FORMAT_ERROR": "Ange en giltig slug, t.ex. anvandarguide"
       }
     },
     "PORTAL_SETTINGS": {
       "FORM": {
         "AVATAR": {
-          "LABEL": "Logo",
-          "IMAGE_UPLOAD_ERROR": "Couldn't upload image! Try again",
-          "IMAGE_UPLOAD_SUCCESS": "Image added successfully. Please click on save changes to save the logo",
-          "IMAGE_DELETE_SUCCESS": "Logo deleted successfully",
-          "IMAGE_DELETE_ERROR": "Unable to delete logo",
-          "IMAGE_UPLOAD_SIZE_ERROR": "Image size should be less than {size}MB"
+          "LABEL": "Logotyp",
+          "IMAGE_UPLOAD_ERROR": "Det gick inte att ladda upp bilden. Försök igen.",
+          "IMAGE_UPLOAD_SUCCESS": "Bilden har lagts till. Klicka på spara ändringar för att spara logotypen.",
+          "IMAGE_DELETE_SUCCESS": "Logotypen har tagits bort",
+          "IMAGE_DELETE_ERROR": "Det gick inte att ta bort logotypen",
+          "IMAGE_UPLOAD_SIZE_ERROR": "Bildstorleken måste vara mindre än {size} MB"
         },
         "NAME": {
           "LABEL": "Namn",
-          "PLACEHOLDER": "Portal name",
-          "ERROR": "Name is required"
+          "PLACEHOLDER": "Portalnamn",
+          "ERROR": "Namn krävs"
         },
         "HEADER_TEXT": {
-          "LABEL": "Header text",
-          "PLACEHOLDER": "Portal header text"
+          "LABEL": "Rubriktext",
+          "PLACEHOLDER": "Portalens rubriktext"
         },
         "PAGE_TITLE": {
-          "LABEL": "Page title",
-          "PLACEHOLDER": "Portal page title"
+          "LABEL": "Sidtitel",
+          "PLACEHOLDER": "Portalens sidtitel"
         },
         "HOME_PAGE_LINK": {
-          "LABEL": "Home page link",
-          "PLACEHOLDER": "Portal home page link",
-          "ERROR": "Enter a valid URL. The Home page link must start with 'http://' or 'https://'."
+          "LABEL": "Länk till startsida",
+          "PLACEHOLDER": "Portalens länk till startsida",
+          "ERROR": "Ange en giltig URL. Länken till startsidan måste börja med 'http://' eller 'https://'."
         },
         "SLUG": {
           "LABEL": "Slug",
-          "PLACEHOLDER": "Portal slug"
+          "PLACEHOLDER": "Portalens slug"
         },
         "LIVE_CHAT_WIDGET": {
-          "LABEL": "Live chat widget",
-          "PLACEHOLDER": "Select live chat widget",
-          "HELP_TEXT": "Select a live chat widget that will appear on your help center",
-          "NONE_OPTION": "No widget"
+          "LABEL": "Livechatt-widget",
+          "PLACEHOLDER": "Välj livechatt-widget",
+          "HELP_TEXT": "Välj en livechatt-widget som ska visas i ditt hjälpcenter",
+          "NONE_OPTION": "Ingen widget"
         },
         "BRAND_COLOR": {
-          "LABEL": "Brand color"
+          "LABEL": "Varumärkesfärg"
         },
-        "SAVE_CHANGES": "Save changes"
+        "SAVE_CHANGES": "Spara ändringar"
       },
       "CONFIGURATION_FORM": {
         "CUSTOM_DOMAIN": {
-          "HEADER": "Custom domain",
-          "LABEL": "Custom domain:",
-          "DESCRIPTION": "You can host your portal on a custom domain. For instance, if your website is yourdomain.com and you want your portal available at docs.yourdomain.com, simply enter that in this field.",
-          "STATUS_DESCRIPTION": "Your custom portal will start working as soon as it is verified.",
-          "PLACEHOLDER": "Portal custom domain",
+          "HEADER": "Anpassad domän",
+          "LABEL": "Anpassad domän:",
+          "DESCRIPTION": "Du kan publicera portalen på en egen domän. Om din webbplats till exempel är yourdomain.com och du vill att portalen ska finnas på docs.yourdomain.com anger du det i detta fält.",
+          "STATUS_DESCRIPTION": "Din anpassade portal börjar fungera så snart den är verifierad.",
+          "PLACEHOLDER": "Portalens anpassade domän",
           "EDIT_BUTTON": "Redigera",
-          "ADD_BUTTON": "Add custom domain",
+          "ADD_BUTTON": "Lägg till anpassad domän",
           "STATUS": {
             "LIVE": "Live",
-            "PENDING": "Awaiting verification",
-            "ERROR": "Verification failed"
+            "PENDING": "Väntar på verifiering",
+            "ERROR": "Verifieringen misslyckades"
           },
           "DIALOG": {
-            "ADD_HEADER": "Add custom domain",
-            "EDIT_HEADER": "Edit custom domain",
-            "ADD_CONFIRM_BUTTON_LABEL": "Add domain",
-            "EDIT_CONFIRM_BUTTON_LABEL": "Update domain",
-            "LABEL": "Custom domain",
-            "PLACEHOLDER": "Portal custom domain",
-            "ERROR": "Custom domain is required",
-            "FORMAT_ERROR": "Please enter a valid domain URL e.g. docs.yourdomain.com"
+            "ADD_HEADER": "Lägg till anpassad domän",
+            "EDIT_HEADER": "Redigera anpassad domän",
+            "ADD_CONFIRM_BUTTON_LABEL": "Lägg till domän",
+            "EDIT_CONFIRM_BUTTON_LABEL": "Uppdatera domän",
+            "LABEL": "Anpassad domän",
+            "PLACEHOLDER": "Portalens anpassade domän",
+            "ERROR": "Anpassad domän krävs",
+            "FORMAT_ERROR": "Ange en giltig domän-URL, t.ex. docs.yourdomain.com"
           },
           "DNS_CONFIGURATION_DIALOG": {
-            "HEADER": "DNS configuration",
-            "DESCRIPTION": "Log in to the account you have with your DNS provider, and add a CNAME record for subdomain pointing to chatwoot.help",
-            "COPY": "Successfully copied CNAME",
+            "HEADER": "DNS-konfiguration",
+            "DESCRIPTION": "Logga in hos din DNS-leverantör och lägg till en CNAME-post för subdomänen som pekar mot getcustio.help",
+            "COPY": "CNAME har kopierats",
             "SEND_INSTRUCTIONS": {
-              "HEADER": "Send instructions",
-              "DESCRIPTION": "If you would prefer to have someone from your development team to handle this step, you can enter email address below, and we will send them the required instructions.",
-              "PLACEHOLDER": "Enter their email",
-              "ERROR": "Enter a valid email address",
+              "HEADER": "Skicka instruktioner",
+              "DESCRIPTION": "Om du hellre vill att någon i utvecklingsteamet hanterar detta steg kan du ange deras e-postadress nedan, så skickar vi instruktionerna.",
+              "PLACEHOLDER": "Ange deras e-postadress",
+              "ERROR": "Ange en giltig e-postadress",
               "SEND_BUTTON": "Skicka"
             }
           }
         },
         "DELETE_PORTAL": {
-          "BUTTON": "Delete {portalName}",
-          "HEADER": "Delete portal",
-          "DESCRIPTION": "Permanently delete this portal. This action is irreversible",
+          "BUTTON": "Ta bort {portalName}",
+          "HEADER": "Ta bort portal",
+          "DESCRIPTION": "Ta bort den här portalen permanent. Åtgärden kan inte ångras",
           "DIALOG": {
-            "HEADER": "Sure you want to delete {portalName}?",
-            "DESCRIPTION": "This is a permanent action that cannot be reversed.",
+            "HEADER": "Är du säker på att du vill ta bort {portalName}?",
+            "DESCRIPTION": "Det här är en permanent åtgärd som inte kan ångras.",
             "CONFIRM_BUTTON_LABEL": "Radera"
           }
         },
-        "EDIT_CONFIGURATION": "Edit configuration"
+        "EDIT_CONFIGURATION": "Redigera konfiguration"
       },
       "API": {
         "CREATE_PORTAL": {
-          "SUCCESS_MESSAGE": "Portal created successfully",
-          "ERROR_MESSAGE": "Unable to create portal"
+          "SUCCESS_MESSAGE": "Portalen har skapats",
+          "ERROR_MESSAGE": "Det gick inte att skapa portalen"
         },
         "UPDATE_PORTAL": {
-          "SUCCESS_MESSAGE": "Portal updated successfully",
-          "ERROR_MESSAGE": "Unable to update portal"
+          "SUCCESS_MESSAGE": "Portalen har uppdaterats",
+          "ERROR_MESSAGE": "Det gick inte att uppdatera portalen"
         }
       }
     },
     "PDF_UPLOAD": {
-      "TITLE": "Upload PDF Document",
-      "DESCRIPTION": "Upload a PDF document to automatically generate FAQs using AI",
-      "DRAG_DROP_TEXT": "Drag and drop your PDF file here, or click to select",
-      "SELECT_FILE": "Select PDF File",
-      "ADDITIONAL_CONTEXT_LABEL": "Additional Context (Optional)",
-      "ADDITIONAL_CONTEXT_PLACEHOLDER": "Provide any additional context or instructions for FAQ generation...",
+      "TITLE": "Ladda upp PDF-dokument",
+      "DESCRIPTION": "Ladda upp ett PDF-dokument för att automatiskt generera frågor och svar med AI",
+      "DRAG_DROP_TEXT": "Dra och släpp din PDF-fil här, eller klicka för att välja",
+      "SELECT_FILE": "Välj PDF-fil",
+      "ADDITIONAL_CONTEXT_LABEL": "Ytterligare kontext (valfritt)",
+      "ADDITIONAL_CONTEXT_PLACEHOLDER": "Ange eventuell extra kontext eller instruktioner för generering av frågor och svar...",
       "UPLOADING": "Laddar upp...",
-      "UPLOAD": "Upload & Process",
+      "UPLOAD": "Ladda upp och bearbeta",
       "CANCEL": "Avbryt",
-      "ERROR_INVALID_TYPE": "Please select a valid PDF file",
-      "ERROR_FILE_TOO_LARGE": "File size must be less than 512MB",
-      "ERROR_UPLOAD_FAILED": "Failed to upload PDF. Please try again."
+      "ERROR_INVALID_TYPE": "Välj en giltig PDF-fil",
+      "ERROR_FILE_TOO_LARGE": "Filstorleken måste vara mindre än 512 MB",
+      "ERROR_UPLOAD_FAILED": "Det gick inte att ladda upp PDF-filen. Försök igen."
     },
     "PDF_DOCUMENTS": {
-      "TITLE": "PDF Documents",
-      "DESCRIPTION": "Manage uploaded PDF documents and generate FAQs from them",
-      "UPLOAD_PDF": "Upload PDF",
-      "UPLOAD_FIRST_PDF": "Upload your first PDF",
-      "UPLOADED_BY": "Uploaded by",
-      "GENERATE_FAQS": "Generate FAQs",
-      "GENERATING": "Generating...",
-      "CONFIRM_DELETE": "Are you sure you want to delete {filename}?",
+      "TITLE": "PDF-dokument",
+      "DESCRIPTION": "Hantera uppladdade PDF-dokument och generera frågor och svar från dem",
+      "UPLOAD_PDF": "Ladda upp PDF",
+      "UPLOAD_FIRST_PDF": "Ladda upp din första PDF",
+      "UPLOADED_BY": "Uppladdad av",
+      "GENERATE_FAQS": "Generera frågor och svar",
+      "GENERATING": "Genererar...",
+      "CONFIRM_DELETE": "Är du säker på att du vill ta bort {filename}?",
       "EMPTY_STATE": {
-        "TITLE": "No PDF documents yet",
-        "DESCRIPTION": "Upload PDF documents to automatically generate FAQs using AI"
+        "TITLE": "Inga PDF-dokument ännu",
+        "DESCRIPTION": "Ladda upp PDF-dokument för att automatiskt generera frågor och svar med AI"
       },
       "STATUS": {
-        "UPLOADED": "Ready",
-        "PROCESSING": "Processing",
-        "PROCESSED": "Completed",
-        "FAILED": "Failed"
+        "UPLOADED": "Redo",
+        "PROCESSING": "Bearbetas",
+        "PROCESSED": "Klar",
+        "FAILED": "Misslyckades"
       }
     },
     "CONTENT_GENERATION": {
-      "TITLE": "Content Generation",
-      "DESCRIPTION": "Upload PDF documents to automatically generate FAQ content using AI",
-      "UPLOAD_TITLE": "Upload PDF Document",
-      "DRAG_DROP": "Drag and drop your PDF file here, or click to select",
-      "SELECT_FILE": "Select PDF File",
-      "UPLOADING": "Processing document...",
-      "UPLOAD_SUCCESS": "Document processed successfully!",
-      "UPLOAD_ERROR": "Failed to upload document. Please try again.",
-      "INVALID_FILE_TYPE": "Please select a valid PDF file",
-      "FILE_TOO_LARGE": "File size must be less than 512MB",
-      "GENERATED_CONTENT": "Generated FAQ Content",
-      "PUBLISH_SELECTED": "Publish Selected",
-      "PUBLISHING": "Publishing...",
-      "FROM_DOCUMENT": "From document",
-      "NO_CONTENT": "No generated content available. Upload a PDF document to get started.",
-      "LOADING": "Loading generated content..."
+      "TITLE": "Innehållsgenerering",
+      "DESCRIPTION": "Ladda upp PDF-dokument för att automatiskt generera FAQ-innehåll med AI",
+      "UPLOAD_TITLE": "Ladda upp PDF-dokument",
+      "DRAG_DROP": "Dra och släpp din PDF-fil här, eller klicka för att välja",
+      "SELECT_FILE": "Välj PDF-fil",
+      "UPLOADING": "Bearbetar dokument...",
+      "UPLOAD_SUCCESS": "Dokumentet har bearbetats!",
+      "UPLOAD_ERROR": "Det gick inte att ladda upp dokumentet. Försök igen.",
+      "INVALID_FILE_TYPE": "Välj en giltig PDF-fil",
+      "FILE_TOO_LARGE": "Filstorleken måste vara mindre än 512 MB",
+      "GENERATED_CONTENT": "Genererat FAQ-innehåll",
+      "PUBLISH_SELECTED": "Publicera valda",
+      "PUBLISHING": "Publicerar...",
+      "FROM_DOCUMENT": "Från dokument",
+      "NO_CONTENT": "Inget genererat innehåll tillgängligt. Ladda upp ett PDF-dokument för att komma igång.",
+      "LOADING": "Laddar genererat innehåll..."
     }
   }
 }

@@ -1,30 +1,30 @@
 {
   "INBOX_MGMT": {
     "HEADER": "Inkorgar",
-    "DESCRIPTION": "A channel is the mode of communication your customer chooses to interact with you. An inbox is where you manage interactions for a specific channel. It can include communications from various sources such as email, live chat, and social media.",
-    "LEARN_MORE": "Learn more about inboxes",
-    "COUNT": "{n} inbox | {n} inboxes",
-    "SEARCH_PLACEHOLDER": "Search inboxes...",
-    "NO_RESULTS": "No inboxes found matching your search",
-    "RECONNECTION_REQUIRED": "Your inbox is disconnected. You won't receive new messages until you reauthorize it.",
-    "CLICK_TO_RECONNECT": "Click here to reconnect.",
-    "WHATSAPP_REGISTRATION_INCOMPLETE": "Your WhatsApp Business registration isn’t complete. Please check your display name status in Meta Business Manager before reconnecting.",
-    "COMPLETE_REGISTRATION": "Complete Registration",
+    "DESCRIPTION": "En kanal är det sätt kunden väljer för att kontakta dig. En inkorg är där du hanterar kommunikationen för en specifik kanal. Den kan innehålla meddelanden från olika källor, till exempel e-post, livechatt och sociala medier.",
+    "LEARN_MORE": "Läs mer om inkorgar",
+    "COUNT": "{n} inkorg | {n} inkorgar",
+    "SEARCH_PLACEHOLDER": "Sök inkorgar...",
+    "NO_RESULTS": "Inga inkorgar matchade din sökning",
+    "RECONNECTION_REQUIRED": "Din inkorg är frånkopplad. Du får inga nya meddelanden förrän du auktoriserar den igen.",
+    "CLICK_TO_RECONNECT": "Klicka här för att ansluta igen.",
+    "WHATSAPP_REGISTRATION_INCOMPLETE": "Din WhatsApp Business-registrering är inte slutförd. Kontrollera statusen för ditt visningsnamn i Meta Business Manager innan du ansluter igen.",
+    "COMPLETE_REGISTRATION": "Slutför registrering",
     "LIST": {
-      "404": "Det finns inga inkorgar kopplade till detta konto."
+      "404": "Det finns inga inkorgar kopplade till det här kontot."
     },
     "CREATE_FLOW": {
       "CHANNEL": {
         "TITLE": "Välj kanal",
-        "BODY": "Välj den leverantör du vill integrera med Chatwoot."
+        "BODY": "Välj den leverantör du vill integrera med Custio."
       },
       "INBOX": {
         "TITLE": "Skapa inkorg",
         "BODY": "Autentisera ditt konto och skapa en inkorg."
       },
       "AGENT": {
-        "TITLE": "Lägg till agenter",
-        "BODY": "Lägg till agenter till den skapade inkorgen."
+        "TITLE": "Lägg till medarbetare",
+        "BODY": "Lägg till medarbetare i den skapade inkorgen."
       },
       "FINISH": {
         "TITLE": "Voilà!",
@@ -34,77 +34,77 @@
     "ADD": {
       "CHANNEL_NAME": {
         "LABEL": "Inkorgsnamn",
-        "PLACEHOLDER": "Ange ditt inkorgsnamn (t. ex. Acme Inc)",
-        "ERROR": "Please enter a valid inbox name"
+        "PLACEHOLDER": "Ange ett namn på inkorgen, t.ex. Acme Inc",
+        "ERROR": "Ange ett giltigt inkorgsnamn"
       },
       "WEBSITE_NAME": {
-        "LABEL": "Website Name",
-        "PLACEHOLDER": "Ange namnet på din webbplats (t.ex. Acme Inc)"
+        "LABEL": "Webbplatsnamn",
+        "PLACEHOLDER": "Ange namnet på din webbplats, t.ex. Acme Inc"
       },
       "FB": {
-        "HELP": "PS: Genom att logga in får vi bara tillgång till din sidas meddelanden. Dina privata meddelanden kan aldrig nås av Chatwoot.",
+        "HELP": "PS: Genom att logga in får vi bara tillgång till meddelanden från din sida. Dina privata meddelanden kan aldrig nås av Custio.",
         "CHOOSE_PAGE": "Välj sida",
         "CHOOSE_PLACEHOLDER": "Välj en sida från listan",
         "INBOX_NAME": "Inkorgsnamn",
         "ADD_NAME": "Lägg till ett namn för din inkorg",
-        "PICK_NAME": "Pick a Name for your Inbox",
+        "PICK_NAME": "Välj ett namn för din inkorg",
         "PICK_A_VALUE": "Välj ett värde",
         "CREATE_INBOX": "Skapa inkorg"
       },
       "INSTAGRAM": {
-        "CONTINUE_WITH_INSTAGRAM": "Continue with Instagram",
-        "CONNECT_YOUR_INSTAGRAM_PROFILE": "Connect your Instagram Profile",
-        "HELP": "To add your Instagram profile as a channel, you need to authenticate your Instagram Profile by clicking on 'Continue with Instagram' ",
-        "ERROR_MESSAGE": "There was an error connecting to Instagram, please try again",
-        "ERROR_AUTH": "There was an error connecting to Instagram, please try again",
-        "NEW_INBOX_SUGGESTION": "This Instagram account was previously linked to a different inbox and has now been migrated here. All new messages will appear here. The old inbox will no longer be able to send or receive messages for this account.",
-        "DUPLICATE_INBOX_BANNER": "This Instagram account was migrated to the new Instagram channel inbox. You won’t be able to send/receive Instagram messages from this inbox anymore."
+        "CONTINUE_WITH_INSTAGRAM": "Fortsätt med Instagram",
+        "CONNECT_YOUR_INSTAGRAM_PROFILE": "Anslut din Instagram-profil",
+        "HELP": "För att lägga till din Instagram-profil som kanal behöver du autentisera profilen genom att klicka på ”Fortsätt med Instagram”.",
+        "ERROR_MESSAGE": "Ett fel uppstod vid anslutningen till Instagram. Försök igen.",
+        "ERROR_AUTH": "Ett fel uppstod vid anslutningen till Instagram. Försök igen.",
+        "NEW_INBOX_SUGGESTION": "Det här Instagram-kontot var tidigare kopplat till en annan inkorg och har nu flyttats hit. Alla nya meddelanden visas här. Den gamla inkorgen kan inte längre skicka eller ta emot meddelanden för det här kontot.",
+        "DUPLICATE_INBOX_BANNER": "Det här Instagram-kontot har flyttats till den nya Instagram-inkorgen. Du kan inte längre skicka eller ta emot Instagram-meddelanden från den här inkorgen."
       },
       "TIKTOK": {
-        "CONTINUE_WITH_TIKTOK": "Continue with TikTok",
-        "CONNECT_YOUR_TIKTOK_PROFILE": "Connect your TikTok Profile",
-        "HELP": "To add your TikTok profile as a channel, you need to authenticate your TikTok Profile by clicking on 'Continue with TikTok' ",
-        "ERROR_MESSAGE": "There was an error connecting to TikTok, please try again",
-        "ERROR_AUTH": "There was an error connecting to TikTok, please try again"
+        "CONTINUE_WITH_TIKTOK": "Fortsätt med TikTok",
+        "CONNECT_YOUR_TIKTOK_PROFILE": "Anslut din TikTok-profil",
+        "HELP": "För att lägga till din TikTok-profil som kanal behöver du autentisera profilen genom att klicka på ”Fortsätt med TikTok”.",
+        "ERROR_MESSAGE": "Ett fel uppstod vid anslutningen till TikTok. Försök igen.",
+        "ERROR_AUTH": "Ett fel uppstod vid anslutningen till TikTok. Försök igen."
       },
       "TWITTER": {
-        "HELP": "För att lägga till din Twitter-profil som en kanal måste du autentisera din Twitter-profil genom att klicka på \"Logga in med Twitter\" ",
-        "ERROR_MESSAGE": "There was an error connecting to Twitter, please try again",
+        "HELP": "För att lägga till din Twitter-profil som kanal behöver du autentisera profilen genom att klicka på ”Logga in med Twitter”.",
+        "ERROR_MESSAGE": "Ett fel uppstod vid anslutningen till Twitter. Försök igen.",
         "TWEETS": {
-          "ENABLE": "Create conversations from mentioned Tweets"
+          "ENABLE": "Skapa konversationer från tweets där ni nämns"
         }
       },
       "WEBSITE_CHANNEL": {
         "TITLE": "Webbplatskanal",
-        "DESC": "Skapa en kanal för din webbplats och börja stödja dina kunder via vår hemsida widget.",
-        "LOADING_MESSAGE": "Skapar supportkanal för webbplats",
+        "DESC": "Skapa en kanal för din webbplats och börja hjälpa dina kunder via vår webbplatswidget.",
+        "LOADING_MESSAGE": "Skapar webbplatskanal",
         "CHANNEL_AVATAR": {
           "LABEL": "Kanalavatar"
         },
         "CHANNEL_WEBHOOK_URL": {
-          "LABEL": "Webhook URL",
-          "PLACEHOLDER": "Please enter your Webhook URL",
+          "LABEL": "Webhook-URL",
+          "PLACEHOLDER": "Ange din webhook-URL",
           "ERROR": "Ange en giltig URL"
         },
         "CHANNEL_DOMAIN": {
           "LABEL": "Webbplatsens domän",
-          "PLACEHOLDER": "Ange din webbplatsdomän (t.ex. acme.com)"
+          "PLACEHOLDER": "Ange din webbplatsdomän, t.ex. acme.com"
         },
         "CHANNEL_WELCOME_TITLE": {
           "LABEL": "Välkomstrubrik",
           "PLACEHOLDER": "Hej där!"
         },
         "CHANNEL_WELCOME_TAGLINE": {
-          "LABEL": "Välkomsttagline",
-          "PLACEHOLDER": "Vi gör det enkelt att ta kontakt med oss. Fråga oss något, eller dela din feedback."
+          "LABEL": "Välkomsttext",
+          "PLACEHOLDER": "Vi gör det enkelt att komma i kontakt med oss. Ställ en fråga eller dela din feedback."
         },
         "CHANNEL_GREETING_MESSAGE": {
-          "LABEL": "Kanalhälsningsmeddelande",
+          "LABEL": "Hälsningsmeddelande",
           "PLACEHOLDER": "Acme Inc svarar vanligtvis inom några timmar."
         },
         "CHANNEL_GREETING_TOGGLE": {
-          "LABEL": "Aktivera kanalhälsning",
-          "HELP_TEXT": "Automatically send a greeting message when a new conversation is created.",
+          "LABEL": "Aktivera hälsningsmeddelande",
+          "HELP_TEXT": "Skicka automatiskt ett hälsningsmeddelande när en ny konversation skapas.",
           "ENABLED": "Aktiverad",
           "DISABLED": "Inaktiverad"
         },
@@ -113,45 +113,45 @@
           "IN_A_FEW_MINUTES": "Inom några minuter",
           "IN_A_FEW_HOURS": "Inom några timmar",
           "IN_A_DAY": "Inom en dag",
-          "HELP_TEXT": "Den här svarstiden kommer att visas på livechattswidgeten"
+          "HELP_TEXT": "Den här svarstiden visas i livechatt-widgeten"
         },
         "WIDGET_COLOR": {
           "LABEL": "Widgetfärg",
-          "PLACEHOLDER": "Uppdatera den widgetfärg som används i widget"
+          "PLACEHOLDER": "Uppdatera färgen som används i widgeten"
         },
         "SUBMIT_BUTTON": "Skapa inkorg",
         "API": {
-          "ERROR_MESSAGE": "We were not able to create a website channel, please try again"
+          "ERROR_MESSAGE": "Det gick inte att skapa webbplatskanalen. Försök igen."
         }
       },
       "TWILIO": {
-        "TITLE": "Twilio SMS/WhatsApp Channel",
-        "DESC": "Integrate Twilio and start supporting your customers via SMS or WhatsApp.",
+        "TITLE": "Twilio SMS-/WhatsApp-kanal",
+        "DESC": "Integrera Twilio och börja hjälpa dina kunder via SMS eller WhatsApp.",
         "ACCOUNT_SID": {
           "LABEL": "Kontots SID",
           "PLACEHOLDER": "Ange SID för ditt Twilio-konto",
           "ERROR": "Detta fält är obligatoriskt"
         },
         "API_KEY": {
-          "USE_API_KEY": "Use API Key Authentication",
+          "USE_API_KEY": "Använd autentisering med API-nyckel",
           "LABEL": "API Key SID",
-          "PLACEHOLDER": "Please enter your API Key SID",
+          "PLACEHOLDER": "Ange ditt API Key SID",
           "ERROR": "Detta fält är obligatoriskt"
         },
         "API_KEY_SECRET": {
           "LABEL": "API Key Secret",
-          "PLACEHOLDER": "Please enter your API Key Secret",
+          "PLACEHOLDER": "Ange din API Key Secret",
           "ERROR": "Detta fält är obligatoriskt"
         },
         "MESSAGING_SERVICE_SID": {
           "LABEL": "Messaging Service SID",
-          "PLACEHOLDER": "Please enter your Twilio Messaging Service SID",
+          "PLACEHOLDER": "Ange ditt Twilio Messaging Service SID",
           "ERROR": "Detta fält är obligatoriskt",
-          "USE_MESSAGING_SERVICE": "Use a Twilio Messaging Service"
+          "USE_MESSAGING_SERVICE": "Använd en Twilio Messaging Service"
         },
         "CHANNEL_TYPE": {
           "LABEL": "Kanaltyp",
-          "ERROR": "Var god välj din kanaltyp"
+          "ERROR": "Välj kanaltyp"
         },
         "AUTH_TOKEN": {
           "LABEL": "Auth-token",
@@ -160,223 +160,223 @@
         },
         "CHANNEL_NAME": {
           "LABEL": "Inkorgsnamn",
-          "PLACEHOLDER": "Please enter a inbox name",
+          "PLACEHOLDER": "Ange ett inkorgsnamn",
           "ERROR": "Detta fält är obligatoriskt"
         },
         "PHONE_NUMBER": {
           "LABEL": "Telefonnummer",
-          "PLACEHOLDER": "Ange telefonnummer från vilket meddelande som ska skickas.",
-          "ERROR": "Please provide a valid phone number that starts with a `+` sign and does not contain any spaces."
+          "PLACEHOLDER": "Ange telefonnumret som meddelanden ska skickas från.",
+          "ERROR": "Ange ett giltigt telefonnummer som börjar med `+` och inte innehåller mellanslag."
         },
         "API_CALLBACK": {
           "TITLE": "Callback-URL",
-          "SUBTITLE": "Du måste konfigurera meddelande-callback-URL i Twilio med den URL som nämns här."
+          "SUBTITLE": "Du behöver konfigurera callback-URL:en för meddelanden i Twilio med URL:en som visas här."
         },
-        "SUBMIT_BUTTON": "Skapa Twiliokanal",
+        "SUBMIT_BUTTON": "Skapa Twilio-kanal",
         "API": {
-          "ERROR_MESSAGE": "Vi kunde inte autentisera Twilio-uppgifterna, försök igen"
+          "ERROR_MESSAGE": "Det gick inte att autentisera Twilio-uppgifterna. Försök igen."
         }
       },
       "SMS": {
-        "TITLE": "SMS Channel",
-        "DESC": "Start supporting your customers via SMS.",
+        "TITLE": "SMS-kanal",
+        "DESC": "Börja hjälpa dina kunder via SMS.",
         "PROVIDERS": {
-          "LABEL": "API Provider",
+          "LABEL": "API-leverantör",
           "TWILIO": "Twilio",
           "BANDWIDTH": "Bandwidth"
         },
         "API": {
-          "ERROR_MESSAGE": "We were not able to save the SMS channel"
+          "ERROR_MESSAGE": "Det gick inte att spara SMS-kanalen"
         },
         "BANDWIDTH": {
           "ACCOUNT_ID": {
             "LABEL": "Account ID",
-            "PLACEHOLDER": "Please enter your Bandwidth Account ID",
+            "PLACEHOLDER": "Ange ditt Bandwidth Account ID",
             "ERROR": "Detta fält är obligatoriskt"
           },
           "API_KEY": {
             "LABEL": "API Key",
-            "PLACEHOLDER": "Please enter your Bandwidth API Key",
+            "PLACEHOLDER": "Ange din Bandwidth API Key",
             "ERROR": "Detta fält är obligatoriskt"
           },
           "API_SECRET": {
             "LABEL": "API Secret",
-            "PLACEHOLDER": "Please enter your Bandwidth API Secret",
+            "PLACEHOLDER": "Ange din Bandwidth API Secret",
             "ERROR": "Detta fält är obligatoriskt"
           },
           "APPLICATION_ID": {
             "LABEL": "Application ID",
-            "PLACEHOLDER": "Please enter your Bandwidth Application ID",
+            "PLACEHOLDER": "Ange ditt Bandwidth Application ID",
             "ERROR": "Detta fält är obligatoriskt"
           },
           "INBOX_NAME": {
             "LABEL": "Inkorgsnamn",
-            "PLACEHOLDER": "Please enter a inbox name",
+            "PLACEHOLDER": "Ange ett inkorgsnamn",
             "ERROR": "Detta fält är obligatoriskt"
           },
           "PHONE_NUMBER": {
             "LABEL": "Telefonnummer",
-            "PLACEHOLDER": "Ange telefonnummer från vilket meddelande som ska skickas.",
-            "ERROR": "Please provide a valid phone number that starts with a `+` sign and does not contain any spaces."
+            "PLACEHOLDER": "Ange telefonnumret som meddelanden ska skickas från.",
+            "ERROR": "Ange ett giltigt telefonnummer som börjar med `+` och inte innehåller mellanslag."
           },
-          "SUBMIT_BUTTON": "Create Bandwidth Channel",
+          "SUBMIT_BUTTON": "Skapa Bandwidth-kanal",
           "API": {
-            "ERROR_MESSAGE": "We were not able to authenticate Bandwidth credentials, please try again"
+            "ERROR_MESSAGE": "Det gick inte att autentisera Bandwidth-uppgifterna. Försök igen."
           },
           "API_CALLBACK": {
             "TITLE": "Callback-URL",
-            "SUBTITLE": "You have to configure the message callback URL in Bandwidth with the URL mentioned here."
+            "SUBTITLE": "Du behöver konfigurera callback-URL:en för meddelanden i Bandwidth med URL:en som visas här."
           }
         }
       },
       "WHATSAPP": {
-        "TITLE": "WhatsApp Channel",
-        "DESC": "Start supporting your customers via WhatsApp.",
+        "TITLE": "WhatsApp-kanal",
+        "DESC": "Börja hjälpa dina kunder via WhatsApp.",
         "PROVIDERS": {
-          "LABEL": "API Provider",
+          "LABEL": "API-leverantör",
           "WHATSAPP_EMBEDDED": "WhatsApp Business",
           "TWILIO": "Twilio",
           "WHATSAPP_CLOUD": "WhatsApp Cloud",
-          "WHATSAPP_CLOUD_DESC": "Quick setup through Meta",
-          "TWILIO_DESC": "Connect via Twilio credentials",
+          "WHATSAPP_CLOUD_DESC": "Snabb konfiguration via Meta",
+          "TWILIO_DESC": "Anslut med Twilio-uppgifter",
           "360_DIALOG": "360dialog"
         },
         "SELECT_PROVIDER": {
-          "TITLE": "Select your API provider",
-          "DESCRIPTION": "Choose your WhatsApp provider. You can connect directly through Meta which requires no setup, or connect through Twilio using your account credentials."
+          "TITLE": "Välj API-leverantör",
+          "DESCRIPTION": "Välj WhatsApp-leverantör. Du kan ansluta direkt via Meta utan manuell konfiguration eller ansluta via Twilio med dina kontouppgifter."
         },
         "INBOX_NAME": {
           "LABEL": "Inkorgsnamn",
-          "PLACEHOLDER": "Please enter an inbox name",
+          "PLACEHOLDER": "Ange ett inkorgsnamn",
           "ERROR": "Detta fält är obligatoriskt"
         },
         "PHONE_NUMBER": {
           "LABEL": "Telefonnummer",
-          "PLACEHOLDER": "Ange telefonnummer från vilket meddelande som ska skickas.",
-          "ERROR": "Please provide a valid phone number that starts with a `+` sign and does not contain any spaces."
+          "PLACEHOLDER": "Ange telefonnumret som meddelanden ska skickas från.",
+          "ERROR": "Ange ett giltigt telefonnummer som börjar med `+` och inte innehåller mellanslag."
         },
         "PHONE_NUMBER_ID": {
           "LABEL": "Phone number ID",
-          "PLACEHOLDER": "Please enter the Phone number ID obtained from Facebook developer dashboard.",
+          "PLACEHOLDER": "Ange Phone number ID från Facebook Developer Dashboard.",
           "ERROR": "Ange ett giltigt värde."
         },
         "BUSINESS_ACCOUNT_ID": {
           "LABEL": "Business Account ID",
-          "PLACEHOLDER": "Please enter the Business Account ID obtained from Facebook developer dashboard.",
+          "PLACEHOLDER": "Ange Business Account ID från Facebook Developer Dashboard.",
           "ERROR": "Ange ett giltigt värde."
         },
         "WEBHOOK_VERIFY_TOKEN": {
           "LABEL": "Webhook Verify Token",
-          "PLACEHOLDER": "Enter a verify token which you want to configure for Facebook webhooks.",
+          "PLACEHOLDER": "Ange en verifieringstoken som du vill konfigurera för Facebook-webhooks.",
           "ERROR": "Ange ett giltigt värde."
         },
         "API_KEY": {
-          "LABEL": "API key",
-          "SUBTITLE": "Configure the WhatsApp API key.",
-          "PLACEHOLDER": "API key",
+          "LABEL": "API-nyckel",
+          "SUBTITLE": "Konfigurera WhatsApp API-nyckeln.",
+          "PLACEHOLDER": "API-nyckel",
           "ERROR": "Ange ett giltigt värde."
         },
         "API_CALLBACK": {
           "TITLE": "Callback-URL",
-          "SUBTITLE": "You have to configure the webhook URL and the verification token in the Facebook Developer portal with the values shown below.",
-          "WEBHOOK_URL": "Webhook URL",
-          "WEBHOOK_VERIFICATION_TOKEN": "Webhook Verification Token"
+          "SUBTITLE": "Du behöver konfigurera webhook-URL:en och verifieringstoken i Facebook Developer-portalen med värdena som visas nedan.",
+          "WEBHOOK_URL": "Webhook-URL",
+          "WEBHOOK_VERIFICATION_TOKEN": "Webhook-verifieringstoken"
         },
         "SUBMIT_BUTTON": "Skapa WhatsApp-kanal",
         "EMBEDDED_SIGNUP": {
-          "TITLE": "Quick setup with Meta",
-          "DESC": "Use the WhatsApp Embedded Signup flow to quickly connect new numbers. You will be redirected to Meta to log into your WhatsApp Business account. Having admin access will help make the setup smooth and easy.",
+          "TITLE": "Snabb konfiguration med Meta",
+          "DESC": "Använd WhatsApp Embedded Signup för att snabbt ansluta nya nummer. Du skickas vidare till Meta för att logga in på ditt WhatsApp Business-konto. Administratörsåtkomst gör konfigurationen enklare.",
           "BENEFITS": {
-            "TITLE": "Benefits of Embedded Signup:",
-            "EASY_SETUP": "No manual configuration required",
-            "SECURE_AUTH": "Secure OAuth based authentication",
-            "AUTO_CONFIG": "Automatic webhook and phone number configuration"
+            "TITLE": "Fördelar med Embedded Signup:",
+            "EASY_SETUP": "Ingen manuell konfiguration krävs",
+            "SECURE_AUTH": "Säker OAuth-baserad autentisering",
+            "AUTO_CONFIG": "Automatisk konfiguration av webhook och telefonnummer"
           },
           "LEARN_MORE": {
-            "TEXT": "To learn more about integrated signup, pricing, and limitations, visit {link}.",
-            "LINK_TEXT": "this link"
+            "TEXT": "Läs mer om integrerad registrering, priser och begränsningar via {link}.",
+            "LINK_TEXT": "den här länken"
           },
-          "SUBMIT_BUTTON": "Connect with WhatsApp Business",
-          "AUTH_PROCESSING": "Authenticating with Meta",
-          "WAITING_FOR_BUSINESS_INFO": "Please complete business setup in the Meta window...",
-          "PROCESSING": "Setting up your WhatsApp Business Account",
-          "LOADING_SDK": "Loading Facebook SDK...",
-          "CANCELLED": "WhatsApp Signup was cancelled",
-          "SUCCESS_TITLE": "WhatsApp Business Account Connected!",
-          "WAITING_FOR_AUTH": "Waiting for authentication...",
-          "INVALID_BUSINESS_DATA": "Invalid business data received from Facebook. Please try again.",
-          "SIGNUP_ERROR": "Signup error occurred",
-          "AUTH_NOT_COMPLETED": "Authentication not completed. Please restart the process.",
-          "SUCCESS_FALLBACK": "WhatsApp Business Account has been successfully configured",
-          "MANUAL_FALLBACK": "If your number is already connected to the WhatsApp Business Platform (API), or if you’re a tech provider onboarding your own number, please use the {link} flow",
-          "MANUAL_LINK_TEXT": "manual setup flow"
+          "SUBMIT_BUTTON": "Anslut med WhatsApp Business",
+          "AUTH_PROCESSING": "Autentiserar med Meta",
+          "WAITING_FOR_BUSINESS_INFO": "Slutför företagskonfigurationen i Meta-fönstret...",
+          "PROCESSING": "Konfigurerar ditt WhatsApp Business-konto",
+          "LOADING_SDK": "Laddar Facebook SDK...",
+          "CANCELLED": "WhatsApp-registreringen avbröts",
+          "SUCCESS_TITLE": "WhatsApp Business-kontot är anslutet!",
+          "WAITING_FOR_AUTH": "Väntar på autentisering...",
+          "INVALID_BUSINESS_DATA": "Ogiltig företagsdata togs emot från Facebook. Försök igen.",
+          "SIGNUP_ERROR": "Ett fel uppstod vid registreringen",
+          "AUTH_NOT_COMPLETED": "Autentiseringen slutfördes inte. Starta om processen.",
+          "SUCCESS_FALLBACK": "WhatsApp Business-kontot har konfigurerats",
+          "MANUAL_FALLBACK": "Om ditt nummer redan är anslutet till WhatsApp Business Platform (API), eller om du är en teknisk leverantör som onboardar ditt eget nummer, använd {link}",
+          "MANUAL_LINK_TEXT": "manuell konfiguration"
         },
         "API": {
-          "ERROR_MESSAGE": "Vi kunde inte spara WhatsApp-kanalen"
+          "ERROR_MESSAGE": "Det gick inte att spara WhatsApp-kanalen"
         }
       },
       "VOICE": {
-        "TITLE": "Voice Channel",
-        "DESC": "Integrate Twilio Voice and start supporting your customers via phone calls.",
+        "TITLE": "Samtalskanal",
+        "DESC": "Integrera Twilio Voice och börja hjälpa dina kunder via telefonsamtal.",
         "PHONE_NUMBER": {
           "LABEL": "Telefonnummer",
-          "PLACEHOLDER": "Enter your phone number (e.g. +1234567890)",
-          "ERROR": "Please provide a valid phone number in E.164 format (e.g. +1234567890)"
+          "PLACEHOLDER": "Ange ditt telefonnummer, t.ex. +1234567890",
+          "ERROR": "Ange ett giltigt telefonnummer i E.164-format, t.ex. +1234567890"
         },
         "TWILIO": {
           "ACCOUNT_SID": {
             "LABEL": "Kontots SID",
-            "PLACEHOLDER": "Enter your Twilio Account SID",
-            "REQUIRED": "Account SID is required"
+            "PLACEHOLDER": "Ange ditt Twilio Account SID",
+            "REQUIRED": "Account SID krävs"
           },
           "AUTH_TOKEN": {
             "LABEL": "Auth-token",
-            "PLACEHOLDER": "Enter your Twilio Auth Token",
-            "REQUIRED": "Auth Token is required"
+            "PLACEHOLDER": "Ange din Twilio Auth Token",
+            "REQUIRED": "Auth Token krävs"
           },
           "API_KEY_SID": {
             "LABEL": "API Key SID",
-            "PLACEHOLDER": "Enter your Twilio API Key SID",
-            "REQUIRED": "API Key SID is required"
+            "PLACEHOLDER": "Ange ditt Twilio API Key SID",
+            "REQUIRED": "API Key SID krävs"
           },
           "API_KEY_SECRET": {
             "LABEL": "API Key Secret",
-            "PLACEHOLDER": "Enter your Twilio API Key Secret",
-            "REQUIRED": "API Key Secret is required"
+            "PLACEHOLDER": "Ange din Twilio API Key Secret",
+            "REQUIRED": "API Key Secret krävs"
           }
         },
         "CONFIGURATION": {
           "TWILIO_VOICE_URL_TITLE": "Twilio Voice URL",
-          "TWILIO_VOICE_URL_SUBTITLE": "Configure this URL as the Voice URL on your Twilio phone number and TwiML App.",
+          "TWILIO_VOICE_URL_SUBTITLE": "Konfigurera denna URL som Voice URL på ditt Twilio-telefonnummer och i din TwiML-app.",
           "TWILIO_STATUS_URL_TITLE": "Twilio Status Callback URL",
-          "TWILIO_STATUS_URL_SUBTITLE": "Configure this URL as the Status Callback URL on your Twilio phone number."
+          "TWILIO_STATUS_URL_SUBTITLE": "Konfigurera denna URL som Status Callback URL på ditt Twilio-telefonnummer."
         },
-        "SUBMIT_BUTTON": "Create Voice Channel",
+        "SUBMIT_BUTTON": "Skapa samtalskanal",
         "API": {
-          "ERROR_MESSAGE": "We were not able to create the voice channel"
+          "ERROR_MESSAGE": "Det gick inte att skapa samtalskanalen"
         }
       },
       "API_CHANNEL": {
         "TITLE": "API-kanal",
-        "DESC": "Integrera med API-kanalen och börja supporta dina kunder.",
+        "DESC": "Integrera med API-kanalen och börja hjälpa dina kunder.",
         "CHANNEL_NAME": {
           "LABEL": "Kanalnamn",
           "PLACEHOLDER": "Ange ett kanalnamn",
           "ERROR": "Detta fält är obligatoriskt"
         },
         "WEBHOOK_URL": {
-          "LABEL": "Webhook URL",
-          "SUBTITLE": "Configure the URL where you want to receive callbacks on events.",
-          "PLACEHOLDER": "Webhook URL"
+          "LABEL": "Webhook-URL",
+          "SUBTITLE": "Konfigurera URL:en där du vill ta emot callbacks för händelser.",
+          "PLACEHOLDER": "Webhook-URL"
         },
         "SUBMIT_BUTTON": "Skapa API-kanal",
         "API": {
-          "ERROR_MESSAGE": "Vi kunde inte spara API-kanalen"
+          "ERROR_MESSAGE": "Det gick inte att spara API-kanalen"
         }
       },
       "EMAIL_CHANNEL": {
         "TITLE": "E-postkanal",
-        "DESC": "Integrate your email inbox.",
+        "DESC": "Integrera din e-postinkorg.",
         "CHANNEL_NAME": {
           "LABEL": "Kanalnamn",
           "PLACEHOLDER": "Ange ett kanalnamn",
@@ -384,22 +384,22 @@
         },
         "EMAIL": {
           "LABEL": "E-post",
-          "SUBTITLE": "E-post dit dina kunder skickar supportärenden",
+          "SUBTITLE": "E-postadressen dit dina kunder skickar supportärenden",
           "PLACEHOLDER": "E-post"
         },
         "SUBMIT_BUTTON": "Skapa e-postkanal",
         "API": {
-          "ERROR_MESSAGE": "Vi kunde inte spara e-postkanalen"
+          "ERROR_MESSAGE": "Det gick inte att spara e-postkanalen"
         },
         "FINISH_MESSAGE": "Börja vidarebefordra dina e-postmeddelanden till följande e-postadress.",
-        "FINISH_MESSAGE_NO_FORWARDING": "Your email inbox has been created successfully! You need to configure SMTP and IMAP credentials to send and receive emails. Without these settings, no emails will be processed.",
-        "FORWARDING_ADDRESS_LABEL": "Forward emails to this address:",
+        "FINISH_MESSAGE_NO_FORWARDING": "Din e-postinkorg har skapats. Du behöver konfigurera SMTP- och IMAP-uppgifter för att kunna skicka och ta emot e-post. Utan dessa inställningar behandlas inga e-postmeddelanden.",
+        "FORWARDING_ADDRESS_LABEL": "Vidarebefordra e-post till den här adressen:",
         "CONFIGURE_SMTP_IMAP_LINK": "Klicka här",
-        "CONFIGURE_SMTP_IMAP_TEXT": " to configure IMAP and SMTP settings"
+        "CONFIGURE_SMTP_IMAP_TEXT": " för att konfigurera IMAP- och SMTP-inställningar"
       },
       "LINE_CHANNEL": {
-        "TITLE": "LINE kanal",
-        "DESC": "Integrera med LINE-kanalen och börja stödja dina kunder.",
+        "TITLE": "LINE-kanal",
+        "DESC": "Integrera med LINE-kanalen och börja hjälpa dina kunder.",
         "CHANNEL_NAME": {
           "LABEL": "Kanalnamn",
           "PLACEHOLDER": "Ange ett kanalnamn",
@@ -410,151 +410,151 @@
           "PLACEHOLDER": "LINE kanal-ID"
         },
         "LINE_CHANNEL_SECRET": {
-          "LABEL": "LINE kanal hemlighet",
-          "PLACEHOLDER": "LINE kanal hemlighet"
+          "LABEL": "LINE-kanalhemlighet",
+          "PLACEHOLDER": "LINE-kanalhemlighet"
         },
         "LINE_CHANNEL_TOKEN": {
-          "LABEL": "LINE kanal hemlighet",
-          "PLACEHOLDER": "LINE kanal hemlighet"
+          "LABEL": "LINE-kanalhemlighet",
+          "PLACEHOLDER": "LINE-kanalhemlighet"
         },
-        "SUBMIT_BUTTON": "Skapa API-kanal",
+        "SUBMIT_BUTTON": "Skapa LINE-kanal",
         "API": {
-          "ERROR_MESSAGE": "Vi kunde inte spara API-kanalen"
+          "ERROR_MESSAGE": "Det gick inte att spara LINE-kanalen"
         },
         "API_CALLBACK": {
           "TITLE": "Callback-URL",
-          "SUBTITLE": "Du måste konfigurera webhook URL i LINE-programmet med den URL som nämns här."
+          "SUBTITLE": "Du behöver konfigurera webhook-URL:en i LINE-appen med URL:en som visas här."
         }
       },
       "TELEGRAM_CHANNEL": {
-        "TITLE": "Telegram kanal",
-        "DESC": "Integrera med Telegram kanal och börja stödja dina kunder.",
+        "TITLE": "Telegram-kanal",
+        "DESC": "Integrera med Telegram-kanalen och börja hjälpa dina kunder.",
         "BOT_TOKEN": {
           "LABEL": "Bot Token",
-          "SUBTITLE": "Konfigurera bot token du har fått från Telegram BotFather.",
+          "SUBTITLE": "Konfigurera bot-token som du har fått från Telegram BotFather.",
           "PLACEHOLDER": "Bot Token"
         },
-        "SUBMIT_BUTTON": "Create Telegram Channel",
+        "SUBMIT_BUTTON": "Skapa Telegram-kanal",
         "API": {
-          "ERROR_MESSAGE": "We were not able to save the telegram channel"
+          "ERROR_MESSAGE": "Det gick inte att spara Telegram-kanalen"
         }
       },
       "AUTH": {
         "TITLE": "Välj en kanal",
-        "DESC": "Chatwoot supports live-chat widgets, Facebook Messenger, Twitter profiles, WhatsApp, Emails, etc., as channels. If you want to build a custom channel, you can create it using the API channel. To get started, choose one of the channels below.",
-        "TITLE_NEXT": "Complete the setup",
+        "DESC": "Custio stödjer livechatt-widgetar, Facebook Messenger, Twitter-profiler, WhatsApp, e-post med mera som kanaler. Om du vill bygga en egen kanal kan du skapa den med API-kanalen. Välj en av kanalerna nedan för att komma igång.",
+        "TITLE_NEXT": "Slutför konfigurationen",
         "TITLE_FINISH": "Voilà!",
         "CHANNEL": {
           "WEBSITE": {
             "TITLE": "Hemsida",
-            "DESCRIPTION": "Create a live-chat widget"
+            "DESCRIPTION": "Skapa en livechatt-widget"
           },
           "FACEBOOK": {
             "TITLE": "Facebook",
-            "DESCRIPTION": "Connect your Facebook page"
+            "DESCRIPTION": "Anslut din Facebook-sida"
           },
           "WHATSAPP": {
             "TITLE": "WhatsApp",
-            "DESCRIPTION": "Support your customers on WhatsApp"
+            "DESCRIPTION": "Hjälp dina kunder på WhatsApp"
           },
           "EMAIL": {
             "TITLE": "E-post",
-            "DESCRIPTION": "Connect with Gmail, Outlook, or other providers"
+            "DESCRIPTION": "Anslut Gmail, Outlook eller andra leverantörer"
           },
           "SMS": {
             "TITLE": "SMS",
-            "DESCRIPTION": "Integrate SMS channel with Twilio or bandwidth"
+            "DESCRIPTION": "Integrera SMS-kanal med Twilio eller Bandwidth"
           },
           "API": {
             "TITLE": "API",
-            "DESCRIPTION": "Make a custom channel using our API"
+            "DESCRIPTION": "Skapa en egen kanal med vårt API"
           },
           "TELEGRAM": {
             "TITLE": "Telegram",
-            "DESCRIPTION": "Configure Telegram channel using Bot token"
+            "DESCRIPTION": "Konfigurera Telegram-kanal med bot-token"
           },
           "LINE": {
             "TITLE": "Line",
-            "DESCRIPTION": "Integrate your Line channel"
+            "DESCRIPTION": "Integrera din Line-kanal"
           },
           "INSTAGRAM": {
             "TITLE": "Instagram",
-            "DESCRIPTION": "Connect your instagram account"
+            "DESCRIPTION": "Anslut ditt Instagram-konto"
           },
           "TIKTOK": {
             "TITLE": "TikTok",
-            "DESCRIPTION": "Connect your TikTok account"
+            "DESCRIPTION": "Anslut ditt TikTok-konto"
           },
           "VOICE": {
-            "TITLE": "Voice",
-            "DESCRIPTION": "Integrate with Twilio Voice"
+            "TITLE": "Samtal",
+            "DESCRIPTION": "Integrera med Twilio Voice"
           }
         }
       },
       "AGENTS": {
-        "TITLE": "Agenter",
-        "DESC": "Här kan du lägga till agenter för att hantera din nyskapade inkorg. Endast dessa utvalda agenter har tillgång till din inkorg. Agenter som inte är en del av denna inkorg kommer inte att kunna se eller svara på meddelanden i denna inkorg när de loggar in. <br> <b>PS:</b> Som administratör om du behöver åtkomst till alla inkorgar, du bör lägga till dig själv som agent till alla inkorgar som du skapar.",
-        "VALIDATION_ERROR": "Add at least one agent to your new Inbox",
-        "PICK_AGENTS": "Välj agenter för inkorgen"
+        "TITLE": "Medarbetare",
+        "DESC": "Här kan du lägga till medarbetare som ska hantera den nya inkorgen. Endast de valda medarbetarna får åtkomst till inkorgen. Medarbetare som inte ingår i inkorgen kan inte se eller svara på meddelanden i den när de loggar in. <br> <b>PS:</b> Som administratör behöver du lägga till dig själv som medarbetare i alla inkorgar du skapar om du vill ha åtkomst till dem.",
+        "VALIDATION_ERROR": "Lägg till minst en medarbetare i din nya inkorg",
+        "PICK_AGENTS": "Välj medarbetare för inkorgen"
       },
       "DETAILS": {
         "TITLE": "Inkorgsdetaljer",
-        "DESC": "Från rullgardinsmenyn nedan, välj den Facebook-sida du vill ansluta till Chatwoot. Du kan också ge ett anpassat namn till din inkorg för bättre identifiering."
+        "DESC": "Välj Facebook-sidan du vill ansluta till Custio i rullistan nedan. Du kan också ge inkorgen ett eget namn för att enklare känna igen den."
       },
       "FINISH": {
         "TITLE": "Där satt den!",
-        "DESC": "Du har framgångsrikt integrerat din Facebook-sida med Chatwoot. Nästa gång en kund meddelar din sida kommer konversationen automatiskt att visas på din inkorg.<br>Vi ger dig också en widget skript som du enkelt kan lägga till din webbplats. När detta är live på din webbplats, kunder kan meddela dig direkt från din webbplats utan hjälp av något externt verktyg och konversationen kommer att visas här på Chatwoot.<br>Cool, va? Tja, vi försöker säkert att vara :)"
+        "DESC": "Du har integrerat din Facebook-sida med Custio. Nästa gång en kund skickar meddelande till din sida visas konversationen automatiskt i din inkorg.<br>Du får också ett widgetskript som du enkelt kan lägga till på din webbplats. När det är live kan kunder kontakta dig direkt från webbplatsen, och konversationen visas här i Custio."
       },
       "EMAIL_PROVIDER": {
-        "TITLE": "Select your email provider",
-        "DESCRIPTION": "Select an email provider from the list below. If you don't see your email provider in the list, you can select the other provider option and provide the IMAP and SMTP Credentials."
+        "TITLE": "Välj e-postleverantör",
+        "DESCRIPTION": "Välj en e-postleverantör från listan nedan. Om du inte ser din leverantör i listan kan du välja alternativet för annan leverantör och ange IMAP- och SMTP-uppgifter."
       },
       "MICROSOFT": {
-        "TITLE": "Microsoft Email",
-        "DESCRIPTION": "Click on the Sign in with Microsoft button to get started. You will redirected to the email sign in page. Once you accept the requested permissions, you would be redirected back to the inbox creation step.",
-        "EMAIL_PLACEHOLDER": "Enter email address",
-        "SIGN_IN": "Sign in with Microsoft",
-        "ERROR_MESSAGE": "There was an error connecting to Microsoft, please try again"
+        "TITLE": "Microsoft e-post",
+        "DESCRIPTION": "Klicka på Logga in med Microsoft för att komma igång. Du skickas vidare till inloggningen för e-post. När du accepterat behörigheterna skickas du tillbaka till steget för att skapa inkorg.",
+        "EMAIL_PLACEHOLDER": "Ange e-postadress",
+        "SIGN_IN": "Logga in med Microsoft",
+        "ERROR_MESSAGE": "Ett fel uppstod vid anslutningen till Microsoft. Försök igen."
       },
       "GOOGLE": {
-        "TITLE": "Google Email",
-        "DESCRIPTION": "Click on the Sign in with Google button to get started. You will redirected to the email sign in page. Once you accept the requested permissions, you would be redirected back to the inbox creation step.",
-        "SIGN_IN": "Sign in with Google",
-        "EMAIL_PLACEHOLDER": "Enter email address",
-        "ERROR_MESSAGE": "There was an error connecting to Google, please try again"
+        "TITLE": "Google e-post",
+        "DESCRIPTION": "Klicka på Logga in med Google för att komma igång. Du skickas vidare till inloggningen för e-post. När du accepterat behörigheterna skickas du tillbaka till steget för att skapa inkorg.",
+        "SIGN_IN": "Logga in med Google",
+        "EMAIL_PLACEHOLDER": "Ange e-postadress",
+        "ERROR_MESSAGE": "Ett fel uppstod vid anslutningen till Google. Försök igen."
       }
     },
     "DETAILS": {
-      "LOADING_FB": "Autentiserar dig med Facebook...",
-      "ERROR_FB_LOADING": "Error loading Facebook SDK. Please disable any ad-blockers and try again from a different browser.",
-      "ERROR_FB_AUTH": "Något gick fel, vänligen ladda om sidan...",
-      "ERROR_FB_UNAUTHORIZED": "You're not authorized to perform this action. ",
-      "ERROR_FB_UNAUTHORIZED_HELP": "Please ensure you have access to the Facebook page with full control. You can read more about Facebook roles <a href=\" https://www.facebook.com/help/187316341316631\">here</a>.",
+      "LOADING_FB": "Autentiserar med Facebook...",
+      "ERROR_FB_LOADING": "Det gick inte att ladda Facebook SDK. Inaktivera eventuella annonsblockerare och försök igen från en annan webbläsare.",
+      "ERROR_FB_AUTH": "Något gick fel. Ladda om sidan...",
+      "ERROR_FB_UNAUTHORIZED": "Du har inte behörighet att utföra den här åtgärden. ",
+      "ERROR_FB_UNAUTHORIZED_HELP": "Kontrollera att du har full åtkomst till Facebook-sidan. Du kan läsa mer om Facebook-roller <a href=\" https://www.facebook.com/help/187316341316631\">här</a>.",
       "CREATING_CHANNEL": "Skapar din inkorg...",
-      "TITLE": "Konfigurera Inkorgsdetaljer",
+      "TITLE": "Konfigurera inkorgsdetaljer",
       "DESC": ""
     },
     "AGENTS": {
-      "BUTTON_TEXT": "Lägg till agenter",
-      "ADD_AGENTS": "Lägger till agenter i din inkorg..."
+      "BUTTON_TEXT": "Lägg till medarbetare",
+      "ADD_AGENTS": "Lägger till medarbetare i din inkorg..."
     },
     "FINISH": {
       "TITLE": "Din inkorg är redo!",
-      "MESSAGE": "Du kan nu interagera med dina kunder genom din nya kanal. Supporta glatt",
+      "MESSAGE": "Du kan nu kommunicera med dina kunder via din nya kanal. Lycka till med supporten",
       "BUTTON_TEXT": "Ta mig dit",
       "MORE_SETTINGS": "Fler inställningar",
-      "WEBSITE_SUCCESS": "Du har skapat en webbplatskanal. Kopiera koden som visas nedan och klistra in den på din webbplats. Nästa gång en kund använder livechatten visas konversationen automatiskt i din inkorg.",
-      "WHATSAPP_QR_INSTRUCTION": "Scan the QR code above to quickly test your WhatsApp inbox",
-      "MESSENGER_QR_INSTRUCTION": "Scan the QR code above to quickly test your Facebook Messenger inbox",
-      "TELEGRAM_QR_INSTRUCTION": "Scan the QR code above to quickly test your Telegram inbox"
+      "WEBSITE_SUCCESS": "Du har skapat en webbplatskanal. Kopiera koden nedan och klistra in den på din webbplats. Nästa gång en kund använder livechatten visas konversationen automatiskt i din inkorg.",
+      "WHATSAPP_QR_INSTRUCTION": "Skanna QR-koden ovan för att snabbt testa din WhatsApp-inkorg",
+      "MESSENGER_QR_INSTRUCTION": "Skanna QR-koden ovan för att snabbt testa din Facebook Messenger-inkorg",
+      "TELEGRAM_QR_INSTRUCTION": "Skanna QR-koden ovan för att snabbt testa din Telegram-inkorg"
     },
-    "REAUTH": "Återauktorisera",
+    "REAUTH": "Auktorisera igen",
     "VIEW": "Visa",
     "EDIT": {
       "API": {
         "SUCCESS_MESSAGE": "Inkorgen har uppdaterats",
         "AUTO_ASSIGNMENT_SUCCESS_MESSAGE": "Automatisk tilldelning har uppdaterats",
-        "ERROR_MESSAGE": "We couldn't update inbox settings. Please try again later."
+        "ERROR_MESSAGE": "Det gick inte att uppdatera inkorgsinställningarna. Försök igen senare."
       },
       "EMAIL_COLLECT_BOX": {
         "ENABLED": "Aktiverad",
@@ -565,21 +565,21 @@
         "DISABLED": "Inaktiverad"
       },
       "SENDER_NAME_SECTION": {
-        "TITLE": "Sender name",
-        "SUB_TEXT": "Select the name shown to your customer when they receive emails from your agents.",
-        "FOR_EG": "For eg:",
+        "TITLE": "Avsändarnamn",
+        "SUB_TEXT": "Välj vilket namn som visas för kunden när de får e-post från dina medarbetare.",
+        "FOR_EG": "Till exempel:",
         "FRIENDLY": {
-          "TITLE": "Friendly",
+          "TITLE": "Personligt",
           "FROM": "från",
-          "SUBTITLE": "Add the name of the agent who sent the reply in the sender name to make it friendly."
+          "SUBTITLE": "Lägg till namnet på medarbetaren som skickade svaret i avsändarnamnet för en mer personlig känsla."
         },
         "PROFESSIONAL": {
-          "TITLE": "Professional",
-          "SUBTITLE": "Use only the configured business name as the sender name in the email header."
+          "TITLE": "Professionellt",
+          "SUBTITLE": "Använd endast det konfigurerade företagsnamnet som avsändarnamn i e-posthuvudet."
         },
         "BUSINESS_NAME": {
-          "BUTTON_TEXT": "Configure your business name",
-          "PLACEHOLDER": "Enter your business name",
+          "BUTTON_TEXT": "Konfigurera företagsnamn",
+          "PLACEHOLDER": "Ange ditt företagsnamn",
           "SAVE_BUTTON_TEXT": "Spara"
         }
       },
@@ -592,10 +592,10 @@
         "DISABLED": "Inaktiverad"
       },
       "LOCK_TO_SINGLE_CONVERSATION": {
-        "ENABLED": "Reopen same conversation",
-        "DISABLED": "Create new conversations",
-        "ENABLED_DESCRIPTION": "When a contact messages again, the previous conversation will be reopened.",
-        "DISABLED_DESCRIPTION": "A new conversation will be created each time after the previous one is resolved."
+        "ENABLED": "Återöppna samma konversation",
+        "DISABLED": "Skapa nya konversationer",
+        "ENABLED_DESCRIPTION": "När en kontakt hör av sig igen öppnas den tidigare konversationen på nytt.",
+        "DISABLED_DESCRIPTION": "En ny konversation skapas varje gång efter att den tidigare har lösts."
       },
       "ENABLE_HMAC": {
         "LABEL": "Aktivera"
@@ -603,19 +603,19 @@
     },
     "DELETE": {
       "BUTTON_TEXT": "Radera",
-      "AVATAR_DELETE_BUTTON_TEXT": "Ta bort Avatar",
+      "AVATAR_DELETE_BUTTON_TEXT": "Ta bort avatar",
       "CONFIRM": {
         "TITLE": "Bekräfta borttagning",
-        "MESSAGE": "Är du säker på att ta bort ",
-        "PLACE_HOLDER": "Vänligen skriv {inboxName} för att bekräfta",
+        "MESSAGE": "Är du säker på att du vill ta bort ",
+        "PLACE_HOLDER": "Skriv {inboxName} för att bekräfta",
         "YES": "Ja, ta bort ",
         "NO": "Nej, behåll "
       },
       "API": {
         "SUCCESS_MESSAGE": "Inkorgen har tagits bort",
-        "ERROR_MESSAGE": "Kunde inte ta bort inkorgen. Försök igen senare.",
-        "AVATAR_SUCCESS_MESSAGE": "Inkorgavatar har tagits bort",
-        "AVATAR_ERROR_MESSAGE": "Kunde inte ta bort inbox-avataren. Försök igen senare."
+        "ERROR_MESSAGE": "Det gick inte att ta bort inkorgen. Försök igen senare.",
+        "AVATAR_SUCCESS_MESSAGE": "Inkorgens avatar har tagits bort",
+        "AVATAR_ERROR_MESSAGE": "Det gick inte att ta bort inkorgens avatar. Försök igen senare."
       }
     },
     "TABS": {
@@ -625,61 +625,61 @@
       "CAMPAIGN": "Kampanjer",
       "PRE_CHAT_FORM": "Förchattformulär",
       "BUSINESS_HOURS": "Öppettider",
-      "WIDGET_BUILDER": "Widget Builder",
-      "BOT_CONFIGURATION": "Bot Configuration",
-      "ACCOUNT_HEALTH": "Account Health",
-      "CSAT": "CSAT"
+      "WIDGET_BUILDER": "Widgetbyggare",
+      "BOT_CONFIGURATION": "Botkonfiguration",
+      "ACCOUNT_HEALTH": "Kontostatus",
+      "CSAT": "Kundnöjdhet"
     },
-    "CHANNEL_PREFERENCES": "Channel Preferences",
-    "WIDGET_FEATURES": "Widget features",
+    "CHANNEL_PREFERENCES": "Kanalinställningar",
+    "WIDGET_FEATURES": "Widgetfunktioner",
     "ACCOUNT_HEALTH": {
-      "TITLE": "Manage your WhatsApp account",
-      "DESCRIPTION": "Review your WhatsApp account status, messaging limits, and quality. Update settings or resolve issues if needed",
-      "GO_TO_SETTINGS": "Go to Meta Business Manager",
-      "NO_DATA": "Health data is not available",
+      "TITLE": "Hantera ditt WhatsApp-konto",
+      "DESCRIPTION": "Granska status, meddelandegränser och kvalitet för ditt WhatsApp-konto. Uppdatera inställningar eller åtgärda problem vid behov.",
+      "GO_TO_SETTINGS": "Gå till Meta Business Manager",
+      "NO_DATA": "Hälsodata är inte tillgänglig",
       "FIELDS": {
         "DISPLAY_PHONE_NUMBER": {
-          "LABEL": "Display phone number",
-          "TOOLTIP": "Phone number displayed to customers"
+          "LABEL": "Visat telefonnummer",
+          "TOOLTIP": "Telefonnummer som visas för kunder"
         },
         "VERIFIED_NAME": {
-          "LABEL": "Business name",
-          "TOOLTIP": "Business name verified by WhatsApp"
+          "LABEL": "Företagsnamn",
+          "TOOLTIP": "Företagsnamn verifierat av WhatsApp"
         },
         "DISPLAY_NAME_STATUS": {
-          "LABEL": "Display name status",
-          "TOOLTIP": "Status of your business name verification"
+          "LABEL": "Status för visningsnamn",
+          "TOOLTIP": "Status för verifieringen av ditt företagsnamn"
         },
         "QUALITY_RATING": {
-          "LABEL": "Quality rating",
-          "TOOLTIP": "WhatsApp quality rating for your account"
+          "LABEL": "Kvalitetsbetyg",
+          "TOOLTIP": "WhatsApps kvalitetsbetyg för ditt konto"
         },
         "MESSAGING_LIMIT_TIER": {
-          "LABEL": "Messaging limit tier",
-          "TOOLTIP": "Daily messaging limit for your account"
+          "LABEL": "Nivå för meddelandegräns",
+          "TOOLTIP": "Daglig meddelandegräns för ditt konto"
         },
         "ACCOUNT_MODE": {
-          "LABEL": "Account mode",
-          "TOOLTIP": "Current operating mode of your WhatsApp account"
+          "LABEL": "Kontoläge",
+          "TOOLTIP": "Nuvarande driftläge för ditt WhatsApp-konto"
         }
       },
       "VALUES": {
         "TIERS": {
-          "TIER_250": "250 customers per 24h",
-          "TIER_1000": "1K customers per 24h",
-          "TIER_1K": "1K customers per 24h",
-          "TIER_10K": "10K customers per 24h",
-          "TIER_100K": "100K customers per 24h",
-          "TIER_UNLIMITED": "Unlimited customers per 24h",
-          "UNKNOWN": "Rating not available"
+          "TIER_250": "250 kunder per 24 h",
+          "TIER_1000": "1 000 kunder per 24 h",
+          "TIER_1K": "1 000 kunder per 24 h",
+          "TIER_10K": "10 000 kunder per 24 h",
+          "TIER_100K": "100 000 kunder per 24 h",
+          "TIER_UNLIMITED": "Obegränsat antal kunder per 24 h",
+          "UNKNOWN": "Betyg ej tillgängligt"
         },
         "STATUSES": {
-          "APPROVED": "Approved",
-          "PENDING_REVIEW": "Pending Review",
-          "AVAILABLE_WITHOUT_REVIEW": "Available Without Review",
-          "REJECTED": "Rejected",
-          "DECLINED": "Declined",
-          "NON_EXISTS": "Non exists"
+          "APPROVED": "Godkänd",
+          "PENDING_REVIEW": "Väntar på granskning",
+          "AVAILABLE_WITHOUT_REVIEW": "Tillgänglig utan granskning",
+          "REJECTED": "Avvisad",
+          "DECLINED": "Nekad",
+          "NON_EXISTS": "Finns inte"
         },
         "MODES": {
           "SANDBOX": "Sandbox",
@@ -687,178 +687,178 @@
         }
       },
       "WEBHOOK": {
-        "TITLE": "Webhook Configuration",
-        "DESCRIPTION": "Webhook URL is required for your WhatsApp Business Account to receive messages from customers",
-        "ACTION_REQUIRED": "Webhook not configured",
-        "REGISTER_BUTTON": "Register Webhook",
-        "REGISTER_SUCCESS": "Webhook registered successfully",
-        "REGISTER_ERROR": "Failed to register webhook. Please try again.",
-        "CONFIGURED_SUCCESS": "Webhook configured successfully",
-        "URL_MISMATCH": "Webhook URL mismatch"
+        "TITLE": "Webhook-konfiguration",
+        "DESCRIPTION": "Webhook-URL krävs för att ditt WhatsApp Business-konto ska kunna ta emot meddelanden från kunder",
+        "ACTION_REQUIRED": "Webhook är inte konfigurerad",
+        "REGISTER_BUTTON": "Registrera webhook",
+        "REGISTER_SUCCESS": "Webhook har registrerats",
+        "REGISTER_ERROR": "Det gick inte att registrera webhook. Försök igen.",
+        "CONFIGURED_SUCCESS": "Webhook har konfigurerats",
+        "URL_MISMATCH": "Webhook-URL matchar inte"
       }
     },
     "SETTINGS": "Inställningar",
     "FEATURES": {
       "LABEL": "Funktioner",
-      "DISPLAY_FILE_PICKER": "Visa filväljare på widgeten",
-      "DISPLAY_EMOJI_PICKER": "Visa emoji-väljare på widgeten",
-      "ALLOW_END_CONVERSATION": "Allow users to end conversation from the widget",
-      "USE_INBOX_AVATAR_FOR_BOT": "Use inbox name and avatar for the bot"
+      "DISPLAY_FILE_PICKER": "Visa filväljare i widgeten",
+      "DISPLAY_EMOJI_PICKER": "Visa emoji-väljare i widgeten",
+      "ALLOW_END_CONVERSATION": "Tillåt användare att avsluta konversationen från widgeten",
+      "USE_INBOX_AVATAR_FOR_BOT": "Använd inkorgens namn och avatar för boten"
     },
     "SETTINGS_POPUP": {
-      "MESSENGER_HEADING": "Skript för Messenger",
-      "MESSENGER_SUB_HEAD": "Placera denna knapp i din body-tagg",
+      "MESSENGER_HEADING": "Messenger-skript",
+      "MESSENGER_SUB_HEAD": "Placera den här knappen i din body-tagg",
       "ALLOWED_DOMAINS": {
-        "TITLE": "Allowed Domains",
-        "DESCRIPTION": "Restrict which websites can embed your chat widget. For security, only add domains you own and trust. Add one or more domains separated by commas. Leave blank to allow all domains (not recommended for production).",
+        "TITLE": "Tillåtna domäner",
+        "DESCRIPTION": "Begränsa vilka webbplatser som kan bädda in din chattwidget. Lägg av säkerhetsskäl bara till domäner du äger och litar på. Lägg till en eller flera domäner separerade med kommatecken. Lämna tomt för att tillåta alla domäner, vilket inte rekommenderas i produktion.",
         "PLACEHOLDER": "example.com, www.example.com, app.example.com"
       },
       "ALLOW_MOBILE_WEBVIEW": {
-        "LABEL": "Enable widget in mobile apps",
-        "SUBTITLE": "Check this if you embed the widget in iOS or Android apps. Mobile apps don't send domain information, so they would be blocked by domain restrictions unless this is enabled."
+        "LABEL": "Aktivera widget i mobilappar",
+        "SUBTITLE": "Markera detta om du bäddar in widgeten i iOS- eller Android-appar. Mobilappar skickar inte domäninformation och blockeras därför av domänbegränsningar om detta inte är aktiverat."
       },
       "IDENTITY_VALIDATION": {
-        "TITLE": "Identity Validation",
-        "DESCRIPTION": "Verify user authenticity by generating secure tokens. This prevents unauthorized users from impersonating others in your chat.",
-        "SECRET_KEY": "Secret Key",
-        "VIEW_DOCS": "View documentation",
-        "REQUIRE_LABEL": "Require identity validation for all conversations",
-        "REQUIRE_DESCRIPTION": "When enabled, users must provide a valid identity token to start conversations. Requests without valid tokens will be rejected."
+        "TITLE": "Identitetsvalidering",
+        "DESCRIPTION": "Verifiera användarens identitet genom att generera säkra tokens. Detta förhindrar obehöriga användare från att utge sig för att vara någon annan i chatten.",
+        "SECRET_KEY": "Hemlig nyckel",
+        "VIEW_DOCS": "Visa dokumentation",
+        "REQUIRE_LABEL": "Kräv identitetsvalidering för alla konversationer",
+        "REQUIRE_DESCRIPTION": "När detta är aktiverat måste användare ange en giltig identitetstoken för att starta konversationer. Förfrågningar utan giltig token avvisas."
       },
-      "INBOX_AGENTS": "Agenter",
-      "INBOX_AGENTS_SUB_TEXT": "Lägg till eller ta bort agenter från denna inkorg",
-      "AGENT_ASSIGNMENT": "Conversation Assignment",
-      "AGENT_ASSIGNMENT_SUB_TEXT": "Update conversation assignment settings",
+      "INBOX_AGENTS": "Medarbetare",
+      "INBOX_AGENTS_SUB_TEXT": "Lägg till eller ta bort medarbetare från den här inkorgen",
+      "AGENT_ASSIGNMENT": "Konversationstilldelning",
+      "AGENT_ASSIGNMENT_SUB_TEXT": "Uppdatera inställningar för konversationstilldelning",
       "UPDATE": "Uppdatera",
-      "ENABLE_EMAIL_COLLECT_BOX": "Aktivera insamlingsbox för e-post",
-      "ENABLE_EMAIL_COLLECT_BOX_SUB_TEXT": "Aktivera eller inaktivera insamlingsbox för e-post på ny konversation",
+      "ENABLE_EMAIL_COLLECT_BOX": "Aktivera insamling av e-postadress",
+      "ENABLE_EMAIL_COLLECT_BOX_SUB_TEXT": "Aktivera eller inaktivera insamling av e-postadress vid ny konversation",
       "AUTO_ASSIGNMENT": "Aktivera automatisk tilldelning",
-      "SENDER_NAME_SECTION": "Enable Agent Name in Email",
-      "SENDER_NAME_SECTION_TEXT": "Enable/Disable showing Agent's name in email, if disabled it will show business name",
-      "ENABLE_CONTINUITY_VIA_EMAIL": "Enable conversation continuity via email",
-      "ENABLE_CONTINUITY_VIA_EMAIL_SUB_TEXT": "Conversations will continue over email if the contact email address is available.",
-      "LOCK_TO_SINGLE_CONVERSATION": "Conversation Routing",
-      "LOCK_TO_SINGLE_CONVERSATION_SUB_TEXT": "Configure conversation creation for existing contacts",
+      "SENDER_NAME_SECTION": "Visa medarbetarens namn i e-post",
+      "SENDER_NAME_SECTION_TEXT": "Aktivera eller inaktivera visning av medarbetarens namn i e-post. Om det är inaktiverat visas företagsnamnet.",
+      "ENABLE_CONTINUITY_VIA_EMAIL": "Aktivera konversationskontinuitet via e-post",
+      "ENABLE_CONTINUITY_VIA_EMAIL_SUB_TEXT": "Konversationer fortsätter via e-post om kontaktens e-postadress finns tillgänglig.",
+      "LOCK_TO_SINGLE_CONVERSATION": "Konversationsrouting",
+      "LOCK_TO_SINGLE_CONVERSATION_SUB_TEXT": "Konfigurera hur konversationer skapas för befintliga kontakter",
       "INBOX_UPDATE_TITLE": "Inkorgsinställningar",
       "INBOX_UPDATE_SUB_TEXT": "Uppdatera inställningarna för din inkorg",
-      "AUTO_ASSIGNMENT_SUB_TEXT": "Aktivera eller inaktivera automatisk tilldelning av nya konversationer till de agenter som lagts till den här inkorgen.",
+      "AUTO_ASSIGNMENT_SUB_TEXT": "Aktivera eller inaktivera automatisk tilldelning av nya konversationer till medarbetarna i den här inkorgen.",
       "HMAC_VERIFICATION": "Validering av användaridentitet",
-      "HMAC_DESCRIPTION": "With this key you can generate a secret token that can be used to verify the identity of your users.",
-      "HMAC_LINK_TO_DOCS": "You can read more here.",
+      "HMAC_DESCRIPTION": "Med den här nyckeln kan du generera en hemlig token som används för att verifiera användarnas identitet.",
+      "HMAC_LINK_TO_DOCS": "Du kan läsa mer här.",
       "HMAC_MANDATORY_VERIFICATION": "Validering av användaridentitet",
-      "HMAC_MANDATORY_DESCRIPTION": "If enabled, requests that cannot be verified will be rejected.",
+      "HMAC_MANDATORY_DESCRIPTION": "Om detta är aktiverat avvisas förfrågningar som inte kan verifieras.",
       "INBOX_IDENTIFIER": "Identifierare för inkorgen",
       "INBOX_IDENTIFIER_SUB_TEXT": "Använd `inbox_identifier`-token som visas här för att autentisera dina API-klienter.",
-      "FORWARD_EMAIL_TITLE": "Vidarebefordra till e-post",
+      "FORWARD_EMAIL_TITLE": "Vidarebefordra e-post",
       "FORWARD_EMAIL_SUB_TEXT": "Börja vidarebefordra dina e-postmeddelanden till följande e-postadress.",
-      "FORWARD_EMAIL_NOT_CONFIGURED": "Forwarding emails to your inbox is currently disabled on this installation. To use this feature, it must be enabled by your administrator. Please get in touch with them to proceed.",
-      "ALLOW_MESSAGES_AFTER_RESOLVED": "Allow messages after conversation resolved",
-      "ALLOW_MESSAGES_AFTER_RESOLVED_SUB_TEXT": "Allow the end-users to send messages even after the conversation is resolved.",
-      "WHATSAPP_SECTION_SUBHEADER": "This API Key is used for the integration with the WhatsApp APIs.",
-      "WHATSAPP_SECTION_UPDATE_SUBHEADER": "Enter the new API key to be used for the integration with the WhatsApp APIs.",
-      "WHATSAPP_SECTION_TITLE": "API Key",
-      "WHATSAPP_SECTION_UPDATE_TITLE": "Update API Key",
-      "WHATSAPP_SECTION_UPDATE_PLACEHOLDER": "Enter the new API Key here",
+      "FORWARD_EMAIL_NOT_CONFIGURED": "Vidarebefordran av e-post till din inkorg är inaktiverad i den här installationen. För att använda funktionen måste den aktiveras av din administratör. Kontakta administratören för att gå vidare.",
+      "ALLOW_MESSAGES_AFTER_RESOLVED": "Tillåt meddelanden efter att konversationen har lösts",
+      "ALLOW_MESSAGES_AFTER_RESOLVED_SUB_TEXT": "Tillåt slutanvändare att skicka meddelanden även efter att konversationen har lösts.",
+      "WHATSAPP_SECTION_SUBHEADER": "Den här API-nyckeln används för integrationen med WhatsApp API:er.",
+      "WHATSAPP_SECTION_UPDATE_SUBHEADER": "Ange den nya API-nyckeln som ska användas för integrationen med WhatsApp API:er.",
+      "WHATSAPP_SECTION_TITLE": "API-nyckel",
+      "WHATSAPP_SECTION_UPDATE_TITLE": "Uppdatera API-nyckel",
+      "WHATSAPP_SECTION_UPDATE_PLACEHOLDER": "Ange den nya API-nyckeln här",
       "WHATSAPP_SECTION_UPDATE_BUTTON": "Uppdatera",
       "WHATSAPP_EMBEDDED_SIGNUP_TITLE": "WhatsApp Embedded Signup",
-      "WHATSAPP_EMBEDDED_SIGNUP_SUBHEADER": "This inbox is connected through WhatsApp embedded signup.",
-      "WHATSAPP_EMBEDDED_SIGNUP_DESCRIPTION": "You can reconfigure this inbox to update your WhatsApp Business settings.",
-      "WHATSAPP_RECONFIGURE_BUTTON": "Reconfigure",
-      "WHATSAPP_CONNECT_TITLE": "Connect to WhatsApp Business",
-      "WHATSAPP_CONNECT_SUBHEADER": "Upgrade to WhatsApp embedded signup for easier management.",
-      "WHATSAPP_CONNECT_DESCRIPTION": "Connect this inbox to WhatsApp Business for enhanced features and easier management.",
+      "WHATSAPP_EMBEDDED_SIGNUP_SUBHEADER": "Den här inkorgen är ansluten via WhatsApp Embedded Signup.",
+      "WHATSAPP_EMBEDDED_SIGNUP_DESCRIPTION": "Du kan konfigurera om den här inkorgen för att uppdatera dina WhatsApp Business-inställningar.",
+      "WHATSAPP_RECONFIGURE_BUTTON": "Konfigurera om",
+      "WHATSAPP_CONNECT_TITLE": "Anslut till WhatsApp Business",
+      "WHATSAPP_CONNECT_SUBHEADER": "Uppgradera till WhatsApp Embedded Signup för enklare hantering.",
+      "WHATSAPP_CONNECT_DESCRIPTION": "Anslut den här inkorgen till WhatsApp Business för fler funktioner och enklare hantering.",
       "WHATSAPP_CONNECT_BUTTON": "Anslut",
-      "WHATSAPP_CONNECT_SUCCESS": "Successfully connected to WhatsApp Business!",
-      "WHATSAPP_CONNECT_ERROR": "Failed to connect to WhatsApp Business. Please try again.",
-      "WHATSAPP_RECONFIGURE_SUCCESS": "Successfully reconfigured WhatsApp Business!",
-      "WHATSAPP_RECONFIGURE_ERROR": "Failed to reconfigure WhatsApp Business. Please try again.",
-      "WHATSAPP_APP_ID_MISSING": "WhatsApp App ID is not configured. Please contact your administrator.",
-      "WHATSAPP_CONFIG_ID_MISSING": "WhatsApp Configuration ID is not configured. Please contact your administrator.",
-      "WHATSAPP_LOGIN_CANCELLED": "WhatsApp login was cancelled. Please try again.",
-      "WHATSAPP_WEBHOOK_TITLE": "Webhook Verification Token",
-      "WHATSAPP_WEBHOOK_SUBHEADER": "This token is used to verify the authenticity of the webhook endpoint.",
-      "WHATSAPP_TEMPLATES_SYNC_TITLE": "Sync Templates",
-      "WHATSAPP_TEMPLATES_SYNC_SUBHEADER": "Manually sync message templates from WhatsApp to update your available templates.",
-      "WHATSAPP_TEMPLATES_SYNC_BUTTON": "Sync Templates",
-      "WHATSAPP_TEMPLATES_SYNC_SUCCESS": "Templates sync initiated successfully. It may take a couple of minutes to update.",
-      "UPDATE_PRE_CHAT_FORM_SETTINGS": "Update Pre Chat Form Settings"
+      "WHATSAPP_CONNECT_SUCCESS": "WhatsApp Business har anslutits!",
+      "WHATSAPP_CONNECT_ERROR": "Det gick inte att ansluta till WhatsApp Business. Försök igen.",
+      "WHATSAPP_RECONFIGURE_SUCCESS": "WhatsApp Business har konfigurerats om!",
+      "WHATSAPP_RECONFIGURE_ERROR": "Det gick inte att konfigurera om WhatsApp Business. Försök igen.",
+      "WHATSAPP_APP_ID_MISSING": "WhatsApp App ID är inte konfigurerat. Kontakta din administratör.",
+      "WHATSAPP_CONFIG_ID_MISSING": "WhatsApp Configuration ID är inte konfigurerat. Kontakta din administratör.",
+      "WHATSAPP_LOGIN_CANCELLED": "WhatsApp-inloggningen avbröts. Försök igen.",
+      "WHATSAPP_WEBHOOK_TITLE": "Webhook-verifieringstoken",
+      "WHATSAPP_WEBHOOK_SUBHEADER": "Den här token används för att verifiera webhook-endpointens äkthet.",
+      "WHATSAPP_TEMPLATES_SYNC_TITLE": "Synka mallar",
+      "WHATSAPP_TEMPLATES_SYNC_SUBHEADER": "Synka meddelandemallar manuellt från WhatsApp för att uppdatera dina tillgängliga mallar.",
+      "WHATSAPP_TEMPLATES_SYNC_BUTTON": "Synka mallar",
+      "WHATSAPP_TEMPLATES_SYNC_SUCCESS": "Synkning av mallar har startats. Det kan ta ett par minuter innan de uppdateras.",
+      "UPDATE_PRE_CHAT_FORM_SETTINGS": "Uppdatera inställningar för förchattformulär"
     },
     "HELP_CENTER": {
-      "LABEL": "Help Center",
-      "PLACEHOLDER": "Select Help Center",
-      "SELECT_PLACEHOLDER": "Select Help Center",
-      "NONE": "None",
-      "REMOVE": "Remove Help Center",
-      "SUB_TEXT": "Attach a Help Center with the inbox"
+      "LABEL": "Hjälpcenter",
+      "PLACEHOLDER": "Välj hjälpcenter",
+      "SELECT_PLACEHOLDER": "Välj hjälpcenter",
+      "NONE": "Inget",
+      "REMOVE": "Ta bort hjälpcenter",
+      "SUB_TEXT": "Koppla ett hjälpcenter till inkorgen"
     },
     "AUTO_ASSIGNMENT": {
-      "MAX_ASSIGNMENT_LIMIT": "Auto assignment limit",
-      "MAX_ASSIGNMENT_LIMIT_RANGE_ERROR": "Please enter a value greater than 0",
-      "MAX_ASSIGNMENT_LIMIT_SUB_TEXT": "Limit the maximum number of conversations from this inbox that can be auto assigned to an agent"
+      "MAX_ASSIGNMENT_LIMIT": "Gräns för automatisk tilldelning",
+      "MAX_ASSIGNMENT_LIMIT_RANGE_ERROR": "Ange ett värde större än 0",
+      "MAX_ASSIGNMENT_LIMIT_SUB_TEXT": "Begränsa hur många konversationer från den här inkorgen som kan tilldelas automatiskt till en medarbetare"
     },
     "ASSIGNMENT": {
-      "TITLE": "Conversation Assignment",
-      "DESCRIPTION": "Automatically assign incoming conversations to available agents based on assignment policies",
-      "ENABLE_AUTO_ASSIGNMENT": "Enable automatic conversation assignment",
-      "DEFAULT_RULES_TITLE": "Default assignment rules",
-      "DEFAULT_RULES_DESCRIPTION": "Using the default assignment behavior for all conversations",
-      "DEFAULT_RULE_1": "Earliest created conversations first",
-      "DEFAULT_RULE_2": "Round robin distribution",
-      "CUSTOMIZE_WITH_POLICY": "Customize with assignment policy",
-      "USING_POLICY": "Using custom assignment policy for this inbox",
-      "CUSTOMIZE_POLICY": "Customize with assignment policy",
-      "DELETE_POLICY": "Delete policy",
-      "POLICY_LABEL": "Assignment policy",
-      "ASSIGNMENT_ORDER_LABEL": "Assignment Order",
-      "ASSIGNMENT_METHOD_LABEL": "Assignment Method",
+      "TITLE": "Konversationstilldelning",
+      "DESCRIPTION": "Tilldela inkommande konversationer automatiskt till tillgängliga medarbetare baserat på tilldelningspolicyer",
+      "ENABLE_AUTO_ASSIGNMENT": "Aktivera automatisk konversationstilldelning",
+      "DEFAULT_RULES_TITLE": "Standardregler för tilldelning",
+      "DEFAULT_RULES_DESCRIPTION": "Använder standardbeteende för tilldelning av alla konversationer",
+      "DEFAULT_RULE_1": "Äldst skapade konversationer först",
+      "DEFAULT_RULE_2": "Round robin-fördelning",
+      "CUSTOMIZE_WITH_POLICY": "Anpassa med tilldelningspolicy",
+      "USING_POLICY": "Använder anpassad tilldelningspolicy för den här inkorgen",
+      "CUSTOMIZE_POLICY": "Anpassa med tilldelningspolicy",
+      "DELETE_POLICY": "Ta bort policy",
+      "POLICY_LABEL": "Tilldelningspolicy",
+      "ASSIGNMENT_ORDER_LABEL": "Tilldelningsordning",
+      "ASSIGNMENT_METHOD_LABEL": "Tilldelningsmetod",
       "POLICY_STATUS": {
-        "ACTIVE": "Active",
-        "INACTIVE": "Inactive"
+        "ACTIVE": "Aktiv",
+        "INACTIVE": "Inaktiv"
       },
       "PRIORITY": {
-        "EARLIEST_CREATED": "Earliest created",
-        "LONGEST_WAITING": "Longest waiting"
+        "EARLIEST_CREATED": "Äldst skapad först",
+        "LONGEST_WAITING": "Längst väntetid först"
       },
       "METHOD": {
         "ROUND_ROBIN": "Round robin",
-        "BALANCED": "Balanced assignment"
+        "BALANCED": "Balanserad tilldelning"
       },
-      "UPGRADE_PROMPT": "Custom assignment policies are available on the Business plan",
-      "UPGRADE_TO_BUSINESS": "Upgrade to Business",
-      "DEFAULT_POLICY_LINKED": "Default policy linked",
-      "DEFAULT_POLICY_DESCRIPTION": "Link a custom assignment policy to customize how conversations are assigned to agents in this inbox.",
-      "LINK_EXISTING_POLICY": "Link existing policy",
-      "CREATE_NEW_POLICY": "Create new policy",
-      "NO_POLICIES": "No assignment policies found",
-      "VIEW_ALL_POLICIES": "View all policies",
-      "CURRENT_BEHAVIOR": "Currently using default assignment behavior:",
-      "LINK_SUCCESS": "Assignment policy linked successfully",
-      "LINK_ERROR": "Failed to link assignment policy"
+      "UPGRADE_PROMPT": "Anpassade tilldelningspolicyer är tillgängliga i Business-planen",
+      "UPGRADE_TO_BUSINESS": "Uppgradera till Business",
+      "DEFAULT_POLICY_LINKED": "Standardpolicy kopplad",
+      "DEFAULT_POLICY_DESCRIPTION": "Koppla en anpassad tilldelningspolicy för att styra hur konversationer tilldelas medarbetare i den här inkorgen.",
+      "LINK_EXISTING_POLICY": "Koppla befintlig policy",
+      "CREATE_NEW_POLICY": "Skapa ny policy",
+      "NO_POLICIES": "Inga tilldelningspolicyer hittades",
+      "VIEW_ALL_POLICIES": "Visa alla policyer",
+      "CURRENT_BEHAVIOR": "Använder just nu standardbeteende för tilldelning:",
+      "LINK_SUCCESS": "Tilldelningspolicyn har kopplats",
+      "LINK_ERROR": "Det gick inte att koppla tilldelningspolicyn"
     },
     "ASSIGNMENT_POLICY": {
-      "DELETE_CONFIRM_TITLE": "Delete assignment policy?",
-      "DELETE_CONFIRM_MESSAGE": "Are you sure you want to remove this assignment policy from this inbox? The inbox will revert to default assignment rules.",
+      "DELETE_CONFIRM_TITLE": "Ta bort tilldelningspolicy?",
+      "DELETE_CONFIRM_MESSAGE": "Är du säker på att du vill ta bort den här tilldelningspolicyn från inkorgen? Inkorgen återgår till standardregler för tilldelning.",
       "CANCEL": "Avbryt",
       "CONFIRM_DELETE": "Radera",
-      "DELETE_SUCCESS": "Assignment policy removed successfully",
-      "DELETE_ERROR": "Failed to remove assignment policy"
+      "DELETE_SUCCESS": "Tilldelningspolicyn har tagits bort",
+      "DELETE_ERROR": "Det gick inte att ta bort tilldelningspolicyn"
     },
     "FACEBOOK_REAUTHORIZE": {
-      "TITLE": "Återauktorisera",
-      "SUBTITLE": "Din Facebook-anslutning har löpt ut, vänligen återanslut din Facebook-sida för att fortsätta med tjänsterna",
+      "TITLE": "Auktorisera igen",
+      "SUBTITLE": "Din Facebook-anslutning har gått ut. Anslut din Facebook-sida igen för att fortsätta använda tjänsterna.",
       "MESSAGE_SUCCESS": "Återanslutning lyckades",
-      "MESSAGE_ERROR": "Ett fel uppstod, vänligen försök igen"
+      "MESSAGE_ERROR": "Ett fel uppstod. Försök igen."
     },
     "PRE_CHAT_FORM": {
-      "DESCRIPTION": "Förchattformulär gör det möjligt för dig att samla in användarinformation innan de börjar samtala med dig.",
-      "SET_FIELDS": "Pre chat form fields",
+      "DESCRIPTION": "Förchattformulär gör det möjligt att samla in information från användaren innan chatten startar.",
+      "SET_FIELDS": "Fält i förchattformulär",
       "SET_FIELDS_HEADER": {
-        "FIELDS": "Fields",
-        "LABEL": "Label",
-        "PLACE_HOLDER": "Placeholder",
-        "KEY": "Key",
-        "TYPE": "Type",
-        "REQUIRED": "Required"
+        "FIELDS": "Fält",
+        "LABEL": "Etikett",
+        "PLACE_HOLDER": "Platshållare",
+        "KEY": "Nyckel",
+        "TYPE": "Typ",
+        "REQUIRED": "Obligatoriskt"
       },
       "ENABLE": {
         "LABEL": "Aktivera formulär före chatt",
@@ -868,240 +868,240 @@
         }
       },
       "PRE_CHAT_MESSAGE": {
-        "LABEL": "Pre chat message",
-        "PLACEHOLDER": "Detta meddelande skulle vara synligt för användarna tillsammans med formuläret"
+        "LABEL": "Meddelande före chatt",
+        "PLACEHOLDER": "Det här meddelandet visas för användare tillsammans med formuläret"
       },
       "REQUIRE_EMAIL": {
-        "LABEL": "Besökare bör uppge sitt namn och sin e-postadress innan de startar chatten"
+        "LABEL": "Besökare ska ange namn och e-postadress innan de startar chatten"
       }
     },
     "CSAT": {
-      "TITLE": "Aktivera CSAT",
-      "SUBTITLE": "Automatically trigger CSAT surveys at the end of conversations to understand how customers feel about their support experience. Track satisfaction trends and identify areas for improvement over time.",
+      "TITLE": "Aktivera kundnöjdhetsmätning",
+      "SUBTITLE": "Skicka automatiskt kundnöjdhetsenkäter i slutet av konversationer för att förstå hur kunder upplever supporten. Följ nöjdhet över tid och identifiera förbättringsområden.",
       "DISPLAY_TYPE": {
-        "LABEL": "Display type"
+        "LABEL": "Visningstyp"
       },
       "MESSAGE": {
         "LABEL": "Meddelande",
-        "PLACEHOLDER": "Please enter a message to show users with the form"
+        "PLACEHOLDER": "Ange ett meddelande som visas för användare tillsammans med formuläret"
       },
       "BUTTON_TEXT": {
-        "LABEL": "Button text",
-        "PLACEHOLDER": "Please rate us"
+        "LABEL": "Knapptext",
+        "PLACEHOLDER": "Betygsätt oss"
       },
       "LANGUAGE": {
-        "LABEL": "Language",
-        "PLACEHOLDER": "Select template language"
+        "LABEL": "Språk",
+        "PLACEHOLDER": "Välj mallspråk"
       },
       "MESSAGE_PREVIEW": {
-        "LABEL": "Message preview",
-        "TOOLTIP": "This may vary slightly when rendered on WhatsApp's platform."
+        "LABEL": "Förhandsvisning av meddelande",
+        "TOOLTIP": "Detta kan skilja sig något när det visas på WhatsApps plattform."
       },
       "TEMPLATE_STATUS": {
-        "APPROVED": "Approved by WhatsApp",
-        "PENDING": "Pending WhatsApp approval",
-        "REJECTED": "Meta rejected the template",
-        "DEFAULT": "Needs WhatsApp approval",
-        "NOT_FOUND": "The template does not exist in the Meta platform."
+        "APPROVED": "Godkänd av WhatsApp",
+        "PENDING": "Väntar på godkännande från WhatsApp",
+        "REJECTED": "Meta avvisade mallen",
+        "DEFAULT": "Kräver godkännande från WhatsApp",
+        "NOT_FOUND": "Mallen finns inte på Metas plattform."
       },
       "TEMPLATE_CREATION": {
-        "SUCCESS_MESSAGE": "WhatsApp template created successfully and sent for approval",
-        "ERROR_MESSAGE": "Failed to create WhatsApp template"
+        "SUCCESS_MESSAGE": "WhatsApp-mallen har skapats och skickats för godkännande",
+        "ERROR_MESSAGE": "Det gick inte att skapa WhatsApp-mallen"
       },
       "TEMPLATE_UPDATE_DIALOG": {
-        "TITLE": "Edit survey details",
-        "DESCRIPTION": "We will delete the previous template and make a new one which will be sent again for WhatsApp approval",
-        "CONFIRM": "Create new template",
-        "CANCEL": "Go back"
+        "TITLE": "Redigera enkätuppgifter",
+        "DESCRIPTION": "Vi tar bort den tidigare mallen och skapar en ny som skickas för WhatsApp-godkännande igen",
+        "CONFIRM": "Skapa ny mall",
+        "CANCEL": "Gå tillbaka"
       },
       "UTILITY_ANALYZER": {
-        "ACTION": "Check utility fit",
-        "HELPER_NOTE": "Check this message before submission to improve Utility fit. The system creates a dedicated CSAT template with buttons for reporting and submits it as Utility; Meta may still reclassify it as Marketing based on content.",
-        "RESULT_LABEL": "Meta category prediction",
-        "GUIDANCE_NOTE": "This is a guidance check, not a guarantee of Meta approval.",
-        "SUGGESTION_LABEL": "Suggested utility-safe rewrite",
-        "APPLY": "Use this rewrite",
-        "ERROR_MESSAGE": "Couldn't analyze the message. Please try again.",
+        "ACTION": "Kontrollera Utility-passning",
+        "HELPER_NOTE": "Kontrollera meddelandet innan du skickar in det för att förbättra chansen att det klassas som Utility. Systemet skapar en dedikerad CSAT-mall med knappar för rapportering och skickar in den som Utility. Meta kan fortfarande omklassificera den som Marketing baserat på innehållet.",
+        "RESULT_LABEL": "Metas kategoriprognos",
+        "GUIDANCE_NOTE": "Detta är en vägledande kontroll, inte en garanti för Metas godkännande.",
+        "SUGGESTION_LABEL": "Föreslagen omskrivning som passar Utility",
+        "APPLY": "Använd den här omskrivningen",
+        "ERROR_MESSAGE": "Det gick inte att analysera meddelandet. Försök igen.",
         "CLASSIFICATION": {
-          "LIKELY_UTILITY": "Likely Utility",
-          "LIKELY_MARKETING": "Likely Marketing",
-          "UNCLEAR": "Needs clarification"
+          "LIKELY_UTILITY": "Troligen Utility",
+          "LIKELY_MARKETING": "Troligen Marketing",
+          "UNCLEAR": "Behöver förtydligas"
         }
       },
       "SURVEY_RULE": {
-        "LABEL": "Survey rule",
-        "DESCRIPTION_PREFIX": "Send the survey if the conversation",
-        "DESCRIPTION_SUFFIX": "any of the labels",
+        "LABEL": "Enkätregel",
+        "DESCRIPTION_PREFIX": "Skicka enkäten om konversationen",
+        "DESCRIPTION_SUFFIX": "någon av etiketterna",
         "OPERATOR": {
-          "CONTAINS": "contains",
-          "DOES_NOT_CONTAINS": "does not contain"
+          "CONTAINS": "innehåller",
+          "DOES_NOT_CONTAINS": "inte innehåller"
         },
-        "SELECT_PLACEHOLDER": "select labels"
+        "SELECT_PLACEHOLDER": "välj etiketter"
       },
-      "NOTE": "Note: CSAT surveys are sent only once per conversation",
-      "WHATSAPP_NOTE": "Note: When you save, the system creates a dedicated CSAT template in WhatsApp (used to capture rating and feedback in reports) and submits it as Utility for approval. Meta may still classify it as Marketing based on content. After approval, surveys are sent only once per conversation as per the survey rule.",
+      "NOTE": "Obs: Kundnöjdhetsenkäter skickas bara en gång per konversation",
+      "WHATSAPP_NOTE": "Obs: När du sparar skapar systemet en dedikerad CSAT-mall i WhatsApp, som används för att samla in betyg och feedback i rapporter, och skickar in den som Utility för godkännande. Meta kan fortfarande klassificera den som Marketing baserat på innehållet. Efter godkännande skickas enkäter bara en gång per konversation enligt enkätregeln.",
       "API": {
-        "SUCCESS_MESSAGE": "CSAT settings updated successfully",
-        "ERROR_MESSAGE": "We couldn't update CSAT settings. Please try again later."
+        "SUCCESS_MESSAGE": "Kundnöjdhetsinställningarna har uppdaterats",
+        "ERROR_MESSAGE": "Det gick inte att uppdatera kundnöjdhetsinställningarna. Försök igen senare."
       }
     },
     "BUSINESS_HOURS": {
       "TITLE": "Ställ in din tillgänglighet",
-      "SUBTITLE": "Set your availability on your livechat widget",
-      "WEEKLY_TITLE": "Set your weekly hours",
-      "TIMEZONE_LABEL": "Select timezone",
-      "UPDATE": "Update business hours settings",
-      "TOGGLE_AVAILABILITY": "Enable business availability for this inbox",
-      "UNAVAILABLE_MESSAGE_LABEL": "Unavailable message for visitors",
-      "TOGGLE_HELP": "Enabling business availability will show the available hours on live chat widget even if all the agents are offline. Outside available hours visitors can be warned with a message and a pre-chat form.",
+      "SUBTITLE": "Ställ in tillgängligheten i din livechatt-widget",
+      "WEEKLY_TITLE": "Ställ in veckans öppettider",
+      "TIMEZONE_LABEL": "Välj tidszon",
+      "UPDATE": "Uppdatera öppettider",
+      "TOGGLE_AVAILABILITY": "Aktivera öppettider för den här inkorgen",
+      "UNAVAILABLE_MESSAGE_LABEL": "Meddelande till besökare utanför öppettider",
+      "TOGGLE_HELP": "När öppettider är aktiverade visas tillgängliga tider i livechatt-widgeten även om alla medarbetare är offline. Utanför öppettider kan besökare få ett meddelande och ett förchattformulär.",
       "DAY": {
-        "DAY": "Day",
+        "DAY": "Dag",
         "AVAILABILITY": "Tillgänglighet",
-        "HOURS": "Hours",
-        "ENABLE": "Enable availability for this day",
-        "UNAVAILABLE": "Unavailable",
-        "VALIDATION_ERROR": "Starting time should be before closing time.",
-        "CHOOSE": "Choose"
+        "HOURS": "Tider",
+        "ENABLE": "Aktivera tillgänglighet för den här dagen",
+        "UNAVAILABLE": "Ej tillgänglig",
+        "VALIDATION_ERROR": "Starttiden måste vara före sluttiden.",
+        "CHOOSE": "Välj"
       },
-      "ALL_DAY": "All-Day"
+      "ALL_DAY": "Hela dagen"
     },
     "IMAP": {
       "TITLE": "IMAP",
-      "SUBTITLE": "Set your IMAP details",
-      "NOTE_TEXT": "To enable SMTP, please configure IMAP.",
-      "UPDATE": "Update IMAP settings",
-      "TOGGLE_AVAILABILITY": "Enable IMAP configuration for this inbox",
-      "TOGGLE_HELP": "Enabling IMAP will help the user to receive email",
+      "SUBTITLE": "Ange dina IMAP-uppgifter",
+      "NOTE_TEXT": "För att aktivera SMTP behöver du konfigurera IMAP.",
+      "UPDATE": "Uppdatera IMAP-inställningar",
+      "TOGGLE_AVAILABILITY": "Aktivera IMAP-konfiguration för den här inkorgen",
+      "TOGGLE_HELP": "Aktivering av IMAP gör att användaren kan ta emot e-post",
       "EDIT": {
-        "SUCCESS_MESSAGE": "IMAP settings updated successfully",
-        "ERROR_MESSAGE": "Unable to update IMAP settings"
+        "SUCCESS_MESSAGE": "IMAP-inställningarna har uppdaterats",
+        "ERROR_MESSAGE": "Det gick inte att uppdatera IMAP-inställningarna"
       },
       "ADDRESS": {
-        "LABEL": "Address",
-        "PLACE_HOLDER": "Address (Eg: imap.gmail.com)"
+        "LABEL": "Adress",
+        "PLACE_HOLDER": "Adress, t.ex. imap.gmail.com"
       },
       "PORT": {
         "LABEL": "Port",
         "PLACE_HOLDER": "Port"
       },
       "LOGIN": {
-        "LABEL": "Logga in",
-        "PLACE_HOLDER": "Logga in"
+        "LABEL": "Inloggning",
+        "PLACE_HOLDER": "Inloggning"
       },
       "PASSWORD": {
         "LABEL": "Lösenord",
         "PLACE_HOLDER": "Lösenord"
       },
-      "ENABLE_SSL": "Enable SSL"
+      "ENABLE_SSL": "Aktivera SSL"
     },
     "MICROSOFT": {
       "TITLE": "Microsoft",
-      "SUBTITLE": "Reauthorize your MICROSOFT account"
+      "SUBTITLE": "Auktorisera ditt Microsoft-konto igen"
     },
     "SMTP": {
       "TITLE": "SMTP",
-      "SUBTITLE": "Set your SMTP details",
-      "UPDATE": "Update SMTP settings",
-      "TOGGLE_AVAILABILITY": "Enable SMTP configuration for this inbox",
-      "TOGGLE_HELP": "Enabling SMTP will help the user to send email",
+      "SUBTITLE": "Ange dina SMTP-uppgifter",
+      "UPDATE": "Uppdatera SMTP-inställningar",
+      "TOGGLE_AVAILABILITY": "Aktivera SMTP-konfiguration för den här inkorgen",
+      "TOGGLE_HELP": "Aktivering av SMTP gör att användaren kan skicka e-post",
       "EDIT": {
-        "SUCCESS_MESSAGE": "SMTP settings updated successfully",
-        "ERROR_MESSAGE": "Unable to update SMTP settings"
+        "SUCCESS_MESSAGE": "SMTP-inställningarna har uppdaterats",
+        "ERROR_MESSAGE": "Det gick inte att uppdatera SMTP-inställningarna"
       },
       "ADDRESS": {
-        "LABEL": "Address",
-        "PLACE_HOLDER": "Address (Eg: smtp.gmail.com)"
+        "LABEL": "Adress",
+        "PLACE_HOLDER": "Adress, t.ex. smtp.gmail.com"
       },
       "PORT": {
         "LABEL": "Port",
         "PLACE_HOLDER": "Port"
       },
       "LOGIN": {
-        "LABEL": "Logga in",
-        "PLACE_HOLDER": "Logga in"
+        "LABEL": "Inloggning",
+        "PLACE_HOLDER": "Inloggning"
       },
       "PASSWORD": {
         "LABEL": "Lösenord",
         "PLACE_HOLDER": "Lösenord"
       },
       "DOMAIN": {
-        "LABEL": "Domain",
-        "PLACE_HOLDER": "Domain"
+        "LABEL": "Domän",
+        "PLACE_HOLDER": "Domän"
       },
-      "ENCRYPTION": "Encryption",
+      "ENCRYPTION": "Kryptering",
       "SSL_TLS": "SSL/TLS",
       "START_TLS": "STARTTLS",
       "OPEN_SSL_VERIFY_MODE": "Open SSL Verify Mode",
-      "AUTH_MECHANISM": "Authentication"
+      "AUTH_MECHANISM": "Autentisering"
     },
-    "NOTE": "Note: ",
+    "NOTE": "Obs: ",
     "WIDGET_BUILDER": {
       "WIDGET_OPTIONS": {
         "AVATAR": {
-          "LABEL": "Website Avatar",
+          "LABEL": "Webbplatsavatar",
           "DELETE": {
             "API": {
-              "SUCCESS_MESSAGE": "Avatar deleted successfully",
-              "ERROR_MESSAGE": "Ett fel uppstod, vänligen försök igen"
+              "SUCCESS_MESSAGE": "Avataren har tagits bort",
+              "ERROR_MESSAGE": "Ett fel uppstod. Försök igen."
             }
           }
         },
         "WEBSITE_NAME": {
-          "LABEL": "Website Name",
-          "PLACE_HOLDER": "Ange namnet på din webbplats (t.ex. Acme Inc)",
-          "ERROR": "Please enter a valid website name"
+          "LABEL": "Webbplatsnamn",
+          "PLACE_HOLDER": "Ange namnet på din webbplats, t.ex. Acme Inc",
+          "ERROR": "Ange ett giltigt webbplatsnamn"
         },
         "WELCOME_HEADING": {
           "LABEL": "Välkomstrubrik",
-          "PLACE_HOLDER": "Hi there!"
+          "PLACE_HOLDER": "Hej där!"
         },
         "WELCOME_TAGLINE": {
-          "LABEL": "Välkomsttagline",
-          "PLACE_HOLDER": "Vi gör det enkelt att ta kontakt med oss. Fråga oss något, eller dela din feedback."
+          "LABEL": "Välkomsttext",
+          "PLACE_HOLDER": "Vi gör det enkelt att komma i kontakt med oss. Ställ en fråga eller dela din feedback."
         },
         "REPLY_TIME": {
-          "LABEL": "Reply Time",
+          "LABEL": "Svarstid",
           "IN_A_FEW_MINUTES": "Inom några minuter",
           "IN_A_FEW_HOURS": "Inom några timmar",
           "IN_A_DAY": "Inom en dag"
         },
         "WIDGET_COLOR_LABEL": "Widgetfärg",
-        "WIDGET_BUBBLE": "Bubble",
+        "WIDGET_BUBBLE": "Bubbla",
         "WIDGET_BUBBLE_POSITION_LABEL": "Position:",
-        "WIDGET_BUBBLE_TYPE_LABEL": "Type:",
+        "WIDGET_BUBBLE_TYPE_LABEL": "Typ:",
         "WIDGET_BUBBLE_LAUNCHER_TITLE": {
           "DEFAULT": "Chatta med oss",
-          "LABEL": "Launcher Title",
+          "LABEL": "Starttext",
           "PLACE_HOLDER": "Chatta med oss"
         },
         "UPDATE": {
-          "BUTTON_TEXT": "Update Widget Settings",
+          "BUTTON_TEXT": "Uppdatera widgetinställningar",
           "API": {
-            "SUCCESS_MESSAGE": "Widget settings updated successfully",
-            "ERROR_MESSAGE": "Unable to update widget settings"
+            "SUCCESS_MESSAGE": "Widgetinställningarna har uppdaterats",
+            "ERROR_MESSAGE": "Det gick inte att uppdatera widgetinställningarna"
           }
         },
         "WIDGET_VIEW_OPTION": {
-          "PREVIEW": "Preview",
-          "SCRIPT": "Script"
+          "PREVIEW": "Förhandsvisa",
+          "SCRIPT": "Skript"
         },
         "WIDGET_BUBBLE_POSITION": {
-          "LEFT": "Left",
-          "RIGHT": "Right"
+          "LEFT": "Vänster",
+          "RIGHT": "Höger"
         },
         "WIDGET_BUBBLE_TYPE": {
           "STANDARD": "Standard",
-          "EXPANDED_BUBBLE": "Expanded Bubble"
+          "EXPANDED_BUBBLE": "Expanderad bubbla"
         }
       },
       "WIDGET_SCREEN": {
-        "DEFAULT": "Default",
-        "CHAT": "Chat mode"
+        "DEFAULT": "Standard",
+        "CHAT": "Chattläge"
       },
       "REPLY_TIME": {
         "IN_A_FEW_MINUTES": "Svarar vanligtvis inom några minuter",
         "IN_A_FEW_HOURS": "Svarar vanligtvis inom några timmar",
-        "IN_A_DAY": "Svar vanligtvis inom en dag"
+        "IN_A_DAY": "Svarar vanligtvis inom en dag"
       },
       "FOOTER": {
         "START_CONVERSATION_BUTTON_TEXT": "Starta konversation",
@@ -1112,24 +1112,24 @@
           "ONLINE": "Vi är online",
           "OFFLINE": "Vi är borta för tillfället"
         },
-        "USER_MESSAGE": "Hi",
-        "AGENT_MESSAGE": "Hello"
+        "USER_MESSAGE": "Hej",
+        "AGENT_MESSAGE": "Hej"
       },
-      "BRANDING_TEXT": "Drivs av Chatwoot",
+      "BRANDING_TEXT": "Drivs av Custio",
       "SCRIPT_SETTINGS": "\n      window.chatwootSettings = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": {
         "TITLE": "Microsoft",
-        "DESCRIPTION": "Connect with Microsoft"
+        "DESCRIPTION": "Anslut med Microsoft"
       },
       "GOOGLE": {
         "TITLE": "Google",
-        "DESCRIPTION": "Connect with Google"
+        "DESCRIPTION": "Anslut med Google"
       },
       "OTHER_PROVIDERS": {
-        "TITLE": "Other Providers",
-        "DESCRIPTION": "Connect with Other Providers"
+        "TITLE": "Andra leverantörer",
+        "DESCRIPTION": "Anslut med andra leverantörer"
       }
     },
     "CHANNELS": {
@@ -1145,7 +1145,7 @@
       "API": "API-kanal",
       "INSTAGRAM": "Instagram",
       "TIKTOK": "TikTok",
-      "VOICE": "Voice"
+      "VOICE": "Samtal"
     }
   }
 }

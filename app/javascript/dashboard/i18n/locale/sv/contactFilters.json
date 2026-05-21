@@ -1,60 +1,60 @@
 {
   "CONTACTS_FILTER": {
-    "TITLE": "Filter Contacts",
-    "SUBTITLE": "Add filters below and hit 'Submit' to filter contacts.",
-    "EDIT_CUSTOM_SEGMENT": "Edit Segment",
-    "CUSTOM_VIEWS_SUBTITLE": "Add or remove filters and update your segment.",
-    "ADD_NEW_FILTER": "Add Filter",
-    "CLEAR_ALL_FILTERS": "Clear All Filters",
-    "FILTER_DELETE_ERROR": "You should have atleast one filter to save",
+    "TITLE": "Filtrera kunder",
+    "SUBTITLE": "Lägg till filter nedan och klicka på ”Skicka” för att filtrera kunder.",
+    "EDIT_CUSTOM_SEGMENT": "Redigera segment",
+    "CUSTOM_VIEWS_SUBTITLE": "Lägg till eller ta bort filter och uppdatera ditt segment.",
+    "ADD_NEW_FILTER": "Lägg till filter",
+    "CLEAR_ALL_FILTERS": "Rensa alla filter",
+    "FILTER_DELETE_ERROR": "Du behöver ha minst ett filter för att kunna spara",
     "SUBMIT_BUTTON_LABEL": "Skicka",
-    "UPDATE_BUTTON_LABEL": "Update Segment",
+    "UPDATE_BUTTON_LABEL": "Uppdatera segment",
     "CANCEL_BUTTON_LABEL": "Avbryt",
-    "CLEAR_BUTTON_LABEL": "Clear Filters",
-    "EMPTY_VALUE_ERROR": "Value is required",
-    "SEGMENT_LABEL": "Segment Name",
-    "SEGMENT_QUERY_LABEL": "Segment Query",
-    "TOOLTIP_LABEL": "Filter contacts",
+    "CLEAR_BUTTON_LABEL": "Rensa filter",
+    "EMPTY_VALUE_ERROR": "Värde krävs",
+    "SEGMENT_LABEL": "Segmentnamn",
+    "SEGMENT_QUERY_LABEL": "Segmentfråga",
+    "TOOLTIP_LABEL": "Filtrera kunder",
     "QUERY_DROPDOWN_LABELS": {
-      "AND": "AND",
-      "OR": "OR"
+      "AND": "OCH",
+      "OR": "ELLER"
     },
     "OPERATOR_LABELS": {
-      "equal_to": "Equal to",
-      "not_equal_to": "Not equal to",
-      "contains": "Contains",
-      "does_not_contain": "Does not contain",
-      "is_present": "Is present",
-      "is_not_present": "Is not present",
-      "is_greater_than": "Is greater than",
-      "is_lesser_than": "Is lesser than",
-      "days_before": "Is x days before"
+      "equal_to": "Är lika med",
+      "not_equal_to": "Är inte lika med",
+      "contains": "Innehåller",
+      "does_not_contain": "Innehåller inte",
+      "is_present": "Finns",
+      "is_not_present": "Finns inte",
+      "is_greater_than": "Är större än",
+      "is_lesser_than": "Är mindre än",
+      "days_before": "Är x dagar före"
     },
     "ERRORS": {
-      "VALUE_REQUIRED": "Value is required"
+      "VALUE_REQUIRED": "Värde krävs"
     },
     "ATTRIBUTES": {
       "NAME": "Namn",
       "EMAIL": "E-post",
       "PHONE_NUMBER": "Telefonnummer",
-      "IDENTIFIER": "Identifier",
-      "CITY": "City",
-      "COUNTRY": "Country",
-      "CUSTOM_ATTRIBUTE_LIST": "List",
+      "IDENTIFIER": "Identifierare",
+      "CITY": "Stad",
+      "COUNTRY": "Land",
+      "CUSTOM_ATTRIBUTE_LIST": "Lista",
       "CUSTOM_ATTRIBUTE_TEXT": "Text",
-      "CUSTOM_ATTRIBUTE_NUMBER": "Number",
-      "CUSTOM_ATTRIBUTE_LINK": "Link",
-      "CUSTOM_ATTRIBUTE_CHECKBOX": "Checkbox",
-      "CREATED_AT": "Created At",
+      "CUSTOM_ATTRIBUTE_NUMBER": "Nummer",
+      "CUSTOM_ATTRIBUTE_LINK": "Länk",
+      "CUSTOM_ATTRIBUTE_CHECKBOX": "Kryssruta",
+      "CREATED_AT": "Skapad",
       "LAST_ACTIVITY": "Senaste aktivitet",
-      "REFERER_LINK": "Referrer link",
+      "REFERER_LINK": "Hänvisningslänk",
       "BLOCKED": "Blockerad",
       "LABELS": "Etiketter"
     },
     "GROUPS": {
-      "STANDARD_FILTERS": "Standard Filters",
-      "ADDITIONAL_FILTERS": "Additional Filters",
-      "CUSTOM_ATTRIBUTES": "Egna egenskaper"
+      "STANDARD_FILTERS": "Standardfilter",
+      "ADDITIONAL_FILTERS": "Ytterligare filter",
+      "CUSTOM_ATTRIBUTES": "Anpassade egenskaper"
     }
   }
 }

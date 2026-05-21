@@ -1,45 +1,45 @@
 {
   "BULK_ACTION": {
-    "CONVERSATIONS_SELECTED": "{conversationCount} conversations selected",
-    "AGENT_SELECT_LABEL": "Välj agent",
-    "ASSIGN_CONFIRMATION_LABEL": "Are you sure to assign {conversationCount} {conversationLabel} to",
-    "UNASSIGN_CONFIRMATION_LABEL": "Are you sure to unassign {conversationCount} {conversationLabel}?",
-    "GO_BACK_LABEL": "Go back",
+    "CONVERSATIONS_SELECTED": "{conversationCount} konversationer valda",
+    "AGENT_SELECT_LABEL": "Välj medarbetare",
+    "ASSIGN_CONFIRMATION_LABEL": "Är du säker på att du vill tilldela {conversationCount} {conversationLabel} till",
+    "UNASSIGN_CONFIRMATION_LABEL": "Är du säker på att du vill ta bort tilldelningen för {conversationCount} {conversationLabel}?",
+    "GO_BACK_LABEL": "Gå tillbaka",
     "ASSIGN_LABEL": "Tilldela",
     "YES": "Ja",
     "SEARCH_INPUT_PLACEHOLDER": "Sök",
-    "ASSIGN_AGENT_TOOLTIP": "Tilldela agent",
+    "ASSIGN_AGENT_TOOLTIP": "Tilldela medarbetare",
     "ASSIGN_TEAM_TOOLTIP": "Tilldela team",
-    "ASSIGN_SUCCESFUL": "Conversations assigned successfully.",
-    "ASSIGN_FAILED": "Failed to assign conversations. Please try again.",
-    "RESOLVE_SUCCESFUL": "Conversations resolved successfully.",
-    "RESOLVE_FAILED": "Failed to resolve conversations. Please try again.",
-    "ALL_CONVERSATIONS_SELECTED_ALERT": "Conversations visible on this page are only selected.",
-    "AGENT_LIST_LOADING": "Laddar agenter",
+    "ASSIGN_SUCCESFUL": "Konversationerna har tilldelats.",
+    "ASSIGN_FAILED": "Det gick inte att tilldela konversationerna. Försök igen.",
+    "RESOLVE_SUCCESFUL": "Konversationerna har markerats som lösta.",
+    "RESOLVE_FAILED": "Det gick inte att markera konversationerna som lösta. Försök igen.",
+    "ALL_CONVERSATIONS_SELECTED_ALERT": "Endast konversationerna som visas på den här sidan är valda.",
+    "AGENT_LIST_LOADING": "Laddar medarbetare",
     "UPDATE": {
-      "CHANGE_STATUS": "Change status",
-      "SNOOZE_UNTIL": "Snooza",
-      "UPDATE_SUCCESFUL": "Conversation status updated successfully.",
-      "UPDATE_FAILED": "Failed to update conversations. Please try again."
+      "CHANGE_STATUS": "Ändra status",
+      "SNOOZE_UNTIL": "Pausa till",
+      "UPDATE_SUCCESFUL": "Konversationernas status har uppdaterats.",
+      "UPDATE_FAILED": "Det gick inte att uppdatera konversationerna. Försök igen."
     },
     "RESOLVE": {
-      "ALL_MISSING_ATTRIBUTES": "Cannot resolve conversations due to missing required attributes",
-      "PARTIAL_SUCCESS": "Some conversations need required attributes before resolving and were skipped"
+      "ALL_MISSING_ATTRIBUTES": "Konversationerna kan inte markeras som lösta eftersom obligatoriska egenskaper saknas",
+      "PARTIAL_SUCCESS": "Vissa konversationer saknar obligatoriska egenskaper och hoppades därför över"
     },
     "LABELS": {
-      "ASSIGN_LABELS": "Assign labels",
+      "ASSIGN_LABELS": "Tilldela etiketter",
       "NO_LABELS_FOUND": "Inga etiketter hittades",
-      "ASSIGN_SELECTED_LABELS": "Assign selected labels",
-      "ASSIGN_SUCCESFUL": "Labels assigned successfully.",
-      "ASSIGN_FAILED": "Failed to assign labels. Please try again."
+      "ASSIGN_SELECTED_LABELS": "Tilldela valda etiketter",
+      "ASSIGN_SUCCESFUL": "Etiketterna har tilldelats.",
+      "ASSIGN_FAILED": "Det gick inte att tilldela etiketterna. Försök igen."
     },
     "TEAMS": {
       "TEAM_SELECT_LABEL": "Välj team",
       "NONE": "Inget",
-      "NO_TEAMS_AVAILABLE": "There are no teams added to this account yet.",
-      "ASSIGN_SELECTED_TEAMS": "Assign selected team.",
-      "ASSIGN_SUCCESFUL": "Teams assigned successfully.",
-      "ASSIGN_FAILED": "Failed to assign team. Please try again."
+      "NO_TEAMS_AVAILABLE": "Det finns inga team på det här kontot ännu.",
+      "ASSIGN_SELECTED_TEAMS": "Tilldela valt team.",
+      "ASSIGN_SUCCESFUL": "Team har tilldelats.",
+      "ASSIGN_FAILED": "Det gick inte att tilldela team. Försök igen."
     }
   }
 }

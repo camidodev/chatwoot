@@ -1,213 +1,213 @@
 {
   "CAMPAIGN": {
     "LIVE_CHAT": {
-      "HEADER_TITLE": "Live chat campaigns",
-      "NEW_CAMPAIGN": "Create campaign",
+      "HEADER_TITLE": "Chattkampanjer",
+      "NEW_CAMPAIGN": "Skapa kampanj",
       "CARD": {
         "STATUS": {
           "ENABLED": "Aktiverad",
           "DISABLED": "Inaktiverad"
         },
         "CAMPAIGN_DETAILS": {
-          "SENT_BY": "Skickat av",
+          "SENT_BY": "Skickas av",
           "BOT": "Bot",
           "FROM": "från",
           "URL": "URL:"
         }
       },
       "EMPTY_STATE": {
-        "TITLE": "No live chat campaigns are available",
-        "SUBTITLE": "Connect with your customers using proactive messages.  Click 'Create campaign' to get started."
+        "TITLE": "Det finns inga chattkampanjer",
+        "SUBTITLE": "Nå dina kunder via chatten med riktade meddelanden. Klicka på ”Skapa kampanj” för att komma igång."
       },
       "CREATE": {
-        "TITLE": "Create a live chat campaign",
+        "TITLE": "Skapa chattkampanj",
         "CANCEL_BUTTON_TEXT": "Avbryt",
         "CREATE_BUTTON_TEXT": "Skapa",
         "FORM": {
           "TITLE": {
-            "LABEL": "Title",
-            "PLACEHOLDER": "Please enter the title of campaign",
-            "ERROR": "Title is required"
+            "LABEL": "Titel",
+            "PLACEHOLDER": "Ange kampanjens titel",
+            "ERROR": "Titel krävs"
           },
           "MESSAGE": {
             "LABEL": "Meddelande",
-            "PLACEHOLDER": "Please enter the message of campaign",
-            "ERROR": "Meddelande måste fyllas i"
+            "PLACEHOLDER": "Ange kampanjens meddelande",
+            "ERROR": "Meddelande krävs"
           },
           "INBOX": {
-            "LABEL": "Select Inbox",
-            "PLACEHOLDER": "Select Inbox",
-            "ERROR": "Inbox is required"
+            "LABEL": "Välj inkorg",
+            "PLACEHOLDER": "Välj inkorg",
+            "ERROR": "Inkorg krävs"
           },
           "SENT_BY": {
-            "LABEL": "Skickat av",
-            "PLACEHOLDER": "Please select sender",
-            "ERROR": "Sender is required"
+            "LABEL": "Skickas av",
+            "PLACEHOLDER": "Välj avsändare",
+            "ERROR": "Avsändare krävs"
           },
           "END_POINT": {
             "LABEL": "URL",
-            "PLACEHOLDER": "Please enter the URL",
+            "PLACEHOLDER": "Ange URL",
             "ERROR": "Ange en giltig URL"
           },
           "TIME_ON_PAGE": {
-            "LABEL": "Time on page(Seconds)",
-            "PLACEHOLDER": "Please enter the time",
-            "ERROR": "Time on page is required"
+            "LABEL": "Tid på sidan (sekunder)",
+            "PLACEHOLDER": "Ange tid",
+            "ERROR": "Tid på sidan krävs"
           },
           "OTHER_PREFERENCES": {
-            "TITLE": "Other preferences",
-            "ENABLED": "Enable campaign",
-            "TRIGGER_ONLY_BUSINESS_HOURS": "Trigger only during business hours"
+            "TITLE": "Övriga inställningar",
+            "ENABLED": "Aktivera kampanj",
+            "TRIGGER_ONLY_BUSINESS_HOURS": "Aktivera endast under öppettider"
           },
           "BUTTONS": {
             "CREATE": "Skapa",
             "CANCEL": "Avbryt"
           },
           "API": {
-            "SUCCESS_MESSAGE": "Live chat campaign created successfully",
-            "ERROR_MESSAGE": "There was an error. Please try again."
+            "SUCCESS_MESSAGE": "Chattkampanjen har skapats",
+            "ERROR_MESSAGE": "Ett fel uppstod. Försök igen."
           }
         }
       },
       "EDIT": {
-        "TITLE": "Edit live chat campaign",
+        "TITLE": "Redigera chattkampanj",
         "FORM": {
           "API": {
-            "SUCCESS_MESSAGE": "Live chat campaign updated successfully",
-            "ERROR_MESSAGE": "There was an error. Please try again."
+            "SUCCESS_MESSAGE": "Chattkampanjen har uppdaterats",
+            "ERROR_MESSAGE": "Ett fel uppstod. Försök igen."
           }
         }
       }
     },
     "SMS": {
-      "HEADER_TITLE": "SMS campaigns",
-      "NEW_CAMPAIGN": "Create campaign",
+      "HEADER_TITLE": "SMS-kampanjer",
+      "NEW_CAMPAIGN": "Skapa kampanj",
       "EMPTY_STATE": {
-        "TITLE": "No SMS campaigns are available",
-        "SUBTITLE": "Launch an SMS campaign to reach your customers directly. Send offers or make announcements with ease. Click 'Create campaign' to get started."
+        "TITLE": "Det finns inga SMS-kampanjer",
+        "SUBTITLE": "Skapa en SMS-kampanj för att nå dina kunder direkt. Skicka erbjudanden eller dela nyheter på ett enkelt sätt. Klicka på ”Skapa kampanj” för att komma igång."
       },
       "CARD": {
         "STATUS": {
-          "COMPLETED": "Completed",
-          "SCHEDULED": "Scheduled"
+          "COMPLETED": "Slutförd",
+          "SCHEDULED": "Schemalagd"
         },
         "CAMPAIGN_DETAILS": {
-          "SENT_FROM": "Sent from",
-          "ON": "on"
+          "SENT_FROM": "Skickas från",
+          "ON": "den"
         }
       },
       "CREATE": {
-        "TITLE": "Create SMS campaign",
+        "TITLE": "Skapa SMS-kampanj",
         "CANCEL_BUTTON_TEXT": "Avbryt",
         "CREATE_BUTTON_TEXT": "Skapa",
         "FORM": {
           "TITLE": {
-            "LABEL": "Title",
-            "PLACEHOLDER": "Please enter the title of campaign",
-            "ERROR": "Title is required"
+            "LABEL": "Titel",
+            "PLACEHOLDER": "Ange kampanjens titel",
+            "ERROR": "Titel krävs"
           },
           "MESSAGE": {
             "LABEL": "Meddelande",
-            "PLACEHOLDER": "Please enter the message of campaign",
-            "ERROR": "Meddelande måste fyllas i"
+            "PLACEHOLDER": "Ange kampanjens meddelande",
+            "ERROR": "Meddelande krävs"
           },
           "INBOX": {
-            "LABEL": "Select Inbox",
-            "PLACEHOLDER": "Select Inbox",
-            "ERROR": "Inbox is required"
+            "LABEL": "Välj inkorg",
+            "PLACEHOLDER": "Välj inkorg",
+            "ERROR": "Inkorg krävs"
           },
           "AUDIENCE": {
-            "LABEL": "Audience",
-            "PLACEHOLDER": "Select the customer labels",
-            "ERROR": "Audience is required"
+            "LABEL": "Målgrupp",
+            "PLACEHOLDER": "Välj kundetiketter",
+            "ERROR": "Målgrupp krävs"
           },
           "SCHEDULED_AT": {
-            "LABEL": "Scheduled time",
-            "PLACEHOLDER": "Please select the time",
-            "ERROR": "Scheduled time is required"
+            "LABEL": "Schemalagd tid",
+            "PLACEHOLDER": "Välj tid",
+            "ERROR": "Schemalagd tid krävs"
           },
           "BUTTONS": {
             "CREATE": "Skapa",
             "CANCEL": "Avbryt"
           },
           "API": {
-            "SUCCESS_MESSAGE": "SMS campaign created successfully",
-            "ERROR_MESSAGE": "There was an error. Please try again."
+            "SUCCESS_MESSAGE": "SMS-kampanjen har skapats",
+            "ERROR_MESSAGE": "Ett fel uppstod. Försök igen."
           }
         }
       }
     },
     "WHATSAPP": {
-      "HEADER_TITLE": "WhatsApp campaigns",
-      "NEW_CAMPAIGN": "Create campaign",
+      "HEADER_TITLE": "WhatsApp-kampanjer",
+      "NEW_CAMPAIGN": "Skapa kampanj",
       "EMPTY_STATE": {
-        "TITLE": "No WhatsApp campaigns are available",
-        "SUBTITLE": "Launch a WhatsApp campaign to reach your customers directly. Send offers or make announcements with ease. Click 'Create campaign' to get started."
+        "TITLE": "Det finns inga WhatsApp-kampanjer",
+        "SUBTITLE": "Skapa en WhatsApp-kampanj för att nå dina kunder direkt. Skicka erbjudanden eller dela nyheter på ett enkelt sätt. Klicka på ”Skapa kampanj” för att komma igång."
       },
       "CARD": {
         "STATUS": {
-          "COMPLETED": "Completed",
-          "SCHEDULED": "Scheduled"
+          "COMPLETED": "Slutförd",
+          "SCHEDULED": "Schemalagd"
         },
         "CAMPAIGN_DETAILS": {
-          "SENT_FROM": "Sent from",
-          "ON": "on"
+          "SENT_FROM": "Skickas från",
+          "ON": "den"
         }
       },
       "CREATE": {
-        "TITLE": "Create WhatsApp campaign",
+        "TITLE": "Skapa WhatsApp-kampanj",
         "CANCEL_BUTTON_TEXT": "Avbryt",
         "CREATE_BUTTON_TEXT": "Skapa",
         "FORM": {
           "TITLE": {
-            "LABEL": "Title",
-            "PLACEHOLDER": "Please enter the title of campaign",
-            "ERROR": "Title is required"
+            "LABEL": "Titel",
+            "PLACEHOLDER": "Ange kampanjens titel",
+            "ERROR": "Titel krävs"
           },
           "INBOX": {
-            "LABEL": "Select Inbox",
-            "PLACEHOLDER": "Select Inbox",
-            "ERROR": "Inbox is required"
+            "LABEL": "Välj inkorg",
+            "PLACEHOLDER": "Välj inkorg",
+            "ERROR": "Inkorg krävs"
           },
           "TEMPLATE": {
-            "LABEL": "WhatsApp Template",
-            "PLACEHOLDER": "Select a template",
-            "INFO": "Select a template to use for this campaign.",
-            "ERROR": "Template is required",
-            "PREVIEW_TITLE": "Process {templateName}",
-            "LANGUAGE": "Language",
-            "CATEGORY": "Category",
-            "VARIABLES_LABEL": "Variables",
-            "VARIABLE_PLACEHOLDER": "Enter value for {variable}"
+            "LABEL": "WhatsApp-mall",
+            "PLACEHOLDER": "Välj en mall",
+            "INFO": "Välj en mall att använda för den här kampanjen.",
+            "ERROR": "Mall krävs",
+            "PREVIEW_TITLE": "Bearbeta {templateName}",
+            "LANGUAGE": "Språk",
+            "CATEGORY": "Kategori",
+            "VARIABLES_LABEL": "Variabler",
+            "VARIABLE_PLACEHOLDER": "Ange värde för {variable}"
           },
           "AUDIENCE": {
-            "LABEL": "Audience",
-            "PLACEHOLDER": "Select the customer labels",
-            "ERROR": "Audience is required"
+            "LABEL": "Målgrupp",
+            "PLACEHOLDER": "Välj kundetiketter",
+            "ERROR": "Målgrupp krävs"
           },
           "SCHEDULED_AT": {
-            "LABEL": "Scheduled time",
-            "PLACEHOLDER": "Please select the time",
-            "ERROR": "Scheduled time is required"
+            "LABEL": "Schemalagd tid",
+            "PLACEHOLDER": "Välj tid",
+            "ERROR": "Schemalagd tid krävs"
           },
           "BUTTONS": {
             "CREATE": "Skapa",
             "CANCEL": "Avbryt"
           },
           "API": {
-            "SUCCESS_MESSAGE": "WhatsApp campaign created successfully",
-            "ERROR_MESSAGE": "There was an error. Please try again."
+            "SUCCESS_MESSAGE": "WhatsApp-kampanjen har skapats",
+            "ERROR_MESSAGE": "Ett fel uppstod. Försök igen."
           }
         }
       }
     },
     "CONFIRM_DELETE": {
-      "TITLE": "Är du säker på att ta bort?",
-      "DESCRIPTION": "The delete action is permanent and cannot be reversed.",
+      "TITLE": "Är du säker på att du vill ta bort kampanjen?",
+      "DESCRIPTION": "Den här åtgärden är permanent och kan inte ångras.",
       "CONFIRM": "Radera",
       "API": {
-        "SUCCESS_MESSAGE": "Campaign deleted successfully",
-        "ERROR_MESSAGE": "There was an error. Please try again."
+        "SUCCESS_MESSAGE": "Kampanjen har tagits bort",
+        "ERROR_MESSAGE": "Ett fel uppstod. Försök igen."
       }
     }
   }

@@ -1,91 +1,91 @@
 {
   "CUSTOM_ROLE": {
-    "HEADER": "Custom Roles",
-    "LEARN_MORE": "Learn more about custom roles",
-    "DESCRIPTION": "Custom roles are roles that are created by the account owner or admin. These roles can be assigned to agents to define their access and permissions within the account. Custom roles can be created with specific permissions and access levels to suit the requirements of the organization.",
-    "COUNT": "{n} custom role | {n} custom roles",
-    "HEADER_BTN_TXT": "Add custom role",
-    "LOADING": "Fetching custom roles...",
-    "SEARCH_PLACEHOLDER": "Search custom roles...",
-    "NO_RESULTS": "No custom roles found matching your search",
-    "SEARCH_404": "Det finns inga objekt som matchar denna fråga.",
+    "HEADER": "Anpassade roller",
+    "LEARN_MORE": "Läs mer om anpassade roller",
+    "DESCRIPTION": "Anpassade roller är roller som skapas av kontoägaren eller en administratör. Roller kan tilldelas medarbetare för att styra deras åtkomst och behörigheter i kontot. Du kan skapa roller med specifika behörigheter och åtkomstnivåer som passar organisationens behov.",
+    "COUNT": "{n} anpassad roll | {n} anpassade roller",
+    "HEADER_BTN_TXT": "Lägg till anpassad roll",
+    "LOADING": "Hämtar anpassade roller...",
+    "SEARCH_PLACEHOLDER": "Sök anpassade roller...",
+    "NO_RESULTS": "Inga anpassade roller matchade din sökning",
+    "SEARCH_404": "Inga resultat matchade din sökning.",
     "PAYWALL": {
-      "TITLE": "Upgrade to create custom roles",
-      "AVAILABLE_ON": "The custom role feature is only available in the Business and Enterprise plans.",
-      "UPGRADE_PROMPT": "Upgrade your plan to get access to advanced features like team management, automations, custom attributes, and more.",
-      "UPGRADE_NOW": "Upgrade now",
-      "CANCEL_ANYTIME": "You can change or cancel your plan anytime"
+      "TITLE": "Uppgradera för att skapa anpassade roller",
+      "AVAILABLE_ON": "Funktionen för anpassade roller är endast tillgänglig i Business- och Enterprise-planerna.",
+      "UPGRADE_PROMPT": "Uppgradera din plan för att få tillgång till avancerade funktioner som teamhantering, automatiseringar, anpassade egenskaper och mer.",
+      "UPGRADE_NOW": "Uppgradera nu",
+      "CANCEL_ANYTIME": "Du kan ändra eller avsluta din plan när som helst"
     },
     "ENTERPRISE_PAYWALL": {
-      "AVAILABLE_ON": "The custom role feature is only available in the paid plans.",
-      "UPGRADE_PROMPT": "Upgrade to a paid plan to access advanced features like audit logs, agent capacity, and more.",
-      "ASK_ADMIN": "Please reach out to your administrator for the upgrade."
+      "AVAILABLE_ON": "Funktionen för anpassade roller är endast tillgänglig i betalda planer.",
+      "UPGRADE_PROMPT": "Uppgradera till en betald plan för att få tillgång till avancerade funktioner som aktivitetsloggar, medarbetarkapacitet och mer.",
+      "ASK_ADMIN": "Kontakta din administratör för att uppgradera."
     },
     "LIST": {
-      "404": "There are no custom roles available in this account.",
-      "TITLE": "Manage custom roles",
-      "DESC": "Custom roles are roles that are created by the account owner or admin. These roles can be assigned to agents to define their access and permissions within the account. Custom roles can be created with specific permissions and access levels to suit the requirements of the organization.",
+      "404": "Det finns inga anpassade roller på det här kontot.",
+      "TITLE": "Hantera anpassade roller",
+      "DESC": "Anpassade roller är roller som skapas av kontoägaren eller en administratör. Roller kan tilldelas medarbetare för att styra deras åtkomst och behörigheter i kontot. Du kan skapa roller med specifika behörigheter och åtkomstnivåer som passar organisationens behov.",
       "TABLE_HEADER": {
         "NAME": "Namn",
         "DESCRIPTION": "Beskrivning",
-        "PERMISSIONS": "Permissions",
+        "PERMISSIONS": "Behörigheter",
         "ACTIONS": "Åtgärder"
       }
     },
     "PERMISSIONS": {
-      "CONVERSATION_MANAGE": "Manage all conversations",
-      "CONVERSATION_UNASSIGNED_MANAGE": "Manage unassigned conversations and those assigned to them",
-      "CONVERSATION_PARTICIPATING_MANAGE": "Manage participating conversations and those assigned to them",
-      "CONTACT_MANAGE": "Manage contacts",
-      "REPORT_MANAGE": "Manage reports",
-      "KNOWLEDGE_BASE_MANAGE": "Manage knowledge base"
+      "CONVERSATION_MANAGE": "Hantera alla konversationer",
+      "CONVERSATION_UNASSIGNED_MANAGE": "Hantera otilldelade konversationer och konversationer som är tilldelade dem",
+      "CONVERSATION_PARTICIPATING_MANAGE": "Hantera konversationer de deltar i och konversationer som är tilldelade dem",
+      "CONTACT_MANAGE": "Hantera kunder",
+      "REPORT_MANAGE": "Hantera rapporter",
+      "KNOWLEDGE_BASE_MANAGE": "Hantera kunskapsbas"
     },
     "FORM": {
       "NAME": {
         "LABEL": "Namn",
-        "PLACEHOLDER": "Please enter a name.",
-        "ERROR": "Name is required."
+        "PLACEHOLDER": "Ange ett namn.",
+        "ERROR": "Namn krävs."
       },
       "DESCRIPTION": {
         "LABEL": "Beskrivning",
-        "PLACEHOLDER": "Please enter a description.",
-        "ERROR": "Description is required."
+        "PLACEHOLDER": "Ange en beskrivning.",
+        "ERROR": "Beskrivning krävs."
       },
       "PERMISSIONS": {
-        "LABEL": "Permissions",
-        "ERROR": "Permissions are required."
+        "LABEL": "Behörigheter",
+        "ERROR": "Behörigheter krävs."
       },
       "CANCEL_BUTTON_TEXT": "Avbryt",
       "API": {
-        "ERROR_MESSAGE": "Kunde inte ansluta till Woot server. Vänligen försök igen."
+        "ERROR_MESSAGE": "Det gick inte att spara rollen. Försök igen."
       }
     },
     "ADD": {
-      "TITLE": "Add custom role",
-      "DESC": " Custom roles allows you to create roles with specific permissions and access levels to suit the requirements of the organization.",
-      "SUBMIT": "Skicka",
+      "TITLE": "Lägg till anpassad roll",
+      "DESC": "Anpassade roller gör det möjligt att skapa roller med specifika behörigheter och åtkomstnivåer som passar organisationens behov.",
+      "SUBMIT": "Skapa",
       "API": {
-        "SUCCESS_MESSAGE": "Custom role added successfully."
+        "SUCCESS_MESSAGE": "Den anpassade rollen har lagts till."
       }
     },
     "EDIT": {
       "BUTTON_TEXT": "Redigera",
-      "TITLE": "Edit custom role",
-      "DESC": " Custom roles allows you to create roles with specific permissions and access levels to suit the requirements of the organization.",
+      "TITLE": "Redigera anpassad roll",
+      "DESC": "Anpassade roller gör det möjligt att skapa roller med specifika behörigheter och åtkomstnivåer som passar organisationens behov.",
       "SUBMIT": "Uppdatera",
       "API": {
-        "SUCCESS_MESSAGE": "Custom role updated successfully."
+        "SUCCESS_MESSAGE": "Den anpassade rollen har uppdaterats."
       }
     },
     "DELETE": {
       "BUTTON_TEXT": "Radera",
       "API": {
-        "SUCCESS_MESSAGE": "Custom role deleted successfully.",
-        "ERROR_MESSAGE": "Kunde inte ansluta till Woot server. Vänligen försök igen."
+        "SUCCESS_MESSAGE": "Den anpassade rollen har tagits bort.",
+        "ERROR_MESSAGE": "Det gick inte att ta bort rollen. Försök igen."
       },
       "CONFIRM": {
         "TITLE": "Bekräfta borttagning",
-        "MESSAGE": "Är du säker på att ta bort ",
+        "MESSAGE": "Är du säker på att du vill ta bort ",
         "YES": "Ja, ta bort ",
         "NO": "Nej, behåll "
       }
