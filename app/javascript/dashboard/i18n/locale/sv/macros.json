@@ -49,6 +49,9 @@
         "ERROR_MESSAGE": "Det gick inte att ta bort makrot. Försök igen senare"
       }
     },
+    "VIEW": {
+      "TOOLTIP": "View macro"
+    },
     "EDIT": {
       "TOOLTIP": "Redigera makro",
       "API": {

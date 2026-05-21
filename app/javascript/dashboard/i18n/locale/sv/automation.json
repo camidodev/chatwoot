@@ -130,6 +130,7 @@
       "ATLEAST_ONE_ACTION_REQUIRED": "Minst en åtgärd krävs"
     },
     "NONE_OPTION": "Inget",
+    "LAST_RESPONDING_AGENT": "Last Responding Agent",
     "EVENTS": {
       "CONVERSATION_CREATED": "Konversation skapad",
       "CONVERSATION_UPDATED": "Konversation uppdaterad",

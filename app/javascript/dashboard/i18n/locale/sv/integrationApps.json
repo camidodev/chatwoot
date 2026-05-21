@@ -46,6 +46,7 @@
           "PLACEHOLDER": "Välj inkorg"
         },
         "SUBMIT": "Skapa",
+        "VALIDATING_OPENAI": "Validating with OpenAI...",
         "CANCEL": "Avbryt"
       },
       "API": {

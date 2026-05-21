@@ -742,6 +742,7 @@
       "SELECT_ALL": "Välj alla ({count})",
       "UNSELECT_ALL": "Avmarkera alla ({count})",
       "BULK_DELETE_BUTTON": "Radera",
+      "BULK_SYNC_BUTTON": "Refresh",
       "BULK_DELETE": {
         "TITLE": "Ta bort dokument?",
         "DESCRIPTION": "Är du säker på att du vill ta bort de valda dokumenten? Åtgärden kan inte ångras.",
