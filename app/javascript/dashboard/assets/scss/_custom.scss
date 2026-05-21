@@ -192,6 +192,9 @@ $custom-icon-color:rgb(96, 100, 108);
         .ltr\:right-0:where([dir=ltr],[dir=ltr] *){
           right: unset !important;
         }
+        div.flex.items-center.justify-between.w-full{
+          gap: 1rem;
+        }
       }
     }
     &.bg-n-surface-1 {
