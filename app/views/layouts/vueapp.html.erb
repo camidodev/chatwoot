@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+      (function () {
+        try { localStorage.setItem('color_scheme', 'light'); } catch (e) {}
+        document.documentElement.style.setProperty('color-scheme', 'light');
+      })();
+    </script>
+    <meta name="color-scheme" content="light">
     <title>
       <%= @global_config['INSTALLATION_NAME'] %>
     </title>
