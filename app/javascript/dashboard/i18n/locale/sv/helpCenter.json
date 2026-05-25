@@ -419,7 +419,7 @@
         "SLUG": {
           "LABEL": "Slug",
           "PLACEHOLDER": "Kategorins slug för URL:er",
-          "HELP_TEXT": "app.getcustio.com/hc/my-portal/en-US/categories/my-slug",
+          "HELP_TEXT": "app.custio.io/hc/my-portal/en-US/categories/my-slug",
           "ERROR": "Slug krävs"
         },
         "DESCRIPTION": {
@@ -450,7 +450,7 @@
         "SLUG": {
           "LABEL": "Slug",
           "PLACEHOLDER": "Kategorins slug för URL:er",
-          "HELP_TEXT": "app.getcustio.com/hc/my-portal/en-US/categories/my-slug",
+          "HELP_TEXT": "app.custio.io/hc/my-portal/en-US/categories/my-slug",
           "ERROR": "Slug krävs"
         },
         "DESCRIPTION": {
@@ -634,7 +634,7 @@
             "LABEL": "Slug",
             "PLACEHOLDER": "Kategorins slug för URL:er",
             "ERROR": "Slug krävs",
-            "HELP_TEXT": "app.getcustio.com/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
+            "HELP_TEXT": "app.custio.io/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
           },
           "DESCRIPTION": {
             "LABEL": "Beskrivning",
