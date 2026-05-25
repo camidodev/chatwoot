@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "DNS կարգավորումներ",
-            "DESCRIPTION": "Մուտք գործեք ձեր DNS մատակարարի հաշիվ և ավելացրեք CNAME գրառում ենթադոմենի համար, որը ցույց է տալիս custio.io.help",
+            "DESCRIPTION": "Մուտք գործեք ձեր DNS մատակարարի հաշիվ և ավելացրեք CNAME գրառում ենթադոմենի համար, որը ցույց է տալիս custio.io",
             "COPY": "CNAME-ը հաջողությամբ պատճենվեց",
             "SEND_INSTRUCTIONS": {
               "HEADER": "Ուղարկել հրահանգներ",

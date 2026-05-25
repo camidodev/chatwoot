@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "DNS設定",
-            "DESCRIPTION": "DNSプロバイダーのアカウントにログインし、サブドメインのCNAMEレコードをcustio.io.helpにポイントするように追加してください。",
+            "DESCRIPTION": "DNSプロバイダーのアカウントにログインし、サブドメインのCNAMEレコードをcustio.ioにポイントするように追加してください。",
             "COPY": "Successfully copied CNAME",
             "SEND_INSTRUCTIONS": {
               "HEADER": "Send instructions",

@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "Настройка DNS",
-            "DESCRIPTION": "Войдите в учетную запись с вашим DNS провайдером и добавьте запись CNAME для поддомена, указывающего на custio.io.help",
+            "DESCRIPTION": "Войдите в учетную запись с вашим DNS провайдером и добавьте запись CNAME для поддомена, указывающего на custio.io",
             "COPY": "CNAME успешно скопирован",
             "SEND_INSTRUCTIONS": {
               "HEADER": "Отправить инструкции",

@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "DNS configuration",
-            "DESCRIPTION": "DNS sağlayıcınızda sahip olduğunuz hesaba giriş yapın ve custio.io.help adresine yönlendiren alt alan adı için bir CNAME kaydı ekleyin",
+            "DESCRIPTION": "DNS sağlayıcınızda sahip olduğunuz hesaba giriş yapın ve custio.io adresine yönlendiren alt alan adı için bir CNAME kaydı ekleyin",
             "COPY": "CNAME başarıyla kopyalandı",
             "SEND_INSTRUCTIONS": {
               "HEADER": "Talimatları gönder",

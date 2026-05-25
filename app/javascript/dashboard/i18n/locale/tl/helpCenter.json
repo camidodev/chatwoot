@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "DNS na pagsasaayos",
-            "DESCRIPTION": "Mag-login sa iyong account sa DNS provider, at magdagdag ng CNAME record para sa subdomain na ituturo sa custio.io.help",
+            "DESCRIPTION": "Mag-login sa iyong account sa DNS provider, at magdagdag ng CNAME record para sa subdomain na ituturo sa custio.io",
             "COPY": "Matagumpay na nakopya ang CNAME",
             "SEND_INSTRUCTIONS": {
               "HEADER": "Ipadala ang mga tagubilin",

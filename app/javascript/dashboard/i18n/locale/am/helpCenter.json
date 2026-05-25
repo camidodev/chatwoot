@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "የDNS ቅንብር",
-            "DESCRIPTION": "ከDNS አቅራቢዎ ጋር ያለዎትን መለያ ይግቡ፣ እና ለsubdomain ወደ custio.io.help የሚያመራ የCNAME መዝገብ ያክሉ",
+            "DESCRIPTION": "ከDNS አቅራቢዎ ጋር ያለዎትን መለያ ይግቡ፣ እና ለsubdomain ወደ custio.io የሚያመራ የCNAME መዝገብ ያክሉ",
             "COPY": "CNAME በተሳካ ሁኔታ ተቀይሯል",
             "SEND_INSTRUCTIONS": {
               "HEADER": "መመሪያዎችን ላክ",

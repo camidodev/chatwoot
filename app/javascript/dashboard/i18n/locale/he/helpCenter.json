@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "הגדרת DNS",
-            "DESCRIPTION": "היכנס לחשבון שלך אצל ספק ה-DNS שלך, והוסף רשומת CNAME עבור תת-הדומיין המצביע על custio.io.help",
+            "DESCRIPTION": "היכנס לחשבון שלך אצל ספק ה-DNS שלך, והוסף רשומת CNAME עבור תת-הדומיין המצביע על custio.io",
             "COPY": "CNAME הועתק בהצלחה",
             "SEND_INSTRUCTIONS": {
               "HEADER": "שלח הוראות",

@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "DNS کی تشکیل",
-            "DESCRIPTION": "اپنے DNS فراہم کنندہ کے اکاؤنٹ میں لاگ ان کریں، اور سب ڈومین کے لیے custio.io.help کی طرف اشارہ کرنے والا CNAME ریکارڈ شامل کریں",
+            "DESCRIPTION": "اپنے DNS فراہم کنندہ کے اکاؤنٹ میں لاگ ان کریں، اور سب ڈومین کے لیے custio.io کی طرف اشارہ کرنے والا CNAME ریکارڈ شامل کریں",
             "COPY": "CNAME کامیابی سے کاپی ہو گیا",
             "SEND_INSTRUCTIONS": {
               "HEADER": "ہدایات بھیجیں",

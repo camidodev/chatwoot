@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "DNS configuration",
-            "DESCRIPTION": "Logi sisse oma DNS-teenusepakkuja kontole ja lisa alamdomeeni jaoks CNAME kirje, mis osutab custio.io.help",
+            "DESCRIPTION": "Logi sisse oma DNS-teenusepakkuja kontole ja lisa alamdomeeni jaoks CNAME kirje, mis osutab custio.io",
             "COPY": "CNAME edukalt kopeeritud",
             "SEND_INSTRUCTIONS": {
               "HEADER": "Saada juhised",

@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "Configurazione DNS",
-            "DESCRIPTION": "Accedi al tuo provider DNS e aggiungi un record CNAME per subdominio che punta a custio.io.help",
+            "DESCRIPTION": "Accedi al tuo provider DNS e aggiungi un record CNAME per subdominio che punta a custio.io",
             "COPY": "CNAME copiato",
             "SEND_INSTRUCTIONS": {
               "HEADER": "Invia istruzioni",

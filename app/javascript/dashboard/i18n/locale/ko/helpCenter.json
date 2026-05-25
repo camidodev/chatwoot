@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "DNS 설정",
-            "DESCRIPTION": "DNS 공급자 계정에 로그인하여 서브도메인에 대한 CNAME 레코드를 custio.io.help로 가리키도록 추가하십시오",
+            "DESCRIPTION": "DNS 공급자 계정에 로그인하여 서브도메인에 대한 CNAME 레코드를 custio.io로 가리키도록 추가하십시오",
             "COPY": "CNAME이 성공적으로 복사되었습니다",
             "SEND_INSTRUCTIONS": {
               "HEADER": "안내 전송",

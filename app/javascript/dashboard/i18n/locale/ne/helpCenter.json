@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "DNS कन्फिगरेसन",
-            "DESCRIPTION": "तपाईंको DNS प्रदायकको खातामा लगइन गर्नुहोस्, र उपडोमेनको लागि CNAME रेकर्ड custio.io.help तर्फ थप्नुहोस्",
+            "DESCRIPTION": "तपाईंको DNS प्रदायकको खातामा लगइन गर्नुहोस्, र उपडोमेनको लागि CNAME रेकर्ड custio.io तर्फ थप्नुहोस्",
             "COPY": "CNAME सफलतापूर्वक प्रतिलिपि गरियो",
             "SEND_INSTRUCTIONS": {
               "HEADER": "निर्देशनहरू पठाउनुहोस्",

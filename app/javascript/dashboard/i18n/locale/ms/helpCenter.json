@@ -843,7 +843,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "Konfigurasi DNS",
-            "DESCRIPTION": "Log masuk ke akaun anda dengan penyedia DNS anda, dan tambah rekod CNAME untuk subdomain yang menunjuk ke custio.io.help",
+            "DESCRIPTION": "Log masuk ke akaun anda dengan penyedia DNS anda, dan tambah rekod CNAME untuk subdomain yang menunjuk ke custio.io",
             "COPY": "Berjaya menyalin CNAME",
             "SEND_INSTRUCTIONS": {
               "HEADER": "Hantar arahan",
