@@ -108,7 +108,7 @@
       "UPDATE": "Uppdatera bot"
     },
     "WEBHOOK": {
-      "DESCRIPTION": "Konfigurera en webhook-bot för att koppla Custio till dina egna tjänster. Boten kan ta emot och hantera händelser från konversationer och svara utifrån dem."
+      "DESCRIPTION": "Konfigurera en webhook-bot för att koppla custio.io till dina egna tjänster. Boten kan ta emot och hantera händelser från konversationer och svara utifrån dem."
     },
     "TYPES": {
       "WEBHOOK": "Webhook-bot"

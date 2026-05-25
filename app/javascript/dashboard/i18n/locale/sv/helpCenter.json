@@ -419,7 +419,7 @@
         "SLUG": {
           "LABEL": "Slug",
           "PLACEHOLDER": "Kategorins slug för URL:er",
-          "HELP_TEXT": "app.custio.io/hc/my-portal/en-US/categories/my-slug",
+          "HELP_TEXT": "app.custio.io.io/hc/my-portal/en-US/categories/my-slug",
           "ERROR": "Slug krävs"
         },
         "DESCRIPTION": {
@@ -450,7 +450,7 @@
         "SLUG": {
           "LABEL": "Slug",
           "PLACEHOLDER": "Kategorins slug för URL:er",
-          "HELP_TEXT": "app.custio.io/hc/my-portal/en-US/categories/my-slug",
+          "HELP_TEXT": "app.custio.io.io/hc/my-portal/en-US/categories/my-slug",
           "ERROR": "Slug krävs"
         },
         "DESCRIPTION": {
@@ -634,7 +634,7 @@
             "LABEL": "Slug",
             "PLACEHOLDER": "Kategorins slug för URL:er",
             "ERROR": "Slug krävs",
-            "HELP_TEXT": "app.custio.io/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
+            "HELP_TEXT": "app.custio.io.io/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
           },
           "DESCRIPTION": {
             "LABEL": "Beskrivning",
@@ -727,7 +727,7 @@
       "CONFIRM_BUTTON_LABEL": "Skapa",
       "NAME": {
         "LABEL": "Namn",
-        "PLACEHOLDER": "Användarguide | Custio",
+        "PLACEHOLDER": "Användarguide | custio.io",
         "MESSAGE": "Välj ett namn för din portal.",
         "ERROR": "Namn krävs"
       },
@@ -807,7 +807,7 @@
           },
           "DNS_CONFIGURATION_DIALOG": {
             "HEADER": "DNS-konfiguration",
-            "DESCRIPTION": "Logga in hos din DNS-leverantör och lägg till en CNAME-post för subdomänen som pekar mot getcustio.help",
+            "DESCRIPTION": "Logga in hos din DNS-leverantör och lägg till en CNAME-post för subdomänen som pekar mot getcustio.io.help",
             "COPY": "CNAME har kopierats",
             "SEND_INSTRUCTIONS": {
               "HEADER": "Skicka instruktioner",

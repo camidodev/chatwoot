@@ -98,7 +98,7 @@
       "BACKUP_TITLE": "Använda en reservkod",
       "BACKUP_DESC": "Om du inte har åtkomst till din autentiseringsapp kan du använda en av reservkoderna du sparade när du aktiverade 2FA. Varje kod kan bara användas en gång.",
       "CONTACT_TITLE": "Behöver du mer hjälp?",
-      "CONTACT_DESC_CLOUD": "Om du har förlorat åtkomst till både din autentiseringsapp och dina reservkoder, kontakta Custio-supporten för hjälp.",
+      "CONTACT_DESC_CLOUD": "Om du har förlorat åtkomst till både din autentiseringsapp och dina reservkoder, kontakta custio.io-supporten för hjälp.",
       "CONTACT_DESC_SELF_HOSTED": "Om du har förlorat åtkomst till både din autentiseringsapp och dina reservkoder, kontakta din administratör för hjälp."
     },
     "VERIFICATION_FAILED": "Verifieringen misslyckades. Försök igen."

@@ -1,11 +1,11 @@
 {
   "REGISTER": {
     "TRY_WOOT": "Skapa ett konto",
-    "GET_STARTED": "Kom igång med Custio",
+    "GET_STARTED": "Kom igång med custio.io",
     "TITLE": "Registrera dig",
     "TESTIMONIAL_HEADER": "Det krävs bara ett steg för att komma vidare",
     "TESTIMONIAL_CONTENT": "Du är bara ett steg från att kunna möta dina kunder, behålla dem och hitta nya.",
-    "TERMS_ACCEPT": "Genom att skapa ett konto godkänner du våra <a href=\"https://www.getcustio.com/terms\">villkor</a> och vår <a href=\"https://www.getcustio.com/privacy-policy\">integritetspolicy</a>",
+    "TERMS_ACCEPT": "Genom att skapa ett konto godkänner du våra <a href=\"https://www.getcustio.io.com/terms\">villkor</a> och vår <a href=\"https://www.getcustio.io.com/privacy-policy\">integritetspolicy</a>",
     "OAUTH": {
       "GOOGLE_SIGNUP": "Registrera dig med Google"
     },

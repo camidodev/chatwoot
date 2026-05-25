@@ -17,16 +17,16 @@
       "ERROR": "Ett fel uppstod vid anslutningen till Shopify. Försök igen eller kontakta supporten om problemet kvarstår."
     },
     "HEADER": "Integrationer",
-    "DESCRIPTION": "Custio integrerar med flera verktyg och tjänster för att effektivisera teamets arbete. Utforska listan nedan för att konfigurera dina favoritappar.",
+    "DESCRIPTION": "custio.io integrerar med flera verktyg och tjänster för att effektivisera teamets arbete. Utforska listan nedan för att konfigurera dina favoritappar.",
     "LEARN_MORE": "Läs mer om integrationer",
     "LOADING": "Hämtar integrationer",
     "SEARCH_PLACEHOLDER": "Sök integrationer...",
     "NO_RESULTS": "Inga integrationer matchade din sökning",
     "CAPTAIN": {
-      "DISABLED": "Custio AI är inte aktiverat för ditt konto.",
+      "DISABLED": "custio.io AI är inte aktiverat för ditt konto.",
       "CLICK_HERE_TO_CONFIGURE": "Klicka här för att konfigurera",
-      "LOADING_CONSOLE": "Laddar Custio AI-konsolen...",
-      "FAILED_TO_LOAD_CONSOLE": "Det gick inte att ladda Custio AI-konsolen. Uppdatera sidan och försök igen."
+      "LOADING_CONSOLE": "Laddar custio.io AI-konsolen...",
+      "FAILED_TO_LOAD_CONSOLE": "Det gick inte att ladda custio.io AI-konsolen. Uppdatera sidan och försök igen."
     },
     "WEBHOOK": {
       "SUBSCRIBED_EVENTS": "Prenumererade händelser",
@@ -44,7 +44,7 @@
       "NO_RESULTS": "Inga webhooks matchade din sökning",
       "FORM": {
         "CANCEL": "Avbryt",
-        "DESC": "Webhook-händelser ger dig realtidsinformation om vad som händer i ditt Custio-konto. Ange en giltig URL för att konfigurera en callback.",
+        "DESC": "Webhook-händelser ger dig realtidsinformation om vad som händer i ditt custio.io-konto. Ange en giltig URL för att konfigurera en callback.",
         "SUBSCRIPTIONS": {
           "LABEL": "Händelser",
           "EVENTS": {
@@ -78,7 +78,7 @@
       "HEADER_BTN_TXT": "Lägg till ny webhook",
       "LOADING": "Hämtar webhooks",
       "SEARCH_404": "Det finns inga objekt som matchar denna sökning",
-      "SIDEBAR_TXT": "<p><b>Webhooks</b> </p> <p>Webhooks är HTTP-callbacks som kan definieras för varje konto. De utlöses av händelser, till exempel när meddelanden skapas i Custio. Du kan skapa fler än en webhook för det här kontot. <br /><br /> För att skapa en <b>webhook</b>, klicka på knappen <b>Lägg till ny webhook</b>. Du kan också ta bort befintliga webhooks genom att klicka på knappen Radera.</p>",
+      "SIDEBAR_TXT": "<p><b>Webhooks</b> </p> <p>Webhooks är HTTP-callbacks som kan definieras för varje konto. De utlöses av händelser, till exempel när meddelanden skapas i custio.io. Du kan skapa fler än en webhook för det här kontot. <br /><br /> För att skapa en <b>webhook</b>, klicka på knappen <b>Lägg till ny webhook</b>. Du kan också ta bort befintliga webhooks genom att klicka på knappen Radera.</p>",
       "LIST": {
         "404": "Det finns inga webhooks konfigurerade för det här kontot.",
         "TITLE": "Hantera webhooks",
@@ -126,14 +126,14 @@
       },
       "HELP_TEXT": {
         "TITLE": "Använd Slack-integrationen",
-        "BODY": "Med den här integrationen synkas alla inkommande konversationer till kanalen ***{selectedChannelName}*** i din Slack-arbetsyta. Du kan hantera alla kundkonversationer direkt i kanalen och slipper missa meddelanden.\n\nHär är integrationens viktigaste funktioner:\n\n**Svara på konversationer direkt från Slack:** För att svara på en konversation i Slack-kanalen ***{selectedChannelName}*** skriver du bara ditt meddelande och skickar det som en tråd. Det skapar ett svar till kunden via Custio. Så enkelt är det!\n\n **Skapa privata anteckningar:** Om du vill skapa privata anteckningar i stället för svar, börja meddelandet med ***`note:`***. Då hålls meddelandet privat och visas inte för kunden.\n\n**Koppla en medarbetarprofil:** Om personen som svarar i Slack har en medarbetarprofil i Custio med samma e-postadress kopplas svaren automatiskt till den profilen. Det gör det enkelt att följa vem som skrev vad och när. Om personen som svarar inte har en kopplad medarbetarprofil visas svaren från botprofilen för kunden.",
+        "BODY": "Med den här integrationen synkas alla inkommande konversationer till kanalen ***{selectedChannelName}*** i din Slack-arbetsyta. Du kan hantera alla kundkonversationer direkt i kanalen och slipper missa meddelanden.\n\nHär är integrationens viktigaste funktioner:\n\n**Svara på konversationer direkt från Slack:** För att svara på en konversation i Slack-kanalen ***{selectedChannelName}*** skriver du bara ditt meddelande och skickar det som en tråd. Det skapar ett svar till kunden via custio.io. Så enkelt är det!\n\n **Skapa privata anteckningar:** Om du vill skapa privata anteckningar i stället för svar, börja meddelandet med ***`note:`***. Då hålls meddelandet privat och visas inte för kunden.\n\n**Koppla en medarbetarprofil:** Om personen som svarar i Slack har en medarbetarprofil i custio.io med samma e-postadress kopplas svaren automatiskt till den profilen. Det gör det enkelt att följa vem som skrev vad och när. Om personen som svarar inte har en kopplad medarbetarprofil visas svaren från botprofilen för kunden.",
         "SELECTED": "vald"
       },
       "SELECT_CHANNEL": {
         "OPTION_LABEL": "Välj en kanal",
         "UPDATE": "Uppdatera",
         "BUTTON_TEXT": "Anslut kanal",
-        "DESCRIPTION": "Din Slack-arbetsyta är nu kopplad till Custio. Integrationen är däremot inte aktiv ännu. För att aktivera integrationen och ansluta en kanal till Custio, klicka på knappen nedan.\n\n**Obs:** Om du försöker ansluta en privat kanal behöver du först lägga till Custio-appen i Slack-kanalen innan du fortsätter med detta steg.",
+        "DESCRIPTION": "Din Slack-arbetsyta är nu kopplad till custio.io. Integrationen är däremot inte aktiv ännu. För att aktivera integrationen och ansluta en kanal till custio.io, klicka på knappen nedan.\n\n**Obs:** Om du försöker ansluta en privat kanal behöver du först lägga till custio.io-appen i Slack-kanalen innan du fortsätter med detta steg.",
         "ATTENTION_REQUIRED": "Åtgärd krävs",
         "EXPIRED": "Din Slack-integration har gått ut. För att fortsätta ta emot meddelanden i Slack behöver du ta bort integrationen och ansluta arbetsytan igen."
       },
@@ -235,7 +235,7 @@
     "DASHBOARD_APPS": {
       "TITLE": "Dashboard-appar",
       "HEADER_BTN_TXT": "Lägg till ny dashboard-app",
-      "SIDEBAR_TXT": "<p><b>Dashboard-appar</b></p><p>Dashboard-appar gör det möjligt för organisationer att bädda in en applikation i Custio-dashboarden för att ge medarbetare mer kontext i kundsupporten. Funktionen gör att du kan skapa en fristående applikation och bädda in den i dashboarden för att visa användarinformation, ordrar eller tidigare betalningshistorik.</p><p>När du bäddar in din applikation via dashboarden i Custio får applikationen kontext om konversationen och kontakten som en window-händelse. Implementera en lyssnare för message-eventet på din sida för att ta emot kontexten.</p><p>För att lägga till en ny dashboard-app klickar du på knappen ”Lägg till ny dashboard-app”.</p>",
+      "SIDEBAR_TXT": "<p><b>Dashboard-appar</b></p><p>Dashboard-appar gör det möjligt för organisationer att bädda in en applikation i custio.io-dashboarden för att ge medarbetare mer kontext i kundsupporten. Funktionen gör att du kan skapa en fristående applikation och bädda in den i dashboarden för att visa användarinformation, ordrar eller tidigare betalningshistorik.</p><p>När du bäddar in din applikation via dashboarden i custio.io får applikationen kontext om konversationen och kontakten som en window-händelse. Implementera en lyssnare för message-eventet på din sida för att ta emot kontexten.</p><p>För att lägga till en ny dashboard-app klickar du på knappen ”Lägg till ny dashboard-app”.</p>",
       "DESCRIPTION": "Dashboard-appar gör det möjligt för organisationer att bädda in en applikation i dashboarden för att ge medarbetare mer kontext i kundsupporten. Funktionen gör att du kan skapa en fristående applikation och bädda in den för att visa användarinformation, ordrar eller tidigare betalningshistorik.",
       "LEARN_MORE": "Läs mer om dashboard-appar",
       "COUNT": "{n} dashboard-app | {n} dashboard-appar",
@@ -389,7 +389,7 @@
     }
   },
   "CAPTAIN": {
-    "NAME": "Custio AI",
+    "NAME": "custio.io AI",
     "HEADER_KNOW_MORE": "Läs mer",
     "ASSISTANT_SWITCHER": {
       "ASSISTANTS": "Assistenter",
@@ -404,7 +404,7 @@
       "KICK_OFF_MESSAGE": "Behöver du en snabb sammanfattning, vill du kolla tidigare konversationer eller skriva ett bättre svar? Copilot hjälper dig att komma vidare snabbare.",
       "SEND_MESSAGE": "Skicka meddelande...",
       "EMPTY_MESSAGE": "Ett fel uppstod när svaret skulle genereras. Försök igen.",
-      "LOADER": "Custio AI tänker",
+      "LOADER": "custio.io AI tänker",
       "YOU": "Du",
       "USE": "Använd detta",
       "RESET": "Återställ",
@@ -439,23 +439,23 @@
       "MESSAGE_PLACEHOLDER": "Skriv ditt meddelande...",
       "HEADER": "Testmiljö",
       "DESCRIPTION": "Använd denna testmiljö för att skicka meddelanden till din assistent och kontrollera att den svarar korrekt, snabbt och med den ton du förväntar dig.",
-      "CREDIT_NOTE": "Meddelanden som skickas här räknas mot dina Custio AI-krediter."
+      "CREDIT_NOTE": "Meddelanden som skickas här räknas mot dina custio.io AI-krediter."
     },
     "PAYWALL": {
-      "TITLE": "Uppgradera för att använda Custio AI",
-      "AVAILABLE_ON": "Custio AI är inte tillgängligt i gratisplanen.",
+      "TITLE": "Uppgradera för att använda custio.io AI",
+      "AVAILABLE_ON": "custio.io AI är inte tillgängligt i gratisplanen.",
       "UPGRADE_PROMPT": "Uppgradera ditt abonnemang för att få tillgång till assistenter, copilot och mer.",
       "UPGRADE_NOW": "Uppgradera nu",
       "CANCEL_ANYTIME": "Du kan ändra eller avsluta ditt abonnemang när som helst"
     },
     "ENTERPRISE_PAYWALL": {
-      "AVAILABLE_ON": "Custio AI är endast tillgängligt i Enterprise-planerna.",
+      "AVAILABLE_ON": "custio.io AI är endast tillgängligt i Enterprise-planerna.",
       "UPGRADE_PROMPT": "Uppgradera ditt abonnemang för att få tillgång till assistenter, copilot och mer.",
       "ASK_ADMIN": "Kontakta din administratör för att uppgradera."
     },
     "BANNER": {
-      "RESPONSES": "Du har använt över 80 % av din svarsgräns. Uppgradera för att fortsätta använda Custio AI.",
-      "DOCUMENTS": "Dokumentgränsen är uppnådd. Uppgradera för att fortsätta använda Custio AI."
+      "RESPONSES": "Du har använt över 80 % av din svarsgräns. Uppgradera för att fortsätta använda custio.io AI.",
+      "DOCUMENTS": "Dokumentgränsen är uppnådd. Uppgradera för att fortsätta använda custio.io AI."
     },
     "FORM": {
       "CANCEL": "Avbryt",
@@ -576,8 +576,8 @@
         "TITLE": "Inga assistenter tillgängliga",
         "SUBTITLE": "Skapa en assistent för att ge snabba och korrekta svar till dina användare. Den kan lära sig från dina hjälpartiklar och tidigare konversationer.",
         "FEATURE_SPOTLIGHT": {
-          "TITLE": "Custio AI-assistent",
-          "NOTE": "Custio AI-assistenten interagerar direkt med kunder, lär sig från dina hjälpdokument och tidigare konversationer och ger snabba, korrekta svar. Den hanterar de första frågorna och löser ärenden snabbt innan den lämnar över till en medarbetare vid behov."
+          "TITLE": "custio.io AI-assistent",
+          "NOTE": "custio.io AI-assistenten interagerar direkt med kunder, lär sig från dina hjälpdokument och tidigare konversationer och ger snabba, korrekta svar. Den hanterar de första frågorna och löser ärenden snabbt innan den lämnar över till en medarbetare vid behov."
         }
       },
       "GUARDRAILS": {
@@ -799,8 +799,8 @@
         "TITLE": "Inga dokument tillgängliga",
         "SUBTITLE": "Dokument används av assistenten för att generera FAQ:er. Du kan importera dokument för att ge assistenten mer kontext.",
         "FEATURE_SPOTLIGHT": {
-          "TITLE": "Custio AI-dokument",
-          "NOTE": "Ett dokument i Custio AI fungerar som en kunskapskälla för assistenten. Genom att koppla in hjälpcenter eller guider kan Custio AI analysera innehållet och ge korrekta svar på kundfrågor."
+          "TITLE": "custio.io AI-dokument",
+          "NOTE": "Ett dokument i custio.io AI fungerar som en kunskapskälla för assistenten. Genom att koppla in hjälpcenter eller guider kan custio.io AI analysera innehållet och ge korrekta svar på kundfrågor."
         }
       }
     },
@@ -964,7 +964,7 @@
         "ALL": "Alla"
       },
       "PENDING_BANNER": {
-        "TITLE": "Custio AI har hittat FAQ:er som dina kunder verkar leta efter.",
+        "TITLE": "custio.io AI har hittat FAQ:er som dina kunder verkar leta efter.",
         "ACTION": "Klicka här för att granska"
       },
       "FORM_DESCRIPTION": "Lägg till en fråga och ett tillhörande svar i kunskapsbasen och välj vilken assistent den ska kopplas till.",
@@ -1002,8 +1002,8 @@
         "SUBTITLE": "FAQ:er hjälper assistenten att ge snabba och korrekta svar på kundernas frågor. De kan genereras automatiskt från ditt innehåll eller läggas till manuellt.",
         "CLEAR_SEARCH": "Rensa aktiva filter",
         "FEATURE_SPOTLIGHT": {
-          "TITLE": "Custio AI FAQ",
-          "NOTE": "Custio AI FAQ upptäcker vanliga kundfrågor – oavsett om de saknas i kunskapsbasen eller ställs ofta – och genererar relevanta FAQ:er för att förbättra supporten. Du kan granska varje förslag och välja om du vill godkänna eller avvisa det."
+          "TITLE": "custio.io AI FAQ",
+          "NOTE": "custio.io AI FAQ upptäcker vanliga kundfrågor – oavsett om de saknas i kunskapsbasen eller ställs ofta – och genererar relevanta FAQ:er för att förbättra supporten. Du kan granska varje förslag och välja om du vill godkänna eller avvisa det."
         }
       }
     },

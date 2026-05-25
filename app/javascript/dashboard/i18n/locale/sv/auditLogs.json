@@ -6,11 +6,11 @@
     "DESCRIPTION": "Aktivitetsloggar sparar händelser på ditt konto, så att du kan följa upp och granska aktivitet kopplad till kontot, teamet eller era tjänster.",
     "LEARN_MORE": "Läs mer om aktivitetsloggar",
     "SEARCH_404": "Inga resultat matchade din sökning",
-    "SIDEBAR_TXT": "<p><b>Aktivitetsloggar</b> </p><p> Aktivitetsloggar visar händelser och åtgärder i Custio. </p>",
+    "SIDEBAR_TXT": "<p><b>Aktivitetsloggar</b> </p><p> Aktivitetsloggar visar händelser och åtgärder i custio.io. </p>",
     "LIST": {
       "404": "Det finns inga aktivitetsloggar på det här kontot.",
       "TITLE": "Hantera aktivitetsloggar",
-      "DESC": "Aktivitetsloggar visar händelser och åtgärder i Custio.",
+      "DESC": "Aktivitetsloggar visar händelser och åtgärder i custio.io.",
       "TABLE_HEADER": {
         "ACTIVITY": "Användare",
         "TIME": "Åtgärd",

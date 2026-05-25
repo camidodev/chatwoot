@@ -1,6 +1,6 @@
 {
   "LOGIN": {
-    "TITLE": "Logga in på Custio",
+    "TITLE": "Logga in på custio.io",
     "EMAIL": {
       "LABEL": "E-post",
       "PLACEHOLDER": "example{'@'}companyname.com",

@@ -123,11 +123,11 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Du kan nu ta emot e-postmeddelanden på din egen domän."
       }
     },
-    "UPDATE_CHATWOOT": "En uppdatering {latestChatwootVersion} för Custio är tillgänglig. Uppdatera din instans.",
+    "UPDATE_custio.io": "En uppdatering {latestcustio.ioVersion} för custio.io är tillgänglig. Uppdatera din instans.",
     "LEARN_MORE": "Läs mer",
-    "PAYMENT_PENDING": "Din betalning inväntar bekräftelse. Uppdatera dina betalningsuppgifter för att fortsätta använda Custio",
-    "UPGRADE": "Uppgradera för att fortsätta använda Custio",
-    "LIMITS_UPGRADE": "Ditt konto har överskridit användningsgränserna. Uppgradera ditt abonnemang för att fortsätta använda Custio",
+    "PAYMENT_PENDING": "Din betalning inväntar bekräftelse. Uppdatera dina betalningsuppgifter för att fortsätta använda custio.io",
+    "UPGRADE": "Uppgradera för att fortsätta använda custio.io",
+    "LIMITS_UPGRADE": "Ditt konto har överskridit användningsgränserna. Uppgradera ditt abonnemang för att fortsätta använda custio.io",
     "OPEN_BILLING": "Öppna fakturering"
   },
   "FORMS": {

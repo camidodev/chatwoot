@@ -262,7 +262,7 @@
     "SENT_BY": "Skickat av:",
     "BOT": "Bot",
     "NATIVE_APP": "Native app",
-    "NATIVE_APP_ADVISORY": "Det här meddelandet skickades från native-appen. Svara från Custio för att behålla meddelandefönstret.",
+    "NATIVE_APP_ADVISORY": "Det här meddelandet skickades från native-appen. Svara från custio.io för att behålla meddelandefönstret.",
     "SEND_FAILED": "Det gick inte att skicka meddelandet. Försök igen.",
     "TRY_AGAIN": "försök igen",
     "ASSIGNMENT": {

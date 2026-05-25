@@ -16,7 +16,7 @@
     "CREATE_FLOW": {
       "CHANNEL": {
         "TITLE": "Välj kanal",
-        "BODY": "Välj den leverantör du vill integrera med Custio."
+        "BODY": "Välj den leverantör du vill integrera med custio.io."
       },
       "INBOX": {
         "TITLE": "Skapa inkorg",
@@ -42,7 +42,7 @@
         "PLACEHOLDER": "Ange namnet på din webbplats, t.ex. Acme Inc"
       },
       "FB": {
-        "HELP": "PS: Genom att logga in får vi bara tillgång till meddelanden från din sida. Dina privata meddelanden kan aldrig nås av Custio.",
+        "HELP": "PS: Genom att logga in får vi bara tillgång till meddelanden från din sida. Dina privata meddelanden kan aldrig nås av custio.io.",
         "CHOOSE_PAGE": "Välj sida",
         "CHOOSE_PLACEHOLDER": "Välj en sida från listan",
         "INBOX_NAME": "Inkorgsnamn",
@@ -449,7 +449,7 @@
       },
       "AUTH": {
         "TITLE": "Välj en kanal",
-        "DESC": "Custio stödjer livechatt-widgetar, Facebook Messenger, Twitter-profiler, WhatsApp, e-post med mera som kanaler. Om du vill bygga en egen kanal kan du skapa den med API-kanalen. Välj en av kanalerna nedan för att komma igång.",
+        "DESC": "custio.io stödjer livechatt-widgetar, Facebook Messenger, Twitter-profiler, WhatsApp, e-post med mera som kanaler. Om du vill bygga en egen kanal kan du skapa den med API-kanalen. Välj en av kanalerna nedan för att komma igång.",
         "TITLE_NEXT": "Slutför konfigurationen",
         "TITLE_FINISH": "Voilà!",
         "CHANNEL": {
@@ -507,11 +507,11 @@
       },
       "DETAILS": {
         "TITLE": "Inkorgsdetaljer",
-        "DESC": "Välj Facebook-sidan du vill ansluta till Custio i rullistan nedan. Du kan också ge inkorgen ett eget namn för att enklare känna igen den."
+        "DESC": "Välj Facebook-sidan du vill ansluta till custio.io i rullistan nedan. Du kan också ge inkorgen ett eget namn för att enklare känna igen den."
       },
       "FINISH": {
         "TITLE": "Där satt den!",
-        "DESC": "Du har integrerat din Facebook-sida med Custio. Nästa gång en kund skickar meddelande till din sida visas konversationen automatiskt i din inkorg.<br>Du får också ett widgetskript som du enkelt kan lägga till på din webbplats. När det är live kan kunder kontakta dig direkt från webbplatsen, och konversationen visas här i Custio."
+        "DESC": "Du har integrerat din Facebook-sida med custio.io. Nästa gång en kund skickar meddelande till din sida visas konversationen automatiskt i din inkorg.<br>Du får också ett widgetskript som du enkelt kan lägga till på din webbplats. När det är live kan kunder kontakta dig direkt från webbplatsen, och konversationen visas här i custio.io."
       },
       "EMAIL_PROVIDER": {
         "TITLE": "Välj e-postleverantör",
@@ -1123,8 +1123,8 @@
         "USER_MESSAGE": "Hej",
         "AGENT_MESSAGE": "Hej"
       },
-      "BRANDING_TEXT": "Drivs av Custio",
-      "SCRIPT_SETTINGS": "\n      window.chatwootSettings = {options};"
+      "BRANDING_TEXT": "Drivs av custio.io",
+      "SCRIPT_SETTINGS": "\n      window.custio.ioSettings = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": {
