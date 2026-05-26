@@ -49,8 +49,8 @@ services:
       # Larger pool avoids ConnectionTimeoutError when Vite builds compete with web requests (Docker dev).
       - RAILS_MAX_THREADS=10
       # Branding (see config/initializers/installation_branding_from_env.rb); remove or change if you prefer defaults.
-      - CHATWOOT_OVERRIDE_INSTALLATION_NAME=Custio.io
-      - CHATWOOT_OVERRIDE_BRAND_NAME=Custio.io
+      - CHATWOOT_OVERRIDE_INSTALLATION_NAME=Lume
+      - CHATWOOT_OVERRIDE_BRAND_NAME=Lume
     entrypoint: docker/entrypoints/rails.sh
     command: ["bundle", "exec", "rails", "s", "-p", "3000", "-b", "0.0.0.0"]
 
@@ -71,8 +71,8 @@ services:
       - POSTGRES_DATABASE=chatwoot
       - NODE_ENV=development
       - RAILS_ENV=development
-      - CHATWOOT_OVERRIDE_INSTALLATION_NAME=Custio.io
-      - CHATWOOT_OVERRIDE_BRAND_NAME=Custio.io
+      - CHATWOOT_OVERRIDE_INSTALLATION_NAME=Lume
+      - CHATWOOT_OVERRIDE_BRAND_NAME=Lume
     command: ["bundle", "exec", "sidekiq", "-C", "config/sidekiq.yml"]
 
   vite:
