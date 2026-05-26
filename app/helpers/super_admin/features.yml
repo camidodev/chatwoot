@@ -56,13 +56,13 @@ live_chat:
   icon: 'icon-chat-smile-3-line'
 email:
   name: 'Email'
-  description: 'Manage your email customer interactions from Lume.'
+  description: 'Manage your email customer interactions from Custio.io.'
   enabled: true
   icon: 'icon-mail-send-fill'
   config_key: 'email'
 sms:
   name: 'SMS'
-  description: 'Manage your SMS customer interactions from Lume.'
+  description: 'Manage your SMS customer interactions from Custio.io.'
   enabled: true
   icon: 'icon-message-line'
 messenger:
@@ -85,17 +85,17 @@ tiktok:
   config_key: 'tiktok'
 whatsapp:
   name: 'WhatsApp'
-  description: 'Manage your WhatsApp business interactions from Lume.'
+  description: 'Manage your WhatsApp business interactions from Custio.io.'
   enabled: true
   icon: 'icon-whatsapp-line'
 telegram:
   name: 'Telegram'
-  description: 'Manage your Telegram customer interactions from Lume.'
+  description: 'Manage your Telegram customer interactions from Custio.io.'
   enabled: true
   icon: 'icon-telegram-line'
 line:
   name: 'Line'
-  description: 'Manage your Line customer interactions from Lume.'
+  description: 'Manage your Line customer interactions from Custio.io.'
   enabled: true
   icon: 'icon-line-line'
 
