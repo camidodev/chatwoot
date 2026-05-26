@@ -1136,7 +1136,7 @@
         "AGENT_MESSAGE": "哈囉"
       },
       "BRANDING_TEXT": "Powered by custio.io",
-      "SCRIPT_SETTINGS": "\n      window.custio.ioSettings = {options};"
+      "SCRIPT_SETTINGS": "\n      window.chatwootSettingsgs = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": {

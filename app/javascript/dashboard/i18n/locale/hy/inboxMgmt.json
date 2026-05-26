@@ -1136,7 +1136,7 @@
         "AGENT_MESSAGE": "Բարև ձեզ"
       },
       "BRANDING_TEXT": "Շահագործվում է custio.io-ով",
-      "SCRIPT_SETTINGS": "\n      window.custio.ioSettings = {options};"
+      "SCRIPT_SETTINGS": "\n      window.chatwootSettingsgs = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": {

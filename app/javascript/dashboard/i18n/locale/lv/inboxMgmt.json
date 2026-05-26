@@ -1136,7 +1136,7 @@
         "AGENT_MESSAGE": "Labdien"
       },
       "BRANDING_TEXT": "Darbināts ar custio.io",
-      "SCRIPT_SETTINGS": "\nwindow.custio.ioSettings = {options};"
+      "SCRIPT_SETTINGS": "\nwindow.chatwootSettingsgs = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": {

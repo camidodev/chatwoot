@@ -1136,7 +1136,7 @@
         "AGENT_MESSAGE": "სალამი"
       },
       "BRANDING_TEXT": "მოძრავებულია custio.io-ის მიერ",
-      "SCRIPT_SETTINGS": "\n      window.custio.ioSettings = {options};"
+      "SCRIPT_SETTINGS": "\n      window.chatwootSettingsgs = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": {
