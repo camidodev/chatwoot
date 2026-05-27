@@ -138,11 +138,13 @@ const allowedMenuItems = computed(() => {
       <button
         class="flex gap-2 items-center p-1 text-left rounded-lg cursor-pointer hover:bg-n-alpha-1"
         :class="[
+          { 'bg-n-alpha-1': isOpen },
           isCollapsed ? 'justify-center' : 'w-full',
           headerLayout &&
             '!w-auto items-center gap-2 pr-1.5 pl-0.5 rounded-md hover:bg-n-alpha-2 dark:hover:bg-n-alpha-1',
         ]"
         :title="isCollapsed ? currentUser.available_name : undefined"
+        @click="toggle"
         type="button"
       >
         <Avatar
