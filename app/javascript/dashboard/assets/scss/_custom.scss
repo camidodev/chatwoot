@@ -94,6 +94,12 @@ $custom-icon-color:rgb(96, 100, 108);
         font-weight: 700;
       }
     }
+    .ltr\:right-0:where([dir=ltr],[dir=ltr] *){
+      div:has(span.i-lucide-palette) {
+        display: none;
+      }
+    
+    }
   }
 
   // -- Sidebar shell ----------------------------------------------------------
@@ -489,3 +495,5 @@ $custom-icon-color:rgb(96, 100, 108);
   // selector to scope dark-mode tweaks. Add rules below as needed.
   // .dark & { ... }
 }
+
+
