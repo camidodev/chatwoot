@@ -359,7 +359,7 @@ const menuItems = computed(() => {
       ],
     },
     {
-      name: 'Custio AI',
+      name: 'Captain',
       icon: 'i-woot-captain',
       label: t('SIDEBAR.CAPTAIN'),
       activeOn: ['captain_assistants_create_index'],
@@ -874,15 +874,7 @@ const menuItems = computed(() => {
           isEffectivelyCollapsed
         "
       />
-      <div
-        class="px-1 py-1.5 flex-shrink-0 flex w-full z-50 gap-2 items-center border-t border-n-weak shadow-[0px_-2px_4px_0px_rgba(27,28,29,0.02)]"
-        :class="isEffectivelyCollapsed ? 'justify-center' : 'justify-between'"
-      >
-        <SidebarProfileMenu
-          :is-collapsed="isEffectivelyCollapsed"
-          @open-key-shortcut-modal="emit('openKeyShortcutModal')"
-        />
-      </div>
+      
     </section>
     <!-- Resize Handle (desktop only) -->
     <div
