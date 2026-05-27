@@ -273,6 +273,9 @@ $custom-icon-color:rgb(96, 100, 108);
           padding-bottom: 0px !important;
         }
       }
+      div[logo="dialogflow.png"],div[logo="dyte.png"],div[logo="leadsquared.png"],div[logo="openai.png"]{
+        display: none;
+      }
     }
 
     .bg-n-surface-2 {
