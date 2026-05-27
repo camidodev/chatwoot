@@ -359,7 +359,7 @@ const menuItems = computed(() => {
       ],
     },
     {
-      name: 'Captain',
+      name: 'Custio AI',
       icon: 'i-woot-captain',
       label: t('SIDEBAR.CAPTAIN'),
       activeOn: ['captain_assistants_create_index'],

@@ -78,8 +78,7 @@ const iconLinkClass =
         <span class="i-lucide-search size-5" />
       </RouterLink>
       <a
-        target="_blank"
-        rel="noopener noreferrer"
+        href="mailto:support@custio.io"
         :class="iconLinkClass"
         :title="t('SIDEBAR_ITEMS.DOCS')"
       >
