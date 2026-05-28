@@ -1097,12 +1097,7 @@ export default {
       return multipleMessagePayload;
     },
     getMessagePayload(message) {
-        let outgoingMessage = message;
-        if (!this.isPrivate) {
-         const ticketNo = this.currentChat.id; // same as #1 in header
-         outgoingMessage = `Ticket No #${ticketNo} ${outgoingMessage}`;
-        }
-      const messageWithQuote = this.getMessageWithQuotedEmailText(outgoingMessage);
+      const messageWithQuote = this.getMessageWithQuotedEmailText(message);
 
       let messagePayload = {
         conversationId: this.currentChat.id,
