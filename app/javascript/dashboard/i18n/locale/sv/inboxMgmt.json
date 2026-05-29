@@ -639,6 +639,17 @@
       "CSAT": "Kundnöjdhet"
     },
     "CHANNEL_PREFERENCES": "Kanalinställningar",
+    "EMAIL_SUBJECT_PREFIX": {
+      "TOGGLE": {
+        "LABEL": "Lägg till konversations-ID i e-postämnet",
+        "HELP_TEXT": "När detta är aktiverat inkluderas konversationsnumret (till exempel [#89]) före ämnesraden i utgående e-postsvar."
+      },
+      "START_ID": {
+        "LABEL": "Startnummer för konversationer",
+        "HELP_TEXT": "Ange det första konversationsnumret för detta konto. Detta alternativ är endast tillgängligt innan några konversationer finns.",
+        "PLACEHOLDER": "t.ex. 1000"
+      }
+    },
     "WIDGET_FEATURES": "Widgetfunktioner",
     "ACCOUNT_HEALTH": {
       "TITLE": "Hantera ditt WhatsApp-konto",

@@ -649,6 +649,17 @@
       }
     },
     "CHANNEL_PREFERENCES": "Channel Preferences",
+    "EMAIL_SUBJECT_PREFIX": {
+      "TOGGLE": {
+        "LABEL": "Add conversation ID to email subject",
+        "HELP_TEXT": "When enabled, outgoing email replies include the conversation number (for example [#89]) before the subject line."
+      },
+      "START_ID": {
+        "LABEL": "Starting conversation number",
+        "HELP_TEXT": "Set the first conversation number for this account. This option is only available before any conversations exist.",
+        "PLACEHOLDER": "e.g. 1000"
+      }
+    },
     "WIDGET_FEATURES": "Widget features",
     "ACCOUNT_HEALTH": {
       "TITLE": "Manage your WhatsApp account",

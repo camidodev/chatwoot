@@ -114,17 +114,34 @@ class ConversationReplyMailer < ApplicationMailer
 
   def mail_subject
     subject = @conversation.additional_attributes['mail_subject']
+
+    if subject.nil?
+      return default_mail_subject
+    end
+
+    formatted_subject = email_subject_prefix_enabled? ? prefixed_subject(subject) : subject
+    reply_subject(formatted_subject)
+  end
+
+  def default_mail_subject
+    "[##{@conversation.display_id}] #{I18n.t('conversations.reply.email_subject')}"
+  end
+
+  def email_subject_prefix_enabled?
+    @inbox.email_subject_prefix_enabled?
+  end
+
+  def prefixed_subject(subject)
     display_id_prefix = "[##{@conversation.display_id}]"
-    base_subject = subject.presence || I18n.t('conversations.reply.email_subject')
-    prefixed_subject = if base_subject.start_with?(display_id_prefix)
-                         base_subject
-                       else
-                         "#{display_id_prefix} #{base_subject}"
-                       end
+    return subject if subject.start_with?(display_id_prefix)
 
-    return prefixed_subject unless @conversation.messages.chat.count > 1
+    "#{display_id_prefix} #{subject}"
+  end
 
-    "Re: #{prefixed_subject}"
+  def reply_subject(subject)
+    return subject unless @conversation.messages.chat.count > 1
+
+    "Re: #{subject}"
   end
 
   def reply_email

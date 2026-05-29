@@ -41,6 +41,7 @@ import SelectInput from 'dashboard/components-next/select/Select.vue';
 import Widget from 'dashboard/modules/widget-preview/components/Widget.vue';
 import AccessToken from 'dashboard/routes/dashboard/settings/profile/AccessToken.vue';
 import { copyTextToClipboard } from 'shared/helpers/clipboard';
+import InboxesAPI from 'dashboard/api/inboxes';
 
 export default {
   components: {
@@ -108,6 +109,9 @@ export default {
       widgetBubblePosition: 'right',
       widgetBubbleType: 'standard',
       widgetBubbleLauncherTitle: '',
+      emailSubjectPrefixEnabled: false,
+      conversationDisplayIdStart: '',
+      accountHasConversations: false,
     };
   },
   computed: {
@@ -391,6 +395,7 @@ export default {
       handler(newInbox, oldInbox) {
         if (newInbox?.id !== oldInbox?.id) {
           this.syncInboxData();
+          this.fetchInboxMeta();
           this.fetchHealthData();
           this.$nextTick(() => {
             this.setTabFromRouteParam();
@@ -404,6 +409,7 @@ export default {
   },
   mounted() {
     this.fetchSharedData();
+    this.fetchInboxMeta();
   },
   methods: {
     async copyWebhookSecret(value) {
@@ -439,6 +445,16 @@ export default {
       this.$store.dispatch('labels/get');
       this.$store.dispatch('portals/index');
     },
+    async fetchInboxMeta() {
+      if (!this.currentInboxId) return;
+
+      try {
+        const { data } = await InboxesAPI.show(this.currentInboxId);
+        this.accountHasConversations = data.account_has_conversations || false;
+      } catch (error) {
+        this.accountHasConversations = false;
+      }
+    },
     syncInboxData() {
       if (!this.inbox || !this.inbox.id) return;
 
@@ -447,6 +463,8 @@ export default {
       this.webhookUrl = this.inbox.webhook_url;
       this.greetingEnabled = this.inbox.greeting_enabled || false;
       this.greetingMessage = this.inbox.greeting_message || '';
+      this.emailSubjectPrefixEnabled =
+        this.inbox.email_subject_prefix_enabled || false;
       this.emailCollectEnabled = this.inbox.enable_email_collect;
       this.senderNameType = this.inbox.sender_name_type;
       this.businessName = this.inbox.business_name;
@@ -567,6 +585,16 @@ export default {
           allow_messages_after_resolved: this.allowMessagesAfterResolved,
           greeting_enabled: this.greetingEnabled,
           greeting_message: this.greetingMessage || '',
+          email_subject_prefix_enabled: this.emailSubjectPrefixEnabled,
+          ...(this.emailSubjectPrefixEnabled &&
+          !this.accountHasConversations &&
+          this.conversationDisplayIdStart
+            ? {
+                conversation_display_id_start: Number(
+                  this.conversationDisplayIdStart
+                ),
+              }
+            : {}),
           portal_id: this.selectedPortalSlug
             ? this.portals.find(
                 portal => portal.slug === this.selectedPortalSlug
@@ -591,6 +619,11 @@ export default {
           payload.avatar = this.avatarFile;
         }
         await this.$store.dispatch('inboxes/updateInbox', payload);
+        if (payload.conversation_display_id_start) {
+          this.conversationDisplayIdStart = '';
+        }
+        const { data } = await InboxesAPI.show(this.currentInboxId);
+        this.accountHasConversations = data.account_has_conversations || false;
         useAlert(this.$t('INBOX_MGMT.EDIT.API.SUCCESS_MESSAGE'));
         this.showBusinessNameInput = false;
       } catch (error) {
@@ -1159,6 +1192,43 @@ export default {
                     "
                     :richtext="!textAreaChannels"
                   />
+                </template>
+              </SettingsToggleSection>
+
+              <SettingsToggleSection
+                v-if="isAnEmailChannel"
+                v-model="emailSubjectPrefixEnabled"
+                :header="$t('INBOX_MGMT.EMAIL_SUBJECT_PREFIX.TOGGLE.LABEL')"
+                :description="
+                  $t('INBOX_MGMT.EMAIL_SUBJECT_PREFIX.TOGGLE.HELP_TEXT')
+                "
+              >
+                <template
+                  v-if="emailSubjectPrefixEnabled && !accountHasConversations"
+                  #editor
+                >
+                  <div class="flex flex-col gap-1 pt-2">
+                    <label class="text-sm font-medium text-n-slate-12">
+                      {{
+                        $t('INBOX_MGMT.EMAIL_SUBJECT_PREFIX.START_ID.LABEL')
+                      }}
+                    </label>
+                    <woot-input
+                      v-model="conversationDisplayIdStart"
+                      type="number"
+                      min="1"
+                      :placeholder="
+                        $t(
+                          'INBOX_MGMT.EMAIL_SUBJECT_PREFIX.START_ID.PLACEHOLDER'
+                        )
+                      "
+                    />
+                    <span class="text-xs text-n-slate-11">
+                      {{
+                        $t('INBOX_MGMT.EMAIL_SUBJECT_PREFIX.START_ID.HELP_TEXT')
+                      }}
+                    </span>
+                  </div>
                 </template>
               </SettingsToggleSection>
 

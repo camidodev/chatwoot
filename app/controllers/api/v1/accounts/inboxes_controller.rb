@@ -46,9 +46,10 @@ class Api::V1::Accounts::InboxesController < Api::V1::Accounts::BaseController
   end
 
   def update
-    inbox_params = permitted_params.except(:channel, :csat_config)
+    inbox_params = permitted_params.except(:channel, :csat_config, :conversation_display_id_start)
     inbox_params[:csat_config] = format_csat_config(permitted_params[:csat_config]) if permitted_params[:csat_config].present?
     @inbox.update!(inbox_params)
+    apply_conversation_display_id_start(params[:conversation_display_id_start])
     update_inbox_working_hours
     update_channel if channel_update_required?
   end
@@ -156,10 +157,19 @@ class Api::V1::Accounts::InboxesController < Api::V1::Accounts::BaseController
     formatted['template'] = config['template'] if config['template'].present?
   end
 
+  def apply_conversation_display_id_start(start_value)
+    return if start_value.blank?
+
+    Accounts::SetConversationDisplayIdSequenceService.new(
+      account: Current.account,
+      start_value: start_value
+    ).perform
+  end
+
   def inbox_attributes
     [:name, :avatar, :greeting_enabled, :greeting_message, :enable_email_collect, :csat_survey_enabled,
      :enable_auto_assignment, :working_hours_enabled, :out_of_office_message, :timezone, :allow_messages_after_resolved,
-     :lock_to_single_conversation, :portal_id, :sender_name_type, :business_name,
+     :lock_to_single_conversation, :portal_id, :sender_name_type, :business_name, :email_subject_prefix_enabled,
      { csat_config: [:display_type, :message, :button_text, :language,
                      { survey_rules: [:operator, { values: [] }],
                        template: [:name, :template_id, :friendly_name, :content_sid, :approval_sid, :created_at, :language, :status] }] }]
