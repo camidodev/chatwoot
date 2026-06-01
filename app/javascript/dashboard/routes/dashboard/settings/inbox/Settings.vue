@@ -423,11 +423,18 @@ export default {
         } else {
           this.suggestConversationDisplayIdStart();
         }
+
+        if (
+          !this.conversationDisplayIdPrefix &&
+          this.inbox?.conversationDisplayIdPrefix
+        ) {
+          this.conversationDisplayIdPrefix =
+            this.inbox.conversationDisplayIdPrefix;
+        }
         return;
       }
 
       this.conversationDisplayIdStart = '';
-      this.conversationDisplayIdPrefix = '';
     },
   },
   mounted() {
@@ -489,6 +496,20 @@ export default {
       if (data.conversation_display_id_prefix !== undefined) {
         this.conversationDisplayIdPrefix =
           data.conversation_display_id_prefix || '';
+      }
+
+      this.commitInboxFromApi(data);
+    },
+    commitInboxFromApi(data) {
+      const {
+        account_has_conversations: _accountHasConversations,
+        max_conversation_display_id: _maxConversationDisplayId,
+        next_conversation_display_id: _nextConversationDisplayId,
+        ...inboxData
+      } = data;
+
+      if (inboxData.id) {
+        this.$store.commit('inboxes/EDIT_INBOXES', inboxData);
       }
     },
     syncConversationDisplayIdStart(data) {
@@ -683,9 +704,8 @@ export default {
           greeting_enabled: this.greetingEnabled,
           greeting_message: this.greetingMessage || '',
           email_subject_prefix_enabled: this.emailSubjectPrefixEnabled,
-          conversation_display_id_prefix: this.emailSubjectPrefixEnabled
-            ? this.conversationDisplayIdPrefix?.trim() || ''
-            : '',
+          conversation_display_id_prefix:
+            this.conversationDisplayIdPrefix?.trim() || '',
           ...(this.emailSubjectPrefixEnabled
             ? {
                 conversation_display_id_start:
