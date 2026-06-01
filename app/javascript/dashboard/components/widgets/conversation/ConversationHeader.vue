@@ -14,6 +14,7 @@ import { snoozedReopenTime } from 'dashboard/helper/snoozeHelpers';
 import { useInbox } from 'dashboard/composables/useInbox';
 import { useI18n } from 'vue-i18n';
 import { copyTextToClipboard } from 'shared/helpers/clipboard';
+import { formatConversationDisplayId } from 'shared/helpers/conversationDisplayId';
 import { useAlert } from 'dashboard/composables';
 
 const props = defineProps({
@@ -94,9 +95,16 @@ const hasMultipleInboxes = computed(
 
 const hasSlaPolicyId = computed(() => props.chat?.sla_policy_id);
 
+const formattedConversationId = computed(() =>
+  formatConversationDisplayId(
+    props.chat.id,
+    inbox.value?.conversation_display_id_prefix
+  )
+);
+
 const copyConversationId = async () => {
   try {
-    await copyTextToClipboard(String(props.chat.id));
+    await copyTextToClipboard(formattedConversationId.value.replace(/^#/, ''));
     useAlert(t('CONVERSATION.HEADER.COPY_ID_SUCCESS'));
   } catch (error) {
     // error
@@ -151,7 +159,7 @@ const copyConversationId = async () => {
             class="truncate text-label-small text-n-slate-11 hover:text-n-slate-12 !p-0 cucursor-pointer"
             @click="copyConversationId"
           >
-            {{ `#${chat.id}` }}
+            {{ formattedConversationId }}
           </button>
           <span v-if="hasMultipleInboxes">•</span>
           <InboxName v-if="hasMultipleInboxes" :inbox="inbox" class="!mx-0" />

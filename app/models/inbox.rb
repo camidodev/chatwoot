@@ -4,29 +4,31 @@
 #
 # Table name: inboxes
 #
-#  id                            :integer          not null, primary key
-#  allow_messages_after_resolved :boolean          default(TRUE)
-#  auto_assignment_config        :jsonb
-#  business_name                 :string
-#  channel_type                  :string
-#  csat_config                   :jsonb            not null
-#  csat_survey_enabled           :boolean          default(FALSE)
-#  email_address                 :string
-#  enable_auto_assignment        :boolean          default(TRUE)
-#  enable_email_collect          :boolean          default(TRUE)
-#  greeting_enabled              :boolean          default(FALSE)
-#  greeting_message              :string
-#  lock_to_single_conversation   :boolean          default(FALSE), not null
-#  name                          :string           not null
-#  out_of_office_message         :string
-#  sender_name_type              :integer          default("friendly"), not null
-#  timezone                      :string           default("UTC")
-#  working_hours_enabled         :boolean          default(FALSE)
-#  created_at                    :datetime         not null
-#  updated_at                    :datetime         not null
-#  account_id                    :integer          not null
-#  channel_id                    :integer          not null
-#  portal_id                     :bigint
+#  id                             :integer          not null, primary key
+#  allow_messages_after_resolved  :boolean          default(TRUE)
+#  auto_assignment_config         :jsonb
+#  business_name                  :string
+#  channel_type                   :string
+#  conversation_display_id_prefix :string
+#  csat_config                    :jsonb            not null
+#  csat_survey_enabled            :boolean          default(FALSE)
+#  email_address                  :string
+#  email_subject_prefix_enabled   :boolean          default(FALSE), not null
+#  enable_auto_assignment         :boolean          default(TRUE)
+#  enable_email_collect           :boolean          default(TRUE)
+#  greeting_enabled               :boolean          default(FALSE)
+#  greeting_message               :string
+#  lock_to_single_conversation    :boolean          default(FALSE), not null
+#  name                           :string           not null
+#  out_of_office_message          :string
+#  sender_name_type               :integer          default("friendly"), not null
+#  timezone                       :string           default("UTC")
+#  working_hours_enabled          :boolean          default(FALSE)
+#  created_at                     :datetime         not null
+#  updated_at                     :datetime         not null
+#  account_id                     :integer          not null
+#  channel_id                     :integer          not null
+#  portal_id                      :bigint
 #
 # Indexes
 #
@@ -205,6 +207,13 @@ class Inbox < ApplicationRecord
 
   def auto_assignment_v2_enabled?
     account.feature_enabled?('assignment_v2')
+  end
+
+  def formatted_conversation_display_id(display_id)
+    prefix = conversation_display_id_prefix.to_s.strip
+    return display_id.to_s if prefix.blank?
+
+    "#{prefix}#{display_id}"
   end
 
   private

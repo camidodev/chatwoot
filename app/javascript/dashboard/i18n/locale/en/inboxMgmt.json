@@ -661,6 +661,11 @@
         "PLACEHOLDER": "e.g. 1000",
         "PLACEHOLDER_EXISTING": "Must be greater than {suggestedDisplayId}",
         "ERROR": "The starting conversation number must be greater than {maxDisplayId}."
+      },
+      "PREFIX": {
+        "LABEL": "Conversation ID prefix",
+        "HELP_TEXT": "Optional. When set, conversation numbers are shown with this prefix (for example #TKT102). Leave blank to show the number only.",
+        "PLACEHOLDER": "e.g. TKT"
       }
     },
     "WIDGET_FEATURES": "Widget features",

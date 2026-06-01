@@ -651,6 +651,11 @@
         "PLACEHOLDER": "t.ex. 1000",
         "PLACEHOLDER_EXISTING": "Måste vara större än {suggestedDisplayId}",
         "ERROR": "Startnumret måste vara högre än {maxDisplayId}."
+      },
+      "PREFIX": {
+        "LABEL": "Prefix för konversations-ID",
+        "HELP_TEXT": "Valfritt. När detta är angivet visas konversationsnummer med detta prefix (till exempel #TKT102). Lämna tomt för att bara visa numret.",
+        "PLACEHOLDER": "t.ex. TKT"
       }
     },
     "WIDGET_FEATURES": "Widgetfunktioner",

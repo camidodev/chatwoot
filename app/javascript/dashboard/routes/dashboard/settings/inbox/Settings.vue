@@ -110,6 +110,7 @@ export default {
       widgetBubbleType: 'standard',
       widgetBubbleLauncherTitle: '',
       emailSubjectPrefixEnabled: false,
+      conversationDisplayIdPrefix: '',
       conversationDisplayIdStart: '',
       accountHasConversations: false,
       maxConversationDisplayId: 0,
@@ -426,6 +427,7 @@ export default {
       }
 
       this.conversationDisplayIdStart = '';
+      this.conversationDisplayIdPrefix = '';
     },
   },
   mounted() {
@@ -504,6 +506,8 @@ export default {
       this.greetingMessage = this.inbox.greeting_message || '';
       this.emailSubjectPrefixEnabled =
         this.inbox.email_subject_prefix_enabled || false;
+      this.conversationDisplayIdPrefix =
+        this.inbox.conversation_display_id_prefix || '';
       this.emailCollectEnabled = this.inbox.enable_email_collect;
       this.senderNameType = this.inbox.sender_name_type;
       this.businessName = this.inbox.business_name;
@@ -668,6 +672,9 @@ export default {
           greeting_enabled: this.greetingEnabled,
           greeting_message: this.greetingMessage || '',
           email_subject_prefix_enabled: this.emailSubjectPrefixEnabled,
+          conversation_display_id_prefix: this.emailSubjectPrefixEnabled
+            ? this.conversationDisplayIdPrefix?.trim() || ''
+            : '',
           ...(this.emailSubjectPrefixEnabled
             ? {
                 conversation_display_id_start:
@@ -1281,6 +1288,22 @@ export default {
                 "
               >
                 <template v-if="emailSubjectPrefixEnabled" #editor>
+                  <div class="flex flex-col gap-1 pt-2">
+                    <label class="text-sm font-medium text-n-slate-12">
+                      {{
+                        $t('INBOX_MGMT.EMAIL_SUBJECT_PREFIX.PREFIX.LABEL')
+                      }}
+                    </label>
+                    <woot-input
+                      v-model="conversationDisplayIdPrefix"
+                      :placeholder="
+                        $t('INBOX_MGMT.EMAIL_SUBJECT_PREFIX.PREFIX.PLACEHOLDER')
+                      "
+                    />
+                    <span class="text-xs text-n-slate-11">
+                      {{ $t('INBOX_MGMT.EMAIL_SUBJECT_PREFIX.PREFIX.HELP_TEXT') }}
+                    </span>
+                  </div>
                   <div class="flex flex-col gap-1 pt-2">
                     <label class="text-sm font-medium text-n-slate-12">
                       {{

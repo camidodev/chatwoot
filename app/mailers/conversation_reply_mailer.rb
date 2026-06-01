@@ -56,7 +56,7 @@ class ConversationReplyMailer < ApplicationMailer
     mail({
            to: to_email,
            from: from_email_with_name,
-           subject: "[##{@conversation.display_id}] #{I18n.t('conversations.reply.transcript_subject')}"
+           subject: "#{conversation_display_id_tag} #{I18n.t('conversations.reply.transcript_subject')}"
          })
   end
 
@@ -124,15 +124,19 @@ class ConversationReplyMailer < ApplicationMailer
   end
 
   def default_mail_subject
-    "[##{@conversation.display_id}] #{I18n.t('conversations.reply.email_subject')}"
+    "#{conversation_display_id_tag} #{I18n.t('conversations.reply.email_subject')}"
   end
 
   def email_subject_prefix_enabled?
     @inbox.email_subject_prefix_enabled?
   end
 
+  def conversation_display_id_tag
+    "[##{@inbox.formatted_conversation_display_id(@conversation.display_id)}]"
+  end
+
   def prefixed_subject(subject)
-    display_id_prefix = "[##{@conversation.display_id}]"
+    display_id_prefix = conversation_display_id_tag
     return subject if subject.start_with?(display_id_prefix)
 
     "#{display_id_prefix} #{subject}"
