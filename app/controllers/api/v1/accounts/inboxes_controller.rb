@@ -51,6 +51,7 @@ class Api::V1::Accounts::InboxesController < Api::V1::Accounts::BaseController
 
     inbox_params = permitted_params.except(:channel, :csat_config)
     inbox_params[:csat_config] = format_csat_config(permitted_params[:csat_config]) if permitted_params[:csat_config].present?
+    merge_conversation_display_id_prefix!(inbox_params)
     @inbox.update!(inbox_params)
     update_inbox_working_hours
     update_channel if channel_update_required?
@@ -173,6 +174,23 @@ class Api::V1::Accounts::InboxesController < Api::V1::Accounts::BaseController
   def conversation_display_id_start_param
     params[:conversation_display_id_start].presence ||
       params.dig(:inbox, :conversation_display_id_start).presence
+  end
+
+  def merge_conversation_display_id_prefix!(inbox_params)
+    return unless conversation_display_id_prefix_param_key_present?
+
+    inbox_params[:conversation_display_id_prefix] =
+      conversation_display_id_prefix_param.to_s.strip.presence
+  end
+
+  def conversation_display_id_prefix_param_key_present?
+    params.key?(:conversation_display_id_prefix) ||
+      params[:inbox]&.key?(:conversation_display_id_prefix)
+  end
+
+  def conversation_display_id_prefix_param
+    params[:conversation_display_id_prefix] ||
+      params.dig(:inbox, :conversation_display_id_prefix)
   end
 
   def inbox_attributes

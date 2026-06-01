@@ -1,2 +1,2 @@
 // Bump when inbox (or other cached) API shape changes so clients refetch from network.
-export const DATA_VERSION = '1748781600';
+export const DATA_VERSION = '1748782800';

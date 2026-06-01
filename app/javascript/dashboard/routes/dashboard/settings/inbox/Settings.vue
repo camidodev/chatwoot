@@ -112,6 +112,7 @@ export default {
       emailSubjectPrefixEnabled: false,
       conversationDisplayIdPrefix: '',
       conversationDisplayIdStart: '',
+      inboxMetaRequestId: 0,
       accountHasConversations: false,
       maxConversationDisplayId: 0,
       nextConversationDisplayId: 0,
@@ -404,7 +405,7 @@ export default {
         if (newInbox?.id !== oldInbox?.id) {
           this.syncInboxData();
           this.fetchHealthData();
-          this.fetchInboxMeta();
+          this.loadEmailSubjectPrefixSettings();
           this.$nextTick(() => {
             this.setTabFromRouteParam();
           });
@@ -413,11 +414,6 @@ export default {
         }
       },
       immediate: true,
-    },
-    currentInboxId(inboxId) {
-      if (inboxId) {
-        this.fetchInboxMeta();
-      }
     },
     emailSubjectPrefixEnabled(enabled) {
       if (enabled) {
@@ -444,6 +440,7 @@ export default {
   },
   mounted() {
     this.fetchSharedData();
+    this.loadEmailSubjectPrefixSettings();
   },
   methods: {
     async copyWebhookSecret(value) {
@@ -479,27 +476,49 @@ export default {
       this.$store.dispatch('labels/get');
       this.$store.dispatch('portals/index');
     },
+    loadEmailSubjectPrefixSettings() {
+      this.fetchInboxMeta();
+    },
     async fetchInboxMeta() {
       if (!this.currentInboxId) return;
 
+      const requestId = ++this.inboxMetaRequestId;
+
       try {
         const { data } = await InboxesAPI.show(this.currentInboxId);
+        if (requestId !== this.inboxMetaRequestId) return;
+
         this.syncEmailSubjectPrefixFromServer(data);
         this.syncConversationDisplayIdStart(data);
       } catch (error) {
+        if (requestId !== this.inboxMetaRequestId) return;
+
         this.accountHasConversations = false;
         this.maxConversationDisplayId = 0;
         this.nextConversationDisplayId = 0;
       }
     },
-    syncEmailSubjectPrefixFromServer(data) {
+    conversationDisplayIdPrefixFromApi(data) {
       if ('conversation_display_id_prefix' in data) {
-        this.conversationDisplayIdPrefix =
-          data.conversation_display_id_prefix || '';
+        return data.conversation_display_id_prefix || '';
       }
 
-      if (data.email_subject_prefix_enabled !== undefined) {
-        this.emailSubjectPrefixEnabled = data.email_subject_prefix_enabled;
+      if ('conversationDisplayIdPrefix' in data) {
+        return data.conversationDisplayIdPrefix || '';
+      }
+
+      return undefined;
+    },
+    syncEmailSubjectPrefixFromServer(data) {
+      const prefix = this.conversationDisplayIdPrefixFromApi(data);
+      if (prefix !== undefined) {
+        this.conversationDisplayIdPrefix = prefix;
+      }
+
+      const enabled =
+        data.email_subject_prefix_enabled ?? data.emailSubjectPrefixEnabled;
+      if (enabled !== undefined) {
+        this.emailSubjectPrefixEnabled = enabled;
       }
 
       this.commitInboxFromApi(data);
@@ -743,10 +762,12 @@ export default {
         if (this.avatarFile) {
           payload.avatar = this.avatarFile;
         }
-        await this.$store.dispatch('inboxes/updateInbox', payload);
-        const { data } = await InboxesAPI.show(this.currentInboxId);
-        this.syncEmailSubjectPrefixFromServer(data);
-        this.syncConversationDisplayIdStart(data);
+        const updatedInbox = await this.$store.dispatch(
+          'inboxes/updateInbox',
+          payload
+        );
+        this.syncEmailSubjectPrefixFromServer(updatedInbox);
+        await this.fetchInboxMeta();
         useAlert(this.$t('INBOX_MGMT.EDIT.API.SUCCESS_MESSAGE'));
         this.showBusinessNameInput = false;
       } catch (error) {
