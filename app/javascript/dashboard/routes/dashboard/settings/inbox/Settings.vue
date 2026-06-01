@@ -403,8 +403,8 @@ export default {
       handler(newInbox, oldInbox) {
         if (newInbox?.id !== oldInbox?.id) {
           this.syncInboxData();
-          this.fetchInboxMeta();
           this.fetchHealthData();
+          this.fetchInboxMeta();
           this.$nextTick(() => {
             this.setTabFromRouteParam();
           });
@@ -413,6 +413,11 @@ export default {
         }
       },
       immediate: true,
+    },
+    currentInboxId(inboxId) {
+      if (inboxId) {
+        this.fetchInboxMeta();
+      }
     },
     emailSubjectPrefixEnabled(enabled) {
       if (enabled) {
@@ -439,7 +444,6 @@ export default {
   },
   mounted() {
     this.fetchSharedData();
-    this.fetchInboxMeta();
   },
   methods: {
     async copyWebhookSecret(value) {
@@ -489,13 +493,13 @@ export default {
       }
     },
     syncEmailSubjectPrefixFromServer(data) {
-      if (data.email_subject_prefix_enabled !== undefined) {
-        this.emailSubjectPrefixEnabled = data.email_subject_prefix_enabled;
-      }
-
-      if (data.conversation_display_id_prefix !== undefined) {
+      if ('conversation_display_id_prefix' in data) {
         this.conversationDisplayIdPrefix =
           data.conversation_display_id_prefix || '';
+      }
+
+      if (data.email_subject_prefix_enabled !== undefined) {
+        this.emailSubjectPrefixEnabled = data.email_subject_prefix_enabled;
       }
 
       this.commitInboxFromApi(data);
@@ -508,9 +512,16 @@ export default {
         ...inboxData
       } = data;
 
-      if (inboxData.id) {
-        this.$store.commit('inboxes/EDIT_INBOXES', inboxData);
-      }
+      if (!inboxData.id) return;
+
+      const existingInbox = this.$store.state.inboxes.records.find(
+        inbox => inbox.id === inboxData.id
+      );
+
+      this.$store.commit('inboxes/EDIT_INBOXES', {
+        ...existingInbox,
+        ...inboxData,
+      });
     },
     syncConversationDisplayIdStart(data) {
       this.accountHasConversations = data.account_has_conversations || false;
@@ -536,10 +547,6 @@ export default {
       this.webhookUrl = this.inbox.webhook_url;
       this.greetingEnabled = this.inbox.greeting_enabled || false;
       this.greetingMessage = this.inbox.greeting_message || '';
-      this.emailSubjectPrefixEnabled =
-        this.inbox.emailSubjectPrefixEnabled || false;
-      this.conversationDisplayIdPrefix =
-        this.inbox.conversationDisplayIdPrefix || '';
       this.emailCollectEnabled = this.inbox.enable_email_collect;
       this.senderNameType = this.inbox.sender_name_type;
       this.businessName = this.inbox.business_name;
