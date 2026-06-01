@@ -46,12 +46,16 @@ class Api::V1::Accounts::InboxesController < Api::V1::Accounts::BaseController
   end
 
   def update
-    inbox_params = permitted_params.except(:channel, :csat_config, :conversation_display_id_start)
+    display_id_start = conversation_display_id_start_param
+    apply_conversation_display_id_start!(display_id_start)
+
+    inbox_params = permitted_params.except(:channel, :csat_config)
     inbox_params[:csat_config] = format_csat_config(permitted_params[:csat_config]) if permitted_params[:csat_config].present?
     @inbox.update!(inbox_params)
-    apply_conversation_display_id_start(params[:conversation_display_id_start])
     update_inbox_working_hours
     update_channel if channel_update_required?
+  rescue CustomExceptions::Account::InvalidConversationDisplayIdStart => e
+    render_could_not_create_error(e.message)
   end
 
   def agent_bot
@@ -157,13 +161,18 @@ class Api::V1::Accounts::InboxesController < Api::V1::Accounts::BaseController
     formatted['template'] = config['template'] if config['template'].present?
   end
 
-  def apply_conversation_display_id_start(start_value)
+  def apply_conversation_display_id_start!(start_value)
     return if start_value.blank?
 
     Accounts::SetConversationDisplayIdSequenceService.new(
       account: Current.account,
       start_value: start_value
-    ).perform
+    ).perform!
+  end
+
+  def conversation_display_id_start_param
+    params[:conversation_display_id_start].presence ||
+      params.dig(:inbox, :conversation_display_id_start).presence
   end
 
   def inbox_attributes

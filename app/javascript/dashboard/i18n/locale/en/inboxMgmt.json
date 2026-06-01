@@ -657,7 +657,10 @@
       "START_ID": {
         "LABEL": "Starting conversation number",
         "HELP_TEXT": "Set the first conversation number for this account. This option is only available before any conversations exist.",
-        "PLACEHOLDER": "e.g. 1000"
+        "HELP_TEXT_EXISTING": "Optional. Set the next conversation number for new conversations. It must be greater than the latest conversation number ({maxDisplayId}).",
+        "PLACEHOLDER": "e.g. 1000",
+        "PLACEHOLDER_EXISTING": "Must be greater than {suggestedDisplayId}",
+        "ERROR": "The starting conversation number must be greater than {maxDisplayId}."
       }
     },
     "WIDGET_FEATURES": "Widget features",

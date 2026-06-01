@@ -174,6 +174,18 @@ class Account < ApplicationRecord
     clear_unread_conversation_counts_cache
   end
 
+  def next_conversation_display_id
+    sequence_name = "conv_dpid_seq_#{id}"
+    quoted_sequence_name = self.class.connection.quote_table_name(sequence_name)
+
+    self.class.connection.select_value(<<~SQL.squish).to_i
+      SELECT CASE WHEN is_called THEN last_value + 1 ELSE last_value END
+      FROM #{quoted_sequence_name}
+    SQL
+  rescue ActiveRecord::StatementInvalid
+    1
+  end
+
   private
 
   def notify_creation

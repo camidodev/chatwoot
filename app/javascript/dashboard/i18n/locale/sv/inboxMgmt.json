@@ -647,7 +647,10 @@
       "START_ID": {
         "LABEL": "Startnummer för konversationer",
         "HELP_TEXT": "Ange det första konversationsnumret för detta konto. Detta alternativ är endast tillgängligt innan några konversationer finns.",
-        "PLACEHOLDER": "t.ex. 1000"
+        "HELP_TEXT_EXISTING": "Valfritt. Ange nästa konversationsnummer för nya konversationer. Det måste vara högre än det senaste konversationsnumret ({maxDisplayId}).",
+        "PLACEHOLDER": "t.ex. 1000",
+        "PLACEHOLDER_EXISTING": "Måste vara större än {suggestedDisplayId}",
+        "ERROR": "Startnumret måste vara högre än {maxDisplayId}."
       }
     },
     "WIDGET_FEATURES": "Widgetfunktioner",

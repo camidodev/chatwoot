@@ -1,16 +1,21 @@
 class Accounts::SetConversationDisplayIdSequenceService
   pattr_initialize [:account!, :start_value!]
 
-  def perform
-    return false if account.conversations.exists?
-    return false unless start_value.to_i.positive?
+  def perform!
+    start = start_value.to_i
+    return if start <= 0
+
+    max_display_id = account.conversations.maximum(:display_id).to_i
+
+    if max_display_id.positive? && start <= max_display_id
+      raise CustomExceptions::Account::InvalidConversationDisplayIdStart.new(max_display_id: max_display_id)
+    end
 
     ActiveRecord::Base.connection.exec_query(
       ActiveRecord::Base.sanitize_sql_array(
-        ['SELECT setval(?, ?, true)', sequence_name, start_value.to_i - 1]
+        ['SELECT setval(?, ?, true)', sequence_name, start - 1]
       )
     )
-    true
   end
 
   private

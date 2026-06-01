@@ -5,10 +5,27 @@ import { ACCOUNT_EVENTS } from '../../../helper/AnalyticsHelper/events';
 
 export const buildInboxData = inboxParams => {
   const formData = new FormData();
-  const { channel = {}, ...inboxProperties } = inboxParams;
+  const {
+    channel = {},
+    conversation_display_id_start: conversationDisplayIdStart,
+    ...inboxProperties
+  } = inboxParams;
   Object.keys(inboxProperties).forEach(key => {
-    formData.append(key, inboxProperties[key]);
+    const value = inboxProperties[key];
+    if (value !== undefined && value !== null) {
+      formData.append(key, value);
+    }
   });
+  if (
+    conversationDisplayIdStart !== undefined &&
+    conversationDisplayIdStart !== null &&
+    conversationDisplayIdStart !== ''
+  ) {
+    formData.append(
+      'conversation_display_id_start',
+      String(conversationDisplayIdStart)
+    );
+  }
   const { selectedFeatureFlags, ...channelParams } = channel;
   // selectedFeatureFlags needs to be empty when creating a website channel
   if (selectedFeatureFlags) {

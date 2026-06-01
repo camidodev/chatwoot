@@ -112,6 +112,8 @@ export default {
       emailSubjectPrefixEnabled: false,
       conversationDisplayIdStart: '',
       accountHasConversations: false,
+      maxConversationDisplayId: 0,
+      nextConversationDisplayId: 0,
     };
   },
   computed: {
@@ -288,6 +290,11 @@ export default {
       }
       return this.inbox.name;
     },
+    minConversationDisplayIdStart() {
+      return this.accountHasConversations
+        ? this.maxConversationDisplayId + 1
+        : 1;
+    },
     canLocktoSingleConversation() {
       return (
         this.isASmsInbox ||
@@ -406,6 +413,20 @@ export default {
       },
       immediate: true,
     },
+    emailSubjectPrefixEnabled(enabled) {
+      if (enabled) {
+        if (this.nextConversationDisplayId) {
+          this.conversationDisplayIdStart = String(
+            this.nextConversationDisplayId
+          );
+        } else {
+          this.suggestConversationDisplayIdStart();
+        }
+        return;
+      }
+
+      this.conversationDisplayIdStart = '';
+    },
   },
   mounted() {
     this.fetchSharedData();
@@ -450,10 +471,28 @@ export default {
 
       try {
         const { data } = await InboxesAPI.show(this.currentInboxId);
-        this.accountHasConversations = data.account_has_conversations || false;
+        this.syncConversationDisplayIdStart(data);
       } catch (error) {
         this.accountHasConversations = false;
+        this.maxConversationDisplayId = 0;
+        this.nextConversationDisplayId = 0;
       }
+    },
+    syncConversationDisplayIdStart(data) {
+      this.accountHasConversations = data.account_has_conversations || false;
+      this.maxConversationDisplayId = data.max_conversation_display_id || 0;
+      this.nextConversationDisplayId = data.next_conversation_display_id || 0;
+
+      if (!this.emailSubjectPrefixEnabled) return;
+
+      if (this.nextConversationDisplayId) {
+        this.conversationDisplayIdStart = String(
+          this.nextConversationDisplayId
+        );
+        return;
+      }
+
+      this.suggestConversationDisplayIdStart();
     },
     syncInboxData() {
       if (!this.inbox || !this.inbox.id) return;
@@ -569,7 +608,50 @@ export default {
       const tabIndex = this.tabs.findIndex(tab => tab.key === tabParam);
       this.selectedTabIndex = tabIndex === -1 ? 0 : tabIndex;
     },
+    suggestConversationDisplayIdStart() {
+      if (!this.emailSubjectPrefixEnabled || this.conversationDisplayIdStart) {
+        return;
+      }
+
+      this.conversationDisplayIdStart = String(
+        this.minConversationDisplayIdStart
+      );
+    },
+    validateConversationDisplayIdStart() {
+      if (!this.emailSubjectPrefixEnabled || !this.conversationDisplayIdStart) {
+        return true;
+      }
+
+      const startValue = Number(this.conversationDisplayIdStart);
+
+      if (
+        this.accountHasConversations &&
+        startValue <= this.maxConversationDisplayId
+      ) {
+        useAlert(
+          this.$t('INBOX_MGMT.EMAIL_SUBJECT_PREFIX.START_ID.ERROR', {
+            maxDisplayId: this.maxConversationDisplayId,
+          })
+        );
+        return false;
+      }
+
+      if (!this.accountHasConversations && startValue < 1) {
+        useAlert(
+          this.$t('INBOX_MGMT.EMAIL_SUBJECT_PREFIX.START_ID.ERROR', {
+            maxDisplayId: 0,
+          })
+        );
+        return false;
+      }
+
+      return true;
+    },
     async updateInbox() {
+      if (!this.validateConversationDisplayIdStart()) {
+        return;
+      }
+
       const bubbleSettings = {
         position: this.widgetBubblePosition,
         type: this.widgetBubbleType,
@@ -586,13 +668,11 @@ export default {
           greeting_enabled: this.greetingEnabled,
           greeting_message: this.greetingMessage || '',
           email_subject_prefix_enabled: this.emailSubjectPrefixEnabled,
-          ...(this.emailSubjectPrefixEnabled &&
-          !this.accountHasConversations &&
-          this.conversationDisplayIdStart
+          ...(this.emailSubjectPrefixEnabled
             ? {
-                conversation_display_id_start: Number(
-                  this.conversationDisplayIdStart
-                ),
+                conversation_display_id_start:
+                  Number(this.conversationDisplayIdStart) ||
+                  this.minConversationDisplayIdStart,
               }
             : {}),
           portal_id: this.selectedPortalSlug
@@ -619,11 +699,8 @@ export default {
           payload.avatar = this.avatarFile;
         }
         await this.$store.dispatch('inboxes/updateInbox', payload);
-        if (payload.conversation_display_id_start) {
-          this.conversationDisplayIdStart = '';
-        }
         const { data } = await InboxesAPI.show(this.currentInboxId);
-        this.accountHasConversations = data.account_has_conversations || false;
+        this.syncConversationDisplayIdStart(data);
         useAlert(this.$t('INBOX_MGMT.EDIT.API.SUCCESS_MESSAGE'));
         this.showBusinessNameInput = false;
       } catch (error) {
@@ -1203,10 +1280,7 @@ export default {
                   $t('INBOX_MGMT.EMAIL_SUBJECT_PREFIX.TOGGLE.HELP_TEXT')
                 "
               >
-                <template
-                  v-if="emailSubjectPrefixEnabled && !accountHasConversations"
-                  #editor
-                >
+                <template v-if="emailSubjectPrefixEnabled" #editor>
                   <div class="flex flex-col gap-1 pt-2">
                     <label class="text-sm font-medium text-n-slate-12">
                       {{
@@ -1216,16 +1290,33 @@ export default {
                     <woot-input
                       v-model="conversationDisplayIdStart"
                       type="number"
-                      min="1"
+                      :min="minConversationDisplayIdStart"
                       :placeholder="
-                        $t(
-                          'INBOX_MGMT.EMAIL_SUBJECT_PREFIX.START_ID.PLACEHOLDER'
-                        )
+                        accountHasConversations
+                          ? $t(
+                              'INBOX_MGMT.EMAIL_SUBJECT_PREFIX.START_ID.PLACEHOLDER_EXISTING',
+                              {
+                                suggestedDisplayId:
+                                  minConversationDisplayIdStart,
+                              }
+                            )
+                          : $t(
+                              'INBOX_MGMT.EMAIL_SUBJECT_PREFIX.START_ID.PLACEHOLDER'
+                            )
                       "
                     />
                     <span class="text-xs text-n-slate-11">
                       {{
-                        $t('INBOX_MGMT.EMAIL_SUBJECT_PREFIX.START_ID.HELP_TEXT')
+                        accountHasConversations
+                          ? $t(
+                              'INBOX_MGMT.EMAIL_SUBJECT_PREFIX.START_ID.HELP_TEXT_EXISTING',
+                              {
+                                maxDisplayId: maxConversationDisplayId,
+                              }
+                            )
+                          : $t(
+                              'INBOX_MGMT.EMAIL_SUBJECT_PREFIX.START_ID.HELP_TEXT'
+                            )
                       }}
                     </span>
                   </div>

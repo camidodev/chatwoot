@@ -42,4 +42,13 @@ module CustomExceptions::Account
       I18n.t 'errors.plan_upgrade_required.failed'
     end
   end
+
+  class InvalidConversationDisplayIdStart < CustomExceptions::Base
+    def message
+      I18n.t(
+        'errors.account.invalid_conversation_display_id_start',
+        max_display_id: @data[:max_display_id]
+      )
+    end
+  end
 end

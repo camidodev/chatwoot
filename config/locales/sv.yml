@@ -39,6 +39,7 @@ sv:
         invalid: is not a valid timezone
       support_email:
         invalid: is not a valid email address
+      invalid_conversation_display_id_start: Startnumret för konversationer måste vara högre än det senaste konversationsnumret (%{max_display_id}).
     validations:
       presence: must not be blank
     webhook:

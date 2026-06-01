@@ -53,6 +53,7 @@ en:
         invalid: is not a valid timezone
       support_email:
         invalid: is not a valid email address
+      invalid_conversation_display_id_start: The starting conversation number must be greater than the latest conversation number (%{max_display_id}).
     validations:
       presence: must not be blank
     webhook:
