@@ -1,3 +1,2 @@
-// Monday, 13 March 2023
-// Change this version if you want to invalidate old data
-export const DATA_VERSION = '1678706392';
+// Bump when inbox (or other cached) API shape changes so clients refetch from network.
+export const DATA_VERSION = '1748779200';

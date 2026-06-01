@@ -98,7 +98,7 @@ const hasSlaPolicyId = computed(() => props.chat?.sla_policy_id);
 const formattedConversationId = computed(() =>
   formatConversationDisplayId(
     props.chat.id,
-    inbox.value?.conversation_display_id_prefix
+    inbox.value?.conversationDisplayIdPrefix
   )
 );
 

@@ -8,6 +8,7 @@ export const buildInboxData = inboxParams => {
   const {
     channel = {},
     conversation_display_id_start: conversationDisplayIdStart,
+    conversation_display_id_prefix: conversationDisplayIdPrefix,
     ...inboxProperties
   } = inboxParams;
   Object.keys(inboxProperties).forEach(key => {
@@ -24,6 +25,15 @@ export const buildInboxData = inboxParams => {
     formData.append(
       'conversation_display_id_start',
       String(conversationDisplayIdStart)
+    );
+  }
+  if (
+    conversationDisplayIdPrefix !== undefined &&
+    conversationDisplayIdPrefix !== null
+  ) {
+    formData.append(
+      'conversation_display_id_prefix',
+      String(conversationDisplayIdPrefix)
     );
   }
   const { selectedFeatureFlags, ...channelParams } = channel;

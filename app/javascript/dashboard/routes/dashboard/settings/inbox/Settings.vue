@@ -473,11 +473,22 @@ export default {
 
       try {
         const { data } = await InboxesAPI.show(this.currentInboxId);
+        this.syncEmailSubjectPrefixFromServer(data);
         this.syncConversationDisplayIdStart(data);
       } catch (error) {
         this.accountHasConversations = false;
         this.maxConversationDisplayId = 0;
         this.nextConversationDisplayId = 0;
+      }
+    },
+    syncEmailSubjectPrefixFromServer(data) {
+      if (data.email_subject_prefix_enabled !== undefined) {
+        this.emailSubjectPrefixEnabled = data.email_subject_prefix_enabled;
+      }
+
+      if (data.conversation_display_id_prefix !== undefined) {
+        this.conversationDisplayIdPrefix =
+          data.conversation_display_id_prefix || '';
       }
     },
     syncConversationDisplayIdStart(data) {
@@ -505,9 +516,9 @@ export default {
       this.greetingEnabled = this.inbox.greeting_enabled || false;
       this.greetingMessage = this.inbox.greeting_message || '';
       this.emailSubjectPrefixEnabled =
-        this.inbox.email_subject_prefix_enabled || false;
+        this.inbox.emailSubjectPrefixEnabled || false;
       this.conversationDisplayIdPrefix =
-        this.inbox.conversation_display_id_prefix || '';
+        this.inbox.conversationDisplayIdPrefix || '';
       this.emailCollectEnabled = this.inbox.enable_email_collect;
       this.senderNameType = this.inbox.sender_name_type;
       this.businessName = this.inbox.business_name;
@@ -707,6 +718,7 @@ export default {
         }
         await this.$store.dispatch('inboxes/updateInbox', payload);
         const { data } = await InboxesAPI.show(this.currentInboxId);
+        this.syncEmailSubjectPrefixFromServer(data);
         this.syncConversationDisplayIdStart(data);
         useAlert(this.$t('INBOX_MGMT.EDIT.API.SUCCESS_MESSAGE'));
         this.showBusinessNameInput = false;
