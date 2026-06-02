@@ -709,6 +709,50 @@ export default {
 
       return true;
     },
+    buildInboxUpdatePayload() {
+      const payload = {
+        id: this.currentInboxId,
+        name: this.selectedInboxName?.trim(),
+        enable_email_collect: this.emailCollectEnabled,
+        allow_messages_after_resolved: this.allowMessagesAfterResolved,
+        greeting_enabled: this.greetingEnabled,
+        greeting_message: this.greetingMessage || '',
+        email_subject_prefix_enabled: this.emailSubjectPrefixEnabled,
+        conversation_display_id_prefix:
+          this.conversationDisplayIdPrefix?.trim() || '',
+        ...(this.emailSubjectPrefixEnabled
+          ? {
+              conversation_display_id_start:
+                Number(this.conversationDisplayIdStart) ||
+                this.minConversationDisplayIdStart,
+            }
+          : {}),
+        portal_id: this.selectedPortalSlug
+          ? this.portals.find(
+              portal => portal.slug === this.selectedPortalSlug
+            )?.id || null
+          : null,
+        lock_to_single_conversation: this.locktoSingleConversation,
+        sender_name_type: this.senderNameType,
+        business_name: this.businessName || null,
+      };
+
+      if (!this.isAnEmailChannel) {
+        payload.channel = {
+          widget_color: this.inbox.widget_color,
+          website_url: this.channelWebsiteUrl,
+          webhook_url: this.webhookUrl || '',
+          welcome_title: this.channelWelcomeTitle || '',
+          welcome_tagline: this.channelWelcomeTagline || '',
+          selectedFeatureFlags: this.selectedFeatureFlags,
+          reply_time: this.replyTime || 'in_a_few_minutes',
+          continuity_via_email:
+            this.isInboundEmailEnabled && this.continuityViaEmail,
+        };
+      }
+
+      return payload;
+    },
     async updateInbox() {
       if (!this.validateConversationDisplayIdStart()) {
         return;
@@ -722,50 +766,14 @@ export default {
       LocalStorage.set(this.widgetBuilderStorageKey, bubbleSettings);
 
       try {
-        const payload = {
-          id: this.currentInboxId,
-          name: this.selectedInboxName?.trim(),
-          enable_email_collect: this.emailCollectEnabled,
-          allow_messages_after_resolved: this.allowMessagesAfterResolved,
-          greeting_enabled: this.greetingEnabled,
-          greeting_message: this.greetingMessage || '',
-          email_subject_prefix_enabled: this.emailSubjectPrefixEnabled,
-          conversation_display_id_prefix:
-            this.conversationDisplayIdPrefix?.trim() || '',
-          ...(this.emailSubjectPrefixEnabled
-            ? {
-                conversation_display_id_start:
-                  Number(this.conversationDisplayIdStart) ||
-                  this.minConversationDisplayIdStart,
-              }
-            : {}),
-          portal_id: this.selectedPortalSlug
-            ? this.portals.find(
-                portal => portal.slug === this.selectedPortalSlug
-              )?.id || null
-            : null,
-          lock_to_single_conversation: this.locktoSingleConversation,
-          sender_name_type: this.senderNameType,
-          business_name: this.businessName || null,
-          channel: {
-            widget_color: this.inbox.widget_color,
-            website_url: this.channelWebsiteUrl,
-            webhook_url: this.webhookUrl,
-            welcome_title: this.channelWelcomeTitle || '',
-            welcome_tagline: this.channelWelcomeTagline || '',
-            selectedFeatureFlags: this.selectedFeatureFlags,
-            reply_time: this.replyTime || 'in_a_few_minutes',
-            continuity_via_email:
-              this.isInboundEmailEnabled && this.continuityViaEmail,
-          },
-        };
+        const payload = this.buildInboxUpdatePayload();
         if (this.avatarFile) {
           payload.avatar = this.avatarFile;
         }
-        const updatedInbox = await this.$store.dispatch(
-          'inboxes/updateInbox',
-          payload
-        );
+        const updatedInbox = await this.$store.dispatch('inboxes/updateInbox', {
+          ...payload,
+          formData: Boolean(this.avatarFile),
+        });
         this.syncEmailSubjectPrefixFromServer(updatedInbox);
         await this.fetchInboxMeta();
         useAlert(this.$t('INBOX_MGMT.EDIT.API.SUCCESS_MESSAGE'));

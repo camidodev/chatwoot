@@ -145,6 +145,8 @@ jobs:
             docker compose -f "$COMPOSE_FILE" up -d postgres redis
             docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" pull rails sidekiq
             docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" run --rm --no-deps rails bundle exec rails db:migrate
+            docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" run --rm --no-deps rails bundle exec rails runner \
+              "abort('Missing inboxes.conversation_display_id_prefix — run db:migrate') unless Inbox.column_names.include?('conversation_display_id_prefix')"
 
             docker compose -f "$COMPOSE_FILE" -f "$OVERRIDE" up -d --force-recreate --no-deps rails sidekiq
 
