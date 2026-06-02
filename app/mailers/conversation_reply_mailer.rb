@@ -119,7 +119,7 @@ class ConversationReplyMailer < ApplicationMailer
       return default_mail_subject
     end
 
-    formatted_subject = email_subject_prefix_enabled? ? prefixed_subject(subject) : subject
+    formatted_subject = add_display_id_prefix? ? prefixed_subject(subject) : subject
     reply_subject(formatted_subject)
   end
 
@@ -129,6 +129,22 @@ class ConversationReplyMailer < ApplicationMailer
 
   def email_subject_prefix_enabled?
     @inbox.email_subject_prefix_enabled?
+  end
+
+  # The display id prefix (e.g. [#104]) should only be added to the first
+  # outgoing email of the conversation. Subsequent replies keep the plain subject.
+  def add_display_id_prefix?
+    email_subject_prefix_enabled? && first_conversation_email?
+  end
+
+  def first_conversation_email?
+    first_email = @conversation.messages
+                               .where(message_type: %i[outgoing template])
+                               .order(:id)
+                               .first
+    return true if first_email.nil?
+
+    current_message.nil? || current_message.id == first_email.id
   end
 
   def conversation_display_id_tag
