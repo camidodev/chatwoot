@@ -119,8 +119,18 @@ class ConversationReplyMailer < ApplicationMailer
       return default_mail_subject
     end
 
-    formatted_subject = add_display_id_prefix? ? prefixed_subject(subject) : subject
-    reply_subject(formatted_subject)
+    # The subject (including the display id prefix, e.g. [#104]) is computed once
+    # for the first outgoing email and then frozen on the conversation. Later
+    # changes to the prefix value or disabling the toggle do not change it, so the
+    # whole email thread keeps the exact subject from the first message.
+    locked_subject = @conversation.additional_attributes['outgoing_mail_subject'].presence
+    return locked_subject if locked_subject
+
+    return reply_subject(subject) unless email_subject_prefix_enabled?
+
+    final_subject = reply_subject(prefixed_subject(subject))
+    lock_outgoing_mail_subject(final_subject)
+    final_subject
   end
 
   def default_mail_subject
@@ -131,20 +141,12 @@ class ConversationReplyMailer < ApplicationMailer
     @inbox.email_subject_prefix_enabled?
   end
 
-  # The display id prefix (e.g. [#104]) should only be added to the first
-  # outgoing email of the conversation. Subsequent replies keep the plain subject.
-  def add_display_id_prefix?
-    email_subject_prefix_enabled? && first_conversation_email?
-  end
+  def lock_outgoing_mail_subject(final_subject)
+    attributes = @conversation.additional_attributes || {}
+    return if attributes['outgoing_mail_subject'].present?
 
-  def first_conversation_email?
-    first_email = @conversation.messages
-                               .where(message_type: %i[outgoing template])
-                               .order(:id)
-                               .first
-    return true if first_email.nil?
-
-    current_message.nil? || current_message.id == first_email.id
+    attributes['outgoing_mail_subject'] = final_subject
+    @conversation.update_column(:additional_attributes, attributes) # rubocop:disable Rails/SkipsModelValidations
   end
 
   def conversation_display_id_tag
