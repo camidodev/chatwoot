@@ -24,6 +24,18 @@ Rails.application.configure do
   config.public_file_server.headers = {
     'Cache-Control' => "public, max-age=#{1.year.to_i}"
   }
+
+  # Gzip responses (including the large precompiled Vite JS/CSS chunks).
+  # When Rails serves static files directly (no nginx/Cloudflare doing gzip),
+  # big chunks like the ~11MB dashboard bundle are otherwise sent uncompressed,
+  # which makes them hang as "pending" and leaves the dashboard on a blank page.
+  # Placing Rack::Deflater ahead of the static file middleware compresses those
+  # assets on the wire (~11MB -> ~3MB).
+  if config.public_file_server.enabled
+    config.middleware.insert_before ActionDispatch::Static, Rack::Deflater
+  else
+    config.middleware.use Rack::Deflater
+  end
   # Compress JavaScripts and CSS.
   # config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass

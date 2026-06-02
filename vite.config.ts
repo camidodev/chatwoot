@@ -43,8 +43,11 @@ if (isLibraryMode) {
   plugins = [vue(vueOptions), yaml()];
 }
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: plugins,
+  // Browser hits Rails on localhost:3000; vite_ruby proxies to the Vite container with that Host header.
+  // Vite 5+ treats unknown hosts as forbidden unless explicitly allowed (403 on /vite-dev/*).
+  ...(command === 'serve' ? { server: { allowedHosts: true } } : {}),
   build: {
     rollupOptions: {
       output: {
@@ -115,4 +118,4 @@ export default defineConfig({
     mockReset: true,
     clearMocks: true,
   },
-});
+}));
